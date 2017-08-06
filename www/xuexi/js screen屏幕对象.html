@@ -1,0 +1,68 @@
+ <html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript">
+		//实例：屏幕的尺寸获取
+		var str = "<h2>屏幕的尺寸</h2><br/>"
+		str += "宽度："+screen.width+"高度："+screen.height+"<br/>";
+		str += "有效宽度："+screen.availWidth+"有效高度："+screen.availHeight;
+		document.write(str);
+		//获取浏览器的信息
+		function info(){
+			var	str = "浏览器核心：" + navigator.appName + "<br />";
+				str += "浏览器版本：" + navigator.appVersion + "<br />";
+				str += "浏览器语言：" + navigator.language + "<br />";
+				str += "浏览器支持的mime类型：" + navigator.mimeType + "<br />";
+				str += "浏览器的类型：" + navigator.platform + "<br />";
+				str += "浏览器用户程序员代理的表头：" + navigator.userAgent + "<br />";
+				str += "浏览器代码名：" + navigator.appCodeName + "<br />";
+			document.write(str);
+		}
+		</script>
+	</head>
+		<body>
+			<input type = "submit" onclick = "info()" value = "浏览器信息"/>
+		</body>
+ </html>
+<!--
+screen屏幕对象
+	width:屏幕的宽度，只读属性
+	height:屏幕的高度，只读属性
+	availWidth:屏幕的有效宽度，不含任务栏
+	availHeight:屏幕的有效高度，不含任务栏
+navigator对象
+	appName:浏览器的软件名称，主要用来判断使用的是什么核心的浏览器
+			如果是ie浏览器，返回值为：Microsoft Internet Explorer
+			如果是Firefox浏览器的话，返回值为：Netscape
+	appVersion：浏览器软件的核心版本号。
+	systemlanguage：系统语言
+	userLanguage：用户语言
+	platform：平台
+window对象的属性
+		name:指浏览器窗口的名字或框架的名字，这个名字是给<a>标记的target属性来用的
+			 可以设置窗口的名字；window.name = "newWin"
+			 获取窗口的名字：document.write(name)
+		top：代表最顶层窗口，如：window.top
+		parent:代表父级窗口，主要用于框架
+		self：代表当前窗口，主要用于框架中
+		innerWidth：指浏览器窗口的内宽(不含菜单栏，工具栏，地址栏，状态栏)，该属性火狐浏览器支持,ie不支持
+			在ie下使用 document.documentElement.clientWidth来代替window.innerWidth
+		innerHeight：指浏览器窗口的内高(不含菜单栏，工具栏，地址栏，状态栏)，该属性火狐浏览器支持,ie不支持
+			在ie下使用 document.documentElement.clientheight来代替window.innerHeight
+			Document.document.Element就是<html>标记对象
+			document.body 就是<body>标记对象
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ -->

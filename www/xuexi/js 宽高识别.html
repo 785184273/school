@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style>
+			div{width:300px;height:900px;background:pink;padding:10px;border:10px solid red;margin:10px;top:100px;}
+		</style>
+	</head>
+		<body>
+			<div style = "top:200px;color:pink;">my name is kitty</div>
+		</body>
+</html>
+<script>
+	var divObj = document.getElementsByTagName("div")[0];
+	document.write("div的offsetWidth(包括边框线和内填充)：" + divObj.offsetWidth + "px<br />");
+	document.write("div的offsetHeight(包括边框线和内填充)：" + divObj.offsetHeight + "px<br />");
+	document.write("div的offsetLeft(元素相对于自己的offsetParent元素的位置)：" + divObj.offsetLeft + "px<br />");
+	document.write("div的offsetTop(元素相对于自己的offsetParent元素的位置)：" + divObj.offsetTop + "px<br />");
+	document.write("div的clientWidth(包括内填充不含边框线)：" + divObj.clientWidth + "px<br />");
+	document.write("div的clientHeight(包含内填充不含边框线)：" + divObj.clientHeight + "px<br />");
+	document.write("div的clientLeft(边框线宽度)：" + divObj.clientLeft + "px<br />");
+	document.write("div的clientTop(边框线宽度)：" + divObj.clientTop + "px<br />");
+	document.write("div的scrollWidth：" + divObj.scrollWidth + "px<br />");
+	document.write("div的scrollHeight：" + divObj.scrollHeight + "px<br />");
+	//document.write("div的scrollTop：" + divObj.scrollTop + "px<br />");
+	document.write("body的scrollHeight(对象滚动的高度)：" + document.body.scrollHeight + "px<br />");
+	document.write("body的scrollWidth(对象滚动的宽度不含滚动条的宽度)：" + document.body.scrollWidth + "px<br />");
+	document.write("屏幕的screen.Width(屏幕的宽)：" + window.screen.width + "px<br />");
+	document.write("屏幕的screen.height(屏幕的高)：" + window.screen.height + "px<br />");
+	document.write("css行内style样式top：" + divObj.style.top + "<br />");
+	document.write("获取计算后的样式：" + document.defaultView.getComputedStyle(divObj,null)['color']);
+</script>
+<!--
+	1.clientHeight, clientWidth:
+	这两个属性大体上显示了元素内容的象素高度和宽度.理论上说这些测量不考虑任何通过样式表加入
+	元素中的页边距,边框等.
+	2.clientLeft,clientTop:
+	这两个返回的是元素周围边框的厚度,如果不指定一个边框或者不定位改元素,他的值就是0.
+	3.scrollLeft,scrollTop:
+	如果元素是可以滚动的,可以通过这俩个属性得到元素在水平和垂直方向上滚动了多远,单位是象素.
+	对于不可以滚动的元素,这些值总是0.
+	4.scrollHeight,scrollWidth:
+	不管有多少对象在页面上可见,他们得到的是整体.
+	scrollWidth 是对象的实际内容的宽，不包边线宽度，会随对象中内容的多少改变（内容多了可能会改变对象的实际宽度）。
+	clientWidth 是对象可见的宽度，不包滚动条等边线，会随窗口的显示大小改变。
+	offsetWidth 是对象的可见宽度，包滚动条等边线，会随窗口的显示大小改变。	
+-->

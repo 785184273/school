@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<style>
+			*{margin:0px;padding:0px;}
+			body{font-size:14px;font-family:'Microsoft Yahei';}
+			.box{width:545px;height:620px;border:1px solid #dddddd;margin:0px auto;}
+			.menu{height:20px;}
+			a{width:16px;height:16px;display:block;margin:2px 5px;}
+			.btn-list-off{background:url('./images/btns.jpg') no-repeat -20px -33px;float:right;}
+			
+			.btn-list-on{background:url('./images/btns.jpg') no-repeat -38px -34px;float:right;}
+			
+			.btn-car-on{background:url('./images/btns.jpg') no-repeat -38px 0px;float:right;}
+		
+			.btn-car-off{background:url('./images/btns.jpg') no-repeat -22px 0px;float:right;}
+			ul{list-style:none;overflow:hidden;border:px solid red;}
+			li{width:164px;height:275px;border:1px solid #dddddd;float:left;margin:5px 7px;}
+			.show_list img{width:164px;height:165px;display:block;overflow:hidden;}
+			.show_list .info p{border:px solid red;padding-left:15px;}
+			.show_list .btn{height:55px;background:#ccc;text-align:center;line-height:55px;}
+			/*
+				卡片模式向列表模式的转换需要添加一系列的css
+			*/
+			.show_car li{height:115px;}
+			.show_car img{height:50px;width:50px;float:left;margin:5px;}
+			.show_car info{float:right;}
+			.show_car .btn{height:55px;background:#ccc;text-align:center;line-height:55px;clear:both;}
+		</style>
+		<script>
+			$(function (){
+				$('#btn1').on('click',car);
+				$('#btn2').on('click',list);
+			});
+			function car(){
+				$('#btn1').removeClass().addClass('btn-car-off');
+				$('#btn2').removeClass().addClass('btn-list-on');
+				$('.show_list').removeClass().addClass('show_car');
+			}
+			function list(){
+				$('#btn2').removeClass().addClass('btn-list-off');
+				$('#btn1').removeClass().addClass('btn-car-on');
+				$('.show_car').removeClass().addClass('show_list');
+			}
+		</script>
+	</head>
+	<body>
+		<div class = "box">
+			<div class = "menu">
+				<a href = "#" id = "btn1" class = "btn-car-on" title = "卡片模式"></a>
+				<a href = "#" id = "btn2" class = "btn-list-off" title = "列表模式"></a>
+			</div>
+			<div class = "show_list">
+				<ul>
+					<li>
+						<img src = "./images/big.jpg">
+						<div class = "info">
+							<p>白杨</p>
+							<p>辽宁</p>
+							<p>21个共同好友</p>
+						</div>
+						<div class = "btn">
+							未分组好友
+						</div>
+					</li>
+					<li>
+						<img src = "./images/big.jpg">
+						<div class = "info">
+							<p>白杨</p>
+							<p>辽宁</p>
+							<p>21个共同好友</p>
+						</div>
+						<div class = "btn">
+							未分组好友
+						</div>
+					</li>
+					<li>
+						<img src = "./images/big.jpg">
+						<div class = "info">
+							<p>白杨</p>
+							<p>辽宁</p>
+							<p>21个共同好友</p>
+						</div>
+						<div class = "btn">
+							未分组好友
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

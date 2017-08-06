@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<h1 v-on:click = "fun">{{message}}</h1>
+			<input v-model = "message"/>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el : "#app",
+				data : {
+					message : "hello vue!"
+				},
+				methods : {
+					fun : function (){
+						//console.log(this);
+						//alert(1);
+						this.message = this.message.split("").reverse().join("");
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

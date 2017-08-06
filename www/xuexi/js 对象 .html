@@ -1,0 +1,204 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type="text/javascript">
+			//使用new关键字结合Object()来创建一个空的对象
+			//var obj = new Object();
+			//增加属性
+			//obj.name = "张三";
+			//obj.sex = "男";
+			//obj.age = "24";
+			//增加方法：将一个函数定义赋给了对象属性，那么该属性变成了方法。
+			//obj.showInfo = function(){
+			//		alert("ok");
+			//		var str = "<h2>"+obj.name+"的基本信息</h2>";
+			//		return  str;
+			//}
+			//调用对象方法
+			//document.write(obj.showInfo());
+			//使用大括号来创建一个对象
+			//var obj =   {
+			//				name:"张三",
+			//				sex:"男",
+			//				age:24,
+			//				edu:"大专",
+			//				school:undefined,
+			//				showInfo:function(){
+			//					var str = "<h2>"+obj.name+"的基本信息</h2>";
+			//					return str;
+			//					}
+			//			}
+			/*
+			var dog = {
+				color:"gray",
+				age:3,
+				climb:function(){
+					document.write("<br />在爬树！")
+				}
+			};//创建一个空对象
+			document.write(dog.climb());
+			document.write(dog.age);
+			//给对象丰富成员
+			dog.sex = "公";
+			document.write(dog.sex);
+			*/
+			//使用构造函数方式创建对象
+			/*
+			function animal(nm){
+				height = 120;
+				color = "black";
+				name = nm;
+			}
+			//会使得animal函数发生自动调用
+			//在php里面，new 类()会使得构造函数__construct()自动执行
+			var pig = new animal("荷兰");
+			document.write(height);
+			document.write(name);
+			*/
+			//调用对象的方法，并输出结果
+			//document.write(obj.showInfo());
+			//document.write("<hr>");
+			/*
+			var person = new Object();
+			//增加属性
+			person.name = "吴开";
+			person.sex = "男生";
+			person.edu = "大专";
+			person.age = 19;
+			//将一个函数定义赋给了对象属性，那么该属性就成了方法
+			var str;
+			person.showInfo = function()
+					{
+						str += "<h2>"+person.name+"的基本信息</h2>";
+						str += "姓名："+person.name;
+						str += "性别："+person.sex;
+						str += "学历："+person.edu;
+						str += "年龄："+person.age;
+						return str;
+					}
+			//函数调用
+			document.write(person.showInfo());
+			function fn(){
+				var inputObj = document.getElementById("d1");
+				//alert(inputObj);
+				inputObj.value = "确定";
+				alert(inputObj.value);
+			}
+			*/
+			window.onload = function (){
+				div();
+			}
+			function div(){
+				document.getElementsByTagName("div")[0].style.border = "1px solid red";
+			}
+			//构造函数创建对象
+			//构造函数里面不需要return
+			function person(name,sex,age){
+				this.name = name;
+				this.sex = sex;
+				this.age = age;
+				this.sayhello = function (){
+					console.log(this.name + "说：" + "我今年" + this.age + "岁啦！" );
+				}
+			}
+			var people = new person("张三",'男',21);
+			var p1 = new person("李四","男",21);
+			console.log(p1 === people);
+			people.sayhello();
+			//json对象的创建
+			//使用json对象的方法有个缺陷：无法复用
+			var p = {
+				name : '李四',
+				age : 19,
+				sex : '男',
+				sayhello : function (){
+					alert(p.name + '是个大煞笔');
+				}
+			
+			};
+			var p2 = p;
+			console.log(p2 === p);
+			//p.sayhello();
+			p['sayhello']();
+			function student(name,sex,age,mark){
+				this.name = name;
+				this.sex = sex;
+				this.age = age;
+				this.chinese = mark.chinese;
+				this.math = mark.math;
+				this.english = mark.english;
+				this.say = function (){
+					alert("大家好，我叫" + this.name + "今年" + this.age + "岁了,我数学很好" + this.math + "分");
+				}
+			}
+			var ruhua = new student('如花','女','20',{chinese:'99',math:'100',english:'100'});
+			ruhua.say();
+			
+			//重要：在函数里有一个属性叫prototype
+			//由该函数创建的对象会默认的连接到该属性上
+			function fn(){
+				this.age = 21;
+				this.num = 2;
+			}
+			fn.prototype.num = 123;
+			var f = new fn();
+			//f.num = 1;
+			console.log(f.num);
+			
+			//在访问的对象某一个属性(方法)的时候，首先会在当前对象中查找有没有该属性(方法)，如果当前对象没有，就会在构造方法的定义规则中查找，如果没有，就会在与对象连接起来的构造函数的prototype属性中查找
+			
+			//重点：构造函数创建的对象凡是共享的内容都放在prototype中
+			
+			function per(name){
+				//this.name = name;
+			}
+			per.prototype.name = "张三";
+			per.prototype.say = function (){
+				console.log('hello');
+			}
+			var p = new per();
+			var p1 = new per();
+			p.name = "aaa";	//在p对象中的新增的name属性，而不是修改prototype中name的属性
+			console.log(p.say() === p1.say());
+			console.log(p);
+			console.log(per);
+		</script>
+	</head>
+		<body>
+			<input type = "submit" id = "d1" value = "修改" onclick = "fn()">
+			<div>p</div>
+		</body>
+</html>
+<!--
+对象
+	php里面，是从一个类实例化一个对象
+	在js里面没有类的这个概念，可以直接创建一个对象
+	对象的概念(其实就是键值对的集合)
+		人就是一个“对象”，人的特征：身高，体重，姓名，性别，年龄。每个人都有不同的本事(方法)如：打飞机
+		对象是由“属性“和”方法“构成的
+	js对象的分类
+		js内置对象：数组对象，日期对象，字符串对象......
+		BOM对象：浏览器各组件对象，包括，window document location history......
+		DOM对象；文档对象，包括，所有的html标记，每一个html标记，都是一个对象
+		自定义对象：根据自己项目的需要，自定义自己的对象
+	自定义对象
+		使用new关键字结合构造函数Object()来创建一个空的对象
+		使用大括号{}来创建一个对象
+	对象访问成员
+		对象.成员名称
+		对象[成员名称]
+	对象丰富成员
+		对象.名称 = 值
+	
+		
+		
+
+
+
+
+
+
+
+
+
+-->

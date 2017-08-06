@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8">
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+	</head>
+	<body>
+		<a onClick="onc()">百度</a>
+		<div id="nn" style="border:1px solid #666">
+			<div style="height:900px;">百度</div>  
+		</div>
+	</body>
+	<script type="text/javascript">
+	/*
+	 
+	 * 	scorllIntoView()可以在所有的html元素上调用，通过滚动某个浏览器窗口或容器元素，调用元素就可以出现在视口中
+	 * 	如果给该方法传入参数true，或者不传入任何的参数那么窗口滚动之后会让调用元素的顶部与视口顶部尽可能平齐
+	 * 	如果给该方法传入参数false，调用元素会尽可能全部出现在视口中，（可能的话，调用元素的底部会和视口顶部平齐），不过顶部不一定平齐
+	 * */
+   //作为一个事件的函数来被调用
+		function onc() {
+			document.getElementById("nn").scrollIntoView(true);	 //这个意思其实就是将这个元素到顶部来浏览器窗口的顶部来显示
+		}
+	</script>
+</html>

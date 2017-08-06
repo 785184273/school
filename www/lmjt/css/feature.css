@@ -1,0 +1,78 @@
+html,body,ul,section,nav,footer,header{
+	margin : 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+}
+body{
+	font-family: "微软雅黑";
+}
+a{
+	text-decoration: none;
+}
+.content .down:after,
+.down_show:after,
+.link ul:after,
+.about:after,
+header nav ul:after{
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	clear: both;
+}
+
+#feature{
+	width: 100%;
+	background-color: #f8ecdc;
+}
+.content{
+	width: 998px;
+	margin: 0 auto;
+}
+.content p{
+	margin: 18px 0;
+	text-indent: 2em;
+}
+#feature .title{
+	font-size: 24px;
+	text-align: center;
+	padding-top: 58px;
+	margin: 0;
+	font-weight: bold;
+}
+#feature .featureContent{
+	font-size: 16px;
+	color: #212121;
+	padding-top: 28px;
+}
+#feature .featureContent .Imgone{
+	width: 540px;
+	height: 202px;
+	margin: 0 auto;
+}
+.Imgone li{
+	float: left;
+	overflow: hidden;
+}
+.textOne{
+	padding: 18px 0;
+}
+.Imgone .ImgoneRight{
+	margin-left: 8px;
+}
+.ImgTwo{
+	text-align: center;
+	padding-bottom: 60px;
+}
+#feature .featureContent .ImgoneN{
+	width: 558px;
+}
+.clear_pad{
+	padding-bottom: 0;
+}
+#feature .content .featureContent .clear_bottom{
+	padding-bottom: 84px;
+	overflow: hidden;
+}

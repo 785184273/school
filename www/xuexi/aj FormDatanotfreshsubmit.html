@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			window.onload = function (){
+				var fm = document.getElementsByTagName("form")[0];
+				fm.onsubmit = function (event){
+					
+					//找到每个表单中的value值(传统的做法)：
+					/*
+					var nm = document.getElementById("username").value;
+					var pw = document.getElementById("pwd").value;
+					var em = document.getElementById("email").value;
+					*/
+					
+					//利用新技术FormData()做
+					var form = new FormData(fm);
+					//console.log(form);
+					
+					//post传递的信息
+					//var info = "name=" + nm + "&pw=" + pw + "&em=" + em;
+					
+					var xhr = new XMLHttpRequest();
+					
+					console.log(xhr);
+					
+					xhr.onreadystatechange = function (){
+						if(xhr.readyState == 4){
+							alert(xhr.responseText);
+						}
+					}
+					
+					xhr.upload.onprogress = function (evt){
+						console.log(evt);
+						var load = evt.loaded;
+						var total = evt.total;
+						var per = Math.floor((load/total))*100 + "%";
+						
+						document.getElementById("pat").style.display = "block";
+						document.getElementById("load").style.width = per;
+						document.getElementById("load").innerHTML = per;
+					}
+					
+					xhr.open('post','./aj FormData.php');
+					//在post的传递方式下需要设置header头
+					//xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+					
+					//xhr.send(info);
+					xhr.send(form);
+					
+					event.preventDefault();
+				}
+			}
+		</script>
+		<style> 
+			p{border:px solid red;}
+			#pat{border:1px solid red;width:300px;height:30px;display:none;}
+			#load{background:green;height:100%;width:0%;}
+		</style>
+	</head>
+	<body>
+		<form>
+			<p>用户名:<input type = "text" name = "username" id = "username"/></p>
+			<p>密码:<input type = "text" name = "pwd" id = "pwd"/></p>
+			<p>email:<input type = "text" name = "email" id = "email"/></p>
+			<p>头像:<input type = "file" name = "pic" id = "pwd"/></p>
+			<div id = "pat">
+				<div id = "load"></div>
+			</div>
+			<p><input type = "submit" id = "username</p>
+		</form>
+	</body>
+</html>
+<!--
+	使用FormData注意：
+		1.每个表单域必须要有name属性
+		2.不能设置setRequestHeader头
+		3.form标签里边也无需设置enctype = "multipart/form-data"属性(即使有上传文件域也不需要设置)
+		4.普通表单域的特殊符号也无需编码
+	大文件的上传需要在php.ini中去修改限制上传文件最大值
+-->

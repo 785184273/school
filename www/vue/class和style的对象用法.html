@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.one{
+				border: 1px solid red;
+			}
+			.two{
+				width: 200px;
+				height: 200px;
+			}
+			.three{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div :class = "lay" :style = "out">
+				
+			</div>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	class和style的对象用法中
+			 		class判断真假
+			 		style设置值
+			 * */
+			new Vue({
+				el : "#box",
+				data : {
+					lay : {
+						one : true,
+						two : true,
+						three : true
+					},
+					out : {
+						borderRadius : "10px"
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

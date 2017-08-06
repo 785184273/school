@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<p>用户名：<input type = "text" name = "username" id = "username" /></p>
+			<p>密码：<input type = "text" name = "password" id = "password" /></p>
+			<p><input type = "submit" name = "sub" id = "sub"/></p>
+		</form>
+		<script>
+			/*
+			 	旧的api
+			 		document.getElementById
+			 		document.getElementsByTagName
+			 		document.getElementsByName
+			 		document.getElementsByClassName (html5已经不支持)
+			 	新的api
+			 		类似css形式的选择器
+			 		document.querySelector()
+			 		document.querySelectorAll()	返回数组的形式
+			 * 
+			 * */
+			console.log(document.querySelector("#username"));
+			console.log(document.querySelectorAll("input"));
+			console.log(document.querySelectorAll("p"));
+			console.log(document.querySelector("form > p:first-child input"));
+		</script>
+	</body>
+</html>

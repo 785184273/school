@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//更加简单的原型语法
+				function person(){
+				}
+				person.prototype = {
+					constructor : person,		//如果constructor属性实在很重要，可以在重写的person.prototype里面添加constructor属性
+					name : "Nicholas"
+				}
+				var friend = new person();
+				console.log(friend instanceof person);	//true
+				console.log(friend instanceof Object);	//true
+				console.log(person.prototype.constructor == person);	//true
+				console.log(person.prototype.constructor == Object);	//false
+				console.log(friend.name);
+				/*
+					constructor属性不再指向person了，每次创建一个函数，就会创建他的prototype对象，这个对象也会自动获得constructor属性，而上面完全重写了person的prototype对象，因此constructor也就变成了的新的对象的constructor属性(指向Object构造函数)，不再指向person函数
+					如果constructor属性实在很重要，可以在重写的person.prototype里面添加constructor属性
+					注意：添加constructor属性之后person.prototype对象里面的constructor属性就变成可以枚举的了，可以使用函数Object.defineProperty()
+				*/
+			//原型的动态性
+				function people(){
+					
+				}
+				var friend1 = new people();
+				people.prototype = {
+					constructor : people,
+					name : "Nicholas"
+				}
+				console.log(friend1.constructor);
+			
+			//稳妥构造函数模式
+				/*
+					稳妥对象指的是没有公共属性，而且其方法也不引用this的对象，稳妥对象最适合在一些安全的环境中(这些环境中会禁止使用this和new)，稳妥对象方法不引用this，不使用new操作符 
+				*/
+				function person1(name,age){
+					
+					//创建要返回的对象
+					var o = new Object();
+					o.name = name;
+					o.sayName = function (){
+						alert(name);
+					}
+					return o;
+				}
+				var friend = person1("小明",20);
+				friend.sayName();
+		</script>
+	</body>
+</html>

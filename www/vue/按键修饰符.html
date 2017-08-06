@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="submit" @keydown.enter = "say($event)" value = "按下"/>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					message : "哦？那你很棒哦！"
+				},
+				methods : {
+					say : function (event){
+						event.target.value = this.message;
+					}
+				}
+			})
+			/*
+			 
+			 * .enter
+			 * .tab
+			 * .delete	(捕获"删除"和"退格"键)
+			 * .esc
+			 * .space
+			 * .up
+			 * .down
+			 * .left
+			 * .right
+			 * 		可以通过全局config.keyCodes对象自定义按键修饰符别名
+			 * */
+		</script>
+	</body>
+</html>

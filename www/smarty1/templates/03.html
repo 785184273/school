@@ -1,0 +1,38 @@
+<html>
+	<head>
+		{literal}
+		<style type ="text/css">
+			.head{border:px solid red;width:400px;height:20px;background:lightblue;}
+			.main{border:1px solid red;background:lightgrey;overflow:hidden;width:400px;}
+			.center{border:px solid red;background:lightgrey;overflow:hidden;width:400px;}
+			.left{border:px solid red;width:200px;height:100px;background:lightgreen;float:left;}
+			.right{border:px solid red;width:200px;height:100px;background:pink;float:left;}
+			.footer{border:px solid red;width:400px;background:lightgray;}
+		</style>
+		{/literal}
+	</head>
+		<body>
+			<div class = "head">
+				头部信息
+			</div>
+			{block name = "center"}
+			<div class = "main">
+				<div class = "left">
+				欢迎页<br />
+				我的订单<br />
+				{block name = "right"}
+				{$smarty.block.child}
+				{/block}
+				</div>
+				<div class = "right">
+				{block name = "right"}
+				我的订单信息
+				{/block}
+				</div>
+			</div>
+			{/block}
+			<div class = "footer">
+				脚部信息
+			</div>
+		</body>
+</html>

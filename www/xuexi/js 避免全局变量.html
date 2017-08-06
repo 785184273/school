@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				border: 1px solid red;
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div onclick = show.show()>
+			
+		</div>
+		<script type="text/javascript">
+		(function(){
+			var exp = {};
+			var name = "小兰"
+			exp.show = function (){
+				console.log(name);
+			}
+			window.show = exp;
+		})();
+		</script>
+	</body>
+</html>

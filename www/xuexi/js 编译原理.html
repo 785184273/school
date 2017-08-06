@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		/*
+			浏览器中有一个程序，专门用来阅读js代码：js引擎 V8
+			js引擎工作：至少要经过两个步骤
+						1.根据一些关键字来找东西
+						2.逐行执行代码
+					解析：1.根据一些关键字来找东西比如：var function ,找到的东西放进仓库里面，开始找的时候变量a = undefined a = function(){}函数代码块
+						2.通过执行代码，从上到下，要去仓库里面找看到底有没有东西
+		
+		* 	注意：找东西的规则
+		* 			如果是变量的就直接赋值undefined，如果是函数块就直接保存函数块
+		* 			如果变量和函数重名保留的是函数块
+		* 			如果是函数块重名，保留的是后面的函数块
+		* */
+			alert(a);	//开始根据var关键字找到a = undefined
+			var a = 10;		//找到a ,将10复制给a
+			function a(){	//根据关键字function 找到a = function(){}函数块，变量a和函数名a重名，保留的是函数块，
+				alert(2);
+			}
+			alert(a);
+			//然后开始逐行执行代码，所以最开始弹出函数块，后面 a = 10,所以最后面弹出10
+		</script>
+	</body>
+</html>

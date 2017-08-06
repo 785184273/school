@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				数组的length属性很有特点，它不是只读的 ,可以设置该属性，可以从数组的末尾移除项向数组中添加新项
+			*/
+			var arr = [1,2,3,4,5];
+			arr.length = 4;		//本来数组的长度是5，设置数组的长度为4，数组的最后一项被删除
+			console.log(arr[4]);	//数组的最后一项被删除，再次访问变成undefined
+			
+			var arr1 = [1,2,3,4,5];
+			arr1.length = 6;	//本来数组的长度是5，设置数组的长度为6
+			console.log(arr1[5]);	//这个数组不存在位置5，访问这个数组的值就变成了undefined
+		</script>
+	</body>
+</html>

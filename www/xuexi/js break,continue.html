@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<script type="text/javascript">
+		//var sum = 0;
+		//1-100之间奇数的和
+		//for(a = 1;a <= 100;a++)
+		//{
+		//	if(a%2==1)
+		//	{
+		//		sum = sum + a;
+		//	}
+		//}
+		//document.write(sum);
+		//输出1-100之间所有的数，超过50的不再输出
+		var a;
+		for(a = 1;a <= 100;a++)
+		{
+			if(a>50)
+			{
+				break; 
+				//跳出循环，跳到for结果的大括号之后，break之后的语句不再执行
+				//break只能跳出单层循环，不能一次跳出多重循环
+			}
+			document.write(a+" ");
+			
+		}
+		document.write("<hr>");
+		//continue 实例，输出1-100之间所有的偶数，
+		var i;
+		for(i = 1;i <= 100;i++)
+		{
+			if(i%2 != 0)
+			{
+				continue;
+			}
+			document.write(i+" 	");
+		}
+		</script>
+	</head>
+		<body>
+		</body>
+</html>
+<!--
+break语句和continue语句
+	break语句
+	描述：break语句，用于无条件执行各种循环(退出循环)和switch
+	说明：一般情况下，需要在break语句之前加一个条件判断，换句话说，条件成立就退出循环。
+	continue语句
+	描述：结束本次循环，而开始下一次循环，continue之后的代码不再执行
+	说明：一般情况下，需要在continue语句之前加一个条件判断
+
+
+
+
+
+
+
+
+
+
+
+-->

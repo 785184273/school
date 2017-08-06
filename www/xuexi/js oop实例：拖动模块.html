@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+			#box{
+				height: 150px;
+				width: 150px;
+				background: green;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				cursor: move;
+				z-index: 10;
+			}
+			#box1{
+				height: 150px;
+				width: 150px;
+				background: yellow;
+				position: absolute;
+				left: 150px;
+				top: 0px;
+				cursor: move;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function (){
+				var move = new boxmove("box");
+				move.init();
+				var childmove = new childboxmove("box1");
+				childmove.init();
+			}
+			function boxmove(id){
+				this.current = false;
+				this.distanceX = 0;
+				this.distanceY = 0;
+				this.moveleft  = 0;
+				this.movetop   = 0;
+				this.box = document.getElementById(id);
+				this.pageheight = document.documentElement.clientHeight;
+				this.pagewidth  = document.documentElement.clientWidth;			
+			}
+			boxmove.prototype.init = function (){
+				var omove = this;
+				this.box.onmousedown = function (event){	//在这里加个函数其实就是为了间接执行
+					var e = event || window.event;
+					omove.mousedown(e);
+					return false;	//取消事件的默认行为
+				};
+			}
+			boxmove.prototype.mousedown = function (e){
+				var omove = this;
+              	this.distanceX = e.clientX - this.box.offsetLeft;
+              	this.distanceY = e.clientY - this.box.offsetTop;;
+				this.current = true;
+				document.onmousemove = function (e){
+					omove.mousemove(e);
+				};
+			}
+			boxmove.prototype.mousemove = function (e){
+				var omove = this;
+				this.moveleft = e.clientX - this.distanceX;
+			    this.movetop  = e.clientY - this.distanceY;
+				this.mouserange();
+			}
+			boxmove.prototype.mouserange = function (){
+				var omove = this;
+				if(this.current == true){
+					var moveleftM = this.pagewidth - this.box.offsetWidth;
+					var movetopM  = this.pageheight - this.box.offsetHeight;
+						//范围限定
+					/*
+					pagewidth - box.offsetWidth > moveleft > 0
+					pageheight - box.offsetheight > movetop > 0
+					 * */
+ 					 //left  当小于等于零时，设置为零 防止div拖出document之外
+                    if (this.moveleft <= 0) {
+                        this.moveleft = 0;
+                    }
+                    //当left 超过文档右边界  设置为右边界
+                    else if(this.moveleft >= moveleftM){
+                        this.moveleft = moveleftM;
+                    }
+                    if(this.movetop <= 0){
+                       this.movetop = 0;
+                    }else if(this.movetop >= movetopM){
+                        this.movetop = movetopM;
+                    }
+//					moveleft  = Math.min(moveleft,Math.max(0,moveleftM));
+//					movetop   = Math.min(movetop,Math.max(0,movetopM));
+					//console.log(this.distanceX + "," + this.distanceY);
+					this.box.style.left = this.moveleft + "px";
+					this.box.style.top = this.movetop + "px"
+				}
+				document.onmouseup = function (){
+					omove.mouseup();
+				};
+			}
+			boxmove.prototype.mouseup = function (){
+				this.current = false;
+			}
+			function childboxmove(id){
+				window.boxmove.call(this,id);
+			}
+			extend(boxmove.prototype,childboxmove.prototype);
+			function extend(boxmove,childboxmove){
+				for(var attr in boxmove){
+					childboxmove[attr] = boxmove[attr];
+				}
+			}
+			childboxmove.prototype.mouserange = function (){
+				var omove = this;
+				if(this.current == true){
+					this.box.style.left = this.moveleft + "px";
+					this.box.style.top = this.movetop + "px"
+				}
+				document.onmouseup = function (){
+					omove.mouseup();
+				};
+			}
+		</script>
+	</head>
+	<body>
+		<div id ="box">	
+			
+		</div>
+		<div id ="box1">	
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id = "box"></div>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			;(function ($){
+				/*
+				 	$.fn = $.prototypee，是在jquery原型上扩展,扩展一个方法
+				 	$.fn.extend({})一次扩展多个方法
+				 * */
+//				$.fn.size = function (w,h){
+//					$(this).height(h);
+//					$(this).width(w);
+//				}
+				$.fn.extend({
+					size : function (w,h){
+						$(this).height(h);
+						$(this).width(w);
+					}
+				})
+			})(jQuery)
+			$(function (){
+				$("#box").size(100,100);
+			})
+		</script>
+	</body>
+</html>

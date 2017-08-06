@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type = "text/css">
+			
+		</style>
+		<script type = "text/javascript">
+			
+		</script>
+	</head>
+		<body>
+			<div>
+				保留变量使用<br/>
+				{$name}<br/>
+				<!--获得get信息-->
+				名字：{$smarty.get.name}<br/>
+				年龄：{$smarty.get.age}<br/>
+				<!--获得常量信息--> 
+				主机名：{$smarty.const.HOST}<br/>
+				当前时间戳：{$smarty.now}<br/>
+				当前模版名称：{$smarty.template}<br/>
+				当前目录名称：{$smarty.current_dir}<br/>
+				当前模版的smarty版本：{$smarty.version}<br/>
+				模版引擎定界符：{$smarty.ldelim}--{$smarty.rdelim}<br/>
+				变量调节器的使用<br />
+				{$smarty.now}<br />
+				设置时间戳：{$smarty.now|date_format:"%Y-%m-%d : %H-%M-%S"}<br />
+				设置默认值：{$defa|default:"你大爷的"}<br />
+				html标签转换为实体：{$baidu|escape}<br />
+				将字母全部转换为小写：{$xiaoxie|lower}<br />
+				缩进：{$xiaoxie|indent:4:"百度"}<br/>
+				换行符\n替换成html的换行：{$huanhang|nl2br}<br />
+				缓存制作(caching = 1或2)<br />
+				<ul>
+					{foreach $result1 as $val}
+					<li>{$val}</li>
+					{/foreach}
+				</ul>
+			</div>
+		</body>
+</html>

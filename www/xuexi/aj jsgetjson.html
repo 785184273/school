@@ -1,0 +1,23 @@
+<html>
+	<head>
+	</head>
+		<body>
+			<input type = "submit" value = "获取" onclick = "f1()">
+		</body>
+		<script>
+			function f1(){
+				var xhr = new XMLHttpRequest;
+				xhr.onreadystatechange = function (){
+					if(xhr.readyState == 4){
+						//alert(xhr.responseText);
+						//该eval可以把内部参数字符串当成表达式，在上下文环境中运用
+						eval("var jn_info = " + xhr.responseText);
+						console.log(jn_info);
+					}
+				}
+				
+				xhr.open('get','./aj makejsoninfo.php');
+				xhr.send(null);
+			}
+		</script>
+</html>

@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<!--引入外部bootstrap的css文件-->
+		<link rel = "stylesheet" href = "./css/bootstrap.min.css">
+		<style>
+			body{margin:0px;padding:0px;font-family:'Microsoft Yahei';}
+			.show{text-align:center;position:relative;width:1226px;margin:0px auto;}
+			img{margin:0px auto;}
+			.nav{width:234px;height:460px;background:#5c5853;opacity:0.8;position:absolute;left:0px;top:0px;}
+			ul{list-style:none;padding:0px;padding:20px 0px;height:420px;margin:0px;}
+			li{margin:0px auto;padding-left:28px;height:42px;line-height:42px;color:white;text-align:left;position:relative;}
+			li:hover{background:#ff6700;}
+			.nav span{position:absolute;right:10px;top:0px;line-height:42px;}
+			.nav-show{min-width:270px;display:none;position:absolute;left:234px;top:0px;background:#ffffff;min-height:42px;color:black;text-align:center;}
+			li:hover .nav-show{display:block;}
+		</style>
+		<script>
+			var i = 1;
+			window.onload = function (){
+				var img = document.getElementById('showimg');
+				window.setInterval('changeimg()',2000);
+			};
+			function changeimg(){
+				i++;
+				if(i > 5){
+					i = 1;
+				}
+				var img = document.getElementById('showimg');
+				img.src = "./img/" + i + ".jpg";
+			}
+		</script>
+	</head>
+		<body>
+			<div class = "show">
+				<img id = "showimg" src = "./img/1.jpg">
+				<div class = "nav">
+					<ul>
+						<li>手机 电话卡<span class = "glyphicon glyphicon-chevron-right"></span>
+							<div class = "nav-show">小米笔记本Air1</div>
+						</li>
+						<li>笔记本 平板<span class = "glyphicon glyphicon-chevron-right"></span>
+							<div class = "nav-show">小米笔记本Air2</div>
+						</li>
+						<li>电视 盒子<span class = "glyphicon glyphicon-chevron-right"></span>
+							<div class = "nav-show">小米笔记本Air3</div>
+						</li>
+						<li>路由器 智能硬件<span class = "glyphicon glyphicon-chevron-right"></span>
+							<div class = "nav-show">小米笔记本Air4</div>
+						</li>
+						<li>移动电源 电池 插线板<span class = "glyphicon glyphicon-chevron-right"></span>
+							<div class = "nav-show">小米笔记本Air5</div>
+						</li>
+						<li>耳机 音箱<span class = "glyphicon glyphicon-chevron-right"></span>
+							<div class = "nav-show">小米笔记本Air6</div>
+						</li>
+						<li>保护套 贴膜<span class = "glyphicon glyphicon-chevron-right"></span>
+							<div class = "nav-show">小米笔记本Air7</div>
+						</li>
+						<li>线材 支架 存储卡<span class = "glyphicon glyphicon-chevron-right"></span>
+							<div class = "nav-show">小米笔记本Air8</div>
+						</li>
+						<li>箱包 服饰<span class = "glyphicon glyphicon-chevron-right"></span>
+							<<div class = "nav-show">小米笔记本Air</div>
+						</li>
+						<li>米兔 生活周边<span class = "glyphicon glyphicon-chevron-right"></span>
+							<div class = "nav-show">小米笔记本Air</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</body>
+</html>

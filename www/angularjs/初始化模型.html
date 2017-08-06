@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body ng-app = "App" ng-controller = "demo" ng-init = "sex = '男';name = '小明'">
+		<ul>
+			<li ng-repeat = "x in list" ng-switch on = "x">
+				<!--通过ng-repeat可以将数组或对象数据迭代到视图模版中，ng-switch,on,ng-switch-when可以对数据进行筛选-->
+				<span ng-switch-when = "css">{{x}}</span>
+			</li>
+		</ul>
+		<h2 ng-bind = "sex" ng-click = "say()"></h2>
+		<h1 ng-bind-template = "{{name}}"></h1>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			var App = angular.module("App",[]);
+			App.controller("demo",["$scope",function ($scope){
+				$scope.say = function (event){
+					var e = event ? event : window.event;
+					//console.log(e);
+					console.log(e.clientX + "," + e.clientY);
+				}
+				$scope.list = ["html","css","javascript"];
+			}])
+		</script>
+	</body>
+</html>

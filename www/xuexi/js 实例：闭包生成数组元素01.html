@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+		//利用闭包来实现来制作多个独立的数组元素函数
+		var arr = new Array();
+		
+		for(var i = 0;i < 4;++i){
+			arr[i] = f1(i);
+		}
+		
+		function f1(n){
+			function f2(){
+				document.write("<br />" + n);
+			}
+			return f2;
+		}
+		
+		arr[0]();
+		arr[1]();
+		arr[2]();
+		arr[3]();
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>

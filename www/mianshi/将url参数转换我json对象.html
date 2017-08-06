@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = "http://flup.leley.com?a=1&b=2&c=3";
+			var url = str.split("?")[1];
+			var urls = url.split("&");
+			var len = urls.length;
+			var obj = {};
+			for(var i = 0;i < len; ++i){
+				var sstr = urls[i].split("=");
+				obj[sstr[0]] = sstr[1];
+			}
+			console.log(JSON.stringify(obj));	//json字符串
+		</script>
+	</body>
+</html>

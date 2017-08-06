@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<!--Bootstrap不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--移动设备优先,响应式布局-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<style>
+			div[class^="col"]{
+				border:1px solid red;
+			}
+		</style>
+	</head>
+		<body>
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-4 col-sm-4 col-xs-4 col-md-push-8">col-md-push-8</div>
+					<div class = "col-md-8 col-sm-8 col-xs-8 col-md-pull-4">col-pull-4</div>
+				</div>
+			</div>
+		<!--bootstrap模板为使IE6、7、8版本（IE9以下版本）浏览器兼容html5新增的标签。-->
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<!--为使IE6、7、8版本浏览器兼容css3样式-->
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		</body>
+</html>
+<!--
+	bootstrap提供了一套响应式,移动设备优先的流失栅格系统,随着屏幕或视口尺寸的增加，系统会自动分为最多12列，他包含了易于使用的预定义类，还有强大的min用于生成更具语意的布局
+		简介
+		栅格系统用于通过一些列的行(row)和列(column)的组合来创建页面的布局
+			.行(row)必须包含在.container(固定宽度)或.container-fluid(100%宽度)中，以便为期赋予合适的排列(aligment)和内补(padding)
+			.通过行(row)在水平方向创建一组列(column)
+			.你的内容应当放置于列(column)内，并且只有列(column)可以作为行(row)的直接子元素
+			.通过为列(column)设置padding属性，从而创建列与列之间的间距，通过为row元素设置负值margin从而抵消为.container元素设置的padding，也就间接为"行(row)"所包含的列(column)抵消掉了padding
+			.如果一行中包含的列大于12，那么多余的列(column)所在的元素被作为一个整体另起一行排列
+	列偏移
+		使用.col-md-offset-*类可以将列向右侧偏移
+		*：代表偏移的列数
+	列排序
+		.col-md-push-*向右移动
+		.col-md-pull-*向左移动
+		*: 代表移动的列数
+-->

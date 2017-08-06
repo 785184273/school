@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.bd{
+				border: 1px solid black;
+			}
+			.user{
+				width: 200px;
+				height: 200px;
+			}
+			.disabled{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class = "bd user disabled" id = "box">
+		</div>
+	</body>
+	<script type="text/javascript">
+		/*
+		 	在html5中新增了一种操作类名的方法，可以让操作更加的简单和安全
+		 	classList还定义了如下的方法
+		 		add(value)：将给定的字符串添加到列表中，如果值已经存在就不添加
+		 		contains(value)：表示列表中是否存在给定的值，如果存在返回true，否则返回false
+		 		remove(value): 从列表中删除给定的字符串
+		 		toggle(value): 如果列表中存在给定的值，删除它，如果列表中没有给定的值，添加它
+		 		
+		 	
+		 * */
+		/*
+		 * 	使用一下的最新方法简单很多
+		 * 但是注意：支持classList属性的浏览器只有FF3.6+和chrome
+		var div = document.querySelector("#box");
+		div.classList.remove("bd");
+		div.classList.add("lw");
+		console.log(div.classList.contains("disabled"));
+		div.classList.toggle("lw");
+		console.log(div.classList.length);
+		*/
+		var div = document.querySelector("#box");
+		var classNames = div.className.split(/\s/);
+		console.log(classNames);
+	</script>
+</html>

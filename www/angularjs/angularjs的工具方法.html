@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html ng-app>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 angularjs.bind(self,fn,args);
+			 作用：返回一个新的函数，绑定这个函数的this指向
+			 参数
+			 	self:新函数的上下文对象
+			 	fn:需要绑定的函数
+			 	args:传递给函数的参数
+			 返回值：this指向self的新函数
+			 angular.bind会根据你的参数类型来调用call或者apply，所以args可以是一个个的数据，也可以是一个数组
+			 * */
+			function show(a,b){
+				console.log(a + "," + b);
+				console.log(this);
+			}
+			//show();	//window
+			//angular.bind(document,show,3,4)();	//document
+			angular.bind(document,show)([3,4]);	//document
+			/*
+			 angular.copy(source,[destination]);
+			 作用 ：对象的深拷贝
+			 参数
+			 	source：源对象
+			 	destination: 拷贝的对象
+			 返回值：拷贝的对象
+			 * */
+			var obj1 = {
+				name : "小明",
+				agee : 20
+			}
+			var obj2 = {
+				name : "小李"
+			}
+			var copyobj = angular.copy(obj1,obj2);
+			console.log(copyobj);	//Object{name : "小明",age : 20};
+			console.log(obj1);		//Object{name : "小明",age : 20};
+			console.log(obj2)		//Object{name : "小明",age : 20};
+			//此时全部的对象都拷贝了obj1
+			/*
+			 angular.equals(o1,o2);
+			 作用：正常比较和对象的深比较
+			 想用的元素返回true，不同的元素返回false
+			 参数
+			 	o1:比较的对象
+			 	o2:比较的对象
+			 返回值
+			 	boolean
+			 * */
+			console.log(angular.equals(3,2));	//false;
+			console.log(angular.equals(NaN,NaN));	//true
+			console.log(angular.equals({name : "小明"},{name : "小米"}));	//false
+			console.log(angular.equals({name : "小明"},{name : "小明"}));	//true
+			/*
+			 angular.extend(dst,src);
+			 作用：对象的拓展
+			 参数
+			 	dst: 拓展的对象
+			 	src: 源对象
+			 返回值
+			 	拓展的对象
+			 	注意：如果源对象和拓展的对象有相同的属性那么源对象会覆盖拓展的对象的属性
+			 * */
+			var dst = {
+				name : "小明",
+				age : 20
+			}
+			var src = {
+				name : "小李",
+				country : "china"
+			}
+			angular.extend(dst,src);
+			console.log(src);	//Object{country : "china"};
+			console.log(dst);	//Object{name : "小李",age : 20,country : "china"};
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/require.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		/*
+		 通过define函数定义一个模块
+		 	define函数的用法
+		 *		1.define(function (){
+		 * 			这里写具体的模块代码
+		 * 		})用这种形式来替换匿名函数自执行的形式
+		 * 		2.如果当前模块依赖了其他模块，需要define添加第一个参数，参数是一个数组
+		 * 			define(["js/a1","js/b1"],function(a,b){
+		 * 				当前的模块依赖于a1,b1并且a1模块的返回值会传给回调函数对应的参数a,b
+		 * 			})
+		 * */
+			require(["js/b1"]);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

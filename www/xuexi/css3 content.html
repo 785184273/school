@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style>
+			/*
+				content配和css的伪类或者伪元素，一般可以做以下四件事情
+				功能				说明
+				none				不生成任何内容
+				attr				插入标签属性值
+				url					使用指定的绝对或相对路径地址插入一个外部资源(图像，声频，视频或浏览器支持的其他任何资源)
+				string				插入字符串
+			*/
+			a:before{
+				content:"傻逼垒孙子";
+				color:red;
+			}
+			p:before{
+				content:url('./img/233.jpg');
+			}
+			p:after{
+				content:attr(title);
+				color:red;
+			}
+		</style>
+	</head>
+		<body>
+			<a href = "#">cnm 听到没？cnm</a>
+			<p title = "我是一个属性值，我插在你们的后面">cnm 听到没？cnm</p>
+		</body>
+</html>

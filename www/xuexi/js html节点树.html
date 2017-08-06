@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+		/*
+		function init(){
+			//var tdObj = document.getElementById("gaibian");
+			//tdObj.value = "尼玛逼";
+			//查找html节点
+			var node_html = document.firstChild;
+			//alert(node_html);
+			//body节点
+			var node_body = node_html.lastChild;
+			//alert(node_body);
+			//table节点
+			var node_table = node_body.firstChild;
+			//alert(node_table);
+			var node_tbody = node_table.firstChild;
+			
+			var node_tr = node_tbody.childNodes[1];
+			var node_td = node_tr.firstChild;
+			var node_text = node_td.firstChild;
+			node_text.nodeValue = "shabi";
+			}
+		//*/
+		function fn(){
+			var obj = document.getElementById("div1");
+			//alert(obj.parentNode);定位到id为div1的节点的父节点
+			obj.parentNode.style.border = "1px solid red";
+			alert(obj.parentNode.nextSibling.nextSibling);
+			obj.nextSibling.nextSibling.nodeName = "link";
+			obj.parentNode.nextSibling.nextSibling.style.border = "2px solid red";
+		}
+		</script>
+	</head>
+		<body>
+			<!--
+			<table width="600" border="1">
+				<tr>
+					<td>张三</td>
+					<td>男</td>
+				</tr>
+				<tr>
+					<td id="gaibian">李四</td>
+					<td>男</td>
+				</tr>
+			</table>
+			<input type="submit" value="gaibian" onclick="init()"/>
+			-->
+			<div>
+				<p>段落</p>
+				<div id = "div1">这是div1的内容</div>
+				<a href = "">链接</a>
+			</div>
+			<div>
+				abcd
+			</div>
+			<input type = "button" value = "点击" onclick = "fn()"/>
+		</body>
+</html>
+<!--
+html节点树
+	在html中，称为"标记"
+	在DOM中，称为"节点"
+	在js中，称为"对象"
+	根节点：一个html文档只有一个跟，它就是html节点
+	子节点：某一个父节点的下级节点，
+	父节点：某一个节点的上级节点
+	兄弟节点：两个子节点同属于一个父节点
+DOM中节点的类型
+	document文档节点，代表整个网页，不代表任何html标记，但他是html节点的父节点
+	element元素节点，指任何的html标记，每一个html标记称为一个"元素节点"，它可以有文本节点和属性节点
+	attribute属性节点，指html标记的属性
+	text文本节点，是节点树的最底层的节点
+核心DOM中的公共属性和方法
+	提示：核心DOM中查找节点(标记)，都是根节点开始的(html节点)
+	节点访问
+		注意:火狐浏览器中空白处也是一个节点
+		nodeName：节点名称
+		nodeValue：节点值，只有文本节点才有值，元素节点没有值，nodeValue的值只能是"纯文本"不能含有任何的html标记
+		firstchild：第一个子节点
+		lastchild：最后一个子节点
+		childNodes：节点列表，是一个数组
+		parentNode：父节点
+		nextSibling: 下一个姐妹或兄弟节点[注意：必须是同父级关系]
+		previousSibling：前一个兄弟节点
+	查找html标记的方法
+		document.firstChild
+		document.documentElement
+	查找body标记的方法
+		document.firstChild.lastChild
+		document.body
+	为什么，document.body.firstChild找不到<table>节点？
+		核心DOM的属性和方法主要是针对HTML4.0开发的
+		在Firefox下，会把空格或换行，当成文本节点
+		HTML4.0是没有DTD类型定义
+	节点属性
+		setAttribute(name,value):给某个节点添加一个属性
+		getAttribute(name):获取某个节点属性的值
+		removeAttribute(name)：删除某个节点的属性
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->

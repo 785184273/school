@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function (){
+				test();
+			})
+			function test(){
+				console.log(1);
+				setTimeout(function (){
+					console.log(4);	
+				},0)
+				console.log(2);
+				console.log(3);
+			}
+		</script>
+	</body>
+</html>

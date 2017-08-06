@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<script>
+			window.onload = function (){
+				var btn = document.getElementById('event');
+				/*
+				document.body.addEventListener('click',function (event){
+					alert("事件目标：" + event.target + ",this: " + this + ",事件处理程序当前正在处理的那个元素 :" + event.currentTarget);
+				},false)
+				//*/
+				btn.addEventListener('click',function (event){
+					alert(1);
+					event.stopPropagation();		//阻止事件冒泡到body上
+				},false)
+				document.body.onclick = function (){
+					alert(1);
+				}
+			}
+		</script>
+	</head>
+		<body>
+			<input id = "event" type = "submit" value = "点击"/>
+		</body>
+</html>

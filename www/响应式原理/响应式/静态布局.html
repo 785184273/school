@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>静态布局</title>
+		<style type="text/css">
+			html,body{
+				margin: 0;
+				padding: 0;
+				font-family: "microsoft yahei";
+			}
+			header,nav,footer{
+				width: 1000px;
+				margin: 0px auto;
+				height: 100px;
+				background: lightpink;
+				text-align: center;
+			}
+			nav,section,footer{
+				margin-top: 10px;
+			}
+			section{
+				width: 1000px;
+				margin: 0px auto;
+				height: 100px;
+				margin-top: 10px;
+			}
+			section > *{
+				text-align: center;
+				background: lightpink;
+				height: 100px;
+			}
+			section aside{
+				width: 100px;
+				float: left;
+			}
+			section .main{
+				float: left;
+				width: 780px;
+				margin: 0px 10px;
+			}
+			section:after{
+				content: "";
+				display: block;
+				height: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>头部</header>
+		<nav>导航</nav>
+		<section>
+			<aside class = "left">左侧</aside>
+			<div class = "main">
+				主要内容
+			</div>
+			<aside class = "right">右侧</aside>
+		</section>
+		<footer>脚部</footer>
+	</body>
+</html>

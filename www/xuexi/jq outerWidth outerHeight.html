@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				outerWidth()方法返回元素的宽度(包括内边距,边框)
+				outerHeight()方法返回元素的高度(包括内边距,边框)
+				outerWidth(true)方法返回元素的宽度(包括内边距,边框,外边距)
+				outerHeight(true)方法返回元素的高度(包括内边距,边框,外边距)
+			*/
+			$(function (){
+				document.write("box的宽度为: " + $('.box').outerWidth(true) + "<br />box的高度为：" + $('.box').outerHeight());
+				document.write("<br />menu的高度为：" + $('div:eq(1)').outerWidth(true) + "<br />menu的高度为：" + $('div:eq(1)').outerHeight(true));
+			})
+		</script>
+		<style>
+			.box{border:1px solid red;width:500px;height:500px;opacity:0.5;position:relative;left:100px;top:100px;padding:10px;margin:10px;}
+			.menu{boder:1px solid red;width:400px;height:400px;background:blue;padding:10px;margin:10px;}
+		</style>
+	</head>
+		<body>
+			<div class = "box">
+				<div class = "menu"></div>
+			</div>
+		</body>
+</html>

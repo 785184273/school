@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				组合继承避免了原型链和借用构造函数的缺陷，融合了他们的优点，成为了最常用的继承模式 
+			*/
+			function supertype(name){
+				this.name = name;
+				this.colors = ["red","blue"];
+			}
+			
+			supertype.prototype.sayname = function (){
+				console.log(this.name);
+			};
+			function subtype(name,age){
+				
+				//继承属性
+				supertype.call(this,name);
+				this.age = age;
+			}
+			
+			//继承方法
+			subtype.prototype = new supertype();
+			subtype.prototype.constructor = subtype;
+			subtype.prototype.sayage = function (){
+				alert(this.age);
+			}
+			
+			var instance1 = new subtype("nicholas",29);
+			instance1.colors.push("black");
+			console.log(instance1.colors)		//["red", "blue", "black"]
+			instance1.sayname();				//nicholas
+
+			var instance2 = new subtype("jack",29);
+			console.log(instance2.colors)		//["red", "blue"]
+			instance2.sayname();				//jack
+		</script>
+	</body>
+</html>

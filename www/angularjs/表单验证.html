@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app>
+		<form name = "myform">
+			<input type="email" name = "email" ng-model = "text" required ng-minlength = "5" ng-maxlength = "10"/>
+			<span>表单有填写记录：{{myform.email.$dirty}}</span>
+			<span>表单没有填写记录:{{myform.email.$pristine}}</span>
+			<span>字符的内容合法:{{myform.email.$valid}}</span>
+			<span>字段内容是非法:{{myform.email.$invalid}}</span>
+			<span>:{{myform.email.$error}}</span>
+		</form>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 	ng-minlength 	最小长度
+			 	ng-maxlength	最大长度
+			 	ng-pattern		匹配的正则表达式
+			 	在angular下js可以设置为
+			 		type = email
+			 		type = text
+			 		type = number
+			 		type = url
+			 * 
+			 * */
+//			var App = angular.module("App",[]);
+//			App.controller("demo",["$scope",function ($scope){
+//				$scope.text = "123";
+//			}])
+		</script>
+	</body>
+</html>

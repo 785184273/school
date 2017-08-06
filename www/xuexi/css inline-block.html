@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>inline-block</title>
+	<style type="text/css">
+		.box{
+			border: 1px solid red;
+
+		}
+		li{
+			display: inline-block;
+			*display:inline;
+			/*   *只有ie6和7能识别*/
+			zoom: 1;
+			border: 1px solid red;
+			
+		}
+		/*
+			注意：ie6和ie7都不支持行内块元素
+		*/
+	</style>
+</head>
+<body>
+	<ul class = "box">
+		<li>yoyoyo</li>
+		<li>yoyoyo</li>
+		<li>yoyoyo</li>
+	</ul>
+</body>
+</html>

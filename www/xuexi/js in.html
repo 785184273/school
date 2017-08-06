@@ -1,0 +1,29 @@
+<html>
+	<head>
+	</head>
+		<body>
+			<script>
+				//in操作符会在通过对象能在访问属性时返回true，无论该属性存在与实例中，还是原型中
+				function person(){
+					this.name = "小美";
+					this.age = 10;
+				}
+				person.prototype.addr = "四川";
+				var p = new person();
+				alert("name" in p);
+				var o = {
+					toString : function (){
+						return 'my object';
+					}
+				}
+				for(var prop in o){
+					if(prop == "toString"){
+						alert("found toString");
+					}
+				}
+				var obj = Object.keys(p);
+				console.log(typeof obj);	//object
+				alert(Object.keys(person.prototype));
+			</script>
+		</body>
+</html>

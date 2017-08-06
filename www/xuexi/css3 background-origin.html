@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<style>
+			/*
+				background-origin
+					设置元素背景图片的其实原始位置
+				语法
+					background-origin : border-box | padding-box | content-box;
+				参数分别表示背景图片是从盒子的边框还是内边距，或者内容区域开始显示
+				注意：如果这个背景不是no-repeat，这个属性无效，他会从边框开始显示
+			*/
+			div{
+				width:400px;
+				height:400px;
+				border:1px solid red;
+				padding:20px;
+				background:#ccc url('./img/100.jpg') no-repeat;
+				background-origin:content-box;
+			}
+		</style>
+	</head>
+		<body>
+			<div>
+			</div>
+		</body>
+</html>

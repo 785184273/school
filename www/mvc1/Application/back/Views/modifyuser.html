@@ -1,0 +1,22 @@
+<html>
+	<head>
+	</head>
+		<body>
+			<table border = 1 rules = all>
+				<form method = "POST" action = "">
+				<tr>
+					<th>username</th>
+					<th><input type = "text" name = "username" readonly = "readonly" value = "<?php echo $result['username']; ?>" /></th>
+				</tr>
+				<tr>
+					<th>password</th>
+					<th><input type = "text" name = "password" value = "<?php echo $result['password']; ?>" /></th>
+				</tr>
+				<tr>
+					<td colspan = 2 align = "center">
+						<input type = "submit" name = "button" value = "确定"/>
+					</td>
+				</tr>
+			</table>
+		</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body ng-app>
+		<h1 id = "h1" >hello world</h1>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 angular.version
+			 	查看angularjs的版本
+			 angular.forEach(obj,iterator,[context])
+			 	对数组和对象的遍历
+			 	参数
+			 		obj：对象
+			 		iterator: 迭代函数
+			 		context: 迭代函数中上下文
+			 angular.fromJson/toJson
+			 	angular.fromJson(string)
+			 		字符串转json对象
+			 	angular.toJson(json,prety)
+			 		json对象转字符串
+			 		参数
+			 			json： json数据
+			 			prety： boolean 控制字符串输出格式
+			 angular.identity/noop
+			 	angular.identity
+			 		作用：返回这个函数的第一个参数
+			 	angular.noop
+			 		作用：不执行任何操作的空函数
+			 angular.lowercase/uppercase
+			 	angular.lowercase(string)
+			 		作用：将字符串转换为小写
+			 	angular.uppercase
+			 		作用：将字符串转换为大写
+			 angular.element
+			 	作用：封装一个dom元素或html字符串为一个jquery元素
+			 angular.bootstrap
+			 angular.injector
+			 * */
+			console.log(angular.version);	//Object {full: "1.4.6", major: 1, minor: 4, dot: 6, codeName: "multiplicative-elevation"}
+			
+			var arr = [1,2,3,4];
+			var obj = {
+				name : "小明",
+				age : 20,
+			}
+//			angular.forEach(arr,function (value,i){
+//				//注意：angular中的对象和数组遍历和jq中的遍历相似，但是参数刚好相反,先是value,再是下标
+//				console.log(value + "," + i);
+//			})
+			angular.forEach(obj,function (value,i){
+				console.log(value + "," + i);	//小明,name 20,age
+				this.push(value);	
+			},arr)
+			console.log(arr);	//[1, 2, 3, 4, "小明", 20]
+			
+			var jsonstr = '{"name" : "小明","age" : 19}';
+			var jsondata = angular.fromJson(jsonstr);
+			console.log(jsondata); //Object {name: "小明", age: 19}
+			console.log(angular.toJson(jsondata,true));	//{"name":"小明","age":19}
+			
+			console.log(angular.identity("a","b"));	//a
+			console.log(angular.noop("a","b"));	//undefined	，不执行任何操作的空函数
+			
+			console.log(angular.lowercase("ABCD"));		//abcd
+			console.log(angular.uppercase("abcd"));		//ABCD
+			
+			var h1 = document.getElementById("h1");
+			angular.element(h1).css({color:"red"});
+		</script>
+	</body>
+</html>

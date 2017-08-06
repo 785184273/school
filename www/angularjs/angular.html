@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-app = "App">
+			<ul ng-controller = "myctrl">
+				<li ng-repeat = "x in records">{{x}}</li>
+			</ul>
+		</div>
+		<!--<div ng-app = "">
+			<input type="text" name="txt" id="txt" ng-model = "text" />
+			<h2>{{text}}</h2>
+		</div>-->
+
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 	angularjs和我们之前学过个jquery是有一定的区别的，jquery更加准确的来说是一类库（类库指的是一系列函数的集合）以DOM作为驱动核心，而angularjs则一个框架（诸多类库的集合）以数据和逻辑作为驱动（核心）...
+			 	框架对开发的流程和模式做了约束，开发者遵照约束进行开发，更注重的实际的业务逻辑
+			 	angularjs有着诸多的特性，最为核心的是模块化，和双向数据绑定，语义化标签，依赖注入等...
+			 *  angularjs有哪些特性？
+			 * 		MVC模式
+			 * 		模块系统
+			 * 		指令系统
+			 * 		依赖注入
+			 * 		双向数据绑定
+			 * 	定义应用
+			 * 		通过为任意html标签添加ng-app属性，可以指定一个应用，添加了ng-app的标签以内的所有内容都属于应用的一部分
+			 * 			注意：一个页面可以有多个ng-app,但是不能嵌套
+			 * 	定义模块
+			 * 		引入angular后会提供一个全局对象angluar，这个对象有对应的方法（module）可以创建一个模块
+			 *		var App = angular.module("App",[]);
+			 * 	定义控制器
+			 * 		通过模块的返回值也是一个对象，通过此对象方法（controller）可以创建控制器
+			 * 		App.controller("DemoController",["$str",function (){
+			 * 					//定义好了控制器
+			 * 					$str就是Model,$str是一个空对象
+			 * 		}])
+			 * 			参数
+			 * 				DemoController	控制器名字
+			 * */
+			
+			var App = angular.module("App",[]);	//定义一个模块
+			App.controller("myctrl",["$scope",function($scope){
+			  $scope.records = [
+			    "html",
+			    "css",
+			    "javascript",
+			    "php",
+			  ]
+			}]);
+		</script>
+	</body>
+</html>

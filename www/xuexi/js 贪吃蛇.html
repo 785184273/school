@@ -1,0 +1,122 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			//贪吃蛇
+			window.onload = function (){
+				var snackmap = new windowMap();
+				snackmap.map();
+				
+				var snackFood = new Food();
+				snackFood.food();
+				
+				var foursnack = new snack();
+				foursnack.smartSnack();
+				
+				//小蛇移动
+				foursnack.snackmove();
+			}
+			
+			//地图
+			function windowMap(){
+				//设置地图的宽高
+				var width = 1000;
+				var height = 500;
+				this.map = function (){
+					var div = document.createElement("div");
+					document.body.appendChild(div);
+					
+					div.style.width = width + "px";
+					div.style.height = height + "px";
+					div.style.background = "pink";
+				}
+			}
+			
+			//食物
+			function Food(){
+				var width = 20;
+				var height = 20;
+				this.food = function (){
+					var div = document.createElement("div");
+					document.body.appendChild(div);
+					
+					
+					//设置食物的宽高
+					div.style.width = width;
+					div.style.height = height;
+					//使用定位将食物固定在地图上
+					div.style.position = "absolute";
+					div.style.background = "blue";
+					//注意：食物的位置出现的不一样的地方,则食物的坐标是随机的
+					div.style.left = Math.floor((Math.random()*50)) * width + "px";
+					div.style.top = Math.floor((Math.random()*25)) * height + "px";
+				}
+			}
+			
+			//蛇
+			function snack(){
+				var width = 20;
+				var height = 20;
+				this.snack = [
+					[0,1,"black"],
+					[1,1,"black"],
+					[2,1,"black"],
+					[3,1,"red"]
+				];
+				var len = snack.length;
+				var direction = "right";
+				this.smartSnack = function (){
+				//蛇身是由四个div组成的,创建四个div
+					for(var i = 0;i < len;++i){
+						var sncObj = document.createElement("div");
+						document.body.appendChild(sncObj);
+						//
+						sncObj.style.width = width;
+						sncObj.style.height = height;
+						sncObj.style.background = snack[i][2];
+						
+						sncObj.style.position = "absolute";
+						sncObj.style.left = snack[i][0] * width + "px";
+						sncObj.style.top = snack[i][1] * height + "px";
+					}
+					//alert("有毒")
+				}
+				//蛇进行移动
+				this.snackmove = function (){
+					//注意：蛇身子移动的时候,除了头div,后面的div是最后一个向前移，前面的div又向前移，依此类推
+					for(var i = 0;i < len - 1;++i){
+						//X坐标
+						this.snack[i][0] = this.snack[i + 1][0];
+						//y坐标
+						this.snack[i][1] = this.snack[i + 1][1];
+					}
+					//头部操作
+					if(direction == "right"){
+						//向右移动
+						window.alert("xiba");
+						this.snack[len - 1][0] += 1;
+					}
+					if(direction == "left"){
+						this.snack[len - 1][0] -= 1;
+					}
+					if(direction == "up"){
+						this.snack[len - 1][1] -= 1;
+					}
+					if(direction == "down"){
+						this.snack[len - 1][1] += 1;
+					}
+					
+					//根据新的坐标绘制小蛇
+					this.smartSnack();
+					//window.alert("xiba");
+				}
+			}
+		</script>
+		<style>
+			body{margin:0px;}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>web存储sessionStorae</title>
+	</head>
+	<body>
+		姓名:<input type = "text" id = "username" /><br />
+		年龄:<input type = "text" id = "age"  /><br />
+		<input type="submit" id = "sub" value="提交" /><br />
+		<input type="submit" id = "get" value="获取" /><br />
+		<input type="submit" id = "remove" value = "删除" /><br />
+		<input type="submit" id = "clear" value = "清除" /><br />
+		<script type="text/javascript">
+			var sub = document.getElementById("sub");
+			var user = document.getElementById("username");
+			var age = document.getElementById("age");
+			var get = document.getElementById("get");
+			var remove = document.getElementById("remove");
+			var clear = document.getElementById("clear");
+			sub.onclick = function (){
+				sessionStorage.setItem("username",user.value);
+				sessionStorage.setItem("age",age.value);
+			}
+			get.onclick = function (){
+				alert(sessionStorage.getItem("username") + "," + sessionStorage.getItem("age"));
+			}
+			remove.onclick = function (){
+				sessionStorage.removeItem("username");
+			}
+			clear.onclick = function (){
+				sessionStorage.clear();
+			}
+		</script>
+	</body>
+</html>

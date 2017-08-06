@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<child message = "hello"></child>
+			<person my-name = "小明"></person>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	组件意味着协同工作，通常父子组件会是这样的关系：组件A在他的模版中使用了组件B,他们之间必然需要相互通信，父组件需要给子组件传递数据，子组件需要将内部发生的事情告知给父组件
+			 	使用Prop传递数据
+			 		子组件要显式的用props选项声明它期待活动的数据
+			 * */
+			Vue.component("child",{
+				props : ['message'],
+				template : "<div>{{ message }}</div>"
+			})
+			Vue.component("person",{
+				/*
+				 	需要获取的属性值的名称如果是短横线隔开的，需要使用驼峰式命名
+				 * */
+				props : ['myName'],
+				template : "<div>{{ myName }}</div>"
+			})
+			new Vue({
+				el : "#app"
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,8 @@
+@charset = utf8
+
+*{margin: 0px;padding: 0px;}
+body{margin: 0px;padding: 0px;font-family: "微软雅黑";}
+
+/*********************************************************/
+.con_bor{border: 1px solid #dddddd;border-radius: 3px;}
+.conf{margin-top: 10px;}

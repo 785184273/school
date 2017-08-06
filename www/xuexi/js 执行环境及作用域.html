@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<script>
+			/*
+				函数的参数都是按值传递的
+				
+			*/
+			console.log(typeof /123/);	//Object
+			console.log(typeof function (){});	//function
+			
+			function setname(obj){
+				obj.name = "xiaomei";
+				//obj = new Object;
+				obj.name = "xiaoming";
+			}
+			var person = new Object();	
+			setname(person);
+			alert(person.name);
+			
+			var a = 10
+			function test(){
+				var a = 20;
+				b = 30;
+				alert(a + b); //50
+			}
+			test();
+			//注意：全局变量b实在test函数中定义的，则需要调用一次test才能使用全局变量b
+			alert(b); //30
+			
+			for(var i = 0;i < 10;++i){
+			}
+			console.log(i);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

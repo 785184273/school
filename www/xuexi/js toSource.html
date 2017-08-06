@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		/*
+			toSource() 方法表示对象的源代码。
+			toSource()方法通常由js在后台调用，并不显示的出现在代码中
+			浏览器支持
+				只有Firefox支持该方法
+		*/
+			function person (name,job,born){
+				this.name = name;
+				this.job = job;
+				this.born = born;
+			}
+			var bill = new person("Bill Gates","Engineer",1985);
+			console.log(bill.toSource());
+		</script>
+	</body>
+</html>

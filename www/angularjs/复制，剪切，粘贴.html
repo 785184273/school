@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app>
+		<!--
+			ng-copy:复制
+			ng-cut:剪切
+			ng-paste:粘贴
+		-->
+		<input type="text" ng-copy = "name = '小明'" />{{name}};
+		<input type="text" value = "123" ng-cut = "say = 'hello'" />{{say}};
+		<input type="text" ng-paste = "age = '20'" />{{age}};
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+	</body>
+</html>

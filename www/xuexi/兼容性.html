@@ -1,0 +1,53 @@
+<html>
+	<head>
+	<head>
+		<body>
+			
+		</body>
+</html>
+<!--
+	浏览器的兼容性简介
+		一个网页在不同的浏览器下，显示的效果可能不一致，这就是所谓的"不兼容"
+		兼容性的调试，主要调试：ie8 ie7 ie6 Firefox
+		ie浏览器的调试工具：iE TESTER
+	兼容性从一下三个方面来讲解
+		全局css设置
+		常用兼容性技巧
+		css HACK
+	全局css设置
+		1.清除所有标记的内外边距
+			body,ul,li,a,img,p,input{padding:0px;margin:0px;}
+		2.去除项目符号或编号前面的符号
+			ul,ol,li{list-style:none;}
+		3.全局链接效果
+			a:link, a:visited{color:reed:text-decoration:none;}
+			a:hover{color:red}
+		4.网页中的所有文字的大小颜色
+			body{font-size:12px;font-family:宋体;color:red;}
+		5.去除图片的链接边框线
+			img{border:0}
+		6.全局的类样式
+			.floatL{float:left}
+			.floatR{float:right}
+			.clear{clear:both;}
+	常用的兼容性调试技巧
+		1.实现所有浏览器主页居中
+			firefox下居中代码是：.box{margin:0px auto;}
+			ie下主页居中代码: body{text-align:center;}
+			将以上两种代码合在一起写
+			
+		2.单行文本上下居中
+			h1{height:30px;line-height:30px}
+		3.在ie6下，左右margin会加倍
+			提示:能使用padding解决的坚决不用margin。如果实在想用就使用其中的一边
+			解决方案：display:inline /*将块元素转换成行内元素*/
+	css HACK
+		针对不同的浏览器，书写不同的css代码的过程，称为“css hack”
+		也就是说：写一个css代码，让ie6识别，其他浏览器不识别
+		下面,针对不同浏览器，有几个符号：
+			这些符号是在css属性的前面加的，用于分辨不同的浏览器版本。
+			“*” ie6和ie7都识别，如：.box{*background-color:red;}
+			“_” 只有ie6识别，如：.box{_background-color:red;}
+		
+		
+-->	

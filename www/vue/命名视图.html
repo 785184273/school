@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id = "box">
+			<p>
+				<router-link to = "/user">用户</router-link>
+				<router-link to = "/pass">密码</router-link>
+			</p>
+			<router-view name = "a"></router-view>
+			<router-view name = "b"></router-view>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+		<script type="text/javascript">
+			//如果router-view没有设置名字，那么默认是default
+			var user = {
+				data : function (){
+					return {
+						u : "785184273"
+					}
+				},
+				template : "<div>用户名：{{ u }}</div>"
+			}
+			var pass = {
+				data : function (){
+					return {
+						p : "lw199549"
+					}
+				},
+				template : "<div>密码：{{ p }}</div>"
+			}
+			var routes = [
+				{
+					path : "/user",
+					components : {
+						a : user,
+						b : pass
+					}
+				},
+				{
+					path : "/pass",
+					components : {
+						a : user,
+						b : pass
+					}
+				}
+			]
+			var router = new VueRouter({
+				routes : routes
+			})
+			
+			new Vue({
+				router,
+				el : "#box"
+			})
+		</script>
+	</body>
+</html>

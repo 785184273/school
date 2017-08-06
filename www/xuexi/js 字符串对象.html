@@ -1,0 +1,154 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type="text/javascript">
+		//string对象charAt方法
+		//var str = "陈龙是傻逼abc";
+		//var a;
+		//str = str.toUpperCase();
+		//字符串的字符下标与数组元素的下标一样
+		//for(a = 0;a < str.length;a++)
+		//{
+		//	document.write(str.charAt(a)+"<br>")
+		//}
+		//string对象的indexOf方法.实例，判断用户输入的邮箱地址是否含有“@”符号
+		//var email = window.prompt("请输入一个邮箱地址")
+		//if(email.indexOf("@")==-1)
+		//{
+		//	document.write("邮箱"+email+"不合法");
+		//}else
+		//{
+		//	document.write("邮箱"+email+"合法");
+		//}
+		//string对象的lastindexOf方法.实例,判断以下文件名是不是图片
+		var arr = ["jpg","png","gif"];
+		var filename = "2015.06.06.gif"; //假设是长传的文件名
+		//先找到文件扩展名前的小点
+		var index = filename.lastIndexOf(".")
+		//alert(index);
+		//取出扩展名
+		var ext = filename.substr(index+1);
+		document.write(ext);
+		//循环数组,比较扩展名是否合法
+		var flag = false; //标志
+		for(var i = 0;i < arr.length;i++)
+		{
+			if(ext == arr[i])
+			{
+				flag = true;
+				//document.write("合法");
+				break;//退出循环
+			}		
+		}
+		//判断flag的值
+		if(flag)
+		{
+			document.write("合法");
+		}else
+		{
+			document.write("不合法");
+		}
+		document.write("<hr>");
+		//字符串对象方法的练习
+		var str = "四川省成都市都江堰市成都东软学院";
+		var len = str.length;
+		var arr = str.split("");
+		var a = str.indexOf("都");
+		var b = str.charAt(a);
+		var c = str.lastIndexOf("四");
+		var d = str.substr(2,3);
+		var e = str.substring(2,10);
+		var f = str.valueOf();
+		document.write(len + "<br />");
+		document.write(arr + "<br />");
+		document.write(a + "<br />");
+		document.write(b + "<br />");
+		document.write(c + "<br />");
+		document.write(d + "<br />");
+		document.write(e + "<br />");
+		document.write(f + "<br />");
+		document.write("<hr />");
+		document.write("js直接对字符串进行遍历")
+		var a = "pengchengshishabi";
+		var len = a.length;
+		for(var i = 0;i < len;++i){
+			document.write("<br />" + a[i]);
+		}
+		var name = new String("pengchengshishabi");
+		document.write("<br />" + typeof(name));
+		</script>
+	</head>
+		<body>
+		</body>
+</html>
+<!--
+js内置对象
+	string对象：字符串对象，提供了对字符串进行操作的属性和方法
+			string对象属性
+				length:获取字符串的长度，如：var str = Object.length
+			string对象方法
+			toLowerCase():将字符串中的字母转全成小写  var str = Object.toLowerCase()
+			toUpperCase():将字符串中的字母转全成大写  var str = Object.toUpperCase()
+			注意：toLowerCase()和toUpperCase()可以在数组元素中使用
+			valueOf()
+				返回字符串或数组的值
+			charAt(index)					
+				功能：返回指定下标位置的一个字符，如果没找到则返回空字符串 
+				语法：strObj.charAt(index)
+				参数：index是指定的一个索引号，根据index索引号来返回一个字符
+			indexOf()
+				功能：返回一个子字符串在原始字符串中的索引值，如果没找到，则返回-1
+				语法：strObj.indexOf(substr)
+				参数：substr代表要查找的一个子字符串
+			lastIndexOf()
+				功能：在原始字符串，从右往左查找某个子字符串，如果没找到，返回-1
+				语法：strObj.lastindexOf(substr)
+				参数：substr代表要查找的一个子字符串
+			substr()
+				功能：在原始字符串中，返回一个子字符串
+				语法：strObj.substr(startIndex[,length])
+				说明：从下标startIndex起，返回length个字符
+				参数：startIndex表示查找的起始索引号
+					  length可选，返回几个字符，如果省略一直返回到结尾
+			substring()
+				功能：在原始字符串中，返回一个子字符串
+				语法：strObj.substring(startIndex[,endIndex])
+				说明：返回从startIndex索引值到endIndex结束索引值之间的所有字符
+				参数：
+					startIndex：代表开始索引值
+					endIndex：可选项，代表结束索引值，如果省略，一般返回到结尾的所有的字符
+				提示：如果省略第二个参数，那么substr()和substring()结果一样
+				举例："abcdefgh"substring(0,5) = abcde
+				注意:substring()返回的字符包含startIndex处的字符，不包含endIndex处的字符
+			 split()
+				功能：将字符串切割成若干段,切割以后返回一个数组
+				语法：strObj.split(分割号)
+				参数：参数是一个分割号的字符串，用指定的分隔号将字符串切成若干段
+				举例："a,b,c,d,e".split(",")
+	Array对象；数组对象，提供了数组操作方面的属性和方法
+	Date对象：日期时间对象，可以获取系统的日期时间信息
+	Boolean对象：布尔对象，一个布尔变量就是一个布尔对象(没有可以的属性个方法)
+	Number对象：数值对象，一个数值变量就是一个数值对象
+	Math对象：数学对象，提供了数学运算方面的属性和方法, 
+				如：四舍五入 var a = Math.round(100.98);  //101
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->

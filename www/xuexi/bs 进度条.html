@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<!--Bootstrap不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--移动设备优先,响应式布局-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	</head>
+		<body>
+			<div class = "container">
+				<div class = "progress  progress-striped">
+					<div class = "progress-bar" style = "width:40%"></div>
+				</div>
+				<div class = "progress">
+					<div class = "progress-bar progress-bar-info" style = "width:40%"></div>
+				</div>
+				<div class = "progress">
+					<div class = "progress-bar progress-bar-success" style = "width:40%"></div>
+				</div>
+				<div class = "progress">
+					<div class = "progress-bar progress-bar-warning" style = "width:40%"></div>
+				</div>
+				<div class = "progress">
+					<div class = "progress-bar progress-bar-danger" style = "width:40%"></div>
+				</div>
+				<div class = "progress progress-striped">
+					<div class = "progress-bar progress-bar-info" style = "width:40%"></div>
+				</div>
+				<div class = "progress  progress-striped">
+					<div class = "progress-bar progress-bar-success" style = "width:40%"></div>
+				</div>
+				<div class = "progress  progress-striped">
+					<div class = "progress-bar progress-bar-warning" style = "width:40%"></div>
+				</div>
+				<div class = "progress  progress-striped">
+					<div class = "progress-bar progress-bar-danger" style = "width:40%"></div>
+				</div>
+				<div class = "progress progress-striped active">
+					<div class = "progress-bar progress-bar-info" style = "width:40%"></div>
+				</div>
+				<div class = "progress  progress-striped active">
+					<div class = "progress-bar progress-bar-success" style = "width:60%">60%</div>
+				</div>
+				<div class = "progress  progress-striped active">
+					<div class = "progress-bar progress-bar-warning" style = "width:40%">40%</div>
+				</div>
+				<div class = "progress  progress-striped active">
+					<div class = "progress-bar progress-bar-danger" style = "width:0%">0%</div>
+				</div>
+			</div>
+		<!--bootstrap模板为使IE6、7、8版本（IE9以下版本）浏览器兼容html5新增的标签。-->
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<!--为使IE6、7、8版本浏览器兼容css3样式-->
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		</body>
+</html>
+<!--
+	基本样式
+		父容器使用 class = "progress"
+		子容器使用 class = "progress-bar"
+	彩色进度条
+		在子容器中添加
+		.progress-bar-success:表示成功进度条,绿色
+		.progress-bar-info:表示信息进度条,蓝色
+		.progress-bar-warning:表示警告进度条,黄色
+		.progress-bar-danger:表示错误进度条,红色
+	条纹进度条
+		在父容器中添加.progress-striped
+	动态条纹进度条
+		在父容器中添加.active
+-->

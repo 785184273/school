@@ -1,0 +1,18 @@
+<html>
+	<head>
+	</head>
+		<body>
+			<div>
+				<div id = "d1" style = "border:1px solid red;">IE浏览器</div>
+			</div>
+		<script>
+			var div = document.getElementById('d1');
+			div.attachEvent('onclick',function f1(){
+				alert("123");
+			});
+			div.attachEvent('onclick',function f2(){
+				alert("234");
+			});
+		</script>
+		</body>
+</html>

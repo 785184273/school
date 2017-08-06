@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p>message is :{{message}}</p>
+			<input type="text" v-model = "message" /><br />
+			<textarea v-model = "message"></textarea>
+			<br />
+			<!--复选框-->
+			<input type="checkbox" id = "checkbox" value = "jack" v-model = "checked"/>jack
+			<input type="checkbox" id = "checkbox" value = "john" v-model = "checked"/>john
+			<input type="checkbox" id = "checkbox" value = "mike" v-model = "checked"/>mike
+			<span>
+				checked is:{{checked.join(" ")}}
+			</span>
+			<br />
+			<!--单选按钮-->
+			<input type="radio" v-model = "rad" id = "one" value = "one"/><label for = "one">one</label>
+			<input type="radio" v-model = "rad" id = "two" value = "two"/><label for = "two">two</label>
+			<span>
+				{{rad}}
+			</span>
+			<br />
+			<!--列表选项-->
+			<select v-model = "sel">
+				<option value="A">A</option>
+				<option value="B">B</option>
+				<option value="C">C</option>
+			</select>
+			<span>
+				{{sel}}
+			</span>
+			<br />
+			<!--多选列表-->
+			<select v-model = "sels" multiple="multiple">
+				<option value="A">A</option>
+				<option value="B">B</option>
+				<option value="C">C</option>
+			</select>
+			<span>
+				{{sels}}
+			</span>
+			<!--动态下拉列表-->
+			<select v-model = "selects">
+				<option v-for = "x in selectsA" :value = "x.value">{{x.text}}</option>
+			</select>
+			<span>
+				{{selects}}
+			</span>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				/*
+				 	多选就用数组,单选就用空字符串
+				 * */
+				el : "#app",
+				data : {
+					message : "",
+					checked : [],
+					rad : "",
+					sel : "",
+					sels : [],
+					selects : "",
+					selectsA : [
+					    {text: 'One', value: 'A'},
+					    {text: 'Two', value: 'B'},
+					    {text: 'Three', value: 'C'}
+					]
+				}
+			})
+		</script>
+	</body>
+</html>

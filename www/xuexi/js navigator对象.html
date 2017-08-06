@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript">
+			//实例：测试不同浏览器的相关信息
+			/*
+			var str = "</h2>浏览器的相关系</h2>";
+			str += "<br/>软件名称："+navigator.appName;
+			str += "<br/>软件核心版本号"+navigator.appVersion;
+			str += "<br/>浏览器语言语言："+navigator.language;
+			str += "<br/>用户语言："+navigator.userLanguage;
+			str += "<br/>平台："+navigator.platform;
+			document.write(str);
+			*/
+			//打开页面之后，弹出用户是用的什么浏览器
+			window.onload = init;
+			function init(){
+				var str  = "\n浏览器的信息——————";
+				str += "\n浏览器的名称：" + navigator.appName;
+				str += "\n浏览器的语言：" + navigator.language;
+				str += "\n浏览器版本号：" + navigator.appVersion;
+				str += "\n浏览器的代码名：" + navigator.appCodeName;
+				str += "\n用户程序代理的表头：" + navigator.userAgent;
+				alert(str);
+			}
+		</script>
+	</head>
+		<body>
+		</body>
+</html>
+<!--
+navigator对象
+	appName:浏览器的软件名称，主要用来判断使用的是什么核心的浏览器
+			如果是ie浏览器，返回值为：Microsoft Internet Explorer
+			如果是Firefox浏览器的话，返回值为：Netscape
+	appVersion：浏览器软件的核心版本号。
+	systemlanguage：系统语言
+	userLanguage：用户语言
+	platform：平台
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->

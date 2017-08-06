@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			{{ msg }}
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+		var vm = new Vue({
+				el : "#box",
+				data : {
+					msg : "hello Vue!"
+				},
+				beforeCreate : function (){
+					alert("实例化之前");
+				},
+				created : function (){
+					alert("实例化之后");
+				},
+	            beforeMount:function(){
+	                alert('还没挂载到模板上:msg变量还没渲染到模板')  
+	            },
+	            mounted:function(){
+	                alert('已经挂载到模板上:msg变量渲染到模板')  
+	            },
+	            beforeUpdate:function(){
+	                alert('实例还没更新')    
+	            },
+	            updated:function(){
+	                alert('实例更新啦')    
+	            },
+	            destroyed:function(){
+	                alert('销毁啦')  
+	            }
+			})
+		vm.msg = "hello world"
+		</script>
+	</body>
+</html>

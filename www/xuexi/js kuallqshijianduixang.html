@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<style>
+			body{border:1px solid red;}
+		</style>
+	</head>
+	<body>
+		<img src = "./img/1.png" onload = "alert(this.src)">
+		<!--
+			注意：onload事件也可以加载image标签上面
+		-->
+		<input type = "submit" value = "onclick me" id = 'btn'>
+		<script>
+			function eventUtil(){
+				this.addHander = function (element,type,hander){
+					if(element.addEventListener){
+						element.addEventListener(type,hander,false);
+					}else if(element.attachEvent){
+						element.attachEvent("on" + type,hander);
+					}else{
+						element["on" + type] = hander;
+					}
+				}
+				this.removeHander = function (element,type,hander){
+					if(element.removeListener){
+						element.removeListener(type,hander,false);
+					}else if(element.detachEvent){
+						element.detachEvent("on" + type,hander);
+					}else{
+						element["on" + type] = null;
+					}
+				}
+				this.getEvent = function (event){
+					return event ? event : window.event;
+				}
+				this.getTarget = function (event){
+					return event.target ? event.target : event.srcElement;
+				}
+				this.preventDefault = function (event){
+					if(event.preventDefault()){
+						event.preventDefault();
+					}else{
+						event.returnValue = false;
+					}
+				}
+				this.stopPropagation = function (event){
+					if(event.stopPropagation()){
+						event.stopPropagation();
+					}else{
+						event.cancelBubble = true;
+					}
+				}
+			}
+			var get = new eventUtil();
+			
+			var btn = document.getElementById('btn');
+			
+			get.addHander(btn,"click",function (event){
+				alert("123");
+				get.stopPropagation(event);
+			})
+			get.addHander(document.body,'click',function (){
+				alert('123');	//冒泡到body上了
+			})
+			
+			alert(typeof XMLHttpRequest);
+		</script>
+	</body>
+</html>

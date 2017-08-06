@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style>
+			/*
+				:first-of-type选择器类似于first-child选择器，不同的地方就是指定了元素的类型，其主要就是用来定位一个父元素下的某个类型的第一个子元素
+			*/
+			.wrapper p:first-of-type{background:red;} 
+		</style>
+	</head>
+		<body>
+			<div class="wrapper">
+				<p>我是第一个段落</p>
+				<p>我是第二个段落</p>
+				<div>我是第一个Div元素</div>
+				<div>我是第二个Div元素</div>
+				<p>我是第三个段落</p>
+				<p>我是第四个段落</p>
+				<div>我是第三个Div元素</div>
+				<div>我是第四个Div元素</div>
+			</div>
+		</body>
+</html>

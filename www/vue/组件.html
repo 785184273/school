@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<my></my>
+			<me></me>
+		</div>
+		<div id="app1">
+			<my></my>
+			<!--<me></me>会报错-->
+		</div>
+		<table>
+			<tr is = "mytr"></tr>
+		</table>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	注册全局组件
+			 * */
+			Vue.component("my", {
+			  template: "<div>如果时间来到</div>"	
+			})
+			
+			Vue.component("mytr", {
+			  template: "<tr is = 'mytr'></tr>"	
+			})
+			var child = {
+						template : "<div class = 'o'>show me</div>"
+				};
+			var vm = new Vue({
+				el: '#app',
+				data : {
+					message : "the one"
+				},
+				/*
+				 	注册局部组件
+				 * */
+				components : {
+					"me" : child
+				}
+			})
+			var app = new Vue({
+				el : "#app1"
+			})
+			
+		</script>
+	</body>
+</html>

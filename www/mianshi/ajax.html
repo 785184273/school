@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="js/jquery-3.2.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$.get("./get.php",{name : "json",age : 20},function(r,s,x){
+				console.log(typeof r);
+				/*
+				 	注意：r代表包含来自请求的结果数据
+				 		  s代表包含请求的状态
+				 		  x代表xhr对象
+				 * */
+			})
+			$.post("./post.php",{name : "json",age : 20},function(r,s,x){
+				console.log(r);
+			})
+			$.ajax({
+				url : "https://api.asilu.com/weather/",
+				data : {
+					a : 10,
+					b : 20
+				},
+				type : "GET",
+				async : false,
+				dataType : "jsonp",
+				success : function (r,s,x){
+					console.log(r);
+				}
+				
+			})
+		</script>
+	</body>
+</html>

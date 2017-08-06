@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+
+		</style>
+	</head>
+		<body>
+			<input type = "submit" value = "点击" onclick = "f1()">
+		</body>
+		<script>
+			function f1(){
+				var xhr = new XMLHttpRequest();
+				
+				xhr.onreadystatechange = function (){
+					if(xhr.readyState == 4){
+						console.log(xhr.responseText);
+					}
+				}
+				
+				xhr.open("get","./aj.php?");//后加随机数防止动态程序页面发生缓存(php文件不能发生缓存)
+				xhr.send(null);
+			}
+		</script>
+</html>
+<!--
+	防止动态程序页面发生缓存(有缓存，且缓存有多份)
+		1.给动态程序页面后加一个随机数(保证每次请求的地址都不一样)
+		2.给动态程序页面设置header头(不推荐使用)
+			header("Cache-Control:no-cache");
+			header("Pragma:no-cache");
+			header("Expires:-1");
+-->

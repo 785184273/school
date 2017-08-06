@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+
+	</head>
+		<body>
+			<ul>
+				<li>刘备</li>
+				<li>关羽</li>
+				<li>张飞</li>
+			</ul>
+			<input type = "submit" id = "add" value = "后置添加"/>
+			<input type = "submit" value = "前置添加"/>
+			<input type = "submit" value = "兄弟节点前置添加"/>
+			<input type = "submit" value = "兄弟节点后置添加"/>
+		<script>
+			//后置添加
+			$($('#add').click(function (){
+				$("ul").append("<li>赵云</li>")
+			}));
+			
+			//后置添加
+			$('input:eq(1)').click(function (){
+				$('ul').prepend('<li>诸葛亮</li>');
+			});
+			
+			//兄弟节点的前置添加
+			$('input:eq(2)').click(function (){
+				$('li:first').before('<li>刘协</li>');
+			});
+			//兄弟节点的前置添加
+			$('input:eq(3)').click(function (){
+				$('li:last-child').before('<li>马超</li>');
+			});
+		</script>
+		</body>
+</html>

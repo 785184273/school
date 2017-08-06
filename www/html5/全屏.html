@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				border: 1px solid red;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script type="text/javascript">
+			box.onclick = function (){
+				//注意，如果是
+				if(webkitRequestFullScreen){
+					this.webkitRequestFullScreen();
+					
+				}else{
+					this.requestFullscreen()
+				}
+			}
+		</script>
+	</body>
+</html>

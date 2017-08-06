@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+		/*
+			serializeArray()方法通过序列化表单值来创建对象数组(名称和值)
+			您可以选择一个或多个表单元素(比如input/textarea),或者form元素本身
+			
+			serializeArray()方法序列化表单元素(类似serialize()方法),返回json数据结构数据
+			
+			注意：此方法返回的是json对象并不是json 的字符串
+			返回的json对象是一个json数组组成的，其中每个对象包含一个或两个名值对，name参数和value参数如下
+				[{name:'a',value:'12'},{name:'b',value:'12'}]
+		*/
+			$(function (){
+				$('form').submit(function (event){
+					event.preventDefault();
+					console.log($(this).serializeArray());
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<form>
+			<input type = "text" name = "a">
+			<input type = "password" name = "b">
+			<input type = "submit" value = "点击">
+		</form>
+	</body>
+</html>

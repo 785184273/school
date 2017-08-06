@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<child>
+				<ul>
+					<li v-for = "x in arr">{{ x }}</li>
+				</ul>
+				<ol slot = "ol">
+					<li v-for = "x in arr">{{ x }}</li>
+				</ol>
+			</child>
+		</div>
+		<template id = "one">
+			<div>
+				<slot name = "ol">默认的值</slot>
+			</div>
+		</template>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	slot标签内的内容都视为备用内容，备用内容在子组件的作用域内编译，并且只有在宿主元素为空，且没有要插入的内容时，才显示备用内容
+				具名slot：元素可以用一个特殊的属性name来配置如何分发内容，多个slot可以有不同的名字，具名slot将匹配内容片段中有对应slot特性的元素
+			* */
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					arr : ['html','css','js']
+				},
+				components : {
+					child : {
+						template : "#one"
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

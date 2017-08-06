@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				offsetParent() 方法返回最近的祖先定位元素。
+				定位元素指的是元素的 CSS position 属性被设置为 relative、absolute 或 fixed 的元素
+				语法
+					$(selector).offsetParent()
+			*/
+			$(function (){
+				$('input:eq(0)').click(function (){
+				//	alert(123);
+				$('.menu').offsetParent().css('backgroundColor','pink');
+			})});
+		</script>
+		<style>
+			.box{border:1px solid red;width:500px;height:500px;opacity:0.5;position:relative;left:100px;top:100px;}
+			.menu{boder:1px solid red;width:400px;height:400px;background:blue;}
+		</style>
+	</head>
+		<body>
+			<div class = "box">
+				<div class = "menu"></div>
+			</div>
+			<input type = "submit" value = "offsetParent">
+		</body>
+</html>

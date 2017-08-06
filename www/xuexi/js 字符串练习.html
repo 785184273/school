@@ -1,0 +1,169 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type="text/javascript">
+		// toUpperCase() charAt() toLowerCase()
+			var str = "传智播客php";
+			var a;
+			str = str.toUpperCase();
+			for(a = 0;a < str.length;a++)
+			{
+				document.write(str.charAt(a));
+			}
+			document.write("<hr>");
+		// indexOf()
+			var str = "nimabid@";
+			str = str.indexOf("@");
+			if(str == 7)
+			{
+				document.write("congratulation");
+			}
+			else
+			{
+				document.write("是个什么卵");
+			}
+			document.write("<hr>");
+		//	charAt()
+			var str = "index";
+			var string = str.charAt(2);
+			document.write(string);
+			document.write("<hr>");
+		//  indexOf()
+			var str = "dwfghrt";
+			str = str.indexOf("h");
+			document.write(str);
+			document.write("<hr>");
+		//  substr
+			var str = "wodexinhaoleng";
+			str = str.substr(2,3);
+			document.write(str);
+			document.write("<hr>");
+		// substring
+			var str = "wodexinhaoleng";
+			str = str.substring(2,3);
+			document.write(str);
+			document.write("<hr>");
+		// split
+			var str = "魔法少女赵梓坚,魔法少女吴开";
+			var arr = str.split(",");
+			document.write(arr);
+			document.write("<hr>");
+		//输出今天是星期几
+			var str = "星期一,星期二,星期三,星期四,星期五,星期六,星期天";
+			var today = new Date();	//创建一个日期对象
+			var week = today.getDay();	//取得星期值
+			var arr = str.split(",")
+			function xingqi(){
+			switch(week)
+			{
+				case 1:
+				str = arr[0];
+				break;
+				case 2:
+				str = arr[1];
+				break;
+				case 3:
+				str = arr[2];
+				break;
+				case 4:
+				str = arr[3];
+				break;
+				case 5:
+				str = arr[4];
+				break;
+				case 6:
+				str = arr[5];
+				break;
+				case 7:
+				str = arr[6];
+				break;
+				
+			}
+			return str;
+			}
+		//函数的调用
+		document.write("今天是："+xingqi() + "<br />");	
+			
+		//将以下的字符串分割成数组(一个一个的元素)
+		var str = "陈龙是傻逼"
+		var arr = str.split("");
+		document.write(arr+typeof(arr));
+		document.write("<hr>");
+		//2.将字符串"49238028424"以"2"为分隔符分割成数组，并求出数组的长度
+		var str = "49238028424";
+		var arr = str.split("2");
+		document.write(arr+"<br>"+arr.length);
+		document.write("<hr>")
+		//1.获取一个长文件路径(比如"E:/itcast/class/php/js/day2/abc.html")中的文件名(abc)及其后缀(html)
+		var filename = "E:/itcast/class/php/js/day2/abc.html";
+		var index = filename.lastIndexOf(".");
+		//document.write(index);
+		var ext = filename.substr(index+1);
+		var ext1 = filename.substr(index-3,3);
+		document.write(ext+"<br>"+ext1);
+		document.write("<hr>")
+		//检测用户上传的文件是否符合要求
+		//*
+		function init(){
+			var fileObj = document.getElementById("d1");
+			var v = fileObj.value;
+			var idx = v.lastIndexOf(".");
+			var laststr = v.substring(idx+1);
+			laststr = laststr.toLowerCase();
+			//document.write(idx);
+			//window.alert(laststr);
+			//*
+			if(laststr === "exe" || laststr === "docx" || laststr === "rar" || laststr === "doc"){
+				window.alert("文件上传格式不正确");
+			}else if(v === ""){
+				window.alert("请选择上传文件");
+			}else{
+				window.alert("文件开始上传中");
+			}
+	
+		}
+		//*/
+		//if(prompt("请输入！")){
+		//	alert("席吧");
+		//}else{
+		//	alert("菜逼");
+		//}
+		//判断一个字符例如：a,是否出现在另一个字符(比如"2310123abqeqa213aqwe")中，求出现了几次
+		/*
+		var charlist = window.prompt("请输入字符串！","2310123abqeqa213aqwe");
+		var charone = charlist.indexOf(a);
+		if(a == -1){
+			window.alert("字符串中没有该项值");
+		}else{
+			var arr = charlist.split("a");
+			var len = arr.length;
+			window.alert("字符a在该字符串中出现了" + (len - 1) + "次！");
+		}
+		//*/
+		//输出长文件路径的文件名和后缀
+		var str = "E:\\itcast\\class\\php\\js\\day2\\abc.html";
+		var arr = str.split("\\");
+		document.write(arr + "<br />");
+		var len = arr.length;
+		var strlast = arr[len-1];
+		var arr1 = strlast.split(".");
+		document.write("文件名为：" + arr1[0] + "<br />");
+		document.write("文件名后缀为: " + arr1[1] + "<br />");
+		//用window.prompt将输入的字符串反转顺序再alert出来
+		var str = window.prompt("请输入你想输入的任何数据！","陈龙是个大煞笔!");
+		if(str == null || str == ""){
+			window.alert("对不起你没输入任何内容或取消了该项操作！");
+		}else{
+			var arr = str.split("");
+			var arr = arr.reverse();
+			//document.write(arr);
+			var charlist = arr.join("");
+			window.alert(charlist);
+		}
+		</script>
+	</head>
+		<body>
+			<input type = "file" id = "d1" />
+			<input type = "button" onclick = "init()" value = "提交">
+		</body>
+</html>

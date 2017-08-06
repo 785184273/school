@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				border: 1px solid red;
+				width: 300px;
+				height: 100px;
+			}
+			.box1{
+				margin: 0px auto;
+			}
+			/*.box2{
+				position: absolute;
+				margin: auto;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				/*
+				 * 垂直居中1
+				 * 
+				 * /
+			}*/
+			/*.box2{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				/*
+				 * 垂直居中2，translate设定为百分值是相对于本身的宽高
+				 * /
+			}*/
+			.box2{
+				position: absolute;
+				top:50%;
+				left: 50%;
+				margin-left: -150px;
+				margin-top: -50px;
+				/*
+				 * 垂直居中3
+				 */
+			}
+		</style>
+	</head>
+	<body>
+		<div class = "box1">
+			水平居中
+		</div>
+		<div class = "box2">
+			垂直居中
+		</div>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+		<style type="text/css">
+			.box{
+				width: 300px;
+				height: 300px;
+				background: red;
+				margin: 0 auto;
+				margin-bottom: 10px ;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<button @click = "show = !show">切换</button>
+			<transition-group
+				enter-active-class = "animated bounceInLeft"
+				leave-active-class = "animated bounceOutRight"
+				@before-enter = "beforeEnter"
+				@enter = "enter"
+				@after-enter = "afterEnter"
+				
+				@before-leave = "beforeLeave"
+				@leave = "leave"
+				@after-leave = "afterLeave"
+			>
+				<div class = "box" v-show = "show" :key = "1"></div>
+				<div class = "box" v-show = "show" :key = "2"></div>
+			</transition-group>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	注意：
+			 		1.过渡的项目必须放在的transition标签中，
+			 		2.多个元素运动的时候需要使用transition-group标签
+			 		3.必须使用:key
+			 		2.不能使用id，需要使用class
+			 		3.和animate.css一起使用不需要name属性
+			 			需要使用：enter-active-class和leave-active-class
+			 	js钩子函数
+			 		@before-enter	:动画进入之前
+			 		@enter			:动画开始进入
+			 		@after-enter	:动画进入之后
+			 		@before-leave	:动画离开之前
+			 		@leave			:动画开始离开
+			 		@after-leave	:动画离开之后
+			 **/
+			new Vue({
+				el : "#app",
+				data : {
+					show : false
+				},
+				methods : {
+					beforeEnter : function (){
+						console.log("动画进入之前");
+					},
+					enter : function (){
+						console.log("动画开始进入");
+					},
+					afterEnter : function (el){
+						console.log("动画进入之后");
+						el.style.background = "green"
+					},
+					beforeLeave : function (){
+						console.log("动画离开之前");
+					},
+					leave : function (){
+						console.log("动画开始离开");
+					},
+					afterLeave : function (el){
+						el.style.background = "red"
+						console.log("动画离开之后");
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

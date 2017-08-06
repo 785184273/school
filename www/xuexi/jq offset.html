@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				offset() 方法返回或设置匹配元素相对于文档的偏移
+				返回的偏移坐标
+					返回第一个匹配元素的偏移坐标
+					该方法返回的对象返回两个整型属性：top和left，以像素计，次方法只对可见元素有效(设置便宜坐标的时候千万不能带px)
+				语法：$(selector).offset(function (index,oldoffset){})
+					1.可以使用函数来设置便宜坐标，也可以不使用，所以函数是可选的一种方法，也可以直接设置，如下例子
+					2.使用函数设置偏移坐标，因为设置偏移坐标的时候是个json对象，所有在设置的时候一般都是先new一个对象
+						index	可选，接收选择器是index位置
+						oldoffset	可选，接收选择器的当前坐标
+					3.使用已经创建的对象，为对象设置新的便宜坐标
+			*/
+			$(function (){
+				//$('p').offset($('span').offset());	//利用span的offset设置成自己的
+				//$('p').offset({left:100,top:100});	//设置自己的left和top	注意：不能带单位
+				
+				obj1 = new Object();
+				obj1.left = 100;
+				obj1.top = 100;
+				$('input:eq(0)').click(function (){
+					//使用函数设置便宜的坐标
+					/*
+					$('p').offset(function (n,c){
+						obj = new Object();
+						obj.left = c.left + 100;
+						obj.top = c.top + 100;
+						return obj;
+					})
+					*/
+					
+					//使用创建的一个对象来为对象设置新的offset的值
+					$('p').offset(obj1);
+				});
+				alert($('.div').offset().left + "," + $('.div').offset().top);
+			})
+		</script>
+	</head>
+		<body>
+			<p>jQuery 乐趣十足</p>
+			<span style = "margin-left:30px;">啦啦啦啦啦啦，我是卖报的小行家</span>
+			<input type = "submit" value = "offset">
+			<div style = "border:1px solid red;text-align:center;">
+				<div  class = "div" style = "width:300px;height:300px;border:1px solid red;margin:10px auto;">
+					the one
+				</div>
+			</div>
+		</body>
+</html>

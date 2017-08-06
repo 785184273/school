@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<style = "text/css">
+			body{margin:0px;padding:0px;}
+			.main{width:1000px;height:485px;border:1px solid #278296;margin:0px auto;}
+			h5{border:px solid red;text-align:center;margin:0px;}
+			table{font-size:12px;font-weight:bold;margin:0px auto;}
+			select{width:100px;}
+			a{color:blue;text-decoration:none;}
+		</style>
+		<script type = "text/javascript">
+			function mark_delete(){
+				return window.confirm('你真的要删除吗？\\(▔＾▔)/ ');
+			}
+			function mark_update(){
+				var markObj = document.getElementById('mark');
+				var value = markObj.value;
+				return value;
+			}
+		</script>
+	</head>
+		<body>
+			<div class = "main">
+				<h5>成绩信息录入</h5>
+				<form method = "POST" action = "?p=back&c=admin&act=mark_select">
+					<table border = "1" rules = "all">
+						<tr>
+							<td>专业</td>
+							<td>
+								<select name = "major">
+									<option value = 0>请选择</option>
+									<option value = 1>计算机</option>
+									<option value = 2>通信工程</option>
+									<option value = 3>信息安全</option>
+								</select>
+							</td>
+							<td>课程名</td>
+							<td>
+								<select  name = "classname">
+									<option value = 0>请选择</option>
+									<option value = 1>计算机基础</option>
+									<option value = 2>程序设计与语言</option>
+									<option value = 3>离散数学</option>
+									<option value = 4>数据结构</option>
+									<option value = 5>计算机原理</option>
+									<option value = 6>操作系统</option>
+									<option value = 7>数据库原理</option>
+									<option value = 8>计算机网络</option>
+									<option value = 9>软件工程</option>
+								</select>
+							</td>
+							<td>
+							<input type = "submit" name = "button" value = "查询">
+							</td>
+						</tr>
+					</table>
+				</form>
+				<h5><?php echo $major;?>-><?php echo $classname;?></h5>
+				<form method = "POST">
+					<table border = "1" rules = "all">
+						<tr>
+							<td>学号</td>
+							<td>姓名</td>
+							<td>成绩</td>
+							<td>操作</td>
+						</tr>
+						<?php
+						if(is_array($result)){
+							foreach($result as $val){
+						?>
+						<tr>
+							<td><?php echo $val['学号']?></td>
+							<td><?php echo $val['姓名']?></td>
+							<td><input id = 'mark' type = "text" value = "<?php echo $val['成绩']?>"></td>
+							<td>
+								<a href = "?p=back&c=admin&act=student_mark_update&id=<?php echo $val['学号'];?>&cj=<?php $val['成绩'];?>&classname=mark_update()" name = "button">修改</a>
+								<a href = "?p=back&c=admin&act=student_mark_delete&id=<?php echo $val['学号'];?>&classname=<?php echo $classname;?>" onclick = 'return mark_delete();'>删除</a>
+							</td>
+						</tr>
+						<?php
+							}
+						}
+						?>
+					</table>
+				</form>
+			</div>
+		</body>
+</html>

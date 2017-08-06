@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<style>
+			body{
+				background:black;
+				}
+			.box{
+				border:1px solid red;
+				background:url('./img/diqiu.jpg') no-repeat;
+				margin:0px auto;
+				width:550px;
+				height:548px;
+				position:relative;
+			}
+			img{
+				width:50px;
+				position:absolute;
+				top:225px;
+				left:0px;
+				border:1px solid red;
+				transform-origin:550% center;
+				animation:move 2s linear .1s infinite;
+			}
+			@keyframes move{
+				to{
+					transform:rotate(360deg);
+				}
+			}
+		</style>
+		<script>
+			window.onload = function (){
+				var img = document.getElementsByTagName('img')[0];
+				alert(img.height);
+			}
+		</script>
+	</head>
+		<body>
+			<div class = "box">
+				<img src = "./img/huojian.png">
+			</div>
+		</body>
+</html>

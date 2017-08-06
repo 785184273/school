@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<style>
+			/*
+				:read-only:伪类选择器匹配处于只读状态元素的样式
+				:read-write:伪类选择器匹配处于非只读状态时的样式
+			*/
+			input[type="text"]:read-only{
+				color:red;
+			}
+			input[type='text']:read-write{
+				background:pink;
+			}
+		</style>
+	</head>
+		<body>
+			<input type = "text" name = "add" value = "我要怎么说我不爱你" readonly = "readonly"/>
+			<input type = "text" name = "name" value = "张三">
+		</body>
+</html>

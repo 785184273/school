@@ -1,0 +1,57 @@
+@charset "utf-8";
+html,body{
+	margin:0px;
+	padding:0px;
+	height:100%;
+	font-family: "微软雅黑";
+	color:#ececec;
+}
+.section{
+	position:relative;
+}
+.header{
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:99;
+	height:50px;
+	width: 100%;
+	opacity: 0.6;
+	padding-left: 20px;
+	line-height: 50px;
+	border-bottom: 1px solid #353535;
+}
+.phone_info{
+	position:absolute;
+	right:100px;
+	top:70px;
+	float:right;
+
+}
+.phone_info_name,.phone_info_show,.phone_info_price,.phone_info_store{
+	margin-top: 10px;
+}
+.phone_info_price{
+	margin-bottom:0px;
+}
+.phone_info p{
+	font-size:28px;
+}
+.phone_info h1{
+	margin-bottom: 0px;
+}
+.section1{
+	background: url("../img/index-bg2-s.jpg") no-repeat fixed left center;
+}
+.section2{
+	background: url("../img/future-bg-s.jpg") no-repeat;
+}
+.section4{
+	background: url("../img/features-bg-s.jpg") no-repeat;
+}
+.phone_info span{
+	display: inline-block;
+	border: 1px solid white;
+	font-size: 14px;
+	padding:6px;
+}

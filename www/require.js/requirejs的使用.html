@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<script src="js/a.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/b.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/require.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		/*
+		 *	为什么要使用require.js 
+		 *		1.在多个js文件相互关联的时候，可以使用require.js来实现引入，不用多个js文件一个一个的引入,更够解决冲突和依赖
+		 * 		2.可以实现异步加载，解决同步阻塞问题
+		 * 	使用require.js方法
+		 * 		1.引入require.js
+		 * 		2.通过define函数定义一个模块
+		 * 			define函数的用法
+		 * 				2.1.define(function (){
+		 * 					这里写具体的代码
+		 * 				})用这种形式来替换匿名函数自执行的形式
+		 * 				2.2.如果当前模块依赖其他模块需要给defin添加第一个参数，参数是一个数组
+		 * 				define(["js/a1","js/b"],function (){
+		 * 						//当前的模块依赖于a1并且a1模块的返回值会传给回调 函数对应的参数
+		 * 				})
+		 * 		3.通过require函数使用模块
+		 * 			require(["js/a","js/b"],function (a,b){
+		 * 	
+		 * 			})
+		 * 		4.require.js简单配置
+		 * 			require.config({
+		 * 				配置参数
+		 * 					资源目录设置模块到底放在哪个目录
+		 * 						baseUrl:"js"
+		 * 					给模块取一个别名 
+		 * 						paths:{
+		 * 							"jquery" : ["jquery-2.1.0"]
+		 *						 }
+		 * 			})
+		 * */
+		console.log(requirejs());
+			require.config({
+				baseUrl:"js",
+				paths:{
+					"jquery" : ["http://cdn.bootcss.com/jquery/1.11.1/jquery.min"]
+				}
+			})
+			require(["a","b","jquery"],function (){
+				console.log($);
+			});
+		</script>
+	</head>
+	<body>
+		<h2>床前明月光，疑是地上霜，举头望明月，低头思故乡</h2>
+	</body>
+</html>

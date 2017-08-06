@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<style type="text/css">
+			/* table{
+				border-collapse:collapse;
+			}*/
+			body{
+				margin:0px;
+				padding:0px;
+				background:green;
+			}
+			.sha1{
+				width:200px;
+				height:150px;
+				background:red;
+				margin:50px;
+			}
+			.sha2{
+				width:200px;
+				height:150px;
+				background:blue;
+				margin:50px;
+			}
+		</style>
+	</head>
+		<body>
+			<!--<table width="500" border="1" align="center" height="300">
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>-->
+			<!--上下外边距合并-->
+			<div class="sha1"></div>
+			<div class="sha2"></div>
+		</body>
+</html>
+
+<!--
+	html引入css的方法
+		1，嵌入式
+		通过<style>标记，来引入css样式
+		语法格式：<style type="text/css"></style>
+		提示:<style>中的css样式，只能给当前网页使用，同一个网页中，<style>标记可以多次出现
+		2,外联式
+		通过<link>标记来引入外部的css文件（.css），这样的话，可以实现公共的css代码被多个网页共享
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link>标记的常用属性
+			rel：也就是说引入的是什么类型的文件，取值；stylesheet
+			type：内容类型
+			href：引入css文件地址
+			在做css层叠样式表中，表中不能出现html标记，只能用属性
+		提示：link标记放在head标记中，同一个网页可以使用多个link标记来链入多个外部样式表文件
+		3，行内式（主要用于js控制元素的样式）
+		每一个html标记都有一个公共的属性class id title style
+		html标记中的style属性的值，与css中样式属性一模一样
+		提示：行内样式中，css代码不能写的过多；
+			行内样式中，多个css属性不能换行，也就是一行写完
+			行内样式的优先级是最高的，比id选择器都高
+	css表格属性
+		border-collapse：表格边框线合并，取值：collapse
+	盒子模型
+		我们可以把每一个html标记都看成是一个“盒子”
+		这个“盒子”有哪些特征；内容的宽度和高度，边框线，内填充，外边距
+		“盒子”的总宽度，：内容的宽度+边框宽度*2+左填充*2+左外边距*2
+		上下外边距合并问题------这是一种现象
+			什么情况下上下外边距会合并呢？
+				上下两个块元素，如果每一个元素都指定了四个外边距那么上下相邻的那个外边距会发生合并的现象
+				合并以后取较大的外边距。(合并后取较大的一个值)
+			如果要实现上下两个div之间的距离为100px该如何实现呢？
+			1.上下两个div其中一个只指定margin-bottom：100px，而另外一个为margin-top：0px
+			2.可以在上下两个div中间添加一个空的div，并给空的div指定高度为100px，也可以实现；
+			
+			
+			
+		
+		
+		
+		
+		
+		
+-->	
+	

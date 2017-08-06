@@ -1,0 +1,57 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+			//注意：以匿名函数实例化的对象和以字面量创建的对象的对象类型是Object
+			
+			//1.用构造函数创建的对象的对象类型是构造函数名constructor指向构造函数
+			function stu(){
+				this.age = 10;
+			}
+			var ming = new stu();
+			
+			function o(){
+				this.name = "小美";
+			}
+			//o.prototype = ming;
+			o.prototype.say = function(){
+				alert('hello');
+			}
+			var o1 = new o();
+			o.prototype.sayhello = function(){
+				alert('hi');
+			}
+			console.log(o1.constructor == Object);	//false
+			console.log(o1.sayhello());
+			console.log(o1.say());
+			
+			//2.用字面量创建的对象(json形式)的对象的类型指向Object
+			var p = {
+				name:'小名'
+			}
+			console.log(p.constructor == Object);	//true
+			
+			//3.重写原型对象，构造函数中的原型对象被覆盖，对象的类型指向Object
+			function per(){
+				
+			}
+			var p1 = new per();
+			//重写原型对象
+			per.prototype = {
+				name:"小美",
+				sayname: function (){
+					alert(this.name);
+				}
+			};
+			
+			//注意：在对象实例化后重写原型对象并不能替代之前的原型对象，因为在对象实例化后，对象中的__proto__会指向构造函数中的原型对象，在构造函数的中的原型对象并没有p1.name和p1.sayname()属性
+			console.log(p1.name);	
+			console.log(p1.sayname());
+			console.log(p1.constructor);
+			//注意：所有对象都继承自Object，所以既是Object的实例，又是per的实例
+			console.log(p1 instanceof per);
+			console.log(p1 instanceof Object);
+		</script>
+	</body>
+</html>

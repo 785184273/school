@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<!--Bootstrap不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--移动设备优先,响应式布局-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	
+	</head>
+		<body>
+			<!--选项卡组件(菜单项nav-tabs)-->
+			<ul id="myTab" class="nav nav-tabs">
+				<li class="active"><a href="#bulletin"  data-toggle="tab">公告</a></li>
+				<li><a href="#rule"  data-toggle="tab">规则</a></li>
+				<li><a href="#forum"  data-toggle="tab">论坛</a></li>
+				<li><a href="#security"  data-toggle="tab">安全</a></li>
+				<li><a href="#welfare"  data-toggle="tab">公益</a></li>
+			</ul>
+			<!-- 选项卡面板 -->
+			<div id="myTabContent" class="tab-content">
+				<div class="tab-pane fade in active" id="bulletin">公告内容面板</div>
+				<div class="tab-pane fade" id="rule">规则内容面板</div>
+				<div class="tab-pane fade" id="forum">论坛内容面板</div>
+				<div class="tab-pane fade" id="security">安全内容面板</div>
+				<div class="tab-pane fade" id="welfare">公益内容面板</div>
+			</div>
+			<!--选项卡组件(菜单项nav-tabs)-->
+			<ul id="myTab" class="nav nav-pills">
+				<li class="active"><a href="#bulletins"  data-toggle="pill">公告</a></li>
+				<li><a href="#rules"  data-toggle="pill">规则</a></li>
+				<li><a href="#forums"  data-toggle="pill">论坛</a></li>
+				<li><a href="#securitys"  data-toggle="pill">安全</a></li>
+				<li><a href="#welfares"  data-toggle="pill">公益</a></li>
+			</ul>
+			<!-- 选项卡面板 -->
+			<div id="myTabContent" class="tab-content">
+				<div class="tab-pane fade in active" id="bulletins">公告内容面板</div>
+				<div class="tab-pane fade" id="rules">规则内容面板</div>
+				<div class="tab-pane fade" id="forums">论坛内容面板</div>
+				<div class="tab-pane fade" id="securitys">安全内容面板</div>
+				<div class="tab-pane fade" id="welfares">公益内容面板</div>
+			</div>
+		<!--bootstrap模板为使IE6、7、8版本（IE9以下版本）浏览器兼容html5新增的标签。-->
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<!--为使IE6、7、8版本浏览器兼容css3样式-->
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		</body>
+</html>
+<!--
+	选项卡
+		注意:选项卡中链接的锚点要与对应的面板内容容器的ID相匹配。
+		选项卡触发切换效果
+			1.选项卡导航连接中要设置data-toggle = "tab"
+			2.并且设置data-target = "对应面板内容的选择符(一般是id)"
+				如果是链接的话，还可以通过href = "对应面板的选择符(一般是id)"
+		选项卡添加fade样式
+			为了让面板的隐藏和显示在切换的效果更加流畅，可以在面板中添加fade样式，让其产生渐入的效果
+			注意：在添加fade样式时，最初的默认显示的内容面板一定要记得加上in类名，不然其内容无法看到
+	胶囊式选项卡
+		在bs中除了可以让nav-tab具有选项卡的切换功能之外，还可以对胶囊式nav-pills导航具有选项卡的功能
+			只需要将nav-tabs换成nav-pills
+			将data-toggle = "tab"换成data-toggle = "pill"
+	js触发
+		<div id = "mytab" class = "nav nav-...">
+			...
+		</div>
+		<div id = "mytabcontent" class = "tab-content">
+			...
+		</div>
+		$(function (){
+			$("#mytab a").click(function (e){
+				e.preventDefault();
+				$(this).tab("show");
+			})
+		})
+-->

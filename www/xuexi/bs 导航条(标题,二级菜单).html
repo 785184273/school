@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<!--Bootstrap不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--移动设备优先,响应式布局-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	</head>
+		<body>
+			<div class = "container">
+				<div class = "navbar navbar-default">
+					<div class = "navbar-header">
+						<img style = "width:184px;"src = "./img/neu.jpg"/>
+					</div>
+					<ul class = "nav navbar-nav">
+						<li>
+							<a href = "">Dashboard<span class = ></span></a>
+						</li>
+						<li class = "dropdown">
+							<a href = "#" class = 'dropdown-toggle' data-toggle = "dropdown">安全服务<span class = "caret"></span></a>
+								<ul class = "dropdown-menu">
+									<li><a href= "./index_menu.html" target = "showpage">GitHub Scan</a></li>
+									<li><a href = "./scan_resultlist.html" target = "showpage">结果列表</a></li>
+									<li><a href = "./conf_keyword.html" target = "showpage">关键字配置</a></li>
+									<li><a href = "./conf_list.html" target = "showpage">白名单配置</a></li>
+									<li><a href= "./att_soft.html" target = "showpage">关注软件</a></li>
+									<li><a href= "./history_bug.html" target = "showpage">历史漏洞</a></li>
+									<li><a href= "./conf_url.html" target = "showpage">URL配置</a></li>
+									<li><a href= "">天眼</a></li>
+								</ul>
+						</li>
+						<li class = "dropdown">
+							<a href= "#" class = 'dropdown-toggle' data-toggle = "dropdown">业务安全<span class = "caret"></span></a>
+								<ul class = "dropdown-menu">
+									<li><a href = "">当前状态</a></li>
+									<li><a href = "">报表统计</a></li>
+									<li><a href = "">详细日志</a></li>
+									<li><a href = "">修改密匙</a></li>
+									<li><a href = "">查询Token</a></li>
+									<li><a href = "">IP白名单</a></li>
+									<li><a href = "">帮助文档</a></li>
+								</ul>
+						</li>
+						<li class = "dropdown">
+							<a href = "javascript:;"  class = 'user'>帐号管理<span class = "caret"></span></a>
+								<ul class = "dropdown-menu">
+									<li><a href= "">联系人修改</a></li>
+									<li><a href= "">密码修改</span></a></li>
+								</ul>
+						</li>
+						<li class = "dropdown">
+							<a herf = "" data-toggle = "dropdown">意见反馈</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		<!--bootstrap模板为使IE6、7、8版本（IE9以下版本）浏览器兼容html5新增的标签。-->
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<!--为使IE6、7、8版本浏览器兼容css3样式-->
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		</body>
+</html>
+<!--
+	.首先在制作导航的列表(<ul class = "nav">)基类上添加类名navbar-nav
+	.在列表的外部添加一个容器(div)，并且使用类名navbar 和navbardefault
+	导航条标题
+		<div class = "navbar navbar-default">	//导航条容器
+			<div class = "navbar-header">	//导航条标题
+			</div>
+			<ul class = "nav navbar-nav">
+			</ul>
+		</div>
+-->

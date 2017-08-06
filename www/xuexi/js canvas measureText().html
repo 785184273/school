@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<script>
+			/*
+				确定文本大小的方法measureText(),这个方法接收一个参数既要绘制的文本，返回一个TextMetrics对象，返回的对象目前只有一个width属性
+			*/
+			window.onload  = function (){
+				var can = document.getElementById('can');
+				if(can.getContext){
+					var fontsize = 100;
+					var map = can.getContext('2d');
+					map.strokeStyle = "blue";
+					map.strokeRect(10,10,100,100);
+					
+					map.font = fontsize + "px Mircosoft Yahei";
+					while(map.measureText("hello world").width >= 100){
+						fontsize--;
+						map.font = fontsize + "px Mircosoft Yahei";
+					}
+					
+					map.fillText('hello world',10,20);
+					map.fillText("Font size is " + fontsize + "px",10,50);
+				}
+			}
+		</script>
+	</head>
+		<body>
+			<canvas id = "can" width = "300" height = "300"></canvas>
+		</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			function dog(){
+				this.color = "yellow";
+			}
+			var wangcai = new dog();
+			console.log(wangcai.constructor);	//dog()
+			
+			function f1(){
+				console.log(123);
+			}
+			//函数就是对象，因此其应该存在构造器
+			console.log(f1.constructor);	//Function()
+			
+			//return对实例化对象的影响
+			//对创建的对象没有影响，不过return后续代码不给执行，后续成员丢失
+			function cat(){
+				this.name = "tom";
+				this.climb = function (){
+					console.log("在爬树");
+				}
+				//构造函数内部有return
+				return 123;
+				this.age = 5;
+				//return 123;
+			}
+			var bosi = new cat();
+			console.log(bosi);
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+	构造器
+		使用什么元素实例化的对象，元素就称为该对象的构造器
+		例如：var cat = new animal();
+		animal就称为cat对象的构造器
+	return对实例化对象的影响
+		
+		
+-->

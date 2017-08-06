@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function (){
+//				var a = 'bbb';
+//				function a(){
+//				console.log('aaa');
+//				}
+//				a();
+
+				var str = "aaaabbbbcccdeefff";
+				strNum(str);
+			}
+			function strNum(str){
+				var obj = {};
+				var len = str.length;
+				for(var i = 0;i < len;i++){
+				    var v = str.charAt(i);
+				    if(obj[v] && obj[v].value == v){
+				        obj[v].count = ++obj[v].count;
+				    }else{
+				        obj[v] = {};
+				        obj[v].count = 1;
+				        obj[v].value = v;
+				    }
+				}
+				console.log(obj);
+				for(key in obj){
+				    document.write(obj[key].value +'='+obj[key].count+'&nbsp;'); // a=4  b=3  c=4  d=2  f=1  g=1  h=1 
+				}   
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

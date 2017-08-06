@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "utf-8"/>
+	<meta name = "viewport" content="width = device-width,initial-scale = 1,user-scalable = no">
+	<!--引入外部bootstrap的css文件-->
+	<link rel = "stylesheet" href = "./css/bootstrap.min.css">
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src = "./js/jquery.min.js"></script>
+	<!--再引入bootstrap.min.js文件-->
+	<script src = "./js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/scan_resultelist.css">
+	<script src = "./js/scan_resultlist.js" language="JavaScript"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+</head>
+<body>
+	<div class = "container box">
+		<h4 class = "page-header">结果列表</h4>
+		<div class = "row">
+			<div class = "col-md-2 col-lg-2 col-sm-12 col-xs-12">
+				<h4>关键字</h4>
+				<div class = "re_left_w">
+				</div>
+			</div>
+			<div class = "col-md-10 col-lg-10 col-sm-12 col-xs-12">
+				<div class = "re_right">
+				<!-- 数据显示 -->
+				</div>
+			</div>
+		</div>
+		<!-- 清除浮动 -->
+		<div style = "clear:both;margin-left:195px;" id = "clear">
+			<span>总计：</span>
+		</div>
+		<!-- 分页 -->
+		<div class = "page">
+			<nav>
+				<ul class = "pagination" id = "page"></ul>
+			<nav>
+		</div>
+		<div>
+			<div id = "up"></div>
+		</div>
+	</div>
+	<!-- 模态框 -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+		<div class="modal-dialog modal-lg" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        		<h4 class="modal-title" id="exampleModalLabel">全部内容</h4>
+	      		</div>
+	      		<div class="modal-body">
+	      		</div>
+	   		</div>
+	  	</div>
+	</div>
+</body>
+</html>

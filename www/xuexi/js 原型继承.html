@@ -1,0 +1,44 @@
+<html>
+	<head>
+	</head>
+		<body>
+			<script>
+				//原型继承
+				function supertype(){
+					this.property = true;
+				}
+				
+				supertype.prototype.getsupervalue = function (){
+					return this.property;
+				};
+				
+				function subtype(){
+					this.subproperty = false;
+				}
+				
+				subtype.prototype = new supertype();	//继承了supertype
+				
+				//使用字面量添加新的方法，会导致上一行的代码无效(重写了原型对象)
+				
+				/*
+				subtype.prototype = {
+					getsubvalue : function (){
+						return this.subproperty;
+					},
+					someothermethod : function (){
+						return false;
+					}
+				};
+				*/
+				//重写超类型中的方法
+				supertype.prototype.getsupervalue = function (){
+					alert(123);
+				}
+				
+				var instance = new subtype();
+				//var supertp = new supertype();
+				alert(instance.getsupervalue());
+				//alert(supertp.getsupervalue());	//undefined
+			</script>
+		</body>
+</html>

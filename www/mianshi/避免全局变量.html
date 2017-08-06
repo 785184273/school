@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="submit" id = "sub" value = "点击" />
+		<script type="text/javascript">
+			(function (window){
+				var btn = document.getElementById("sub");
+				btn.onclick = function (){
+					alert(2);
+					btn.onclick = null;
+				}
+			})(window)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style type = "text/css">
+		</style>
+	</head>
+		<!--
+			frameset做一个网站的框架，分为三个部分
+			scrolling是每个框架的滚动条
+			frameborder是每个框架的边框
+			noresize = noresize是不能自己随意改变每个框架的大小
+			name只是定义一个框架的名字
+			src是给每个框架连接一个页面的内容，根据链接跳转到index.php
+		-->
+		<frameset framespacing="0" border="0" name = "jump" rows="83,490,*">
+			<frame id="header-frame" scrolling="no" frameborder="0" noresize="noresize" name="header-frame" src="?p=front&c=stu&act=top">
+				<!--<frameset id="frame-body" border="0" framespacing="0" cols="180,*">-->
+					<!--<frame id="menu-frame" scrolling="yes" frameborder="no" name="menu-frame" src="?p=back&c=admin&act=menu">-->
+					<!--<frame id="drag-frame" scrolling="no" frameborder="no" name="drag-frame" src="?p=back&c=admin&act=drag">-->
+					<frame id="main-frame" scrolling="no" frameborder="0" noresize="noresize" name="main-frame" src="?p=front&c=stu&act=main">
+					<frame id="drag-frame" scrolling="no" frameborder="0" name="drag-frame" src="?p=front&c=stu&act=bottom">
+				<!--</frameset-->
+		</frameset>
+</html>

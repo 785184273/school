@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			 js是有浏览器解释执行的脚本语言，不同于java c，需要先编译后运行，js由浏览器js解释器进行解释执行，总的过程分为两大块：
+			 	1.预编译期
+			 	2.执行期
+			 在预编译期
+			 	js解释器会在本代码段内所有的声明的变量和方法进行处理，将变量和方法提到对应的作用域的前面，该过程只是对变量进行声明，并不会进行初始化或者赋值(省缺值默认为undefined)
+			 	注意：变量名函数名重名的时候
+			 		1.函数声明会置顶
+			 		2.变量声明也会置顶
+			 		3.函数声明比变量声明更加置顶
+			 		
+			 * */
+/*
+			foo();
+			function foo(){
+				alert(1);
+			}		
+			foo2();
+			var foo2 = function (){
+				alert(2);
+			}
+			alert(str);
+			var str = "str";
+			alert(str);
+			
+			将上面的代码进行整理之后就是
+			function foo(){
+				alert(1);
+			}	
+			var foo2,str;	//省缺值默认是的undefined
+			foo();
+			foo2();
+			foo2 = function (){
+				alert(2);
+			}
+			alert(str);		//undefined
+			str = "str";
+			alert(str);		//str
+*/
+		var a = 10;
+		function a (){	//函数声明比变量声明更加置顶
+			alert(1);
+		}
+		console.log(a);	//10
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

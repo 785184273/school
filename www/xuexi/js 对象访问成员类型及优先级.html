@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			function wolf(){
+				this.eye = "闪闪发光";
+				this.fight = "多个打一个";	//被继承构造函数内部成员
+			}
+			var seven = new wolf();
+			seven.fight = "一个打七个";	//被继承构造函数本身成员
+			
+			function dog(){
+				this.fight = "一个打多个";	//构造函数内部的成员
+			}
+			dog.prototype = seven;	//继承seven对象
+			var wangcai = new dog();
+			wangcai.fight = "一个打两个";	//对象本身的成员高于构造函数内部的成员
+			
+			//console.log(wangcai.fight);
+			console.log(wangcai.fight);	//输出：一个打两个
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+	
+-->

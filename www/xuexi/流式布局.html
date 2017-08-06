@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- viewport只有移动端才识别 -->
+	<!-- 
+		设置成设备一样的宽度content = "device-width"
+		设置成默认的缩放比 initial-scale = 1.0
+		设置是否允许用户自行缩放 user-scalable
+			取值：0或1
+					yes或no
+	 -->
+	<meta name = "viewport" content = "width = device-width,initial-scale = 1.0,user-scalable = 0"/>
+	<title>流失布局</title>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		.box1{
+			width: 1000px;
+			height: 300px;
+			background: pink;
+			margin: 0px auto;
+		}
+		/*
+		不受宽度的限制
+		*/
+	</style>
+</head>
+<body>
+	<div class="box1">
+		yoooooooooooo
+	</div>
+</body>
+</html>

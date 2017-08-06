@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			var cat = {
+				mingzi:"kitty",
+				climb:function(){
+					console.log(this.mingzi + "在爬树");
+				}
+			};
+			var pig = {
+				mingzi:"野猪",
+			};
+			
+			function person(){
+				this.name = "zhao";
+			}
+			var p = new person();
+			function tigger(){
+				this.mingzi = "东北虎";
+				this.color = "yellow";
+				this.age = 4;
+				this.act = "猛虎下山";
+				this.sha = 345;
+			}
+			//注意：如果对象new在这，输出来的对象类型名字是构造函数的名字，
+
+			//构造函数继承对象
+			//同时继承多个对象，后者将会覆盖前者
+			tigger.prototype = p;
+			//tigger.prototype = pig;
+			
+			//原型继承：继承单一成员(可以同时继承多个)
+			//tigger.prototype.weight = 100;
+			//tigger.prototype.shabi = 100;
+			tigger.prototype.constructor = tigger;	//模拟原型对象的类型名，如果没有该属性，输出的对象名称是object
+			//tigger.prototype = pig;
+			
+			//tigger.prototype.cai = function (){}
+			
+			//注意：如果有多个对象需要继承可以使用下列方法(覆盖原型对象实现继承)(原型对象在构造函数创建出来就存在了)
+			//*	
+			
+			tigger.prototype = {
+				sha:456,
+				weight:100,
+				sayhello:function(){},
+				run:function(){
+					console.log("在森林奔跑");
+				}
+			};
+			//*/
+			
+			//本身和继承对象拥有同名的成员，要使用本身成员
+			var north = new tigger();
+			console.log(north.constructor.name);
+			north.sha = 123;
+			console.log(north);
+			console.log(north.sha);	123 //现在对象的自身去找s这个属性，要是没找到，再在构造函数中去找，再没找到再去原型对象中找该属性
+		
+			//对象new在这，输出来的对象类型名是object因为我们利用了覆盖原型对象实现了继承，我们也可以在该原型对象中添加constructor属性来模拟对象的类型
+			console.log(north.mingzi);
+			console.log(north.run);
+			
+			function fn(){
+			}
+			var o = new fn();
+			console.log(o.__proto__ === fn.prototype);
+			console.log(o.constructor.name)
+			console.log(o.constructor);
+			var shabi = new Object();
+			
+			var person = function (){}
+			var p = new person();
+			
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+	继承
+		php里边：一个类去继承另一个类，继承类实例化对象也会拥有被继承类的成员
+		js里边：(构造)函数可以继承另外一个对象，构造函数实例化出来的对象除了本身成员外还会拥有被继承对象的成员
+			原型继承关键字：prototype
+			例如：构造函数tigger继承对象cat
+				tigger.prototype = cat;
+			
+			除了可以继承对象，还能继承单一成员(可以同时继承多个)
+			例如：构造函数tigger继承单一成员weight
+				tigger.prototype.weight = 100;
+			注意：
+				本身和继承对象拥有相同的成员，要使用本身成员
+				单一成员和对象同时继承，需要先继承对象后继承单一成员
+				同时继承多个对象，后者会覆盖前者
+	原型对象
+		是站在对象的角度看
+	原型属性
+		是站在构造函数的角度看
+	原型式继承
+		概念：对象继承自原型对象，对象没有的成员可以由原型对象提供
+		
+		
+-->

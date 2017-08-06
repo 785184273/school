@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{ message }}</p>
+			<button-counter @trigger = "show()"></button>
+			<button-counter @trigger = "show()"></button>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	父组件使用props传递数据给子组件，子组件把事件传递回去需要自定义事件
+			 	使用v-on绑定自定义事件
+			 		每个Vue实例都实现了事件接口
+			 			使用$on(eventName)监听事件
+			 			使用$emit(eventName)触发事件
+			 		
+			 * */
+			Vue.component("button-counter",{
+				template : "<button @click = 'show()'>{{ counter }}</button>",
+				data : function (){
+					return {
+						counter : 0
+					}	
+				},
+				methods : {
+					show : function (){
+						this.counter += 1;
+						this.$emit('trigger');	
+					}
+				}
+			})
+			new Vue({
+				el : "#app",
+				data : {
+					message : 0
+				},
+				methods : {
+					show : function (){
+						this.message += 1;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

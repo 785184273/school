@@ -1,0 +1,24 @@
+@charset = utf8
+
+*{margin:0px;padding: 0px;}
+
+body{margin:0px;padding: 0px;font-family: "微软雅黑";}
+a:hover{text-decoration:none;}
+
+/*********************************************************/
+.box{border:1px solid #dddddd;border-radius: 3px;margin-bottom: 20px;}
+.scan{border-bottom: 1px solid #dddddd;border-radius: 3px;margin-top: 20px;}
+.table-width{width:530px;}
+.text-keyword{
+	margin-bottom:90px;
+}
+canvas{margin: 0px 20px;}
+span{font-size: 12px;width:100%;}
+.neu-psw{background: #7cb5ec;}
+.neu-sql{background: #434348;}
+.neu-dat{background: #90ed7d;}
+.neu-lg{background: #f7a35c;}
+.neu-pas{background: #8085e9;}
+
+/*********************************************************/
+.safe{border: 1px solid #dddddd;border-radius: 3px;margin-top: 20px;}

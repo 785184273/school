@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<style = "text/css">
+			body{margin:0px;padding:0px;}
+			.main{width:1000px;height:485px;border:1px solid #278296;margin:0px auto;}
+			h5{border:px solid red;text-align:center;margin:0px;}
+			table{font-size:12px;font-weight:bold;margin:0px auto;}
+			select{width:100px;}
+		</style>
+		<script type = "text/javascript">
+		</script>
+	</head>
+		<body>
+			<div class = "main">
+				<h5>成绩信息录入</h5>
+				<form method = "POST" action = "?p=back&c=admin&act=mark_select">
+					<table border = "1" rules = "all">
+						<tr>
+							<td>课程名</td>
+							<td>
+								<select  name = "classname">
+									<option value = 0>请选择</option>
+									<option value = 1>计算机基础</option>
+									<option value = 2>程序设计与语言</option>
+									<option value = 3>离散数学</option>
+									<option value = 4>数据结构</option>
+									<option value = 5>计算机原理</option>
+									<option value = 6>操作系统</option>
+									<option value = 7>数据库原理</option>
+									<option value = 8>计算机网络</option>
+									<option value = 9>软件工程</option>
+								</select>
+							</td>
+							<td>专业</td>
+							<td>
+								<select name = "major">
+									<option value = 0>请选择</option>
+									<option value = 1>计算机</option>
+									<option value = 2>通信工程</option>
+									<option value = 3>信息安全</option>
+								</select>
+							</td>
+							<td><input type = "submit" name = "button" value = "查询"></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</body>
+</html>

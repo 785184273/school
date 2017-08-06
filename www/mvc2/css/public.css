@@ -1,0 +1,177 @@
+/*全局css样式设置*/
+body,ul,li,h4,a{margin:0px;padding:0px;}
+
+ul,li,ol{list-style-type:none;}
+a:link, a:visited{color:#444;text-decoration:none;cursor:pointerl;}
+a:hover{color:red;cursor:pointer;}
+div{background:white}
+img{border:0px;}
+#red{color:red;}
+body{background:DarkCyan;font-size:12px;color:#444;font-family:宋体;}
+.box{width:1000px;height:2973px;border:1px solid blue;margin:0px auto;}
+/*top*/
+.top{height:27px;line-height:27px;border:0px solid red;}
+
+.top .s1{border:px solid red;float:left;color:blue;font-weight:bold;}
+.top ul{border:px solid red;float:right;margin:0px;}
+.top ul li{float:left;padding:0px 5px;}
+.top a{padding:0px 5px;border-right:1px dotted #444;}
+.top .noline{border:0;}
+/*logo*/
+.logo{margin:0px 0px;border:0px solid red;height:122px;}
+.logo .div1{border:0px solid red;width:202px;float:left;height:99px;padding-top:23px;}
+.logo .div2{margin:0px;border:0px solid red;float:right;width:330px;height:122px;}
+.logo .div2 ul{padding:0px;margin-top:0px;border:0px solid red;float:left;width:330px;height:122px;}
+.logo .div2 ul li{width:85;height:20px;line-height:20px;margin:9px;border:0px solid red;float:left;}
+.logo .div3{border:0px solid red;float:right;width:458px;height:106px;padding-top:16px;}
+/*menu*/
+.menu{border-bottom:px solid grey;height:45px;line-height:45px;}
+.menu h3{margin:0px;}
+.menu ul{margin-bottom:0px;margin-right:-4px;margin-top:0px;border:0px solid red;float:right;width:997px;height:45px;}
+.menu ul li{border:0px solid red;float:left;}
+.menu a{border:0px solid red;padding:7px 7px;}
+/*daohang*/
+.daohang{border-bottom:px solid red;height:168px;margin:2px 0px;}
+.daohang .div1{margin:0px;border-bottom:1px dotted grey;height:40px;line-height:40px;margin:0px auto;width:910;}
+.daohang .div1 ul{margin:0px;border:0px solid red;float:left;height:40px;}
+.daohang .div1 ul li{border:0px solid red;float:left;padding:0px 18px;}
+.daohang .div2{margin:0px;border-bottom:1px dotted grey;height:40px;line-height:40px;margin:0px auto;width:910;}
+.daohang .div2 ul{margin:0px;border:0px solid red;float:left;height:40px;}
+.daohang .div2 ul li{border:0px solid red;float:left;padding:0px 21px;}
+.daohang .div3{margin:0px;border-bottom:1px dotted grey;height:40px;line-height:40px;margin:0px auto;width:910;}
+.daohang .div3 ul{margin:0px;border:0px solid red;float:left;height:40px;}
+.daohang .div3 ul li{border:0px solid red;float:left;padding:0px 18px;}
+.daohang .div4{margin:0px;height:40px;line-height:40px;margin:1px;margin:0px auto;}
+.daohang .div4 ul{margin:0px 44px;border:0px solid red;float:left;height:40px;}
+.daohang .div4 ul li{border:0px solid red;float:left;padding:0px 15px;}
+.daohang .div4 span{float:right;border:0px solid red;padding:0px 60px;color:red;}
+/*zhanshi*/
+.zhanshi{height:320px;border-top:1px solid grey;}
+.zhanshi .div1{width:640;height:300px;border:0px solid red;margin:10px 7px;float:left;}
+.zhanshi .div2{width:320px;height:300px;border:0px solid red;margin:10px 7px;float:right;}
+.zhanshi .div2 h3{text-indent:24px;height:30px;line-height:30px;border:0px solid red;margin:0px;background:blue;}
+.zhanshi .div2 ul{height:268px;border:0px solid red;margin:0px;}
+.zhanshi .div2 ul li{border:0px solid red;margin:12px 25px;list-style-type:square;}
+/*tupian*/
+.tupian{height:110px;line-height:110px;border:0px solid red;}
+.tupian img{width:1000px; height:110px;padding:0px;}
+/*nvshen*/
+.nvshen{height:415px;border:0px solid red;margin:2px auto;}
+.nvshen .div1{float:left;margin:0px 1px;}
+.nvshen .div2{float:right;margin:0px 3px;}
+.nvshen .div3{float:right;margin:0px 1px;}
+/*chengguo*/
+.chengguo{height:400px;border-bottom:px solid grey;}
+.chengguo .div1{height:50px;width:958px;margin:2px auto;line-height:50px;border-bottom:1px solid grey;text-indent:24px;}
+.chengguo .div1 .span1{border:0px solid red;font-size:15px;}
+.chengguo .div1 .span3{border:0px solid red;margin:0px 20px;}
+.chengguo .div2{height:340px;width:315px;margin-left:11px;border:px solid red;float:left;}
+.chengguo .div2 img{margin:11px;border:px solid red;}
+.chengguo .div2 span{border:px solid red; margin:10px;}
+.chengguo .div2 .p2{border:px solid red;margin:5px 10px;}
+.chengguo .div2 .s1{font-weight:bold;margin:0px;}
+.chengguo .div33{height:340px;width:608px;margin-right:35px;border:px solid red;float:right;}
+.chengguo .div33 .div3{height:145px;width:150px;border:px solid red;float:left;}
+.chengguo .div33 img{margin:11px 10px;}
+.chengguo .div33 .s2{margin:0px 10px;border:px solid red;}
+.chengguo .div33 .s1{font-weight:bold;color:red;border:px solid red;margin-left:10px;}
+.chengguo .div33 .s3{padding:0px;border:px solid red;}
+.chengguo .div33 .div4{height:145px;width:150px;border:px solid red;float:left;}
+.chengguo .div33 .div5{height:145px;width:150px;border:px solid red;float:left;}
+.chengguo .div33 .div6{height:145px;width:150px;border:px solid red;float:left;}
+.chengguo .div33 .div7{height:145px;width:150px;border:px solid red;float:left;}
+.chengguo .div33 .div8{height:145px;width:150px;border:px solid red;float:left;}
+.chengguo .div33 .div9{height:145px;width:150px;border:px solid red;float:left;}
+.chengguo .div33 .div10{height:145px;width:150px;border:px solid red;float:left;}
+/*show*/
+.show{width}
+/*dazuo*/
+.dazuo{width:682px;height:1356px;border:px solid red;margin:2px 0px;float:left}
+/*message*/
+.message{width:680px;height:310px;border-bottom:px solid red;margin:2px 0px;}
+.message a{padding:0px;border:0px}
+.message .title{height:50px;width:632px;margin:2px auto;line-height:50px;border-bottom:1px solid grey;text-indent:24px;}
+.message .title .span1{border:0px solid red;font-size:15px;}
+.message .content{width:650px;height:245px;border:px solid green;margin:0px 10px;}
+.message .content .left{width:325px;height:230px;border:px solid red;margin:5px 0px;float:left;}
+.message .content .left .top{width:300px;height:100px;border:px solid red;margin:0px 10px;}
+.message .content .left .top img{margin:15px 0px;float:left;}
+.message .content .left .top .span1{color:#444;width:185px;height:85px;border:px solid red;padding:0px;margin-top:15px;line-height:20px;float:right;}
+.message .content .left .bottom{width:300px;height:120px;border:px solid red;margin:0px 10px;}
+.message .content .left .bottom p{border:px solid red;margin:2px 0px;}
+.message .content .right{width:320px;height:230px;border:px solid red;margin:5px 0px;float:right;}
+.message .content .right .top img{margin:15px 0px;float:left;}
+.message .content .right .top .span2{color:#444;width:185px;height:85px;border:px solid red;padding:0px;margin-top:15px;line-height:20px;float:right}
+.message .content .right .top{width:300px;height:100px;border:px solid red;margin:0px 10px;}
+.message .content .right .bottom{width:300px;height:120px;border:px solid red;margin:0px 10px;}
+.message .content .right .bottom p{border:px solid red;margin:2px 0px;}
+/*zhuti*/
+.zhuti{width:680px;height:410px;border:px solid red;margin:2px 0px;}
+.zhuti .top{height:50px;width:632px;margin:2px auto;line-height:50px;border-bottom:1px solid grey;text-indent:24px;}
+.zhuti .content{width:650px;height:375px;border:px solid green;margin:0px 10px;}
+.zhuti .content .left{width:300px;height:340px;border:px solid red;margin:5px 0px;margin-left:10px;float:left}
+.zhuti .content .left img{margin:5px 0px}
+.zhuti .content .left p{margin-top:2px;border:px solid red;}
+.zhuti .content .right{width:320px;height:340px;border:px solid red;margin:5px 0px;margin-right:10px;float:right}
+.zhuti .content .right img{margin:5px 0px}
+.zhuti .content .right p{margin-top:2px;border:px solid red;}
+.zhuti .content .right .i1{margin-right:6px;}
+.zhuti .content .right .i2{margin-left:6px;}
+/*xiaoyuan*/
+.xiaoyuan{width:680px;height:485px;border:px solid red;margin:2px 0px;}
+.xiaoyuan .title{height:50px;width:632px;margin:2px auto;line-height:50px;border-bottom:1px solid grey;text-indent:24px;}
+.xiaoyuan .content .banji{width:295px;height:210px;border:px solid red;margin:5px;margin-left:20px;float:left;}
+.xiaoyuan .content .banji .I1{margin-bottom:10px;}
+.xiaoyuan .content .banji .I2{margin-left:0px;margin-bottom:20px;}
+.xiaoyuan .content .banji .I3{margin-left:20px;margin-bottom:20px;}
+.xiaoyuan .content .banji .S1{margin-left:0px;font-weight:bold;color:red;}
+.xiaoyuan .content .banji .pi1{margin:0px;}
+.xiaoyuan .content .luntan{width:320px;height:210px;border:px solid red;margin:5px;float:right;margin-right:28px;}
+.xiaoyuan .content .luntan img{margin-bottom:10px;}
+.xiaoyuan .content .xueyuan{width:295px;height:210px;border:px solid red;margin:5px;margin-left:20px;float:left;}
+.xiaoyuan .content .xueyuan .I2{margin-left:0px;margin-bottom:20px;}
+.xiaoyuan .content .xueyuan .I3{margin-left:20px;margin-bottom:20px;}
+.xiaoyuan .content .xueyuan .S1{margin-left:0px;font-weight:bold;color:red;}
+.xiaoyuan .content .xueyuan .pi1{margin:0px;}
+.xiaoyuan .content .sb{width:320px;height:210px;border:px solid red;margin:5px;float:right;margin-right:28px;}
+.xiaoyuan .content .sb .I2{margin-left:0px;margin-bottom:20px;margin-top:35px;}
+.xiaoyuan .content .sb .I3{margin-left:20px;margin-bottom:20px;margin-top:35px;}
+.xiaoyuan .content .sb .S1{margin-left:0px;font-weight:bold;color:red;}
+.xiaoyuan .content .sb .pi1{margin:0px;}
+/*IT*/
+.IT{width:680px;height:110px;border:px solid red;margin:2px 0px;}
+.IT img{border:px solid red;width:680px;}
+/*dayou*/
+.dayou{width:303px;height:1355px;border-left:1px solid grey;float:right;margin:2px 0px;}
+/*liulan*/
+.liulan{width:300px;height:460px;border:px solid red;margin:2px 0px;padding:0px;}
+.liulan .top{width:280px;height:35px;line-height:35px;border-bottom:1px solid grey;margin:2px auto;}
+.liulan .bottom{width:270px;height:415px;border:px solid red;margin:2px auto;}
+.liulan .bottom img{margin:5px 4px;width:264px;}
+.liulan .bottom .left{width:193px;height:334px;border:px solid red;float:left}
+.liulan .bottom ul{border:px solid red;}
+.liulan .bottom ul li{width:174px;border:px solid red;list-style-type:square;margin:8px 18px;:10px}
+.liulan .bottom .right{width:70px;height:334px;border:px solid red;float:right;font-weight:bold}
+.liulan .bottom .right p{border:px solid red;margin:8px 0px;}
+/*qunimei*/
+.qunimei{width:300px;height:290px;border:px solid red;}
+.qunimei .top{width:300px;height:35px;line-height:35px;margin:0px auto;background:blue;border:px solid red;}
+.qunimei .top span{margin:0px 20px;}
+.qunimei .content img{border:px solid red;margin:5px 20px;}
+.qunimei .content p{border:px solid red;margin:3px 16px;line-height:20px;}
+/*QQ*/
+.QQ{width:300px;height:595px;border:px solid red;}
+.QQ .top{width:280px;height:35px;line-height:35px;border-bottom:1px solid grey;margin:2px auto;}
+.QQ .content{width:280px;height:100px;border-bottom:1px dotted grey;margin:0px auto;}
+.QQ .content p{border:px solid red;font-size:20px;text-align:right;margin-top:10px;margin-bottom:25px;font-weight:bold;}
+.QQ .content .img1{border:px solid red;margin-left:25px;}
+.QQ .content .img2{border:px solid red;margin-left:20px;}
+.QQ .content a{border:px solid red;width:99px;height:27px;}
+/*zongjie*/
+.zongjie{width:1000px;height:200px;border:px solid red;margin:5px auto;padding:20px 0px;}
+.zongjie .daohang{width:616px;height:18px;border:px solid blue;margin:15px auto;text-align:center}
+.zongjie .daohang ul{border:px solid red;float:right;text-align:center}
+.zongjie .daohang li{border:px solid red;width:76px;text-align:center;float:left}
+.zongjie .daohang ul a{border-right:1px solid grey;padding:0px;float:left;color:blue}
+.zongjie  p{border:px solid red;margin:5px 0px;text-align:center;font-weight:bold;}
+.zongjie img{border:px solid red;}

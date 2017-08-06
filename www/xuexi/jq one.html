@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>the one</p>
+		<script src="jq/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+			 	one(type,[data],fn)为每个匹配元素的特定事件，绑定一个一次性的事件处理函数
+			 * */
+			$("p").one("click",function (){
+				console.log($(this).html());
+			})
+		</script>
+	</body>
+</html>

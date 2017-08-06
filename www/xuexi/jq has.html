@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				has()讲匹配元素集合缩减为拥有匹配指定选择器或dom元素的后代的子集
+				语法
+					has(selector)	字符串只包含匹配元素的选择器表达式
+					和选择器
+			*/
+			$(function (){
+				//$('ul:has(li)').css({background:'pink'});
+				$('ul').has('li').css({background:'pink'});	//和上面的效果一样
+				
+			})
+		</script>
+	</head>
+	<body>
+		<ul class = "ul">
+			<li>张三</li>
+			<li>李四</li>
+			<ul>
+				<li>王二</li>
+				<ul>
+					<li>二狗</li>
+				</ul>
+			</ul>
+		</ul>
+	</body>
+</html>

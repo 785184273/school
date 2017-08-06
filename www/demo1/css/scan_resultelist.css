@@ -1,0 +1,27 @@
+@charset = utf8
+
+*{margin: 0px;padding: 0px;}
+body{margin: 0px;padding: 0px;font-family:'Microsoft Yahei';}
+a:hover{text-decoration: none;}
+
+code{padding:0px;}
+
+/*********************************************************/
+.box{border-radius: 3px;border:1px solid #dddddd;}
+.box h4{margin-top: 10px;}
+
+
+.re_left_w{border:px solid red;margin-left: 0px;padding:0px;}
+.col-left{width:156px;border:1px solid #dddddd;border-bottom:none;border-radius: 3px;height: 40px;margin-left: 0px;margin-right: 0px;line-height: 40px;padding:0px;text-align:center;}
+.a{display:block;}
+
+/*********************************************************/
+.re_right{border: px solid #dddddd;border-radius: 3px;margin:0px 5px;}
+
+.re_menu{border:1px solid #dddddd;border-radius: 3px;margin: 0px 10px;margin-bottom:20px;}
+.col-num{border-left: 1px solid #dddddd;padding:0px;}
+p{margin: 0px;}
+.p1{text-align: right;border: px solid red;}
+.page{text-align:right;}
+#up{border:px solid red;background:url('../img/up.png') no-repeat 0px 0px;width:40px;height:40px;position:fixed;right:3%;bottom:20px;display:none;}
+#up:hover{background:url('../img/up.png') no-repeat 0px -40px;}

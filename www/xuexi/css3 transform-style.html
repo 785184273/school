@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<style>
+			/*
+				transform-style属性规定如何在3d空间中呈现被嵌套的元素
+				语法
+					transform-style : flat | preserve-3d;
+					值
+						flat		子元素将不保留其3d位置
+						preserve-3d			子元素将保留其3d位置
+			*/
+			.box{
+				width:500px;
+				height:500px;
+				perspective:800;
+				transform-style:preserve-3d;
+				border:1px solid red;
+				margin:0px auto;
+				//-webkit-perspective-origin:50% 50%;
+			}
+			.block{
+				width:300px;
+				height:300px;
+				transform:rotateX(90deg);
+				background:lightblue;
+				margin:0px auto;
+			}
+		</style>
+	</head>
+		<body>
+			<div class = "box">
+				<div class = "block">
+				</div>
+			</div>
+		</body>
+</html>

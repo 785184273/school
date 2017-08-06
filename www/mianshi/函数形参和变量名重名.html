@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = 6;
+			(function (a){
+				//相当于在函数内部的顶部定义了var a = 4;是局部变量
+				a = 10;
+			})(4)
+			console.log(a);	//6
+			
+			function foo(a,b){
+				/*
+				 	在函数中修改arguments对象中的值，对原来的形参也会有影响
+				 * */
+				arguments[0] = 10;
+				arguments[1] = 100;
+				console.log(a,b);	//10,100
+			}
+			foo(1,10)	
+			function fo(a,b){
+				/*
+				 	在函数中修改形参，对arguments对象中的值也会有影响，影响是相互的
+				 * */
+				a = 2;
+				b = 3;
+				console.log(arguments[0],arguments[1])	//2，3
+			}
+			fo(1,2);
+			function f(a=1,b=2){
+				/*
+				 	函数形参设定一个预设值，则arguments对象不能改变形参的值
+				 * */
+				arguments[0] = 10;
+				arguments[1] = 100;
+				console.log(a,b);	//1,2
+			}
+			f();
+			function b(a){
+				/*
+				 	以下代码：相当于
+				 		var a = 10;
+				 		console.log(a);
+				 		var a;
+				 		console.log(a);
+				 	由于变量声明提升变为
+				 		var a;
+				 		var a;
+				 		a = 10;
+				 		console.log(a);
+				 		console.log(a);
+				 * 	
+				 * */
+				console.log(a);	//10
+				var a ;
+				console.log(a);	//10
+			}
+			b(10);
+		</script>
+	</body>
+</html>

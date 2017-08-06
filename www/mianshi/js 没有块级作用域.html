@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 	js没有块级作用域，在其他的类C语言中，由花括号封闭的代码块都有自己的作用域
+			 * */
+			//for(var i = 0;i < 10;++i){
+			//	var color = "blue";
+				/*
+				 	这是在for循环中定义的color和i变量，如果在类C语言中color和i会在for循环执行结束后进行销毁，但在for循环的变量声明中会将变量添加到当前的执行环境（window）中
+				 * */
+			//}
+			//console.log(color,i);
+			/*
+			 模仿块级作用域
+			 * */
+			(function(t,n){
+				console.log(t,n);
+				for(var i = 0;i < 10;++i){
+					var color = "blue";
+				}
+			})(this,10);	
+			//alert(i);	//i报错
+			
+			function f1(m){
+				var n = 99;
+				ndd = function (){
+					console.log(n);
+				}
+				function f2(){
+					alert(m);
+				}
+				return f2;
+			}
+			f1();
+			ndd();
+			//var f = f1(4);
+			//f();
+		</script>
+	</body>
+</html>

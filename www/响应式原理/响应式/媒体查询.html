@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>媒体查询</title>
+		<style type="text/css">
+			div{
+				width: 1900px;
+				height: 100px;
+				margin: 0 auto;
+				background: pink;
+			}
+			@media screen and (max-width:1920px){
+				div{
+					width: 1280px;
+				}
+				div::after{
+					content: "最大宽度是1920以下的内容";
+				}
+			}
+			@media screen and (max-width:1280px){
+				div{
+					width: 1000px;
+				}
+				div::after{
+					content: "最大宽度是1280以下的内容";
+				}
+			}
+			@media screen and (max-width:1024px){
+				div{
+					width: 900px;
+				}
+				div::after{
+					content: "最大宽度是1024以下的内容";
+				}
+			}
+			@media screen and (max-width:900px){
+				div{
+					width: 780px;
+				}
+				div::after{
+					content: "最大宽度是900以下的内容";
+				}
+			}
+			@media screen and (max-width:780px){
+				div{
+					width: 96%;
+				}
+				div::after{
+					content: "最大宽度是780以下的内容";
+				}
+			}
+			@media screen and (orientation:portrait){
+				div::after{
+					content: "竖屏";
+				}
+			}
+			@media screen and (orientation:landscape){
+				div::after{
+					content: "横屏";
+				}
+			}
+			/*
+			 媒体查询
+			 	1.min-width 最小宽度
+			 	2.max-width 最大宽度
+			 	注意：
+			 		在设置媒体查询条件时，必须要注意条件的顺序
+			 		如果使用min-width,小的条件写前面
+			 		如果使用max-width,大的条件写前面
+			 	注意：
+			 		orientation:portrait竖屏/landscape横屏
+			 		横屏和竖屏是根据页面的宽高比例决定的，宽 >高 ：横屏  宽 < 高 ：竖屏
+			 * */
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

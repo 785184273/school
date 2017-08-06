@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style>
+			/*
+				column-rule主要用来定义列与列之间的边框宽度，边框样式，和边框颜色，简单点说就有点类似于常用的border属性
+				语法
+					column-rule:column-rule-width | column-rule-style | column-rule-color
+					参数
+						column-rule-width	用来定义列边框的宽度
+							取值:thin		定义纤细规则
+								medium		定义中等规则
+								thick		定义宽厚规则
+								length		规定规则的宽度
+						column-rule-style	设置列之间的样式规则
+							取值:none		定义没有规则
+								hidden		定义隐藏规则
+								dotted		定义点状规则
+								solid		定义实现规则
+								double		定义双线规则
+								groove		定义3d grooved	该效果取决于宽度和颜色值
+								ridge		定义3d ridge	该效果取决于宽度和颜色值
+								inset		定义3d inset该效果取决于宽度和颜色值
+								outset		定义3d outset	该效果取决于宽度和颜色值
+								
+						column-rule-color	设置列之间的颜色规则
+			*/
+			body{
+				font-family:'Microsoft Yahei';
+				column-width:150px;
+				column-count:3;
+				column-gap:30px;
+			}
+		</style>
+	</head>
+		<body>
+			<div class="columns">
+				<h2>我要分列显示</h2>
+				<p>为了能在Web页面中方便实现类似报纸、杂志那种多列排版的布局，W3C特意给CSS3增加了一个多列布局模块（CSS Multi Column Layout Module）。它主要应用在文本的多列布局方面。对于文本的多列布局，我想大家并不陌生，因为报纸和杂志上我们随处可见，这种布局在报纸和杂志上都使用了几十年了，但需要在Web页面上实现文本的多列布局，正如下图所示。</p>
+				<p>为了能在Web页面中方便实现类似报纸、杂志那种多列排版的布局，W3C特意给CSS3增加了一个多列布局模块（CSS Multi Column Layout Module）。它主要应用在文本的多列布局方面。对于文本的多列布局，我想大家并不陌生，因为报纸和杂志上我们随处可见，这种布局在报纸和杂志上都使用了几十年了，但需要在Web页面上实现文本的多列布局，正如下图所示。</p>
+			</div>	
+		</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<a-tag></a-tag>
+			<b-tag></b-tag>
+		</div>
+		<template id = "one">
+			<input type="button" value="开始传递" @click = "star"/>
+		</template>
+		<template id = "two">
+			<div>
+				<span>接收到的消息：</span>{{ a }}
+			</div>
+		</template>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var evt = new Vue();
+			Vue.component("a-tag",{
+				template : "#one",
+				data : function (){
+					return {
+						msg : "a的数据"
+					}
+				},
+				methods : {
+					star : function (){
+						evt.$emit("get",this.msg)
+					}
+				}
+			})
+			Vue.component("b-tag",{
+				template : "#two",
+				data : function (){
+					return {
+						a : ""
+					}
+				},
+				mounted : function (){
+					evt.$on("get",function (val){
+						this.a = val;
+					}.bind(this))
+				}
+			})
+			new Vue({
+				el : "#box"
+			})
+		</script>
+	</body>
+</html>

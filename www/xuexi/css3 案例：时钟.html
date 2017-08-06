@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<style>
+			.show{
+				width:120px;
+				border:1px solid red;
+				margin:0px auto;
+				transform-origin:center top;
+				position:relative;
+				animation:move 2.2s ease-in-out .1s infinite alternate;
+			}
+			.clock{
+				width:100%;
+			}
+			.seconds{
+				border:1px solid red;
+				width:8%;
+				position:absolute;
+				bottom:11.5%;
+				left:45.5%;
+				transform-origin:center 72.4%;
+				animation:seconds 60s linear infinite;
+			}
+			@keyframes move{
+				from{
+					transform:rotate(-30deg);
+				}
+				to{
+					transform:rotate(30deg);
+				}
+			}
+			@keyframes seconds{
+				form{
+					transform:rotate(0deg);
+				}
+				to{
+					transform:rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+		<body>
+			<div class = "show">
+				<img class = "clock" src = "./img/clock.png">
+				<img class = "seconds" src = "./img/seconds.png">
+			</div>
+		</body>
+</html>

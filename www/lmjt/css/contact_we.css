@@ -1,0 +1,49 @@
+html,body,ul,section,footer,header,nav{
+	margin : 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+}
+body{
+	font-family: "微软雅黑";
+}
+a{
+	text-decoration: none;
+}
+.content .main:after,
+.link ul:after,
+header nav ul:after{
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	clear: both;
+}
+/*content*/
+.content{
+	background: #f8ecdc;
+	padding : 20px 0px;
+}
+.content .contact_way{
+	width:998px;
+	margin: 0px auto;
+}
+.content .title{
+	font-size: 24px;
+	color: #212121;
+	font-weight: bold;
+	text-align: center;
+}
+.content p{
+	font-size: 18px;
+	color: #212121;
+}
+.content p span{
+	font-weight: bold;
+}
+#map{
+	height: 468px;
+	width: 998px;
+	margin: 0px auto;
+}

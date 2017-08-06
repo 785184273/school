@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app" @click.stop = "sel($event)">
+			<button @click = "count++">点击</button>
+			<button @click.stop = "sel2()">清零</button>
+			<p @click = "get($event)">这个按钮被点击了{{count}}次</p>
+			<!--内联语句处理器中访问原生dom事件，可以用特殊的变量$event把它传入方法-->
+			<button @click = "say('hi')">say hi</button>
+			<a :href = "url" @click.prevent.once = "Say('what')">Say what</button>
+			<div @click.capture = "show1">
+				<input type="button" @click = "show2" value="冒泡/捕获" />
+			</div>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					count : 0,
+					url : "#"
+				},
+				methods : {
+					//在methods对象中定义方法
+					get : function (event){
+						var evt = event ? event : window.event;
+						//console.log(this);	//this是vue对象
+						evt.target ? evt.target : evt.scrElement;
+						console.log(evt.target.innerText)
+					},
+					example : function(){
+						alert(2);
+					},
+					//内联语句处理器
+					say : function (mess){
+						alert(mess);
+					},
+					Say : function (mess){
+						alert(mess);
+					},
+					sel : function (event){
+						alert(2);
+					},
+					sel2 : function (){
+						alert(2);
+					},
+					show2 : function (){
+						alert("show2");
+					},
+					show1 : function (){
+						alert("show1");
+					}
+					
+				}
+			})
+			//vm.example();
+			//注意：也可以在外部进行调用
+			/*
+			 	事件修饰符
+			 		.stop	阻止冒泡
+			 		.prevent	阻止默认事件
+			 		.capture	使用事件捕获模式
+			 		.self	只在该元素本身上触发(不包括子元素)
+			 		.once	事件只执行一次
+			 * 
+			 * */
+		</script>
+	</body>
+</html>

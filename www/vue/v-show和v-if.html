@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<h1 v-show = "show">如果时间来到</h1>
+			<h2 v-if = "show">the one</h2>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	v-show的元素始终会被渲染并保留在DOM中，v-show是简单的切换css的属性display的值
+			 	v-if是注释掉页面的元素
+			 * */
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					show : false
+				}
+			})
+		</script>
+	</body>
+</html>

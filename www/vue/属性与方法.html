@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box" v-once>
+			<!--
+				v-once指令，你能执行一次性的插值，当数据改变时，插值处的内容不会更新
+			-->
+			{{a}}
+			<div v-html = "html" v-bind:id = "id">
+			</div>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var data = {a : 1,html : "<h1>html</h1>",id:"box1"};
+			var vm = new Vue({
+				el : "#box",
+				data : data,
+				/*
+				 	实例生命周期
+				 		每个vue实例在被创建之前都要经过一系列的初始化过程
+				 			实例需要配置数据观测，编译模版，挂载实例到DOM，然后在数据变化时更新DOM，在这个过程中，实例也会调用一些生命周期钩子，这就给哦们提供了执行自定义逻辑的机会，例如，created这个钩子在实例被创建之后被调用
+				 * 
+				 * */
+				created: function () {
+				    // `this` 指向 vm 实例
+				    console.log('a is: ' + this.a)
+				}
+			})
+			console.log(vm.a == data.a)	//true
+			vm.a = 3;
+			console.log(vm.a);	//3
+			
+			data.a = 5;
+			console.log(vm.a);	//5
+			
+			/*
+			 	每个vue都会代理其data对象里面的所有属性
+			 	注意：
+			 		只有这些被代理的属性是响应式的，如果在实例创建之后添加新的属性到实例上，他不会触发视图更新
+			 	除了data属性，vue还暴露了一些有用的实例属性和方法，这些属性和方法都有前缀$,以便和代理的data属性区分
+			 * */
+			console.log(vm.$data == data);	//true
+			console.log(vm.$el == document.getElementById("box"));	//true
+			
+			vm.$
+		</script>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		{literal}
+		<style type = "text/css">
+			body{margin:0px;padding:0px;}
+			.main{width:1000px;height:485px;border:1px solid #278296;margin:0px auto;}
+			h5{border:px solid red;text-align:center;margin:0px;}
+			table{font-size:12px;font-weight:bold;margin:0px auto;}
+			.float{border:px solid red;width:260px;height:100px;margin:0px auto;text-align:center;padding:0px;}
+			.t1{float:left;}
+			.t2{float:right;}
+		</style>
+		{/literal}
+	</head>
+		<body>
+			<div class = "main">
+				<h5>学生成绩查询</h5>
+					<form method = "POST" action = "">
+						<table>
+							<tr>
+								<td>学号</td>
+								<td><input type = "text" name = "number"></td>
+								<td><input type = "submit" name = "button" value = "查找"></td>
+							</tr>
+						</table>
+					</form>
+					<div class = "float">
+						<table class = "t1" border = 1 rules = "all">
+							<tr>
+								<td>课程号</td>
+								<td>课程名</td>
+								<td>成绩</td>
+							</tr>
+						<!--	if(is_array($result1)){
+								foreach($result1 as $val){
+						-->
+							{foreach $result1 as $va1}
+						<!--
+							<tr>
+								<td><?php //echo $val['课程号'];?></td>
+								<td><?php //echo $val['课程名'];?></td>
+								<td><?php //echo $val['成绩'];?></td>
+							</tr>
+						-->
+							<tr>
+								<td>{$va1.0}</td>
+								<td>{$va1.1}</td>
+								<td>{$va1.2}</td>
+							</tr>
+							{/foreach}
+						<!--	
+								}
+							}
+						-->
+						</table>
+						<table class = "t2" border = 1 rules = "all">
+							<tr>
+								<td>姓名</td>
+								<td>总学分</td>
+							</tr>
+		
+					<!--		
+								if(is_array($result2)){
+								foreach($result2 as $val2){
+
+							<tr>
+								<td><?php //echo $val2['姓名'];?></td>
+								<td><?php //echo $val2['总学分'];?></td>
+							</tr>
+
+								}
+							}
+					-->
+							{foreach $result2 as $val2}
+							<tr>
+								<td>{$val2.0}</td>
+								<td>{$val2.1}</td>
+							</tr>
+							{/foreach}
+						</table>
+					</div>
+			</div>
+		</body>
+</html>

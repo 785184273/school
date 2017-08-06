@@ -1,0 +1,9 @@
+@charset = utf8
+
+*{margin :0px;padding: 0px;}
+
+/*********************************************************/
+body{margin :0px;padding: 0px;font-family:'Microsoft Yahei';}
+.menu{margin-top:50px;}
+.divifr{margin-top: 52px;border: px solid red;}
+.dropdown:hover>ul,.dropdown:hover>ul,.dropdown:hover>ul{display:block;};

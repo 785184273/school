@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			/*
+				匹配ip地址
+				12.89.12.34
+				第一段：1-223
+				/^([1-9]|[1-9]\d|1\d\d|2[01]\d|22[0-3])$/
+				第二,三,四段:0-255
+				/^([0-9]|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])$/
+			//*/
+			window.onload = function (){
+				var obj = document.getElementsByTagName("input");
+				obj[1].onclick = getip;
+			}
+			function getip(){
+				var obj = document.getElementsByTagName("input");
+				var str = obj[0].value;
+				if(str == ""){
+					window.alert("请输入ip地址");
+				}else{
+					var reg = /^([1-9]|[1-9]\d|1\d\d|2[01]\d|22[0-3])(\.([0-9]|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])){3}$/;
+					var rst = str.match(reg);
+					if(rst == null){
+						window.alert("ip地址错误");
+					}else{
+						window.alert("ip地址输入成功!");
+					}
+				}
+			}
+		</script>
+	</head>
+		<body>
+			<input type = "text" name = "ip">
+			<input type = "submit" name = "sub" value = "验证ip">
+		</body>
+</html>
+<!--
+	
+-->

@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<script>
+			/*
+				邮箱匹配
+					123@123.com
+					785184273.com@qq.com
+					
+			*/
+			var str = "123@123.com";
+			var reg = /^[a-zA-Z1-9][a-zA-Z0-9_\.]+@[0-9a-z]+(\.[a-z]+)+$/;
+		
+			var rst = str.match(reg);
+			console.log(rst);
+		</script>
+	</head>
+</html>

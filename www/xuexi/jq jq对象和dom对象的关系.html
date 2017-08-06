@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			window.onload = function(){
+				mm();
+			}
+			function mm(){
+				console.log($('img'));
+				//输出的一个jq对象
+			}
+			/*
+				dom对象	调用 	jq对象
+				document.getElementById("li").css('background','red')	程序报错
+				jq对象	调用	dom对象
+				$('li').style.background = "pink"	程序报错
+			*/
+		</script>
+	</head>
+	<body>
+		<img src = "./img/mm.jpg"/>
+	</body>
+</html>
+<!--
+	jq对象和dom对象的关系
+		jq对象：$('.apple')等选择器使用返回的信息就是jq对象
+		dom对象：document.getElementById()
+	互相调用对方的成员
+		
+-->

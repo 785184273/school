@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			//$(function (){
+			
+			//$(document).ready(function (){
+			
+			//$().ready(function (){
+			//	window.alert("jq加载事件");
+			//});
+			
+			//传统的加载事件后者覆盖前者
+			//window.onload = function (){
+			//	window.alert(123);
+			//}
+			
+			//window.onload = function (){
+			//	window.alert(23);
+			//}
+			
+			//jq加载事件的执行原理
+			//document.addEventListener("DOMContentLoaded",function (){
+			//	alert(12344);
+			//});
+		</script>
+	</head>
+	<body>
+		<h2>jq加载事件实现</h2>
+	</body>
+</html>
+<!--
+	jq加载事件实现
+		1.$(document).ready(function处理);
+			$(document)是把document的dom对象变为jq对象
+		2.$().ready(function处理);
+			$()也是创建jq对象，不过内部没有dom对象的组成部分
+		3.$(function处理);对第一种加载的封装而已
+	js加载事件
+		1.<body onload = "函数名()">
+		2.window.onload = function (){}
+	同一个请求加载的数量
+		jq：可以设置多个
+		js:	只能设置一个
+			传统的加载事件，在同一个请求里面如果设置多个，后者会覆盖前者
+			传统的加载事件是给onload进行赋值，后者覆盖前者
+	执行的时机
+		传统的加载事件，是全部内容(文字，图片，样式)在浏览器显示完毕再给执行加载事件
+		jq方式加载事件，只要全部内容(文字，图片，样式)在内存里边对应的dom树结构绘制完毕就给执行，有可能对应的内容在浏览器里边还没显示
+	jq加载事件的原理
+		jq加载事件是对DOMContentloaded的封装
+		
+-->

@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<style>	
+			/*
+				transform属性向元素应用2d或3d转换，该属性允许我们对元素进行转换，缩放，移动或倾斜
+				旋转:rotate(20deg)
+				顺时针旋转20度，负数就是逆时针旋转		deg
+				rotate3d(x,y,angle)
+					定义3d旋转
+				rotateX(angle)
+					定义沿着X轴的3d旋转
+				rotateY(angle)
+					定义沿着Y轴的3d旋转
+				rotateZ(angle)
+					定义沿着X轴的3d旋转
+				skew()函数能够让元素倾斜显示，他可以讲一个对象以其中心位置围绕着x轴和y轴按照一定的角度倾斜
+					skew(x,y)使元素在水平和垂直方向同时扭曲
+					skewX(x)仅使元素在水平方向扭曲变形
+					skeY(y)仅使元素在垂直方向扭曲变形		deg
+				缩放:scale(x,y)使元素水平方向和垂直方向同时缩放(也就是X轴和Y轴同时缩放)
+					注意：y是一个可选参数，如果没有设置y值，则表示x，y两个方式的缩放倍数是一样的
+					scaleX(x)元素仅水平方向缩放
+					scaleY(y)元素仅垂直方向缩放	1.0
+					scale3d(x,y,z)定义3d缩放
+				位移:translate()可以将元素向指定的方向移动，类似于position中的relative，使用translate()函数可以把元素从原来的位置进行移动，而不影响在X.Y轴上的组件
+					translate(x,y)水平方向和垂直方向同时移动
+					translateX(x)水平方向上移动
+					translateY(y)垂直方向上移动	px	%
+					translate3d(x,y,z)定义3d转换
+					translateZ(z)定义3d转换，只是用z轴的值
+				变形--原点transform-origin:任何一个元素都有一个中心点，默认情况下其中心点是居于元素X轴和Y轴的50%处
+					transform-orgin取值和元素设置背景中的background-position取值类似
+					语法
+					transform-origin:
+						值 			定义视图处于(x/y/z)轴的何处
+						x-axis			left center right length %
+						y-axis			top center bottom length %
+						z-axis			length
+			*/
+			.lin{width:300px;height:150px;background:pink;transform:rotate(20deg);}
+			.zhang{width:300px;height:150px;background:green;transform:rotate(-10deg);}
+			.lin span{display:block;transform:rotate(-20deg);}
+			.zhang span{display:block;transform:rotate(-10deg);}
+			.skew{width:300px;height:150px;transform:skew(45deg,10deg);background:blue;}
+			.skew span{display:block;transform:skew(-45deg);}
+			.scale{width:300px;height:150px;background:red;transform:scale(0.5);}
+			.translate{width:300px;height:150px;background:black;transform:translate(400px,-400px);}
+		</style>
+	</head>
+		<body>
+			<div class = "lin">
+				<span>the one --林峰(rotate)<span>
+			</div>
+			<div class = "zhang">
+				<span>timeless --张力伊(rotate)</span>
+			</div>
+			<div class = "skew">
+				<span>我要怎么说我不爱你(skew)</span>
+			</div>
+			<div class = "scale">
+				<span>scale缩放</span>
+			</div>
+			<div class = "translate">
+			</div>
+		</body>
+</html>

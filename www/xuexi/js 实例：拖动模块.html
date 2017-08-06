@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+			#box{
+				height: 150px;
+				width: 150px;
+				background: green;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			#box1{
+				height: 150px;
+				width: 150px;
+				background: yellow;
+				position: absolute;
+				left: 150px;
+				top: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id ="box">	
+			
+		</div>
+		<div id ="box1">	
+			
+		</div>
+		<script type="text/javascript">
+			var distanceX,distanceY,current = false;
+			var box = document.getElementById("box");
+			var pageheight = document.documentElement.clientHeight;
+			var pagewidth  = document.documentElement.clientWidth;
+			box.onmousedown = mousedown;
+			function mousedown(event){
+              	var e = event || window.event;
+              	distanceX = e.clientX - box.offsetLeft;
+                distanceY = e.clientY - box.offsetTop;;
+				console.log(distanceX + "," + distanceY);
+				current = true;
+			}
+			document.onmousemove = mousemove;
+			function mousemove(event){
+				var e = event || window.event;
+				var moveleft = e.clientX - distanceX;
+				var movetop  = e.clientY - distanceY;
+					//范围限定
+					/*
+					pagewidth - box.offsetWidth > moveleft > 0
+					pageheight - box.offsetheight > movetop > 0
+					 * */
+				if(current == true){
+					var	moveleftM = pagewidth - box.offsetWidth;
+					var movetopM  = pageheight - box.offsetHeight;
+ 					 //left  当小于等于零时，设置为零 防止div拖出document之外
+                    if (moveleft <= 0) {
+                        moveleft = 0;
+                    }
+                    //当left 超过文档右边界  设置为右边界
+                    else if(moveleft >= moveleftM){
+                        moveleft = moveleftM;
+                    }
+                    if(movetop <= 0){
+                        movetop = 0;
+                    }else if(movetop >= movetopM){
+                        movetop = movetopM;
+                    }
+//					moveleft  = Math.min(moveleft,Math.max(0,moveleftM));
+//					movetop   = Math.min(movetop,Math.max(0,movetopM));
+					console.log(moveleft + "," + movetop);
+					box.style.left = moveleft + "px";
+					box.style.top = movetop + "px"
+				}
+			}
+			document.onmouseup = mouseup;
+			function mouseup(){
+				current = false;
+			}
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset = "utf-8"/>
+		<title>帐号登录</title>
+		<!--Bootstrap不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--移动设备优先,响应式布局-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/login.css">
+</head>
+		<body>
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-8 col-sm-6 col-xs-12 col-lg-8">
+					</div>
+					<div class = "col-md-4 col-sm-6 col-xs-12 col-lg-4 form">
+						<div class = "blank"></div>
+						<div class = "login">
+							<div class = "h4 page-header">用户登录</div>
+							<div class = "row">
+								<div class = "col-md-1 col-xs-1 col-sm-1 col-lg-1">
+								</div>
+								<div class = "col-md-10 col-xs-10 col-sm-10 col-lg-10">
+									<form id = "info">
+										<div class = "form-group has-feedback" id = "user_group">
+											<span class = "glyphicon glyphicon-user form-control-feedback"></span>
+											<input type = "text" name = "user" class = "form-control" id = "user">
+										</div>
+										<div class = "form-group has-feedback" id = "password_group">
+											<span class = "glyphicon glyphicon-lock form-control-feedback"></span>
+											<input type = "password" name = "password" class = "form-control" id = "password">
+										</div>
+										<div class = "form-group row" id = "captcha_group" style = "display:none;">
+											<div class = "col-md-5 col-lg-5 col-sm-5 col-xs-5">
+												<input type = "text" name = "captcha" class = "form-control" id = "captcha">
+											</div>
+											<div class = "col-md-7 col-lg-7 col-sm-7 col-xs-7">
+												<img src = "?p=front&c=Link&act=captcha" onclick = "this.src='?p=front&c=Link&act=captcha&'+Math.random()">
+											</div>
+										</div>
+										<div class = "form-group">
+											<input type="submit" class = "btn btn-primary form-control" value = "登录">
+										</div>
+									</form>	
+									<ul class = "list-unstyled text-muted list-inline">
+										<li><a href = "?p=front&c=Link&act=register">没有帐号？立即注册</a></li>
+										<li class = "pull-right"><a href = "?p=front&c=Link&act=user_change">忘记密码</a></li>
+									</ul>
+								</div>
+								<div class = "col-md-1 col-xs-10 col-sm-10 col-lg-1">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		<script src = "./js/jquery.validate-1.13.1.js"></script>
+		<script src = "./js/additional-methods.js"></script>
+		<script src = "./js/login.js"></script>
+		<!--bootstrap模板为使IE6、7、8版本（IE9以下版本）浏览器兼容html5新增的标签。-->
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<!--为使IE6、7、8版本浏览器兼容css3样式-->
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		</body>
+</html>

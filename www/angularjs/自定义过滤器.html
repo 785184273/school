@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body ng-app = "App">
+		<div ng-controller = "demo">
+			<h1>{{name | firstUpper : 4}}</h1>
+		</div>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			var App = angular.module("App",[]);
+			App.filter("firstUpper",function (){
+				return function (str,num){
+					if(num > 0){
+						//console.log(str.substring(0,num));
+						//console.log(str.charAt(num));
+						//console.log(str.substr(num + 1));
+						return str.substring(0,num) + str.charAt(num).toUpperCase() + str.substr(num + 1);
+					}else{
+						return str.charAt(num).toUpperCase() + str.substr(num + 1);
+					}
+				}
+			})
+			App.controller("demo",["$scope",function ($scope){
+				$scope.name = "hello";
+			}])
+		</script>
+	</body>
+</html>

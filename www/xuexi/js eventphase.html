@@ -1,0 +1,26 @@
+<html>
+	<head>
+	</head>
+		<body>
+			<input type = "submit" value = "onclick me" id = "btn">
+			<script>
+				/*
+					事件对象的eventPhase属性
+						可以用来确定事件正处于事件流的哪个阶段，如果是在被捕获的阶段调用的事件处理程序，那么event.eventPhase = 1
+						如果事件处理程序正处于目标对象上，那么event.eventPhase = 2;
+						如果冒泡阶段调用的事件处理程序，那么event.eventPhase = 3;
+				
+				*/
+				var btn = document.getElementById('btn');
+				btn.onclick = function (event){
+					alert(event.eventPhase);	//事件处理程序位于目标对象上
+				}
+				document.body.addEventListener('click',function (event){
+					alert(event.eventPhase);	//正处于捕获阶段
+				},true);
+				document.body.onclick = function (event){
+					alert(event.eventPhase);	//冒泡阶段调用的事件处理程序
+				}
+			</script>
+		</body>
+</html>

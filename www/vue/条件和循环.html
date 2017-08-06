@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p v-if="seen">now you see me</p>
+			<ul>
+				<li v-for = "todo in todos">{{todo.text}}</li>
+			</ul>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vue = new Vue({
+							el : "#app",
+							data : {
+								seen : true,
+								todos : [
+									{text : "html"},
+									{text : "css"},
+									{text : "javascript"}
+								]
+							}
+						})
+		</script>
+	</body>
+</html>

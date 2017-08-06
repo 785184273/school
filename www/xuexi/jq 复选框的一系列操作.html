@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js">
+		</script>
+	</head>
+	<body>
+		<input type = "checkbox" name = "hobby[]" class = "hby" value = "1">篮球
+		<input type = "checkbox" name = "hobby[]" class = "hby" value = "2">足球
+		<input type = "checkbox" name = "hobby[]" class = "hby" value = "3">排球
+		<input type = "checkbox" name = "hobby[]" class = "hby" value = "4">乒乓球
+		<input type = "checkbox" name = "hobby[]" class = "hby" value = "5">橄榄球
+		<br /><br />
+		<input type = "submit" name = "sub" value = "全选操作" onclick = "f1()"/>
+		<input type = "submit" name = "sub" value = "全部选操作" onclick = "f2()"/>
+		<input type = "submit" name = "sub" value = "反选操作" onclick = "f3()"/>
+	</body>
+	<script>
+		function f1(){
+			$('.hby').css('border','1px solid red');
+			//css()/attr()方法都有批量处理效果
+			//在jquery框架里面，大部分方法本身有遍历机制，遍历同时会为每个dom对象都设置对应的(css)属性
+			$('.hby').attr('checked',true);
+			//window.alert($('.hby').attr('value'));
+		}
+		function f2(){
+			$('.hby').attr('checked',false);
+			//$('.hby').removeAttr('checked');
+		}
+		function f3(){
+			//*
+			var len = $('.hby').length;
+			for(var i = 0;i < len;++i){	
+				var flag = $('.hby:eq(' + i + ')').attr('checked');
+				$('.hby:eq(' + i + ')').attr('checked',!flag);
+			}
+			//*/
+			//$('.hby').toggle();
+			/*
+			alert($('.hby').attr('chekec'));
+			if($('.hby').attr('checked') == true)){
+				$('.hby').attr('checked',false);
+			}else{
+				$('.hby').attr('checked',true);
+			}
+			*/
+		}
+	</script>
+</html>
+<!--
+	复选框操作
+		全选，反选，全不选
+		$().attr('checked',true)	设置复选框选中
+		$().attr('checked',false)	取消复选框选中
+		$().attr('checked')		盘点复选框选中情况，返回布尔值
+-->

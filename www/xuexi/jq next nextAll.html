@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				next()方法返回被选元素的下一个同胞元素
+				nextAll()方法返回被选元素的所有跟随的同胞元素
+			*/
+			$(function (){
+				//注意：next该方法只返回一个元素
+				$('h2').next().css({border:'1px solid red'});
+				
+				$('p:first').nextAll().css({border:'1px solid red'});
+			})
+		</script>
+	</head>
+	<body>
+		<div>div (父)
+			<p>p</p>
+			<span>span</span>
+			<h2>h2</h2>
+			<h3>h3</h3>
+			<p>p</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 	jQuery插件的写法
+			 		1.名字：jQuery.name.js
+			 		2.插件的写法
+			 			;(function(){
+			 				//需要插件实现功能的代码逻辑,需要实现的方法添加在jquery的原型上，例如：$.fn.functionName = function (){
+			 					 
+			 				}
+			 			})(jQuery)
+			 		3.也可以在$.prototype上面扩展(添加方法)，只能扩展单个方法
+			 		4.一次扩展多个方法,$.fn.extend({}),或者$.extend({})
+			 		5.jquery中的方法有两种形式
+			 			第一种：$.方法名称
+			 					比如：$.type();
+			 					该方法是静态方法(往往是一些工具方法)
+			 					特点：不需要传入dom
+			 			第二种：$("")实例化方法
+			 					比如：$("#box").html
+			 					特点：需要传入一个dom元素进去
+			 * 
+			 */
+		;(function ($){
+			$.fn.size = function (width,height){
+				$(this).width(width);
+				$(this).height(height);
+			}
+			$.fn.extend({
+				setHtml : function (textHtml){
+					$(this).html(textHtml);
+				},
+				getHtml : function (textHtml){
+					return $(this).html();
+				}
+			})
+		})(jQuery);
+		$(function (){
+			$("#box").size("400","200");
+			$("#box").setHtml("唐磊大傻逼，没有小鸡鸡");
+			console.log($("#box").getHtml());
+		})
+		</script>
+		<div id = "box" style = "border: 1px solid red;">
+			
+		</div>
+	</body>
+</html>

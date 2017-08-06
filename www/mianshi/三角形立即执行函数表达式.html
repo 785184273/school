@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width:0px;
+				height: 0px;
+				border-top: 100px solid red;
+				border-left: 100px solid yellow;
+				border-right: 100px solid green;
+				border-bottom: 100px solid transparent;
+				/*
+				 	transparent代表透明
+				 * */
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			var a,b;
+			(function (a){//相当于 var a = a ,a就是局部变量了,形参是一个特殊的局部变量
+				a = a || {};
+				console.log(a);	//object
+				b = a;
+			})(a);
+			console.log(a);	//undefined
+			console.log(b);	//object
+//			var a,b;
+//			function test(){
+//				a = 10;
+//				console.log(a);
+//			}
+//			test();
+//			console.log(a);
+			/*
+			 	上述立即执行函数表达式可以看成一个函数的调用
+			 	var a;
+			 	function test (a){
+			 		a = a || {}
+			 		b = a;	//定义了一个全局变量
+			 	}
+			 	test(a);
+			 	console.log(a)	//undefined	涉及到作用域链，只能依次向上级访问，在函数内部的时候在自身环境下存在变量a，所以打印出来是object,在函数里面创建了全局变量b指向a的引用
+			 * 
+			 * */
+			//console.log(this)
+			//console.log(b);
+		</script>
+	</body>
+</html>

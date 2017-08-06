@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<style>
+			.chat{width:700px;height:400px;border:1px solid green;margin:0px auto;overflow:auto;}
+			.send{width:700px;height:150px;border:1px solid blue;margin:0px auto;}
+			p{border:1px solid red;margin:5px;5px;}
+		</style>
+	</head>
+		<body>
+			<div class = "chat" id = "chat">
+				<p style = "text-align:center;">欢迎来到聊天室</p>	
+			</div>
+			<div class = "send">
+				<select name = "color">
+					<option value = "yellow">黄色</option>
+					<option value = "blue">蓝色</option>
+					<option value = "green">绿色</option>
+					<option value = "purplr">紫色</option>
+				</select>
+				<textarea style = "display:inline;" cols = "70" rows = "8"></textarea>
+				<input type = "submit" value = "发送">
+			</div>
+		</body>
+		<script>
+			window.onload = function (){
+				setInterval("getinfo()",2000);
+				//getinfo();
+			}
+			var maxId = 0;
+			function getinfo(){
+				var xhr = new XMLHttpRequest();
+				
+				xhr.onreadystatechange = function (){
+					if(xhr.readyState == 4){
+						//alert(xhr.responseText);
+						eval("var arr = " + xhr.responseText);
+						var len = arr.length;
+						var s = "";
+						for(var i = 0;i < len;++i){
+							s += "<p styl = 'color:" + arr[i].color + ";'>" + arr[i].id + "&nbsp" + arr[i].msg + "&nbsp" +arr[i].sender + "&nbsp" + arr[i].receiver + "&nbsp" + arr[i].biaoqing + "&nbsp" + "(" + arr[i].add_time + ")</p>";
+							maxId = arr[i].id;
+						}
+						document.getElementById("chat").innerHTML += s;
+					}	
+				}
+				
+				xhr.open('get','./aj talk.php?id=' + maxId);
+				xhr.send(null);
+			}
+		</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css" id = "style">
+			#box{
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>html</li>
+				<li>css</li>
+				<li>javascript</li>
+			</ul>
+			<span style = "display: none;">hello world</span>
+		</div>
+	</body>
+	<script type="text/javascript" id = "script">
+		/*
+		 	innerText不会获取隐藏元素的content，而textContent会获取
+		 	innerText的返回值会被格式化，而textContent不会
+		 	textContent和innerText会获取所有元素的content，包括style和script
+		 * 
+		 * */
+		window.onload = function (){
+			var div = document.querySelector("#box");
+			console.log(div.innerText);
+			console.log(style.textContent);
+			console.log(style.innerText);
+			console.log(script.textContent);
+			console.log(script.innerText);
+			console.log(getInnerText(div));
+		}
+		function getInnerText(element){
+			return (element.textContent) ? element.textContent : element.innerText; 
+		}
+	</script>
+</html>

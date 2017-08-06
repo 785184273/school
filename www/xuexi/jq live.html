@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				live()方法为备选元素附加一个或多个事件处理程序，并规定当这些事件发生时运行的函数
+				通过live方法附加的事件处理程序适用于匹配选择器的当前及未来的元素(比如由脚本创建的新元素)
+				语法
+					$(selector).live(event,dat,function)
+					event	必需，规定附加到元素的一个或多个事件，由空格分隔开，必须是有效的事件
+					data	可选，规定传递到该函数的额外数据
+					function	必需，规定当事件发生时运行的函数
+			*/
+				$(function (){
+					  $("input").live("click",function(){
+					    $("p").slideToggle();
+					  });
+					$('div').append($('<p>这是新的段落</p>'))
+				});	
+		</script>
+	</head>
+	<body>
+		<div style = "border:1px solid red">
+			<p>这是一个段落</p>
+		</div>
+		<input type = "submit" value = "点击">
+	</body>
+</html>

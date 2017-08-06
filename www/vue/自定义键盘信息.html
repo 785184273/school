@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<input type="text" @keyup.a = "show($event)" />
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	自定义键盘信息可以使用Vue.config.keyCodes
+			 		例如：
+			 		Vue.config.keyCodes.a = 65;
+			 * */
+			Vue.config.keyCodes.a = 65;
+			new Vue({
+				el : "#box",
+				data : {
+					
+				},
+				methods : {
+					show : function (evt){
+						console.log(evt.keyCode);
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

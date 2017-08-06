@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<h1 v-if = "type == 'a'">
+				it's a
+			</h1>
+			<h2 v-else-if = "type == 'b'">
+				it's b
+			</h2>
+			<h2 v-else-if = "type == 'c'">
+				it's c
+			</h2>
+			<h2 v-else>
+				it's no
+			</h2>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					type : "b"
+				}
+			})
+		</script>
+	</body>
+</html>

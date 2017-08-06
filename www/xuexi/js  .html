@@ -1,0 +1,106 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+		<script type="text/javascript">
+			
+			//在body中输出一句话
+			document.write("我是被踢出来的");
+			document.write('<h2 style="color:blue;">我是你爸爸</h2>');
+			var a = 10;
+			var b = a + 20;
+			document.write(b);
+			document.write("<hr>")
+			//实例：输出个人信息
+			//1.变量初始化
+			var name = "周财神";
+			var sex = "男";
+			var age = 20;
+			var ismarried = true;
+			var salary = 2000;
+			var bonus = 500;
+			var school = "北京科技大学";
+			//2.构建输出结果
+			var str="";
+			str="<h1>\""+name+"\"的基本信息</h1>";
+			str += "<br />姓名："+name;
+			str += "<br>性别："+sex;
+			str += "<br>年龄："+age;
+			if(ismarried)
+			{
+				str += "<br>婚否：已婚";
+			}else
+			{
+				str += "<br>婚否：未婚";
+			}
+			str += "<br>基本工资："+salary;
+			str += "<br>奖金："+bonus;
+			str += "<br>实发工资："+(salary+bonus); //注意：要注意优先级和类型的运算，不同类型的加是连接;
+			//if判断；如果school有值。则输出学校的名称，没有值，则输出未填写
+			if(school)
+			{
+				str += "<br>毕业院校："+school;
+			}else
+			{
+				str += "<br>毕业院校：未填写";
+			}
+			//3.输出结果
+			document.write(str);
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+	javascript 是一种小型的，轻量级的，面向对象的，跨平台的客户端脚本语言。
+	javascript 是嵌入到浏览器软件当中的，只要你的电脑有浏览器就可以执行js程序了
+	js是一种面向对象的程序语言。
+		对象在程序中是由“属性”和“方法”构成的
+		在现实中，男女朋友就是一个“对象”。“东西”就是“对象”。一个“物体”就是电脑中的”对象“。
+		”对象“有各种各样的特征（属性），如：身高，体重，年龄，姓名，学历等。
+		”对象“有很多方法。”人“这个对象，可以干什么？或者是”人的行为“，开飞机？打飞机，上网等。
+		注意；js中的对象只要会用就好了，不需要我们自己开发对象。
+	跨平台：js程序可以在多种平台下运行，如：windows，Linux，mac，ios等
+	客户端脚本程序：js只能在客户端的浏览器来运行，不能在服务器端来运行
+	浏览器是一个翻译器，可以翻译三种代码：html代码，css代码，JavaScript代码。
+JavaScript能干什么？
+	表单验证；是js最基本的功能
+	动态html；可以实现动态的，重复的效果
+	交叉式:人机交互，通过键盘鼠标，与网页中的元素进行交互
+javascript名称的由来？
+	javascript最初叫”livescript“，是网景公司（Netscape）公司开发，为自己的浏览器navigator2.0开的客户端语言
+	想借助java的名气很快的成长起来，因此改名叫JavaScript
+	java和JavaScript是两个公司的两个”东西“。
+	<script></script>
+	js代码也是嵌入到html代码中去的
+	同一个网页中，可以有html代码，css代码，JavaScript代码。
+	通过<script></script>来引入js程序代码
+常用的两个客户端输出方法；
+	document.write(str)
+	描述：在网页的<body>标记，输出str的内容
+	document意思”文档“，其实就是指整个网页了
+	document是一个文档对象，代表整个网页
+	write（）是document对象的一个输出方法
+	”.“小数点：通过小数点（.）来调用对象的方法
+	str：表示要输出的内容
+	window.alert(str)
+	描述；在当前窗口中弹出一个警告对话框，str为对话框中显示的内容
+	window代表当前浏览器窗口，window是一个窗口对象
+	alert()方法:弹出一个对话框
+	str:表示要输出的内容
+	console.log()
+		浏览器调试工具(firebug)的输出方法
+		可以输出非常详细的变量信息
+js中的注释
+	css注释：/*注释*/
+	js注释：// 或 /*多行注释*/
+js程序的基本语法
+	js是区分大小写的，如：Name和name是两个变量
+	js中的每一条语句，一般以英文下的分号(;)结束，这个分号不是必须的，为了向php兼容，最好加上分号
+	运算符和变量，以及操作之间可以使用空格分开，这样的程序比较容易阅读
+		var a = 100 和var a=100 是一样的
+js标签的位置
+	可以放到任何的位置
+	页面可以有多个script标签
+	
+-->

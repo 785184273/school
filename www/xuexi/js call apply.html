@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				每个函数都包含两个非继承而来的方法：apply()和call(),这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内设置this对象的值
+				apply方法接受两个参数:一个是在其中运行函数的作用域，另一个是参数数组，其中第二个参数可以是Array数组，或者是arguments对象
+			*/
+			function sum(num1,num2){
+				return num1 + num2;
+			}
+			function applysum1(num1,num2){
+				return sum.apply(this,arguments);
+			}
+			function applysum2(num1,num2){
+				return sum.apply(this,[num1,num2]);
+			}
+			//alert(applysum1(10,10));	//20
+			//alert(applyum2(10,10));	//20
+			
+			/*
+				call()方法和apply()方法作用相同，他们的区别仅仅在于接收参数的方式不同，对于call()方法而言，第一个参数是this值没有变化，变化的是其余的参数都是直接传递给函数，换句话说， 就是在使用call()方法时，传递给函数的参数必须逐个列举出来
+			*/
+			//call(),apply(),bind()用来修改this指向
+			function sum1(num1,num2){
+				return num1 + num2;
+			}
+			function callsum(num1,num2){
+				return sum1.call(this,num1,num2);
+			}
+			//alert(callsum(10,10));
+			var person1 = {
+				name : "小强",
+				phone : function (){
+					alert(this.name + "在约会");
+				},
+				gohome : function (name1){
+					alert(this.name + "带回了女朋友" + name1);
+				}
+			}
+			var person2 = {
+				name : "小红"
+			}
+			person1.phone.call(person2);
+			person1.gohome.call(person2,"小丽");
+			person1.gohome.apply(person2,["小丽"]);
+			
+			(function (){
+				console.log(this);
+			}.bind(person1))();
+		</script>
+	</body>
+</html>

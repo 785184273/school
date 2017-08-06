@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 兼容模式
+			 	自从IE6开始区分渲染页面的模式是标准的还是混杂的，检测页面的兼容模式就成为浏览器的必要功能，IE为此为document添加了一个属性compatMode的属性，这个属性就是为了告诉开发人员浏览器到底采用了哪种的渲染模式
+			 	在标准模式下document.compatMode的值为CSS1Compat
+			 	在混杂模式下document.compatMode的值为BackCompat
+			 		触发混杂模式
+			 			如果在文档的开始处没有发现文档类型声明，则所有的浏览器都会默认开启混杂模式
+			 * */
+			document.write(document.compatMode);
+
+		</script>
+	</body>
+</html>

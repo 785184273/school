@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body ng-app = "App" ng-controller = "demo" ng-init = "num1 = 0;num2 = 0;person = {name : 'john'}">
+		<input type="" name="" id="" ng-model = "num1" />
+		<input type="" name="" id="" ng-model = "num2" />
+		<p>{{num1 * num2}}</p>
+		<p ng-bind = "num1 * num2"></p>
+		<p ng-cloak>我的名字叫{{person.name}}</p>
+		<p>{{'name'}}</p>
+		<!--在表达式中加入引号相当于输出字符串-->
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 	angularjs表达式
+			 		angularjs表达式写在大括号内:{{expression}};
+			 		angularjs表达式将数据绑定在html，这和ng-bind指令有异曲同工之妙
+			 		angularjs将在表达式书写的位置"输出"数据
+			 	angularjs表达式和js表达式
+			 		类似于js表达式，angularjs表达式可以包含字母，操作符，变量
+			 		和js表达式不同，angularjs表达式可以写在html中
+			 		和js表达式不同，angularjs表达式不支持条件判断，循环及异常
+			 		和js表达式不同，angularjs表达式支持过滤器
+			 * */
+			var App = angular.module("App",[]);
+			App.controller("demo",["$scope",function ($scope){
+				console.log($scope);
+			}])
+		</script>
+	</body>
+</html>

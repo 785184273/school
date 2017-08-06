@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>多媒体响应式</title>
+		<style type="text/css">
+			/*
+			 	多媒体响应式布局
+			 		1.可以使用媒体查询实现
+			 		2.可以使用width:100%,max-width:xxxpx实现
+			 * */
+			img,video{
+				width: 100%;
+				max-width: 900px;
+				display: block;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="imgs/1.jpg"/>
+		<video src = "imgs/大雄兔.webm" controls="controls">当前浏览器不支持该标签</video>
+	</body>
+</html>

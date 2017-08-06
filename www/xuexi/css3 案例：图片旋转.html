@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style>
+			.my3d{
+				//border:1px solid red;
+				perspective:800px;
+				perspective-origin:50% 50%;
+				margin:0px auto;
+				text-align:center;
+				overflow:hidden;
+			}
+			.imggroup{
+				height:302px;
+				width:680px;
+				//border:1px solid red;
+				text-align:center;
+				transform-style:perserve-3d;
+				//perspective-origin:50% 100%;
+				position:relative;
+				margin:0px auto;
+			}
+			img{
+				-webkit-transform-origin:bottom;
+				-ms-transform-origin:bottom;
+				-moz-transform-origin:bottom;;
+				-o-transform-origin:bottom;
+				transform-origin:bottom;
+				position:absolute;
+				left:0px;
+				top:0px;
+			}
+			.ope{
+				text-align:center;
+			}
+			#img1{
+				transform:rotateX(0deg);
+				transition:transform 1s linear .1s;
+				-webkit-transform:rotateX(0deg);
+				-webkit-transition:transform 1s linear .1s;
+				-ms-transform:rotateX(0deg);
+				-ms-transition:transform 1s linear .1s;
+				-moz-transform:rotateX(0deg);
+				-moz-transition:transform 1s linear .1s;
+				-o-transform:rotateX(0deg);
+				-o-transition:transform 1s linear .1s;
+
+			}
+			#img2,#img3,#img4,#img5{
+				transform:rotateX(90deg);
+				transition:transform 1s linear .1s;
+				-webkit-transform:rotateX(90deg);
+				-webkit-transition:transform 1s linear .1s;
+				-ms-transform:rotateX(90deg);
+				-ms-transition:transform 1s linear .1s;
+				-moz-transform:rotateX(90deg);
+				-moz-transition:transform 1s linear .1s;
+				-o-transform:rotateX(90deg);
+				-o-transition:transform 1s linear .1s;
+			}
+		</style>
+	</head>
+		<body>
+			<div class = "my3d">
+				<div class = "imggroup">
+					<img id = "img5" src = "./img/237.jpg"/>
+					<img id = "img4" src = "./img/236.jpg"/>
+					<img id = "img3" src = "./img/235.jpg"/>
+					<img id = "img2" src = "./img/234.jpg"/>
+					<img id = "img1" src = "./img/233.jpg"/>
+				</div>
+			</div>
+			<div class = "ope">
+				<a href = "javascript:next()">next</a>
+				<a href = "javascript:pre()">previous</a>
+			</div>
+		</body>
+		<script>
+			var index = 1;
+			function next(){
+				if(index == 5){
+					return;
+				}
+				var curPage = document.getElementById('img' + index);
+				curPage.style.cssText += "-webkit-transform:rotateX(90deg)";
+				index++;
+				
+				var nextPage = document.getElementById('img' + index);
+				nextPage.style.cssText += "-webkit-transform:rotateX(0deg)";
+			}
+			function pre(){
+				if(index == 1){
+					return;
+				}
+				var curPage = document.getElementById('img' + index);
+				curPage.style.cssText += "-webkit-transform:rotateX(-90deg)";
+				index--;
+				
+				var nextPage = document.getElementById('img' + index);
+				nextPage.style.cssText += "-webkit-transform:rotateX(0deg)";
+			}
+		</script>
+</html>

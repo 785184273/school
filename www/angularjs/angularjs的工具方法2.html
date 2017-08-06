@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body ng-app>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 angular.isArray(value);
+			 	判断一个数据是否是数组
+			 angular.isDate(value);
+			 	判断一个数据是不是date类型
+			 angular.isDefined(value);
+			 	判断一个数据是否是defined类型
+			 angular.isUndefined(value);
+			 	判断一个数据是不是Undefined类型
+			 angular.inFunction(value);
+			 	判断一个数据是否是函数
+			 angular.isNumber(value);
+			 	判断一个数据是否是Number类型
+			 angular.isElement(value);
+			 	判断一个数据是否是元素
+			 angular.isString(value);
+			 	判断一个数据是否是字符串
+			 angular.isObject(value);
+			 	判断一个数据是否是对象
+			 * */
+			console.log(angular.isArray([]));	//true
+			console.log(angular.isArray("123"));	//false
+			console.log(angular.isDate("2012-04-09"));	//false
+			console.log(angular.isDate(new Date));	//true
+			console.log(angular.isDefined("a"));	//true
+			console.log(angular.isDefined(undefined));	//false
+			console.log(angular.isUndefined(undefined));	//true
+			console.log(angular.isUndefined("a"));	//false
+			console.log(angular.isFunction(null));	//false
+			console.log(angular.isFunction(function (){}));	//true
+			console.log(angular.isNumber("a"));	//false
+			console.log(angular.isNumber(123));	//true
+			console.log(angular.isElement(document.body))	//true
+			console.log(angular.isElement("a"));	//false
+			console.log(angular.isString("a"));	//true
+			console.log(angular.isString("123"));	//true
+			console.log(angular.isObject(null));	//false
+			console.log(angular.isObject(function (){}));	//false
+			console.log(angular.isObject({name : "小明"}));	//true
+		</script>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript">
+		//实例.5秒跳转
+		
+		</script>
+	</head>
+		<body>
+			<input type = "submit" value = "location.replace" onclick = "location.replace('http://www.baidu.com')"/>
+			<input type = "submit" value = "alert(location.href)" onclick = "alert(location.href)"/>
+			<input type = "submit" value = "location.href" onclick = "location.href ='http://www.baidu.com'"/>
+			<input type = "submit" value = "location.assign" onclick = "location.assign('http://www.baidu.com')"/>
+			<input type="submit" value="location.reload" onclick="javascript:Location.reload(true)"/>
+			<input type="submit" value="window.close" onclick="javascript:window.close()"/>
+		</body>
+</html>
+<!--
+Location地址栏对象
+	Href:获取地址栏中完整的地址,可以实现js的网页跳转。Location.href="http://www.baidu.com"
+	Host:获取地址栏中的主机名
+	Hostname:主机名
+	Pathname:文件路径及文件名
+	Search:查询字符串,(地址栏中问号后面的部分)
+	Protocol:协议 如；http  ftp
+	hash:锚点名称 如#top
+	reload([true]):刷新网页，true参数表示强制刷新
+	assign():加载新的文档
+	replace():用新的文档替换当前文档。
+	location.assign()和location.replace()的区别：
+		location.assign()会产生历史记录
+		location.replace()不会产生历史记录
+		两者都能进行跳转
+	注意：所有的属性重新赋值后，网页将自动刷新
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->

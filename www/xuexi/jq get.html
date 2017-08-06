@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				get()	获得由选择器指定的dom元素，返回的是个数组
+					注意：括号内可以有index下标，如果存在index下标则返回指定的下标值
+			*/
+			$(function (){
+				var item = $('li').get();
+				for(var i = 0;i < item.length;++i){
+					item[i].innerHTML = i + "1";
+				}
+				//var p = $('p').get();
+				//alert(p[0].innerHTML);
+				//var p = $('li');		存在自动遍历
+				//p.css({background:"red"});
+			})
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+		<p>the one</p>
+	</body>
+</html>

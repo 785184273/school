@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<style type = "text/css">
+			body{margin:0px;padding:0px;}
+			.main{width:1000px;height:485px;border:1px solid #278296;margin:0px auto;}
+			h5{border:px solid red;text-align:center;margin:0px;}
+			h6{border:px solid red;text-align:center;margin:0px;}
+			.num{width:80px;}
+			table{margin:0px auto;font-size:12px;font-weight:bold;margin-top:5px;padding:0px;}
+			tr{height:20px;}
+			.td2{width:250px;}
+		</style>
+	</head>
+		<body>
+			<div class = "main">
+				<h5>学生信息录入</h5>
+					<form method = "POST" action = "?p=back&c=admin&act=admin_select">
+						<h6>根据学号查询学生信息:
+						<input class = "num" type = "text" name = "num"/>&nbsp;
+						<input type = "submit" name = "select" value = "查找">
+						</h6>
+					</form>
+					<table border = 1 rules = "all" width = "315px" height = "410px">
+						<form method = "POST" action = "?p=back&c=admin&act=admin_delete">
+							<tr>
+								<td>学号</td>
+								<td class = "td2"><input style = "width:240px;" type = "text" name = "number" value = "<?php echo $result[0];?> "></td>
+							</tr>
+							<tr>
+								<td>姓名</td>
+								<td class = "td2"><input style = "width:240px;" type = "text" name = "name" value = "<?php echo $result[1];?>" ></td>
+							</tr>
+							<tr>
+								<td>性别</td>
+								<td class = "td2"><input style = "width:240px;" type = "text" name = "sex" value = "<?php echo $result[2];?>"></td>
+							</tr>
+							<tr>
+								<td>出生日期</td>
+								<td class = "td2"><input style = "width:240px;" type = "text" name = "date" value = "<?php echo $result[3];?>"></td>
+							</tr>
+							<tr>
+								<td>专业</td>
+								<td class = "td2"><input style = "width:240px;" type = "text" name = "major" value = "<?php echo $result[4];?>"></td>
+							</tr>
+							<tr>
+								<td>总学分</td>
+								<td class = "td2"><input style = "width:240px;" type = "text" name = "mark" value = "<?php echo $result[5];?>"></td>
+							</tr>
+							<tr>
+								<td>备注</td>
+								<td class = "td2"><textarea cols = "31" rows = "5" name = "other" value = "<?php echo $result[6];?>"></textarea></td>
+							</tr>
+							<tr style = "height:90px;">
+								<td>学生照片</td>
+								<td class = "td2">
+									<input type = "file" name = "file">
+								</td>
+							</tr>
+							<tr>
+								<td>路径</td>
+								<td><input style = "width:240px;" type = "text"  readonly = "readonly"></td>
+							</tr>
+							<tr>
+								<td colspan = 2 class = "td2" style = "text-align:center;">
+									<input type = "submit" name = "update" value = "修改"/>
+									<input type = "submit" name = "insert" value = "添加"/>
+									<input type = "submit" name = "delete" value = "删除"/>
+								</td>
+							</tr>
+						</form>
+					</table>
+			</div>
+		</body>

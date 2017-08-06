@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style type = "text/css">
+			.news{width:600px;
+				  border:1px solid red;
+				  text-align:center;
+				  margin:0px auto;
+				  color:blue;
+				}
+		</style>
+		<script type = "text/javascript">
+			function add2()
+			{
+				//获取id=news的网页对象
+				var newsObj = document.getElementById("news")
+				//alert(newsObj.nodeName);
+				//tagName和核心DOM中的nodeName一样
+				//添加className的属性
+				newsObj.className = "news"
+			}
+			function copy2()
+			{
+				//获取id=news和id=copy3的网页对象
+				var newsObj = document.getElementById("news");
+				var copy3Obj = document.getElementById("copy3");
+				//将news中的内容复制到copy3中去
+				copy3Obj.innerHTML = newsObj.innerHTML;
+				//添加className的属性
+				copy3Obj.className = "news";
+			}
+		</script>
+	</head>
+		<body>
+			<div id="news" >
+				<h1>陈龙是傻逼</h1>
+			</div>
+			<div id="copy3">
+			</div>
+			<input type = "submit" value = "添加类的样式" onclick = "add2()"/>
+			<input type = "submit" value = "将news中的内容进行复制" onclick = "copy2()">
+		</body>
+</html>
+<!--
+元素对象的属性
+		每个标记都有三大类的属性
+			1.核心DOM中的属性和方法
+			2.html标记的属性
+			3.元素对象的属性
+		tagName:标签名称，和核心DOM中的nodeName一样
+		className：css中类的样式
+		id：同html标记id属性一样
+		title：同html标记title属性一样
+		style：同html标记的style属性一样
+		innerHTML：nodeValue，包含html标记中的所有内容，包括html标记等
+		offsetWidth:元素对象的可见宽度，不带px单位
+		offsetHeight：元素对象的可见高度，不带px单位
+		scrollWidth：元素对象的总宽度，包括滚动条中的内容，不带px单位
+		scrollHeight：元素对象的总高度，包括滚动条中的内容，不带px单位
+		scrollTOp：指内容向上滚动上去了多少距离(有滚动条时才有效)
+		scrollLeft：指内容向左滚动过去了多少距离(有滚动条时才有效)
+	
+onscroll:当拖动滚动条时，调用js函数
+
+
+
+
+
+
+
+
+
+
+
+-->

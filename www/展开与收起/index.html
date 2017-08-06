@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<style>
+			.con{border:1px solid red;}
+			.con_n{display:none;}
+		</style>
+	</head>
+		<body>
+			<div class = "con">
+				<p>电信2G   电信3G</p>
+				<div class = "con_n">联通2G   联通3G</div>
+				<input type = "submit" id = "con" value = "更多">
+			</div>
+		</body>
+		<script>
+			$(function (){
+				$('input:submit').on('click',function (){
+					$('.con_n').toggle();
+					if($('input:submit').val() == '更多'){
+						$('input:submit').val('取消');
+					}else{
+						$('input:submit').val('更多');
+					}
+				})
+			})
+		</script>
+</html>

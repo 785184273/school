@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model = "msg" />
+			<input type="button" value = "添加" @click = "add"/>
+			<ul>
+				<li v-for = "(x,index) in info">{{ x }}</li>
+			</ul>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					msg : "",
+					info : [
+						"html",
+						"css",
+						"js"
+					]
+				},
+				methods : {
+					add : function (){
+						this.info.push(this.msg);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

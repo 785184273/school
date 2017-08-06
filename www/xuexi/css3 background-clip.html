@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<style>
+			/*
+				background-clip
+					用来将背景图片做适当的裁剪以适应实际需要
+				语法
+					background-clip:border-box | padding-box | content-box | no-clip
+			*/
+			div{
+				width:300px;
+				height:300px;
+				border:1px solid red;
+				padding:20px;
+				background:#ccc url('./img/100.jpg') no-repeat;
+				background-clip:content-box;
+			}
+		</style>
+	</head>
+		<body>
+			<div>
+			
+			</div>
+		</body>
+</html>

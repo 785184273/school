@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app = "App">
+		<tag></tag>
+		<div tag></div>
+		<div class = "tag"></div>
+		<!-- directive:tag -->
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			var App = angular.module("App",[]);
+			//通过模块实例对象的directive方法可以自定义指令
+			App.directive("tag",function (){
+				//返回指令相关的内容
+				return {
+					
+					/*
+					 规定指令的类型
+					 E：element
+					 C：class
+					 A: attribute
+					 M: mark
+					 * */
+					restrict : "EACM",
+					/*
+					 当有字符串定义模版时
+					 	要确保整个字符串有一个根元素
+					 * */
+					//template : "<div><h2 style = 'color:red'>hello world!</h2><span>123</span></div>",
+					//替换原有的tag标签
+					replace : true,
+					//template和templateUrl不能同时存在
+					templateUrl : "header.html"
+				}
+			});
+		</script>
+	</body>
+</html>

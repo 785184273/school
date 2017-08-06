@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				js面向对象的继承主要依靠原型链实现的，原型链是作为实现继承的主要方法
+				
+			*/
+				function supertype(){
+					this.property = true;
+				}
+				supertype.prototype.getsupervalue = function (){
+					return this.property;
+				}
+				function subtype(){
+					this.subproperty = false;
+				}
+				
+				//继承了supertype
+				subtype.prototype = new supertype(); //实现继承的本质是重写原型
+				
+				//添加新方法
+				subtype.prototype.getsubvalue = function (){
+					return this.subproperty;
+				}
+				//重写超类型中的方法
+				supertype.prototype.getsupervalue = function (){
+					return false;
+				}
+				//子类型有时候需要重写超类型中的某个方法，或者需要添加超类型中不存在的某个方法，但是不管怎么样，给原型添加方法的代码一定要放在替换原型 语句之后
+				
+				var instance = new subtype();
+				console.log(instance);
+				console.log(instance.getsupervalue());	//false
+				console.log(instance.constructor.name)	//supertype
+				//注意：instance.constructor.name现在指向的是supertype,这是因为原来的subtype.prototype中的constructor被重写了的缘故
+				console.log(instance instanceof Object);	//true
+				console.log(instance instanceof supertype);	//true
+				console.log(instance instanceof subtype);	//true
+		</script>
+	</body>
+</html>

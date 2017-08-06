@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				border: 1px solid red;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			/*创建自定义事件的步骤：
+					1.自己取一个事件的名字
+					2.分析在什么情况下可以触发这个事件
+			* 
+			* */
+			$("#box").on("rightclick",function (){		//1.自定义事件的名字：rightclick
+				alert(1);
+			})
+			$("#box").on("rightclick",function (){		//1.自定义事件的名字：rightclick
+				alert(2);
+			})
+			$("#box").on("rightclick",function (){		//1.自定义事件的名字：rightclick
+				alert(3);
+			})
+			$(document).on("mouseup",function (evt){	//2.在document对象上，当鼠标抬起的时候id = box的div触发这个事件
+				if(evt.button == 2){
+					//$("#box").trigger("rightclick");
+					console.log(event);
+				}
+			})
+			$(document).on("contextmenu",function (){
+				return false;
+			})
+		</script>
+	</body>
+</html>

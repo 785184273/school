@@ -1,0 +1,121 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type="text/javascript">
+			/*function confirmDel()
+			{
+				if(window.confirm("你确认要删除吗？"))
+				{
+					//跳转到删除页面,执行操作
+				}
+			}*/
+			//实例：弹出一个新的窗口
+			/*
+			function init()
+			{
+				//变量初始化
+				var screenWidth = screen.availWidth;	//屏幕的有效宽度
+				var screenHeight = screen.availHeight;	//屏幕的有效高度
+				var width = 400;	//新窗口的宽度
+				var height = 300;	//新窗口的高度
+				var x = (screenWidth-width)/2;	//左距离
+				var y = (screenHeight-height)/2-80;		//上距离
+				var url2 = "";
+				var name2 = "win2";
+				var options2 = "width="+width+",height="+height+",left="+x+",top="+y+",menubur=no,toolbar=no";
+				//根据上面的规格来打开新的窗口
+				var winObj = window.open(url2,name2,options2);
+				//往新的窗口中输入一个字符串.winObj就是新窗口的对象 
+				winObj.document.write("这是新窗口的内容");
+				//10秒后自动关闭
+				winObj.setTimeout("window.close()",30000);
+			}
+			*/
+		</script>
+	</head>
+		<body onload="init()">
+			<!--<table width="600" border="1" align="center" rules="all" cellpadding="5">
+				<tr>
+					<th>新闻id</th>
+					<th>新闻标题</th>
+					<th>操作选项</th>
+				</tr>
+				<tr>
+					<td>10010</td>
+					<td>2022年中国赢得冬奥会举办权</td>
+					<td style = "text-align:center"> <a href = "">修改</a> <a href = "" onClick="confirmDel()">删除</a></td>
+				</tr>
+			</table>-->
+		<a href = "http://www.baidu.com" onclick = " return change()">跳转</a>
+		</body>
+		<script>
+			function change(){
+				if(confirm("你真的要跳转吗 ？")){
+					return true;
+				}else{
+					return false;
+				}
+			}
+		</script>
+</html>
+<!--
+window对象方法
+	在上面的例子中：
+		html标记如何与js交互呢？是通过html标记的事件属性，去调用js代码来完成交互
+		onClick就是一个事件属性，它是一个单击事件，所有html标记都具有该属性,当单击<a>标记时，去调用confirmDel()函数
+		在confirmDel()函数中，来完成相应的功能代码
+	对html操作有一定的顺序呢的
+		1.<a>标记必须先出来
+		2.鼠标单击<a>标记，事件属性onClick
+		3.当onClick事件发生时，去调用confirmDel()函数中
+		4.转到js代码中，去执行confirmDel()函数代码
+	
+	alert():弹出一个警告对话框
+	prompt():弹出一个输入对话框
+	confirm():弹出一个确认对话框，如果单击"确定"按钮，返回真，单击"取消"，返回假
+	Close():关闭窗口
+	Print()：打印窗口
+	open():方法
+		功能：打开一个新的浏览器窗口
+		语法；var winObj = window.open([url],[name],[options])
+		说明：参数可有可无，如果没有参数，则打开一个选项卡式的窗口(大小是最大化的)
+		参数：
+			属性：
+			opener:在新窗口中，使用父窗口的引用
+			url：准备在新的窗口中显示哪个文件，url可以为空字符串，表是显示一个空的页面
+			name：新窗口的名字，打开形式
+				该名字给<a>标记的target属性来用
+				_self/_top/_blank/
+			options：窗口的规格，大小，坐标
+				width：新的窗口的宽度
+				height:新窗口的高度
+				left：新窗口距离屏幕左边的距离	是指屏幕的坐标
+				top：新窗口距离屏幕上边的距离	是指屏幕的坐标
+				menubur：是否显示菜单栏，取值：yes no
+				toolbar：是否显示工具栏
+				location:是否显示地址栏
+				status：是否显示状态栏
+				scrollbars：是否显示滚动条，不能省略s字母，
+			返回值：返回一个window对象的变量。可以通过该名称跟踪该窗口
+					winObj具备window对象的所有属性和方法
+			Onload事件：当网页加载完成，指<body>标记的所有内容全部加载完成
+						才触发该事件(条件),通过Onload事件属性，去调用js的函数
+						Onload属性只有<body>标记才有
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->

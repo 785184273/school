@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box:after{
+				content: "";
+				display: block;
+				clear: both;
+				height: 0;
+			}
+			#left_self,#right_self{ width: 200px;height: 200px; background-color: #ffe6b8 }  
+			#left_self {float: left;} 
+			#right_self{float: right;}
+			#center_self{margin: 0 205px;height: 200px; background-color: #a0b3d6}  
+			.box2{
+				height: 200px;
+				position: relative;
+			}
+			.left,.right{
+				position: absolute;
+				top: 0;
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+			.left{
+				left: 0;
+			}
+			.right{
+				right: 0;
+			}
+			.center{
+				background: pink;
+				height: 200px;
+				margin: 0px 205px;
+			}
+			@media screen and (max-width:450px){
+				#left_self,#right_self,.left,.right{
+					width: 50px;
+				}
+				#center_self,.center{
+					margin : 0px 50px;
+				}
+			} 
+		</style>
+	</head>
+	<body>
+		<div class = "box">
+			<div id = "left_self">我是左边</div>  
+			<div id = "right_self">我是右边</div>  
+			<div id = "center_self">我是中间</div> 			
+		</div>
+		<div class = "box2">
+			<div class = "left"></div>
+			<div class = "center"></div>
+			<div class = "right"></div>
+		</div>
+	</body>
+</html>

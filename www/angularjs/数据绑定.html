@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app = "App" ng-controller = "demo">
+		<h1 ng-bind = "{{age}}"></h1>
+		<h1 ng-cloak>{{age}}{{name}}</h1>
+		<h1 ng-bind = "age"></h1>
+		<!--ng-bind-template可以解决闪烁，ng-cloak也可以实现-->
+		<h1 ng-bind-template = "{{name}}{{age}}"></h1>
+		<h1>{{name}}</h1>
+		<input type="text" name="" id="" ng-model = "text" />
+		<span ng-bind = "text"></span>
+		<input type="button" name="" id="" value = "点击" ng-click = "say()" />
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 	数据绑定
+			 		双向绑定
+			 			双向绑定可以实现模型数据和视图模版的双向传递
+			 	在angularjs中通过"{{}}"和ng-bind指令实现模型（model）数据向视图（view）模版的绑定，模型数据通过一个内置服务$scope来提供，这个$scope是个空对象，通过这个对象添加属性或方法便可以在相应的视图模版里面被访问
+			 		注意："{{}}"是ng-bind的简写形式，其区别在于通过"{{}}"绑定数据时会有闪烁现象，添加ng-cloak也可以解决闪烁现象，通过ng-bind-template可以绑定多个数据
+		 * */
+			var App = angular.module("App",[]);
+			App.controller("demo",["$scope",function ($scope){
+				$scope.age = "20";
+				$scope.name = "小明"
+				$scope.say = function (){
+					console.log($scope);
+				}
+			}])
+		</script>
+	</body>
+</html>

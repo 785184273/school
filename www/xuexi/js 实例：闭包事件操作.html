@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			window.onload = function (){
+				var obj = document.getElementsByTagName("li");
+				var len = obj.length;
+				
+				for(var i = 0;i < len;++i){
+				/*
+					obj[i].addEventListener("mouseover",function (){
+						this.style.background = "pink";
+						//obj[i].style.background = "pink";
+					});
+					obj[i].addEventListener("mouseout",function (){
+						this.style.background = "";
+						//obj[i].style.background = "";
+					});
+				*/
+					obj[i].onmouseover = f1(i);
+					obj[i].onmouseout = f3(i);
+				}
+			}
+			/*
+				以上事件访问报错：obj[i] is undefined
+				i的值已经定格为3了
+				以上for循环执行的时候声明对应的function(但是并没用执行)，当鼠标划过li的项目使得function执行的时候，其内部的i都已经定格为3的信息
+				
+				所有的事件function都是访问的同一个i变量，该变量的id的信息为3,所以不能获得obj[3]的对象，而我们需要的事件函数function,他们需要的独立的，内部的i信息分别是不同的0/1/2/3
+			*/
+			//*
+			function f1(i){
+				var obj = document.getElementsByTagName("li");
+				function f2(){
+					obj[i].style.background = "pink";
+				}
+				return f2;
+			}
+			function f3(i){
+				var obj = document.getElementsByTagName("li");	
+				function f4(){
+					obj[i].style.background = "";
+				}
+				return f4;
+			}
+			//*/
+		</script>
+	</head>
+		<body>
+			<h2>闭包事件操作</h2>
+			<ul>
+				<li>html</li>
+				<li>css</li>
+				<li>javascript</li>
+			</ul>
+		</body>
+</html>

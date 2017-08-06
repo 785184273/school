@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style>
+			/*
+				text-overflow:用来设置是否使用一个省略标记(...)表示文本对象内文本的溢出
+					语法：text-overflow:clip | ellipsis
+					clip：表示剪切
+					ellipsis：表示显示省略标记
+				white-sapce:规定段落中的文本不进行换行
+				取值：
+					nowrap
+				word-wrap:当前行超过指定容器的边界时是否断开转行
+					word-wrap:normal | break-word;
+					normal:只在允许的端字点换行(浏览器保持默认处理)
+					break-word:在长单词或url地址内部进行换行
+			*/
+			div{
+				text-overflow:ellipsis;
+				overflow:hidden;
+				white-space:nowrap;
+				width:200px;
+				background:pink;
+				/*
+					注意：
+						text-overflow只是用来说明文字溢出时用什么方式显示，要实现移除时产生省略号的效果，还需要定义文本在一行内显示，以及溢出的内容为隐藏，只有这样才能实现溢出为文本显示省略号的效果
+				*/
+			}
+		</style>
+	</head>
+		<body>
+			<div>
+			我没有说谎，我何必说谎，你知道的，我缺点之一就是很健忘，我没有说谎，请别以为你有多难忘，笑是真的不是我逞强
+			</div>
+		</body>
+</html>

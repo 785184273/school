@@ -1,0 +1,114 @@
+<!!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			/*body{
+				height: 500px;
+				margin: 10px;
+				padding: 10px;
+				width: 500px;
+				border: 1px solid red;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div id = "div" style = "border: 1px solid red;padding: 10px;margin: 20px;height: 200px;width: 200px;position: relative;">
+			<div id = "div1" style = "border: 1px solid red;padding: 10px;margin: 10px;width: 20px;height: 20px;">
+			</div>
+		</div>
+		<script type = "text/javascript">
+			console.log(innerHeight);	
+			console.log(innerWidth);
+			console.log(outerHeight);
+			console.log(outerWidth);
+			console.log(screen.height);
+			console.log(screen.width);
+			console.log(window.screenTop);
+			console.log(window.screenLeft);
+			console.log(window.screen.availHeight);
+			console.log(window.screen.availWidth);
+			console.log(document.getElementById("div").clientHeight);
+			console.log(document.getElementById("div").clientWidth);
+			console.log(document.getElementById("div").clientLeft);
+			console.log(document.getElementById("div").clientTop);
+			console.log(document.getElementById("div").offsetHeight);
+			console.log(document.getElementById("div").offsetWidth);
+			console.log(document.getElementById("div1").offsetLeft);
+			console.log(document.getElementById("div1").offsetTop);
+			console.log(document.getElementById("div1").scrollHeight);
+			console.log(document.getElementById("div1").scrollWidth);
+			console.log(document);
+			console.log(document.documentElement);
+			console.log(document.body);
+			console.log(document.body.scrollHeight);
+			//document.body.scrollHeight在火狐浏览器下是0
+			//在chrome浏览器下是浏览器窗口的高度
+			console.log(document.body.scrollWidth);
+			console.log(document.documentElement.clientHeight);
+			console.log(document.body.clientHeight);
+		</script>
+	</body>
+</html>
+<!--
+	window
+		window.innerheight:窗口文档显示区的高度
+		window.innerwidth:窗口的文档显示区的宽度
+		window.outerheight:窗口的外部高度
+		window.outerwidth:窗口的外部宽度
+		screen
+			window.screen.height:屏幕的高度
+			window.screen.width:屏幕的宽度
+			window.screen.availheight:屏幕可利用的高度(屏幕的高度-windows任务栏高度)
+			window.screen.availwidth:屏幕可利用的宽度(屏幕的宽度-windows任务栏宽度
+			window.screenTop:浏览器距屏幕上方的高度
+			window.screntLeft:浏览器距屏幕左边的宽度
+	document
+		document.body.clientWidth:元素的可视部分的宽度(padding+content)
+		document.body.clientHeight:元素的可视部分的高度(padding+content)
+		clientHeight和clientWidth:指的是元素的内容及其内边距所占据的空间大小
+			注意：
+				如果没有滚动条即为元素设定的宽度和高度,如果出现滚动条,滚动条会遮盖元素的宽高，那么该属性就是其本来宽高减去滚动条的宽高
+				不一定是document.body也可以是其他的元素(例如：document.getElementById("...").clientWidth);
+		clientLeft和clientTop:元素周围边框的厚度
+		offsetWidth和offsetHeight:这一对属性指的是元素的border+padding+content的宽度和高度，该属性和其内部的内容是否超出元素大小无关,只和本来设定的border以及width和height有关
+		offsetLeft和offsetTop
+			注意：基于offsetParent
+				.如果当前元素的父级元素没有进行css定位(position为relative和absolute),offsetParent为body
+				.如果当前元素的父级元素中有css定位(position为relative和absolute),offsetParent取最近的那个父级元素
+				在IE6/7中
+					offsetLeft = (offsetParent的padding-left) + (当前元素的margin-left)
+				在IE8/9/10及Chrome中
+					offsetLeft = (offsetParent的margin-left) + (offsetParent的border宽度)+(offsetParent的padding-left)+(当前元素的margin-left)
+				在FireFox中
+					offsetLeft = (offsetParent的margin-left) + (offsetParent的padding-left) + (当前元素的margin-left);
+		scrollWidth和scrollHeight:
+			document.body的scrollWidth和scrollHeight
+				.当给定的宽高小于浏览器窗口
+					scrollWidth通常是浏览器窗口的宽度
+					scrollHeight通常是浏览器窗口的高度
+				.当给定的宽高大于浏览器窗口,且内容小于给定的宽高
+					scrollWidth = 给定的宽度  + padding + margin + border
+					scrollHeight = 给定的高度  + padding + margin + border
+			在某div中scrollHeight和scrollWidth
+				无滚动轴
+					scrollWidth = clientWidth = (style.width + style.padding * 2);
+				有滚动轴
+					scrollWidth = 实际内容的宽度 + padding * 2
+					scrollHeight = 实际内容的高度 + padding * 2
+		scrollLeft和scrollTop:这对属性是可以读写的，指的是当元素其中的内容超出其宽高的时候，元素被卷起的高度和宽度
+	document.documentElement和body的关系
+		父子级的关系
+	event
+		clientX和clientY		相对于浏览器(可视区左上角0,0)的坐标
+		screenX和screenY		相对于设备屏幕左上角(0,0)的坐标(和screenLeft screenTop相等)
+		offsetX和offsetY		相对于事件源左上角(0,0)的坐标
+		pageX和pageY			相对于整个网页左上角(0,0)的坐标
+		X和Y					本来是IE属性，相对于用css动态定位的做内层包容元素
+	jq
+		width()：返回的结果无单位(px)
+		css("width")的结果有单位
+		innerWidth()和innerHeight() = content + padding
+		outerWidth()和outerHeight() = content + padding + border
+		outerWidth(true)和outerHeight(true) = content + padding + margin + border
+			
+-->				

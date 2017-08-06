@@ -1,0 +1,72 @@
+[08-Apr-2016 07:04:05 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[08-Apr-2016 07:04:05 UTC] PHP Stack trace:
+[08-Apr-2016 07:04:05 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[08-Apr-2016 07:06:30 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[08-Apr-2016 07:06:30 UTC] PHP Stack trace:
+[08-Apr-2016 07:06:30 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[08-Apr-2016 07:06:38 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[08-Apr-2016 07:06:38 UTC] PHP Stack trace:
+[08-Apr-2016 07:06:38 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[08-Apr-2016 07:07:08 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[08-Apr-2016 07:07:08 UTC] PHP Stack trace:
+[08-Apr-2016 07:07:08 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[08-Apr-2016 07:07:09 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[08-Apr-2016 07:07:09 UTC] PHP Stack trace:
+[08-Apr-2016 07:07:09 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[08-Apr-2016 08:30:12 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[08-Apr-2016 08:30:12 UTC] PHP Stack trace:
+[08-Apr-2016 08:30:12 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[12-Apr-2016 01:41:58 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[12-Apr-2016 01:41:58 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[12-Apr-2016 01:41:58 UTC] PHP Stack trace:
+[12-Apr-2016 01:41:58 UTC] PHP Stack trace:
+[12-Apr-2016 01:41:58 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[12-Apr-2016 01:41:58 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[12-Apr-2016 01:42:13 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[12-Apr-2016 01:42:13 UTC] PHP Stack trace:
+[12-Apr-2016 01:42:13 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[12-Apr-2016 01:42:20 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[12-Apr-2016 01:42:20 UTC] PHP Stack trace:
+[12-Apr-2016 01:42:20 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[12-Apr-2016 01:43:28 UTC] PHP Warning:  年龄不符合要求! in F:\wamp\wamp\www\phpjiuye\loading.php on line 19
+[12-Apr-2016 01:43:28 UTC] PHP Stack trace:
+[12-Apr-2016 01:43:28 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[12-Apr-2016 01:43:28 UTC] PHP   2. trigger_error() F:\wamp\wamp\www\phpjiuye\loading.php:19
+[12-Apr-2016 01:43:28 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[12-Apr-2016 01:43:28 UTC] PHP Stack trace:
+[12-Apr-2016 01:43:28 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[12-Apr-2016 01:43:45 UTC] PHP Warning:  年龄不符合要求! in F:\wamp\wamp\www\phpjiuye\loading.php on line 19
+[12-Apr-2016 01:43:45 UTC] PHP Stack trace:
+[12-Apr-2016 01:43:45 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[12-Apr-2016 01:43:45 UTC] PHP   2. trigger_error() F:\wamp\wamp\www\phpjiuye\loading.php:19
+[12-Apr-2016 01:43:45 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[12-Apr-2016 01:43:45 UTC] PHP Stack trace:
+[12-Apr-2016 01:43:45 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[12-Apr-2016 01:43:50 UTC] PHP Warning:  年龄不符合要求! in F:\wamp\wamp\www\phpjiuye\loading.php on line 19
+[12-Apr-2016 01:43:50 UTC] PHP Stack trace:
+[12-Apr-2016 01:43:50 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[12-Apr-2016 01:43:50 UTC] PHP   2. trigger_error() F:\wamp\wamp\www\phpjiuye\loading.php:19
+[12-Apr-2016 01:43:50 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[12-Apr-2016 01:43:50 UTC] PHP Stack trace:
+[12-Apr-2016 01:43:50 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[25-Apr-2016 09:39:08 UTC] PHP Warning:  年龄不符合要求! in F:\wamp\wamp\www\phpjiuye\loading.php on line 19
+[25-Apr-2016 09:39:08 UTC] PHP Stack trace:
+[25-Apr-2016 09:39:08 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[25-Apr-2016 09:39:08 UTC] PHP   2. trigger_error() F:\wamp\wamp\www\phpjiuye\loading.php:19
+[25-Apr-2016 09:39:08 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[25-Apr-2016 09:39:08 UTC] PHP Stack trace:
+[25-Apr-2016 09:39:08 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[07-May-2016 14:28:55 UTC] PHP Warning:  年龄不符合要求! in F:\wamp\wamp\www\phpjiuye\loading.php on line 19
+[07-May-2016 14:28:55 UTC] PHP Warning:  年龄不符合要求! in F:\wamp\wamp\www\phpjiuye\loading.php on line 19
+[07-May-2016 14:28:55 UTC] PHP Stack trace:
+[07-May-2016 14:28:55 UTC] PHP Stack trace:
+[07-May-2016 14:28:55 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[07-May-2016 14:28:55 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[07-May-2016 14:28:55 UTC] PHP   2. trigger_error() F:\wamp\wamp\www\phpjiuye\loading.php:19
+[07-May-2016 14:28:55 UTC] PHP   2. trigger_error() F:\wamp\wamp\www\phpjiuye\loading.php:19
+[07-May-2016 14:28:55 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[07-May-2016 14:28:55 UTC] PHP Notice:  Use of undefined constant c1 - assumed 'c1' in F:\wamp\wamp\www\phpjiuye\loading.php on line 25
+[07-May-2016 14:28:55 UTC] PHP Stack trace:
+[07-May-2016 14:28:55 UTC] PHP Stack trace:
+[07-May-2016 14:28:55 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0
+[07-May-2016 14:28:55 UTC] PHP   1. {main}() F:\wamp\wamp\www\phpjiuye\loading.php:0

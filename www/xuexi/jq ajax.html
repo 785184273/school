@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			$(function (){
+				$('form').submit(function (){
+					
+					$.get("./jq ajax1.php",$(this).serialize(),function (msg){
+						alert(msg);
+					});
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<p>the one</p>
+		<form>
+			<input type = "username" name = "a">
+			<input type = "password" name = "b">
+			<input type = "submit" value = "点击">
+		</form>
+	</body>
+</html>
+<!--
+	jq封装的ajax
+		具体操作
+			$.get(url,[data],[function(msg){}回调函数],[dataType]);
+				data：给服务器传递的数据，请求字符换，json对象都可以设置
+				function(msg){}：回调函数，ajax请求完成后调用该函数，可以在此函数完成ajax的后续处理，msg泛指从服务器传递回来的数据
+				dataType: 从服务器返回的数据类型，html，text,xml,json
+			$.post(url,[dtat],[function(msg){}回调函数],[dataType]);
+				该方法与$.get()方法使用完全一致，不同的是其为post方式请求给服务器传递数据的时候，不需要是设置header头
+			(以上两种sjax请求是异步的，如果需要设置同步请求就换其他的方法)
+			$.ajax({//json对象
+					url:请求地址,
+					[data]:给服务器传递的数据(请求字符串/json对象),
+					[dataType]:默认字符串的返回信息，数据从服务器的返回格式html,text,xml,json,
+					[type]:get/post请求,
+					[success]:function(msg){},ajax成功调用的后的回调函数，可以做后续处理使用，msg泛指服务器返回来的信息
+					async:[true]异步/[false]同步
+					cache:[true]缓存/[false]不缓存
+					})
+			
+				
+-->

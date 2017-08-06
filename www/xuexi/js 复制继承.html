@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			//复制继承---该继承在jq有大量的应用，该继承允许同时继承"多个对象"
+			//该继承的特点/好处：继承非常灵活,可以根据实际情况需要为对象去继承成员，如果有的对象不要额外的成员，就不继承即可
+			var cat = {
+				color:"white",
+				weapon:"伶牙俐齿",
+				climb:function (){
+					console.log("在爬树");
+				},
+			};
+			var seven = {
+				eye:"闪闪发光",
+				tail:"笔直的尾巴",
+			};
+			
+			function dog(){
+				this.color = "grey";
+				this.age = 4;
+			}
+			dog.prototype.extend = function (obj){
+				//this代表调用当前方法的对象
+				//遍历obj，获得具体成员，并赋予给black对象
+				for(var k in obj){
+				//继承本身不存在的成员
+					if(!this.hasOwnProperty(k)){
+						this[k] = obj[k];
+					}
+				}
+			}
+			
+			var black = new dog();
+			var yellow = new dog();
+			//使得black对象去继承cat对象,seven对象
+			
+			black.extend(cat);	
+			black.extend(seven);//extend是自定义方法(为了后期的使用和jq保持想法一直，使用该名称)
+			
+			console.log(black);
+			console.log(yellow);
+			for(var k in black){
+				console.log(black[k]);
+			}
+		</script>
+	</head>
+		<body>
+		</body>
+</html>
+<!--
+	原型衍生继承---复制继承
+	
+-->

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body ng-app = "App" ng-controller = "demo">
+		<img ng-src = "./img/1.png"/>
+		<a ng-href = "http://www.baidu.com">baidu</a>
+		<img ng-src = "{{defaultSrc}}"/>
+		<a ng-href = "{{defaultHref}}">baidu</a>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+		/*
+		 ng-src 
+		 	覆盖了img标签的src属性
+		 	值
+		 		表达式返回的字符串
+		 ng-href
+		 	覆盖了a标签的href属性
+		 	值
+		 		表达式返回的字符串
+		 * */
+			var App = angular.module("App",[]);
+			App.controller("demo",["$scope",function ($scope){
+				$scope.defaultSrc = "./img/1.png";
+				$scope.defaultHref = "http://www.baidu.com";
+			}])
+		</script>
+	</body>
+</html>

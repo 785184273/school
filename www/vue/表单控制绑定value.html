@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<select v-model = "sel" @change = "val()">
+				<option value="A">A</option>
+				<option value="B">B</option>
+				<option value="C">C</option>
+				<option value="D">D</option>
+			</select>
+			<span>
+				{{sel}}
+			</span>
+			<br />
+			<input type="text" v-model.lazy.number = "info"/>
+			<span>
+				{{info}}
+			</span>
+			<br />
+			<input type="checkbox" v-model = "toggle" v-bind:value:true-value = "a" v-bind:value:false-value = "b" @click = "show()"/>
+			<span>
+				{{toggle}}
+			</span>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	修饰符
+			 		.lazy
+			 			在默认的情况下，v-model在input事件中同步输入框的值和数据，添加.lazy修饰符，从而转变在change事件中同步
+			 		.number
+			 			如果想将用户输入的值转换为number类型，（如果原值的转换结果为NaN,则返回原值）
+			 		.trim
+			 			自动过滤用户输入的首位空格
+			 * */
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					sel : "",
+					info : "",
+					a : "a",
+					b : "b",
+					toggle : ""
+				},
+				methods : {
+					val : function (){
+						console.log(this.info);
+					},
+					show : function (){
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

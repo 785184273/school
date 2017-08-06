@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>无标题文档</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+</head>
+<body>
+	<!--
+    	数据库简介
+        	数据库是存放数据的仓库，数据不是直接放在数据库中的，是放在数据库的表中的，表中存放的是数据
+            层次模型
+            优点：分类管理，如果查询同一类的数据是很方便的
+            缺点：如果查询很多不是同一类的数据，效率就很低了
+            	层次结构可以造成数据无效
+             网状模型
+             	网状模型解决了层次模型数据无效的问题，但是没有解决导航问题
+          	 关系模型
+             	关系模型中，每个表都是独立的，通过公共字段来建立关系      
+    			优点：表是独立的，需要什么数据就到那个表中查询
+                缺点：多表查询的时候效率低下
+                关系：两个表的公共字段
+		mysql数据库的系统级操作及基本语法规定
+			命令行模式(需要管理员身份)
+				启动:net start mysql
+				停止:net stop mysql
+			服务模式：控制面板>工具>服务>mysql>启动/停止
+		数据库基本语法规定
+			注释语句行
+				有如下三中注释
+					1.单行注释：*注释内容
+								-- 注释内容(注意两个--后面有个空格)
+					2.多行注释：/*注释内容*/
+			语句行
+				默认情况下，以一个英文分号作为一条语句的结束
+				而且，常规的操作中，都是"一次执行一条语句";
+				但，
+				mysql中，可以人为设定语句结束符，做法如下：
+					delimiter 新的结束符
+					此行之后，就可以使用新的结束符；
+			大小写问题
+				1.mysql语言内部本身不区分大小写
+				2.但，musql的某些命令执行后会生成文件夹，此时他们就可能区分大小写；
+					2.1在文件(夹)名称区分大小写的系统中，这些名字也会区分大小写，比如：unix，linux系统
+					2.2在文件(夹)名称不区分大小写的系统中，他们同样不区分大小写，比如：window系统
+			命名规则
+				
+   -->
+</body>
+</html>

@@ -1,0 +1,10 @@
+@charset = utf-8
+*{margin:0px;padding:0px;}
+
+body{margin:0px;padding:0px;font-family:'微软雅黑';}
+
+.box{border:1px solid #dddddd;border-radius: 3px;}
+.box h4{margin-top:10px;}
+#select{width: 200px;}
+.show_bug{border:1px solid #dddddd;border-radius: 3px;margin:10px 0px;}
+.border-left{border-left: 1px solid #dddddd;}

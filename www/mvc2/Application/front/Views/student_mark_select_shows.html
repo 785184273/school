@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<style type = "text/css">
+			body{margin:0px;padding:0px;}
+			.main{width:1000px;height:485px;border:1px solid #278296;margin:0px auto;}
+			h5{border:px solid red;text-align:center;margin:0px;}
+			.float{border:px solid red;width:260px;height:100px;margin:0px auto;text-align:center;padding:0px;}
+			.t1{float:left;font-weight:bold;font-size:12px;}
+			.t2{float:right;font-weight:bold;font-size:12px;}
+		</style>
+	</head>
+		<body>
+			<div class = "main">
+				<h5>学生成绩查询</h5>
+					<div class = "float">
+						<table class = "t1" border = 1 rules = "all">
+							<tr>
+								<td>课程号</td>
+								<td>课程名</td>
+								<td>成绩</td>
+							</tr>
+						<?php
+							if(is_array($result1)){
+								foreach($result1 as $val){
+						?>
+							<tr>
+								<td><?php echo $val['课程号'];?></td>
+								<td><?php echo $val['课程名'];?></td>
+								<td><?php echo $val['成绩'];?></td>
+							</tr>
+						<?php
+								}
+							}
+						?>
+						</table>
+						<table class = "t2" border = 1 rules = "all">
+							<tr>
+								<td>姓名</td>
+								<td>总学分</td>
+							</tr>
+						<?php
+							if(is_array($result2)){
+								foreach($result2 as $val2){
+						?>
+							<tr>
+								<td><?php echo $val2['姓名'];?></td>
+								<td><?php echo $val2['总学分'];?></td>
+							</tr>
+						<?php
+								}
+							}
+						?>
+						</table>
+					</div>
+			</div>
+		</body>
+</html>

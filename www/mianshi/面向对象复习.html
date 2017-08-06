@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//创建对象
+			//工厂模式
+			function createPerson(name,age){
+				var o = new Object();
+				o.name = name;
+				o.age = age;
+				o.sayName = function (){
+					alert(this.name);
+				};
+				return o;
+			}
+			var person1 = createPerson("小明","15");
+			//person1.sayName();
+			/*
+			 工厂模式虽然能创建多个对象，但是不能解决对象识别的问题
+			 * */
+			//构造函数模式
+			function person(name,age){
+				this.name = name;
+				this.age = age;
+				this.sayName = function (){
+					alert(this.name);
+				}			
+			}
+			person.prototype.addr = function (){
+				console.log(this.name);
+			}
+			var person2 = new person("小明","20");
+			var person3 = new person("小明","21");
+			//person2.sayName();
+			console.log(person2);
+			console.log(person.prototype);
+			console.log(person2 instanceof person);		//true
+			console.log(person2 instanceof Object);		//true
+			//console.log(person2.sayName);
+			//console.log(person3.sayName);
+			console.log(person2.sayName === person3.sayName);	//false	注意：不同对象的同名函数是不相等的(注意：你可以那么想，这两个对象本身就不想当，那么这两个对象的方法肯定也不相等)
+			/*
+			 构造函数模式和工厂模式的区别：
+			 	1.没有显示的创建对象
+			 	2.直接将属性和方法赋给了this对象
+			 	3.没有return语句
+			 创建的person新实例，必须使用new操作符，创建步骤：
+			 	1.创建了一个新对象
+			 	2.将构造函数的作用域赋给了新对象
+			 	3.执行构造函数中的代码
+			 	4.返回新对象
+			 person2保存着person的实例，每个创建的对象(实例)都有一个constructor(构造函数)属性，该属性指向person
+			 对象的constructor属性最初是用来标识对象类型的，但是提到检测对象的类型，还是instanceof操作符更要可靠一些，我们在例子中创建的所有对象既是Object的实例，同时也是person的实例
+			 之所有person2对象是Object的实例，是因为所有对象均继承自Object
+			 * */
+			
+			
+			//原型模式
+			/*
+			 我们创建的每一个函数都有一个prototype原型属性，这个属性是一个指针，指向一个对象
+			 prototype就是通过调用构造函数而创建的那个对象实例的原型对象，使用原型对象的好处就是可以让所有的对象实例共享他包含的属性和方法，
+			 * */
+			function protoperson(){
+				
+			}
+			protoperson.prototype.name = "小明";
+			protoperson.prototype.sayName = function (){
+				alert(this.name);
+			}
+			var pperson1 = new protoperson();
+			var pperson2 = new protoperson();
+			pperson1.name = "张三";
+			pperson1.age = 10;
+			//pperson1.sayName();
+			console.log(pperson1.sayName === pperson2.sayName);		//true 
+			console.log(pperson1.name);				//张三
+			console.log(pperson2.name);				//小明
+			/*
+				读取pperson1.name时，现在实例上面搜索名为name的属性，这个属性确实存在，就不必再搜索原型了，以同样的方式访问pperson2.name时，并没有在该实例上发现该属性，因此就会继续搜索该原型
+			*/
+			delete pperson1.name;
+			console.log(pperson1.name);				//小明
+			/*
+				当为对象添加一个属性时，这个属性就会屏蔽原型对象中的保存的属性名，使用delete操作符可以完全删除该实例属性
+			*/
+			console.log(pperson1);
+			console.log(pperson1.constructor.name);	//protoperson 
+			
+			/*
+				hasOwnProperty()方法可以检测一个属性是否存在于实例中，还是存在于原型中，这个方法是从Object继承来的，只在给定属性存在于对象实例中，才会返回true 
+			*/
+			console.log(pperson1.hasOwnProperty("age"));	//true
+			console.log(pperson1.hasOwnProperty("name"));	//false
+			/*
+			 	列举原型对象中的可枚举属性
+			 		可以使用for-in循环
+			 		可以使用ECMAscript5的Object.keys()方法，这个方法接收一个对象作为参数，返回一个字符串数组
+			 */
+			for(var i in protoperson.prototype){
+				console.log(i);
+			}
+			var keys = Object.keys(protoperson.prototype);
+			console.log(keys);		//["name","sayname"];
+			/*
+				如果你想要得到所有的实例属性，无论他是否可以枚举，可以使用Object.getOwnPropertyNames()方法 
+			*/
+			var keys = Object.getOwnPropertyNames(protoperson.prototype);
+			console.log(keys);		//["constructor","name","sayName"]
+			var obj = {
+				"name" : "小明",
+				"age" : 20
+			}
+			for(var i in obj){
+				console.log(obj[i]);		//注意：for in 遍历对象，i输出的是键名(方法名/属性名)，遍历数组i输出的下标
+			}
+		</script>
+	</body>
+</html>

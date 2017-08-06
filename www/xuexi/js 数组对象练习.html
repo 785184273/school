@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript">
+		//实例：将以下字符串转成数组，再转成字符串
+		var str = "星期一,星期二,星期三,星期四,星期五,星期六,星期天";
+		var arr = str.split(",");
+		var a;
+		for(a = 0;a < arr.length;a++)
+		{
+			//window.alert(arr[a]);
+		}
+		var week = arr.join(",")
+		document.write(week+"  类型是："+typeof(week));
+		document.write("<hr>")
+		//实例：将数组中的元素翻转顺序，是对原始数组操作
+		var arr = ["a","b","c","f"];
+		arr = arr.reverse();
+		document.write(arr);
+		document.write("<hr>")
+		//测试数组的长度
+		var arr = ["1","2","3","4"];
+		delete arr[2];
+		document.write("数组的长度："+arr.length+"<br>"+arr);
+		document.write("<hr>")
+		//shift()对象
+		var Arr = ["1","2","3","4"];
+		value = Arr.shift();
+		document.write("数组的长度："+Arr.length+"<br>"+Arr+"<br>删除的元素:"+value);
+		document.write("<hr>")
+		//pop()对象
+		var brr = ["1","2","3","4"];
+		value = brr.pop();
+		document.write("数组的长度："+brr.length+"<br>"+brr+"<br>删除的元素:"+value);
+		document.write("<hr>")
+		//对以下数组进行翻转操作(不使用reverse()方法)
+		var arr = ["a","b","c"];
+		var len = arr.length;
+		//创建一个空的数组
+		var brr = new Array();
+		//循环数组
+		for(var i = 0;i < /*arr.length*/len;i++)
+		{
+			brr[i] = arr.pop();
+			/*
+				用动态获取长度arr.length会发生错误
+					第一次循环	i = 0;i < 4 	["c"];
+					第二次循环	i = 1;i < 3 	["b"];
+					第三次循环	i = 2;i < 2		错误
+				
+			*/
+		}
+		document.write(brr);
+		document.write("<hr>")
+		//往数组前面添加元素
+		var arr = ["a","b","c"];
+		length = arr.unshift("d","e","f");
+		document.write("数组的长度："+length+"<br>数组元素："+arr);
+		document.write("<hr>")
+		//网数组后面添加元素
+		var arr = ["a","b","c"];
+		length = arr.push("d","e","f");
+		document.write("数组的长度："+length+"<br>数组元素："+arr);
+		//3.利用var s1 = prompt("请输入任意字符","")可以获取用户输入的字符(存到变量s1中)
+		//将编程输入的字符翻转顺序，并首位字母大写
+		var get = prompt("请输入一串任意的字符");
+		if(get==null || get == 0)
+		{
+			alert("对不起你取消了该项操作");
+		}else{
+			var arr = get.split('');
+			var daoxu = arr.reverse();
+			get = daoxu.join('');
+			var frist = get.charAt(0);
+			var daxie = frist.toUpperCase();
+			document.write(daxie);
+		}
+		
+		
+		
+		
+		</script>
+	</head>
+		<body>			
+		</body>
+</html>

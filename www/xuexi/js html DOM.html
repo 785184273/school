@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+			/*
+	
+			function init()
+			{
+				var imgObj = document.getElementById("haodiao");
+					imgObj.setAttribute("border","1");
+					imgObj.src = "img/443.jpg";
+				
+			}
+			*/
+			function init()
+			{
+			//获取id=yoyo的网页对象
+			var ulObj = document.getElementById("yoyo");
+			//alert(ulObj);
+			//查找<ul>下的所有的<li>标记
+			var arrObj = ulObj.getElementsByTagName("li");
+			var len = arrObj.length;
+			//alert(arrObj[0].firstChild.nodeValue);
+			//给所有的<li>标记增加css样式
+			for(var i = 0;i < len;i++)
+				{
+					arrObj[i].style= "color:red;";
+					//ulObj.removeChild(arrObj[i]);
+				}
+			}
+		</script>
+	</head>
+		<body onload="init()">
+			<img id = "haodiao" />
+			<ul id="yoyo">
+				<li>超笨笨</li>
+				<li>傻蛋</li>
+				<li>mnimabi</li>
+				<li>window</li>
+			</ul>
+		</body>
+</html>
+<!--
+html DOM简介和新特性
+		描述网页各个组成部分之间的关系
+		核心DOM中，提供是属性和方法，已经可以操作网页了，为什么还要有htmlDOM呢？
+		如果在核心DOM中，网页中节点层级很深时，访问这个节点将很麻烦
+		那么，htmlDOM中就提供了通过id找节点的方法，而不用再从根节点开始
+	htmlDOM的新特征
+		每一个html标记都对于一个元素对象，如：<img>对应一个图片的对象
+		每一个html标记的属性与对应的元素对象的属性，一一对应
+	htmlDOM访问html元素的方法(最常用)
+		1.getElementById()·
+			功能：查找网页中指定id的元素对象
+			语法： var obj = document.getElementById(id)
+			参数：id是指网页中标记的id属性的值
+			返回值：返回一个元素对象
+			举例：var imgObj = document.getElementById("img01");
+		2.getElementsByTagName(tagName)
+			功能：查找指定的html标记，返回一个数组
+			语法：var arrObj = parentNode.getElementsByTagName(tagName)
+			参数：tagName是要查找的标记的名称，不带尖括号
+			返回值：返回一个数组。如果只有一个节点，也返回一个数组
+			举例：var arrObj =  ulObj.getElementsByTagName("li")
+	元素对象的属性
+		每个标记都有三大类的属性
+			1.核心DOM中的属性和方法
+			2.html标记的属性
+			3.元素对象的属性
+		tagName:标签名称，和核心DOM中的nodeName一样
+		className：css中类的样式
+		id：同html标记id属性一样
+		title：同html标记title属性一样
+		style：同html标记的style属性一样
+		innerHTML：nodeValue 包含html标记中的所有内容，包括html标记等
+		offsetWidth:元素对象的宽度，不带px单位
+		offsetHeight：元素对象的高度，不带px单位
+		scrollWidth：元素对象的总宽度，包括滚动条中的内容，不带px单位
+		scrollHeight：元素对象的总高度，包括滚动条中的内容，不带px单位
+		scrollTOp：指内容向上滚动上去了多少距离(有滚动条时才有效)
+		scrollLeft：指内容向左滚动过去了多少距离(有滚动条时才有效)
+
+
+
+
+
+
+-->

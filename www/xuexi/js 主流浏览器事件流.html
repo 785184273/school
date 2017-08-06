@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style>
+			.div1{width:300px;height:300px;background-color:pink;}
+			p{width:200px;height:200px;background-color:lightblue;}
+			span{background-color:lightgreen;}
+		</style>
+	</head>
+		<body>
+			<div>
+				<div id = "d1" style = "border:1px solid red;">主流浏览器</div>
+			</div>
+			<div class = "div1">
+				<p>
+					<span>
+						主流浏览器事件流
+					<span>
+				</p>
+			</div>
+			<input type = "submit" value = "click me" id = "btn"/>
+			<script>
+			var div = document.getElementById('d1');
+			div.addEventListener('click',f1,false);
+			function f1(){
+				alert("info");
+			}
+			div.addEventListener('click',f2,false);
+			function f2(){
+				alert('123');
+			}
+			
+			
+			//主流浏览器事件流
+			var div1 = document.getElementsByClassName("div1")[0];
+			var p = document.getElementsByTagName('p')[0];
+			var span = document.getElementsByTagName('span')[0];
+			span.addEventListener('click',function (event){
+				event.stopPropagation();	//阻止事件流
+				console.log('this is span')
+			});
+			p.addEventListener('click',function (event){
+				event.stopPropagation();	//阻止事件流
+				console.log('this is p')
+			});
+			div1.addEventListener('click',function (event){
+				event.stopPropagation();	//阻止事件流
+				console.log('this is div1')
+			});
+			
+			//
+			var btn = document.getElementById('btn');
+			btn.onclick = function (event){
+				alert(123);
+				event.stopPropagation();	//阻止事件的冒泡
+			}
+			document.body.onclick = function (event){
+				alert(event.target == btn);	//点在按钮上相等，没在按钮上不相等
+				alert(this === document.body);
+				alert(event.currentTarget === document.body);
+			};
+			</script>
+		</body>
+</html>

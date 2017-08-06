@@ -1,0 +1,129 @@
+			html,body{
+				padding: 0;
+				margin: 0;
+				font-family: "microsoft yahei";
+			}
+			a{
+				text-decoration: none;
+			}
+			.section{
+				position: relative;
+			}
+			/*更改导航*/
+			#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span {  
+			    background: #fff; /*活动导航的颜色*/
+			}  
+			#fp-nav ul li a span, .fp-slidesNav ul li a span {
+			    background: #fff;/*非活动导航的颜色*/
+			    height: 10px;
+			    width: 10px;
+			    margin: -4px 0 0 -5px;
+			} 
+			.section #content,
+			.section #skill,
+			.section #project,
+			.section #company_hope,
+			.section #contact{
+				text-align: center;
+				box-shadow: ;
+				width: 600px;
+				height: 400px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -300px;
+				//border: 1px solid red;
+				margin-top: -200px;
+			}
+			.page2 #skill .title,
+			.page4 #project .title,
+			.page5 #company_hope .title,
+			.section #contact .title{
+				font-size: 2rem;
+				color: #ffffff;
+			}
+			/*第一页*/
+			.page1 #content .me{
+				border: 10px solid #36b5c5;
+				border-radius: 50% 50%;
+				box-shadow: -5px 5px 5px #888888;
+			}
+			.page1 #content .myName{
+				font-size: 32px;
+				color: #ffffff;
+				letter-spacing: 3px;
+				text-shadow: 1px 2px #4dd0e1,2px 3px #2caaba;
+				margin: 29px 0px 23px 0px;
+			}
+			.page1 #content .myTitle{
+			    color: #bcf1f8;
+			    font-size: 12px;
+			}
+			.page1 #content .myJob{
+				font-size: 22px;
+				color: #ffffff;
+				font-weight: 400;
+				margin: 12px 0px 24px 0px;
+			}
+			.page1 #content .detail{
+				display: inline-block;
+				padding: 5px 10px;
+				font-size: 14px;
+				color: #ffffff;
+				background-color: #36b5c5;
+				border-radius: 2px;
+				transition: all .5s ease .1s;
+				box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+			}
+			.page1 #content .detail:hover{
+				background-color: #26a69a;
+				
+			}
+			/*第二页*/
+			.page2 #skill .skills{
+				width: 50%;
+				position: absolute;
+				left: 50%;
+				top: 20%;
+				margin-left: -25%;
+			}
+			.page2 #skill .skills a{
+				display: inline-block;
+				padding: 5px 10px;
+				margin:5px;
+				background: #36ddc4;
+				cursor: hand;
+				font-size: 16px;
+				border-radius: 3rem;
+				color: #ffffff;
+			}
+			/*第四页*/
+			.page4 #project .title span{
+				color: #d42d41;
+				font-size: 1rem;
+			}
+			.page4 #project .projects{
+				overflow: hidden;
+				text-align: center;
+			}
+			.page4 #project .projects div{
+				float: left;
+				width: 45%;
+				border: 1px solid #e0e0e0;
+				margin-left: 2%;
+				padding: 8px;
+				margin-bottom: 1%;
+			}
+			/*第五页*/
+			.page5 #company_hope .hope p{
+				color: #ffffff;
+				font-size: 1rem;
+				text-align: left;
+				margin: 5px 0px;
+			}
+			/*第六页*/
+			.page6 #contact .connection p{
+				text-align: center;
+				font-size: 18px;
+				color: #0f7c9d;
+			}

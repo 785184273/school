@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app = "App">
+		<h1 ng-cloak ng-controller = "demo1">{{name}}</h1>
+		<h1 ng-controller = "demo2">{{name}}</h1>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 scope(作用域)是应用在视图(html)和控制器(js)之间的纽带,其实就是存储数据的地方
+			 	很类似js的原型链，搜索的时候优先找到自己的scope,如果没有找到就沿着作用域向上搜索，直至到达根作用域rootScope
+			 scope是个对象有可用的方法和属性
+			 scope可应用在控制器上
+			 scope是模型，是一个js对象
+			 根作用域
+			 	所有的应用都有一个$rootScope,它可以作用在ng-app指令包含的html元素中
+			 	$rootScope可作用在整个应用中，是各个controller中scope的桥梁，用rootScope定义的值，可以在各个controller中使用
+			 	$rootScope是angular加载模块的时候自动创建的，每个模块只有1个rootScope,rootScope创建好会以服务的形式加入到$injector中	
+			* */
+			var App = angular.module("App",[]);
+			App.controller("demo1",["$scope","$rootScope",function ($scope,$rootScope){
+				$scope.name = "小糯米";
+				$rootScope.name = "小明";
+				console.log($scope);
+			}]);
+       		App.controller("demo2",["$scope","$rootScope",function ($scope,$rootScope){	
+				//$scope.name = $rootScope.name;                                               	
+				alert(123);//会弹出123；
+       		}]);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			window.onload = function (){
+				var sear = document.getElementById('search');
+				sear.onclick = function (){
+					var keyw_value = document.getElementById('keywords').value;
+					var src = "http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=" + keyw_value + "&k_length=600&callback=info";
+					var scr = document.createElement('script');
+					scr.src = src;
+					document.getElementsByTagName('head')[0].appendChild(scr);
+				}
+			}
+			function info(text){
+			console.log(text);
+				var s = "";
+				for(var k in text){
+					s += "<p>" + text[k] + "</p>"
+				}
+				document.getElementsByClassName('menu')[0].innerHTML = s;
+			}
+		</script>
+	</head>
+	<body>
+		<input type = "text" name = "keywords" id = "keywords">
+		<input type = "submit" name = "search" id = "search">
+		<div class = "menu" ></div>
+	</body>
+</html>

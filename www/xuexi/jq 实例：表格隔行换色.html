@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js">
+		</script>
+	</head>
+	<body>
+		<table border = 1 rules = "all" style = "margin:0px auto;">
+			<tr>
+				<td><input type = "checkbox" name = "state" id = "sta" onclick = "stat()"></td>
+				<td>序号</td>
+				<td>名称</td>
+				<td>价格</td>
+				<td>数量</td>
+			</tr>
+			<tr>
+				<td><input type = "checkbox" name = "state" class = "goods"></td>
+				<td>1</td>
+				<td>apple手机</td>
+				<td>5000</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td><input type = "checkbox" name = "state" class = "goods"></td>
+				<td>2</td>
+				<td>htc手机</td>
+				<td>3000</td>
+				<td>11</td>
+			</tr>
+			<tr>
+				<td><input type = "checkbox" name = "state" class = "goods"></td>
+				<td>3</td>
+				<td>诺基亚手机</td>
+				<td>2000</td>
+				<td>12</td>
+			</tr>
+		</table>
+	</body>
+	<script>
+		window.onload = function (){
+			//color();
+			$('tr:even').css('background','pink');
+			$('tr:eq(0)').css('background','yellow');
+			$('tr:odd').css('background','green');
+			
+		}
+		/*
+		function color(){
+			var len = $('tr').length;
+			for(var i = 0;i < len;++i){
+				if(i%2 == 0){
+					if(i == 0){
+						$('tr:eq(' + i + ')').css('background','yellow');
+					}else{
+						$('tr:eq(' + i + ')').css('background','pink');
+					}
+				}else{
+					$('tr:eq(' + i + ')').css('background','green');
+				}
+			}
+		}
+		*/
+		function stat(){
+			var state = $('#sta').attr('checked');
+			//window.alert(state);
+			var len = $('.goods').length;
+			for(var i = 0;i < len;++i){
+				$('.goods:eq(' + i + ')').attr('checked',state);
+			}
+		}
+	</script>
+</html>

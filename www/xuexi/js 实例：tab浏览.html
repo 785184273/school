@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<script type = "text/javascript">
+			function show(n,t){
+				//获取对象
+				var obj = document.getElementById("div" + n);
+				for(var j = 1;j < 5;++j){
+					var alldiv = document.getElementById("div" + j);
+					alldiv.style.display = "none";
+				}
+				//更改自身背景颜色之前先将所有的颜色都变为白色
+				for(var i = 1;i < 5;++i){
+					var allLi = document.getElementById("li" + i);
+					allLi.style.background = "white";
+					allLi.style.border = "1px solid red";
+				}
+				//再更改自身的背景颜色
+				t.style.background = "pink";
+				t.style.borderBottom = "0px";
+				obj.style.display = "block";
+			}
+			function moren(){
+				for(var j = 1;j < 5;++j){
+					var obj = document.getElementById("li" + j);
+					obj.style.border = "1px solid red";
+					obj.style.background = "white";
+				}
+				var mObj = document.getElementById("li1");
+				mObj.style.background = "pink";
+				for(var i = 1;i < 5;++i){
+					var dobj = document.getElementById("div" + i);
+					if(i == 1){
+						dobj.style.display = "block";
+					}else{
+						dobj.style.display = "none";
+					}
+				}
+			}
+		</script>
+		<style type = "text/css">
+			#d1{border:1px solid red;width:304px;margin:0px auto;}
+			ul{border:px solid red;overflow:hidden;padding:0px;margin:0px;}
+			ul li{border:1px solid red;list-style:none;float:left;padding:2px 15px;}
+			#div1{border:px solid red;height:200px;margin-top:2px;}
+			#div2{border:px solid red;height:200px;margin-top:2px;}
+			#div3{border:px solid red;height:200px;margin-top:2px;}
+			#div4{border:px solid red;height:200px;margin-top:2px;}
+			#div1,#div2,#div3,#div4{display:none;text-align:center;}
+			#div1{display:block;}
+		</style>
+	</head>
+		<body>
+			<div id = "d1" onmouseout = "moren()">
+				<ul>
+					<li id = "li1" onmouseover = "show(1,this)">江映蓉</li>
+					<li id = "li2" onmouseover = "show(2,this)">李荣浩</li>
+					<li id = "li3" onmouseover = "show(3,this)">林峰</li>
+					<li id = "li4" onmouseover = "show(4,this)">蔡淳佳</li>
+				</ul>
+				<div id = "div1">
+				把握你的美	—— 江映蓉
+				</div>
+				<div id = "div2">
+				不将就	——	李荣浩
+				</div>
+				<div id = "div3">
+				The one —— 林峰
+				</div>
+				<div id = "div4">
+				蔷薇 —— 蔡淳佳
+				</div>
+			</div>
+		</body>
+</html>

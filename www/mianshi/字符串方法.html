@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 	charAt(index)方法返回指定位置的字符串
+			 	charCodeAt(index)方法返回指定位置的Unicode编码，这个返回值是0-65535之间的整数
+				concat(string1,string2......)方法连接两个或多个字符串
+				indexOf(value,index)方法返回某个指定的字符串值在字符串中首次出现的位置，如果未找到则返回-1
+			 		参数：value		需要检索的字符串
+			 			  index		规定在字符串中开始检索的位置，如果省略该参数则从字符串的首字符开始检索
+			 	match(value | regexp)返回存放匹配结果的数组,如果没有找到匹配的结果则返回null
+			 	replace(value | regexp,replacement)用于在字符串中，用一些字符替换另一些字符
+			 		参数：value | regexp 在文本中检索到的字符窜
+			 			 replacement 用于替换文本检索到的字符串的字符串
+			 	
+				slice(start,end)方法提取字符串的某个部分，并以新的字符串返回被提取的部分
+					参数：start	要抽取片段的起始下标，如果是负数，则从字符串的尾部开始算起的位置，-1指的是倒数第一个字符串，-2指倒数第二个字符串
+						  end	要抽取片段的结尾的下标，若未指定该参数，则要提取的子串包括start到原字符串结尾的字符串，如果该字符串是负数，那么它规定的是字符串的尾部开始算起的位置
+				注意：slice()和substr(),substring()的区别
+					都是提取指定位置之间的字符串,都不包含结尾处的字符串
+					slice()支持使用负数
+					substring(start,end)都不能是负数，start是开始的位置，end是结束的位置
+					substr(start,length)start可以是负数，但是第二个参数表示长度
+						
+			*/
+			var str  = "hello world";
+			var str1 = "Vue";
+			console.log(str.charAt(6));	//w
+			console.log(str.charCodeAt(6))	//119
+			console.log(str,str1);	//hello world Vue
+			console.log(str.indexOf("hell",4))	//-1
+			console.log(str.match("y"));	//null
+			console.log(str.match(/world/));	//返回一个数组["world"]
+			console.log(str.replace(/world/g,"Vue"));
+			console.log(str.slice(4,7));	//o w
+			console.log(str.substr(2,3));	//llo
+			console.log(str.substring(4,7));	//o w
+		</script>
+	</body>
+</html>

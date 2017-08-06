@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<script>
+			function f1(){
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function (){
+					if(xhr.readyState == 4){
+						alert(xhr.responseText);
+					}
+				}
+				
+				xhr.open("get","./aj getweather.php");
+				xhr.send(null);
+			}
+		</script>
+	</head>
+		<body>
+			<h1>天气预报的显示</h2>
+			<input type = "submit" value = "点击" onclick = "f1()">
+			<iframe width="420" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&color=%23&bgc=%23&bdc=%23&icon=4&num=5"></iframe>
+		</body>
+</html>
+<!--
+	天气预报的设置
+		浏览器由于安全方面的问题，禁止ajax跨域请求其他网站的数据
+		解决：利用本域php代理间接获得其他网站的数据
+	天气信息获取注意事项
+		不同地区需要显示该地区对应的天气信息
+		ip地址 --- > 城市 --- >城市编码
+		1.通过ip地址获取城市信息
+			http://ip.taobao.com/service/getIpInfo.php?ip=9.9.9.9
+		2.通过城市获取城市编码
+		3，通过城市编码获得天气信息
+			http://www.cnblogs.com/wangjingblogs/p/3192953.html
+			
+		www.tianqi.com网站已经把ip/城市/编码的关系都给处理好了，可以直接调用获得城市对应的天气信息
+		
+		
+
+-->

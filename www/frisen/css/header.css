@@ -1,0 +1,52 @@
+@media screen and (max-width:640px){
+		/*头部*/
+	header{
+		width: 100%;
+		margin: 0 auto;
+		background: url(../img/top.jpg) no-repeat center center;
+		position: relative;
+	}
+	nav{
+		padding: 1.2rem 0.7rem;
+	}
+	nav:after{
+		content : "";
+		display: block;
+		width: 0;
+		height: 0;
+		clear: both;
+	}
+	nav .logo{
+		float: left;
+		width: 50%;
+	}
+	nav .nav_btn{
+		float: right;
+		width: 13%;
+		
+	}
+	nav ul{
+		opacity: 0;
+		overflow: hidden;
+		position: absolute;
+		top: 4.7rem;
+		right: 0;
+		background: #000710;
+		transition: opacity .5s ease .1s;
+	}
+	.active{
+		opacity: 1;
+	}
+	nav ul .fast_nav{
+		border-bottom: 1px solid #c5c5c5;
+	}
+	nav ul li{
+		margin: 1rem 0.5rem 0rem 0.5rem;
+		padding-bottom: 0.5rem;
+	}
+	nav ul li a{
+		color: #c5c5c5;
+		font-size: 0.9rem;
+		text-decoration: none;
+	}
+}

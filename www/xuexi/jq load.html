@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id = "box">
+			
+		</div>
+		<script src = "./js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function (){
+				$("#box").load("aj.html #result",function (){
+					alert('页面加载完毕');
+				});
+			})
+		</script>
+	</body>
+</html>

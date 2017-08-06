@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				delegate()方法指定的元素(属于被选元素的子元素)添加一个或多个事件处理程序，并规定当这些事件发生时运行的函数
+					使用delegate()方法的事件处理程序适用于当前或未来的元素(比如脚本创建的新元素)
+					语法
+					$(selector).delegate(childSelector,event,data,function)
+					childeSelector	必须，规定要附加事件处理程序的一个或多个子元素
+					event	必须，规定附加到元素的一个或多个事件，由空格分隔多个事件值，必须是有效的事件
+					data	可选，规定传递到函数的额外数据
+					function	必须，规定事件发生时的函数
+				
+			*/
+		
+			$(function (){
+				$('input:submit').bind('click',function (){
+					//$('div').append('<p>新的段落</p>');
+					$('div').append($('.new'));	//已有节点的添加会发生物理位置的移动
+				})
+				$('div').delegate('p','click',function (){
+					$(this).slideToggle();
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div style = "border:1px solid red;">
+			<p>我是一个段落</p>
+			<input type = "submit" value = "点击">
+		</div>
+		<p class = "new" >新的段落</p>
+	</body>
+</html>

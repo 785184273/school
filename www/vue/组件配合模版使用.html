@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type = "text" v-model = "msg"/>
+			<!--<child :my-name = "msg"></child>-->
+			<one></one>
+		</div>
+		<template id = "box">
+			<div>
+				{{ a }}
+				<two :my-name = "a"></two>
+			</div>
+		</template>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.config.devtools = true
+			Vue.component("one",{
+				data : function (){
+					return {
+						a : 1122
+					}
+				},
+				template : "#box",
+				components : {
+					"two" : {
+						props : ['myName'],
+						template : "<p>{{ myName }}</p>"
+					}
+				}
+			})
+			new Vue({
+				el : "#app",
+				data : {
+					msg :　"show me!"
+				},
+//				components : {
+//					"child" : {
+//						props : ['myName'],
+//						template : "<h1>{{ myName }}</h1>"
+//					}
+//				}
+			})
+		</script>
+	</body>
+</html>

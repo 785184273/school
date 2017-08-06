@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<input type="button" name="btn" id="btn" value="点击" onclick = "app.btnC()"/>
+		</div>
+		<script type="text/javascript">
+				var b,
+				app = function (b){
+					var a = 10;	//私有变量
+					b = b || {};
+					function test(str){
+						a = str;
+					};
+					test.prototype.btnC = function (){
+						alert(a);
+					}
+					var one = new test("hello");
+					return one;
+				}(b);
+		</script>
+	</body>
+</html>

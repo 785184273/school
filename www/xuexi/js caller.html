@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<script>
+			/*
+				caller这个属性中保存着调用当前函数的函数的引用，如果在全局作用域中调用当前函数，他的值就是null
+			*/
+			function inner(){
+				//alert(inner.caller);	
+				alert(arguments.callee.caller);//为了降低耦合度，可以使用arguments.callee指向inner函数
+			}
+			//inner();	//在全局作用域中调用当前函数，弹出null
+			
+			function outer(){
+				inner();
+			}
+			outer();	//弹出outer这个函数的引用(代码)
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

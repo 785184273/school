@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>document.write和innerHTML的区别</title>
+	</head>
+	<body>
+		documen.write和innerHTML的区别？
+		<script type="text/javascript">
+			document.write(123);
+			/*
+			 document.write()是直接将内容写入页面，会导致页面全部重绘，innerHTML将内容写入某个dom节点，不会导致页面全部重绘
+			 write是document对象下一个方法，innerHTML是一个属性
+			 * */
+		</script>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 300px;
+				height: 300px;
+				background: red;
+			}
+			.fade-enter-active,.fade-leave-active{
+				transition: all .5s ease .1s;
+			}
+			.fade-enter-active{
+				opacity: 1;
+				width: 300px;
+				height: 300px;	
+			}
+			.fade-leave-active{
+				opacity: 0;
+				width: 0px;
+				height: 0px;
+			}
+			.fade-enter{
+				opacity: 0;
+				width: 0px;
+				height: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<button @click = "show = !show">切换</button>
+			<transition 
+				name = "fade" 
+				@before-enter = "beforeEnter"
+				@enter = "enter"
+				@after-enter = "afterEnter"
+				
+				@before-leave = "beforeLeave"
+				@leave = "leave"
+				@after-leave = "afterLeave">
+				<div class = "box" v-show = "show"></div>
+			</transition>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	注意：
+			 		1.过渡的项目必须放在的transition标签中，
+			 		2.不能使用id，需要使用class
+			 	js钩子函数
+			 		@before-enter	:动画进入之前
+			 		@enter			:动画开始进入
+			 		@after-enter	:动画进入之后
+			 		@before-leave	:动画离开之前
+			 		@leave			:动画开始离开
+			 		@after-leave	:动画离开之后
+			 **/
+			new Vue({
+				el : "#app",
+				data : {
+					show : false
+				},
+				methods : {
+					beforeEnter : function (){
+						console.log("动画进入之前");
+					},
+					enter : function (){
+						console.log("动画开始进入");
+					},
+					afterEnter : function (el){
+						console.log("动画进入之后");
+						el.style.background = "green"
+					},
+					beforeLeave : function (){
+						console.log("动画离开之前");
+					},
+					leave : function (){
+						console.log("动画开始离开");
+					},
+					afterLeave : function (el){
+						el.style.background = "red"
+						console.log("动画离开之后");
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

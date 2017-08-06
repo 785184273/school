@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="./js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function (){
+				//默认参数
+				var obj = {
+					name : "小强",
+					age : 10
+				}
+				//传入的参数，实参
+				var option = {
+					//name : "小丽",
+					age : 20,
+					sex : "不详"
+				}
+				console.log( $.extend({},obj,option));
+			})
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			window.onload = function (){
+			//jq对象转化成dom对象
+				$('.red')[1].style.background = "pink";
+				//console.log($('div'));
+			//dom对象转化成jq对象
+				var dv = document.getElementsByTagName('div')[0];
+				$(dv).css('color','red');
+			}
+		</script>
+	</head>
+	<body>
+		<div class = "red">hello world</div>
+		<div class = "red">be my love,be the one</div>
+	</body>
+</html>
+<!--
+	dom对象就是jq对象的数组组成部分
+		jq对象转化成dom对象
+			$()[下标]
+		dom对象转化成jq对象
+			$(dom对象)
+			
+-->

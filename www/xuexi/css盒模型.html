@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+			/*
+			 css盒子模型包括两种
+			 	IE盒子模型
+			 		width = content(width) + padding + border
+			 		height = content(height) + padding + boder
+			 	W3C盒子模型
+					width = content(width)
+					height = content(height)			 	
+			 	box-sizing
+			 		content-box:标准盒模型
+			 		border-box:ie盒模型
+			 * */
+			#div1{
+				width: 200px;
+				height:200px;
+				border: 1px solid red;
+				padding: 10px;
+				margin: 10px;
+				box-sizing: content-box;
+			}
+			#div2{
+				width: 200px;
+				height: 200px;
+				border: 1px solid red;
+				padding: 10px;
+				margin: 10px;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			
+		</div>
+		<div id="div2">
+			
+		</div>
+	</body>
+</html>

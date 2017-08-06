@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			//变量作用域链
+				var banji = "php39";
+				document.write(banji);
+				//var f1 = "";
+				f1();
+				//同名的变量和函数同时存在的情况下，函数的声明先于其他代码进入内存，其余的代码按顺序进入内存
+				function f1(){
+					document.write("<br />f1" + banji);
+					f2();
+					function f2(){
+						document.write("<br />f2" + banji);
+						f3();
+						function f3(){
+							document.write("<br />f3" + banji);
+						}
+					}
+				}
+			//变量作用域链作用
+				//1.变量必须"先声明,后使用"
+				//document.write(xueke); undefined
+				var xueke = "php";
+				document.write("<br />" + xueke);
+				//3.变量的作用域是声明时决定的，而不是运行时决定的
+				var week = "sunday";	//全局变量
+				function f4(){
+					document.write("<br />" + week);
+				}
+				function f5(){
+					var week = "monday";	//局部变量,只能给f5访问
+					document.write("<br />" + week);
+					f4();
+				}
+				f5();
+				document.write("<hr />");
+				var a = 123;
+				function f6(){
+					var a;
+					console.log(a);
+					a = 24;
+					console.log(a);
+				}
+				
+				f6();
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+	作用域链
+		变量在当前环境now,内部环境f1,内部深层环境f2/f3...都起作用的现象形成了一个链条,这个链条就称为变量的"作用域链"
+		作用
+			1.变量必须"先声明,后使用"
+				函数可以先使用，后声明，原因是函数有预加载过程，函数声明先于其他代码进入内存，本质还是函数的声明在前，使用在后
+			2.内部环境可以访问外部环境的变量,反之不然
+				环境：每个函数内部都是一个环境，最外边是全局环境
+				两种类型：函数环境，全局环境
+			3.变量的作用域是声明时决定的，而不是运行时决定的
+-->

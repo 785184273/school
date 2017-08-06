@@ -1,0 +1,139 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+		//输出1-1000之间的整数
+		//var i = 1;	//变量的初始化
+		//while(i<=1000)
+		//{
+		//	document.write("<br>"+typeof(i)+"<font color=red>"+i+"</font>");
+		//	i++; //变量更新的语句，是为了避免出现"死循环"
+		//}
+		//输出1-100之间所有的偶数
+		//var a = 2;
+		//while(a<=100)
+		//{
+		//	document.write("<br>"+"<font color=blue>"+a+"</font>");
+		//	a=a+2;
+		//}
+		//隔行变色
+		/*var str = "";
+		str +=	"<table border=1 width=300 align=center>";
+		str +=		"<tr>";
+		str +=			"<th height=30>编号</th>";
+		str +=			"<th height=30>新闻标题</th>";
+		str +=			"<th height=30>发布时间</th>";
+		str +=		"</tr>";
+		str +=		"<tr height=30>";
+		str +=			"<td></td>";
+		str +=			"<td></td>";
+		str +=			"<td></td>";
+		str +=		"</tr>";
+		str +=		"<tr height=30>";
+		str +=			"<td></td>";
+		str +=			"<td></td>";
+		str +=			"<td></td>";
+		str +=		"</tr>";
+		str +=		"<tr height=30>";
+		str +=			"<td></td>";
+		str +=			"<td></td>";
+		str +=			"<td></td>";
+		str +=		"</tr>";
+		str +=		"<tr height=30>";
+		str +=			"<td></td>";
+		str +=			"<td></td>";
+		str +=			"<td></td>";
+		str +=		"</tr>";
+		str +=		"<tr height=30>";
+		str +=			"<td></td>";
+		str +=			"<td></td>";
+		str +=			"<td></td>";
+		str +=		"</tr>";
+		str +=	"</table>";
+		document.write(str);*/
+		/*var str = "";
+		var two = "";
+		var b= "";
+		var a = 1;
+		str += '<table border=1 width=600 align=center style="background:blue" rules=all>';
+		str +=		"<tr height=30>";
+		str +=			"<td></td>";
+		str +=			"<td></td>";
+		str +=			"<td></td>";
+		str +=		"</tr>";
+		str += "</table>";
+		two += '<table border=1 width=600 align=center style="background:green" rules=all>';
+		two +=		"<tr height=30>";
+		two +=			"<td></td>";
+		two +=			"<td></td>";
+		two +=			"<td></td>";
+		two +=		"</tr>";
+		two += "</table>";
+		b +=	"<table border=1 width=600 align=center rules=all>";
+		b +=		"<tr height=30>";
+		b +=			"<th width=200>编号</th>";
+		b +=			"<th width=200>新闻标题</th>";
+		b +=			"<th width=200>发布时间</th>";
+		b +=		"</tr>";
+		b +=	"</table>";
+		document.write(b);
+		while(a<=10)
+		{
+			if(a%2==1)
+			{
+				document.write(str);
+			}else
+			document.write(two);
+			a++;
+		}*/
+		var str = "";
+		var a = 1;
+		str += '<table width=600 border=1 align=center rules=all>';
+		str +=		"<tr height=30>";
+		str +=			"<td>编号</td>";
+		str +=			"<td>新闻标题</td>";
+		str +=		 	"<td>发布时间</td>";
+		str +=		"</tr>";
+		while(a<=10)
+		{
+			if(a%2==1)
+			{
+			str += '<tr height=30>';
+			}else
+			{
+			str += '<tr style="background:#eee" height=30>';
+			}
+			str +=		'<td><font color=red>第'+a+'行</font></td>';
+			str +=		'<td></td>';
+			str +=		'<td></td>';
+			str +=	'</tr>';
+			a++;
+			
+		}
+		str += '</table>';
+		document.write(str);
+		</script>
+	</head>
+		<body>
+
+		</body>
+</html>
+<!--
+while循环:只要条件成立，就重复不断的执行循环体代码
+	while(条件判断)
+	{
+		如果条件为真，则执行循环体代码
+	}
+while循环的结果说明；
+	在循环的开始前，必须要对变量进行初始化，声明变量，给变量赋初始值
+	如果while的条件为真，则会重复不断的执行循环体{}的代码，如果条件为假，则退出循环
+	在循环体中，必须要有"变量更新"的语句，换句话说，就是两次循环，变量的值不能一样， 如果一样会造成"死循环"
+	
+	
+	
+	
+
+
+
+
+-->

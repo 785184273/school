@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				background: red;
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			放在body里面的style标签优先级要比head里面的style要高，页面加载自上而下，当页面的html代码比较多的时候，页面会闪一下
+		-->
+		<style type="text/css">
+			#box{
+				background: blue;
+				width: 200px;
+				height: 200px;
+			}
+		</style>
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

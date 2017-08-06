@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+			//输出：今天是星期几
+			/*
+				创建一个日期时间对象，它中有很多的信息，时，分，秒，年，月，日，星期
+				取值日期对象中的星期值
+				根据星期值(0-6)来输出中文的星期几
+			*/
+			// 1.创建一个日期时间对象,其中Date()是系统函数，首字母必须大写
+			var today = new Date();
+			//alert(today);
+			//2.从日期对象中取星期值
+			var week = today.getDay(); //返回0-6,0代表星期日
+			//alert(week);
+			//3.使用switch来输出今天是星期几
+			switch(week)
+			{
+				case 1:
+				str = "星期一";
+				break;
+				case 2:
+				str = "星期二";
+				break;
+				case 3:
+				str = "星期三";
+				break;
+				case 4:
+				str = "星期四";
+				break;
+				case 5:
+				str = "星期五";
+				break;
+				case 6:
+				str = "星期六";
+				break;
+				case 0:
+				str = "星期日";
+				break;
+				default:
+				str = "没那个时间";
+			}
+			window.alert("今天是："+str);
+		</script>
+	</head>
+		<body>
+		</body>
+</html>
+<!--
+switch分支语句
+	描述；根据一个变量的不同取值，来执行不同的代码
+	语法描述
+		switch(条件判断)
+		{
+			case 值1:
+				代码1;
+				break;
+			case 值2:
+				代码2;
+				break;
+			case 值3:
+				代码3;
+				break;
+			default:
+				如果以上条件都不满足，则执行该代码;
+		}
+		switch结构说明
+			switch case break default 都是系统关键字，都必须全小写
+			switch后面的小括号():小括号内一般都是一个变量，这个变量可能会有不同的取值
+			每个case的值，与变量的值进行比对，如果一致，则执行case后的代码
+			所有的case都是"或"的关系，每时每刻只有一个case满足条件，
+			每个case中的代码执行完后，必须都要用break语句，结束后，程序要跳到switch结束大括号后
+			如果不写break语句的话，下面所有的case语句都会执行一遍
+if多条件判断和switch的区别
+	if中的条件一般是一个范围(a>100)，而switch中的条件一般是一个变量的不同取值
+
+			
+			
+			
+			
+-->

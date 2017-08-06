@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style>
+			/*
+				column-span:规定元素应该横跨多少列
+				语法
+					column-span: 1 | all;
+					参数：1		元素应该横跨1列
+						all		元素应该横跨所有列
+			*/
+			body{
+				font-family:'Microsoft Yahei';
+			}
+			p{
+				font-family:'Microsoft Yahei';
+				column-width:150px;
+				column-count:3;
+				column-gap:30px;
+			}
+			h2{
+				column-span:1;
+				text-align:center;
+			}
+		</style>
+	</head>
+		<body>
+			<div class="columns">
+				<h2>我要分列显示</h2>
+				<p>为了能在Web页面中方便实现类似报纸、杂志那种多列排版的布局，W3C特意给CSS3增加了一个多列布局模块（CSS Multi Column Layout Module）。它主要应用在文本的多列布局方面。对于文本的多列布局，我想大家并不陌生，因为报纸和杂志上我们随处可见，这种布局在报纸和杂志上都使用了几十年了，但需要在Web页面上实现文本的多列布局，正如下图所示。</p>
+				<p>为了能在Web页面中方便实现类似报纸、杂志那种多列排版的布局，W3C特意给CSS3增加了一个多列布局模块（CSS Multi Column Layout Module）。它主要应用在文本的多列布局方面。对于文本的多列布局，我想大家并不陌生，因为报纸和杂志上我们随处可见，这种布局在报纸和杂志上都使用了几十年了，但需要在Web页面上实现文本的多列布局，正如下图所示。</p>
+			</div>	
+		</body>
+</html>

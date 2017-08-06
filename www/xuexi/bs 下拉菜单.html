@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<!--Bootstrap不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--移动设备优先,响应式布局-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	</head>
+		<body>
+			<div class = "container">
+				<div class = "dropdown">
+					<button class = "btn btn-success dropdown-toggle" type = "button" data-toggle = "dropdown" id = "dropdownMenu1">下拉菜单<span class = "caret"></span></button>
+					<ul class = "dropdown-menu">
+						<li class = "dropdown-header">前端基础</li>
+						<li class = "divider"></li>
+						<li class = "active"><a href = "#">html</a></li>
+						<li><a href = "#">css</a></li>
+						<li><a href = "#">javascript</a></li>
+						<li><a href = "#">jquery</a></li>
+						<li class = "divider"></li>
+						<li class = "dropdown-header">后端基础</li>
+						<li class = "divider"></li>
+						<li class = "disabled"><a href = "#">php</a></li>
+					</ul>
+				</div>
+			</div>
+		<!--bootstrap模板为使IE6、7、8版本（IE9以下版本）浏览器兼容html5新增的标签。-->
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<!--为使IE6、7、8版本浏览器兼容css3样式-->
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		</body>
+</html>
+<!--
+	下拉菜单
+		1.使用一个名为dropdown的容器包裹整个下拉菜单元素,示例
+			<div class = "dropdown"></div>
+		2.使用一个<button>按钮做为父菜单，并且类名dropdown-toggle和自定义data-toggle属性，且值必须和最外容器类名一致
+			date-toggle = "dropdown"
+			<button type = "button" class = "btn btn-default dropdown-toggle" data-toggle = "dropdown">
+		3.下拉菜单使用一个ul列表，并且定义一个类名dropdown-menu
+			<ul class = "dropdown-menu">
+	下拉分割线
+		<li class = "divider"></li>
+	菜单标题
+		<li class = "dropdown-header"></li>
+	对齐方式
+		在bootstrap中下拉菜单默认是左对齐方式
+			右对齐
+			<ul class = "dropdown-menu pull-right"></ul>
+			<ul class = "dropdown-menu dropdown-menu-right"></ul>
+	菜单项状态
+		<li class = "active"></li>
+		<li class = "disabled"></li>
+-->

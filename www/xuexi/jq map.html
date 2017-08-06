@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				map()	 把每个元素通过函数传递到当前匹配集合中，生成包含返回值的新的jquery对象
+				语法
+					map(callback(index,domElement){})
+			*/
+			$(function (){
+				var str = $('li').map(function (){
+					return this.innerText;
+				}).get().join(",");
+				$('ul').append("<li>" + str + "</li>");
+				
+				var arr = [];
+				$('li').each(function (k,v){
+					arr[k] = v.innerHTML;
+				})
+				console.log(arr);
+			})
+			
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function fn(){
+				var n = history.length;
+				alert(n);
+			}
+			function fun(){
+				location.href = "./js history.back.html";
+			}
+			function fun1(){
+				history.forward();
+			}
+		</script>
+	</head>
+		<body>
+			<input type = "submit" value = "点击" onclick = "fn()">
+			<input type = "submit" value = "跳转" onclick = "fun()">
+			<input type = "submit" value = "history.forward" onclick = "fun1()">
+		</body>
+</html>
+<!--
+	length:历史记录的个数
+	go(n)：同时可以实现"前进"和"后退".
+		History.go(0)刷新网页
+		History.go(-1)后退
+		History.go(1)前进一步
+		History.go(3)前进三步
+	forward():相当于浏览器的"前进"按钮
+	back():相当于浏览器的"后退"按钮
+
+
+
+
+
+
+-->

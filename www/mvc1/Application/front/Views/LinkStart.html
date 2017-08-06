@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--<embed src="music/GOOD BOY.mp3" hidden="no"  autostart="true" loop="true">-->
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<meta >
+		<style type="text/css">
+			body,a,img,td,tr{margin:0px;padding:0px;}
+			a:link, a:visited{text-decoration:none;color:grey}
+			a:hover{text-decoration:underline;}
+			a{border:px solid red;padding:0px 10px;}
+			body{cursor:url(img/61695.cur);background:cover;font-size:12px;color:#444;font-family:宋体;background-size:100%,100%;}
+			.content{width:910px;height:500px;border:px solid red;margin:0px 245px; margin-top:97px;}
+			img{border:px solid red;float:left;}
+			.content .denglu{box-shadow:none;border:px solid red;width:422px;height:320px;float:right;background:white;border-radius:3px;} /* border-radius 对边框的四角进行弧形设置*/
+			.content .denglu .title{width:420px;height:50px;line-height:50px;border-bottom:1px solid grey;text-align:center;}
+			.content .denglu .title p{margin:0px;font-size:20px;}
+			.content .denglu .zhanghao{border:px solid red;}
+			.content .denglu .zhanghao table{margin-top:40px;	}
+			.content .denglu .zhanghao input{background-color:#EEE8AA;border:1px solid grey;border-radius:3px;width:270px;height:40px;margin:5px 0px;font-size:15px;}
+			.content .denglu .liebiao{width:420px;height:35px;line-height:35px;border:px solid grey;margin-top:15px;}
+			.content .denglu .liebiao ul{border:px solid red;list-style:none;height:35px;line-height:35px;margin:0px;}
+			.content .denglu .liebiao ul li{border:px solid red;width:82px;text-align:center;}
+			.clear{clear:both;}
+			.dibu{margin-top:80px;}
+			.dibu ul{height:18px;border:px solid red;padding:0px;text-align:center;}
+			.dibu li{text-align:center;padding:0px 6px;border-right:1px solid green;list-style:none;float:left;}
+			.dibu p{text-align:center;}
+		</style>
+		<script type="text/javascript">
+		var i1 = 1;
+		function init1()
+		{
+			var bodyObj = document.getElementById("qiehuan");
+			bodyObj.background = "./img/kj"+i1+".jpg";
+			i1 = i1 + 1;
+			if(i1 > 5)
+			{
+				i1 = 1;
+			}
+			window.setTimeout("init1()",2000);
+		}
+		</script>
+	</head>
+			<?php
+			/*
+				$i = $len = $arr = "";
+				$arr = array("img/kj1.jpg","img/kj2.jpg","img/kj3.jpg");
+				$len = count($arr);
+				$i = rand(0,$len-1);
+				//echo $i;
+			*/
+			//include'./denglu1-1.php';
+			?>
+		<body onload = "init1()" id = "qiehuan">
+			<audio src="./music/GOOD BOY.mp3" autoplay = "autoplay" loop = "loop">
+			</audio>
+			<div class="content">
+				<img src="./img/kj4.png">
+				<div class="denglu">
+					<div class="title">
+						<p>帐号密码登录</p>
+					</div>	
+					<div class="zhanghao">
+						<table width=270 height=150  align="center">
+							<form action="?p=front&c=Link&act=Link" method="POST">
+							<tr>
+								<td><input type="text" name="username" maxlength="16"/></td>
+							</tr>
+							<tr>
+								<td><input type="password" name="password" maxlength="16"></td>
+							</tr>
+							<tr>
+								<td><input type="submit" name = "button" value="登&nbsp录" style="width:115px;background-color:#00FF00;font-size:20px;font-weight:bold;color:white"></td>
+							</tr>
+							</form>
+						</table>
+					</div>
+					<div class="liebiao">
+							<ul>
+								<li style="float:right;"><a href="" >意见反馈</a></li>
+								<li style="float:right;"><a href="" style="border-right:1px solid grey">注册新帐号</a></li>
+								<li style="float:right;"><a href="" style="border-right:1px solid grey">忘了密码？</a></li>
+							</ul>
+					</div>
+				</div>
+				<div class="clear">
+				</div>
+				<div class="dibu">
+					<ul>
+						<li><a href="">反馈建议</a></li>
+						<li><a href="">官方空间</a></li>
+						<li><a href="">空间活动</a></li>
+						<li><a href="">空间应用</a></li>
+						<li><a href="">腾讯原创馆</a></li>
+						<li><a href="">QQ互联</a></li>
+						<li><a href="">QQ登录</a></li>
+						<li><a href="">社交组件</a></li>
+						<li style="width:100px"><a href="">应用侵权投诉</a></li>
+						<li style="width:140px;border:none"><a href="">Complaint Guidelines</a></li>
+					</ul>
+					<p>Copyright © 2005 - 2015 Tencent.All Rights Reserved.</p>
+					<p>纯属抄袭&nbsp没版权</p>
+				</div>
+			</div>
+		</body>
+</html>

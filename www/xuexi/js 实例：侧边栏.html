@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sidebar</title>
+	<!--引入外部bootstrap的css文件-->
+	<link rel = "stylesheet" href = "./css/bootstrap.min.css">
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src = "./js/jquery.min.js"></script>
+	<!--再引入bootstrap.min.js文件-->
+	<script src = "./js/bootstrap.min.js"></script>
+	<style type="text/css">
+		html,body{
+			/*height: 100%;*/
+			font-size: 12px;
+			font-family: "微软雅黑";
+			margin: 0px;
+			padding: 0px;}
+		.bar{width: 35px;
+			/*height: 100%;*/
+			min-height: 100%;
+			background: #e1e1e1;
+			border: px solid red;
+			position: fixed;}
+		ul{list-style: none;
+			/*height: 100%;*/
+			width:35px;
+			margin-top: 200px;
+			padding: 0px;}
+		li{border: 1px solid red;
+			text-align: center;}
+
+	</style>
+</head>
+<body>
+	<div class="bar">
+		<ul>
+			<li class = "item">
+				<span class = "glyphicon glyphicon-user"></span>
+				<div>我</div>
+			</li>
+			<li class = "item">
+				<span class = "glyphicon glyphicon-usd"></span>
+				<div>资产</div>
+			</li>
+			<li class = "item">品牌</li>
+			<li class = "item">直播</li>
+			<li class = "item">看过</li>
+			<li class = "item">日历</li>
+		</ul>
+	</div>
+</body>
+</html>
+ 

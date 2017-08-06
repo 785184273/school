@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div v-colors = "'blue'">
+				{{ msg }}
+			</div>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	自定义指令
+			 		指令函数提供了几个钩子函数
+			 			bind:只调用一次，指令第一次绑定到元素上时调用，用这个钩子函数可以定义一个绑定时执行一次的初始化动作
+			 			update:被绑定元素所在的模版更新时调用，而不论绑定的值是否变化，通过比较更新前后的绑定值，可以忽略不必要的模版更新
+			 			unbind:只调用一次，指令和元素解绑时调用
+			 			inserted:被绑定元素插入父节点时调用(父节点存在即可调用，不必存在document中)
+			 			componentUpdated：被绑定元素所在模版完成一次周期更新时调用
+			 		钩子函数的参数
+			 			el:指令所绑定的元素，可以用来直接操作dom
+			 			binding:一个对象，包含以下的属性
+							name :指令名称，不包含v-前缀
+							value：指令的绑定值，例如：v-model = "1 + 1"，value的值是2
+							oldValue:指令绑定的前一个值，仅在update和componentUpdated钩子中可用，无论值是否改变都可用
+							expression:绑定值的字符串形式，例如：v-model = "1 + 1"，expression的值是"1 + 1"
+							arg:传给指令的参数,例如：v-model:foo,arg的值是foo	
+							modifiers:一个包含修饰符的对象，例如v-model.foo.bar,修饰符modifiers的值是{foo:true,bar:true}
+						vnode:vue编译生成的虚拟节点
+						oldVnode:上一次虚拟节点
+			 * */
+			Vue.directive('colors',function (el,binding){
+				el.style.color = binding.value;
+			});
+			new Vue({
+				el : "#app",
+				data : {
+					msg : "hello Vue!"
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			{{ number > 0 ? '3' : '0' }}
+			<div v-bind:id = "'id' + id">
+				
+			</div>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#box",
+				data : {
+					number : 5,
+					id : "box1"
+				}
+			})
+			/*
+			 	{{ number + 1 }}
+			 	{{ ok ? 'yes' : 'no' }}
+			 	{{ message.split('').reverse().join('') }}
+			 	<div v-bind:id = "'list' + id"></div>
+			 	注意：
+			 		每个绑定只能包含单个表达式，不能如下
+			 			{{ var a = 1 }}		//这是语句不是表达式
+			 			{{ if (ok) {return message} }}		//流程控制也不会生效，请使用三元表达式
+			 * */
+		</script>
+	</body>
+</html>

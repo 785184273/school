@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body,nav,ul,li{
+				padding: 0;
+				margin: 0;
+			}
+			ul{
+				float: left;
+				list-style: none;
+				overflow: hidden;
+				display: block;
+			}
+			.brand{
+				padding: 0.5rem 1rem;
+				float: left;
+			}
+			li{
+				float: left;
+				padding: 0.5rem 1rem;
+			}
+			li:hover{
+				background: #f9f9f9;
+			}
+			
+			nav{
+				margin: 0 auto;
+				overflow: hidden;
+				border: 1px solid #1B6D85;
+				position: relative;
+			}
+			button{
+				margin : 0.5rem 1rem;
+				position:absolute;
+				top: 0;
+				right: 0;
+				display: none;
+			
+			}
+			@media screen and (max-width: 640px) {
+				.brand{
+					float: none;
+				}
+				button{
+					display: block;
+				}
+				ul{
+					float: none;
+					display: none;
+				}
+				li{
+					float: none;
+					line-height: 2rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div class = "brand">logo</div>
+			<ul id = "navList">
+				<li>html</li>
+				<li>css</li>
+				<li>js</li>
+				<li>bootstrap</li>
+			</ul>
+			<button id = "btn">show</button>
+		</nav>
+		<div>
+			the one
+		</div>
+		<script src="jq/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("#btn").on("click",function (){
+				$("#navList").slideToggle(500);
+			})
+			$(window).resize(function(){
+				if($("body").width() > 640){
+					$("#navList").css("display","block");
+				}
+			});
+		</script>
+	</body>
+</html>

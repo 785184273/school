@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app = "app" ng-controller = "demo">
+		<input type="text" ng-model = "info"/><input type="button" value = "搜索" ng-click = "search()" />
+		<table border = "1">
+			<tr>
+				<th ng-click = "sortt('name')">姓名</th>
+				<th ng-click = "sortt('age')">年龄</th>
+			</tr>
+			<tr ng-repeat = "list in list">
+				<td>{{list.name}}</td>
+				<td>{{list.age}}</td>
+			</tr>
+		</table>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			var App = angular.module("app",[]);
+			App.controller("demo",["$scope","$filter",function ($scope,$filter){
+				$scope.arr =  [
+					{name : "yellow",age : 20},
+					{name : "blue",age : 19},
+					{name : "green",age : 17},
+					{name : "red",age : 16}
+				];
+				$scope.list = $scope.arr;
+				$scope.flage = false;
+				$scope.sortt = function (key){
+					$scope.flage = !$scope.flage;
+					$scope.list = $filter("orderBy")($scope.list,key,$scope.flage);
+				}
+				$scope.search = function (){
+					$scope.list = $filter("filter")($scope.arr,$scope.info);
+				}
+			}])
+		</script>
+	</body>
+</html>

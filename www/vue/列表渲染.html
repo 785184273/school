@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for = "(x,index) in items">{{message}}--{{x.item}}--{{index}}</li>
+			</ul>
+			<ul>
+				<li v-for = "(value,key,index) in object">{{value}}--{{key}}--{{index}}</li>
+			</ul>
+			<ul>
+				<li v-for = "n in 10" :key = "n">{{n}}</li>
+			</ul>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					message : "hello Vue!",
+					items : [
+						{item : "html"},
+						{item : "css"},
+						{item : "javascript"}
+					],
+					object : {
+						name : "json",
+						age : "20",
+						addr : "sichuan province"
+					}
+				}
+			})
+			/*
+			 v-for根据一组数组的选项列表进行渲染，v-for指令需要 item in items形式的特殊语法
+			 注意：
+			 	1.在v-for中，我们有对父级作用域属性的完全访问的权限，v-for还支持一个可选的第二个参数为当前项的索引
+			 	2.也可以使用of替代in作为分隔符
+			 	3.v-for也可以实现对象迭代
+			 		(value,key,index) in object
+			 		第一个参数是属性值
+			 		第二参数的键名
+			 		第三个参数是索引
+			 	4.v-for也可以实现整数的迭代
+			 */
+		</script>
+	</body>
+</html>

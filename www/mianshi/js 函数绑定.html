@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 	函数绑定
+			 		函数绑定需要创建一个函数，可以在特定的this环境中以指定参数调用另一函数
+			 * */
+			var message = "window";
+			var handler = {
+				message : "event handled",
+				handleClick : function (event){
+					//var that = this;
+					return function (){
+						console.log(this.message);
+					}
+				}
+			}
+			var f = handler.handleClick();
+			f();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				如果我们希望临时删除页面上的节点，但是不希望节点上的数据和事件丢失，并且能在下一个时间段让这个删除的节点显示在页面上面，这个时候我们就可以使用detach方法来处理
+					
+			*/
+			$(function (){
+				$('p').bind('click',function (evt){
+					alert(evt.target.innerHTML);	//注意：这里的evt.target和this可能不一样，如果点击点在p标签上面那么this == evt.target
+				})
+				var p;
+				$('#but1').bind('click',function (){
+					 p = $('p').detach();
+				})
+				$('#but2').bind('click',function (){
+					$('body').append(p);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<p style = "border:1px solid red">默认给绑定的点击事件</p>
+		<input type = "button" id = "but1" value = "点击删除p元素">
+		<input type = "button" id = "but2" value = "点击移动p元素">
+	</body>
+</html>

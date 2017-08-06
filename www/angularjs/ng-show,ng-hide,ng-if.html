@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app = "App" ng-controller = "demo">
+		<input type = "checkbox" ng-model = "test" ng-click = "say()"/>
+		<p ng-show = "test" ng-style = "{color:'red'}">hello ng-show</p>
+		<p ng-hide = "test" ng-style = "{color:'red'}">hello ng-hide</p>
+		<p ng-if = "test" ng-style = "{color:'red'}">hello ng-if</p>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			var App = angular.module("App",[]);
+			App.controller("demo",["$scope",function ($scope){
+				$scope.say = function (){
+					console.log($scope.test);
+				}
+			}])
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		
+		<form ng-app="App" ng-controller = "demo" name="myForm" ng-init="email = '785184273@qq.com'">
+		
+			Email:
+			<input type="email" name="myAddress" ng-model="email" required>
+			<p>编辑邮箱地址，查看状态的改变。</p>
+			<h1>状态</h1>
+			<p>Valid: {{myForm.myAddress.$valid}} (如果输入的值是合法的则为 true)。</p>
+			<p>Dirty: {{myForm.myAddress.$dirty}} (如果值改变则为 true)。</p>
+			<p>Touched: {{myForm.myAddress.$touched}} (如果通过触屏点击则为 true)。</p>
+	
+		</form>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script> 
+		<script type="text/javascript">
+			/*
+			 ng-model指令用于绑定应用程序数据到html控制器（input,select,textarea）的值
+			 ng-model指令可以为应用数据提供状态值(invalid,dirty,touched,error)
+			 * */
+			var App = angular.module("App",[]);
+			App.controller("demo",["$scope",function ($scope){
+				console.log($scope);
+			}])
+		</script>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+			#box2{
+				width: 100px;
+				height: 100px;
+				background-color: green;
+				position: absolute;
+				left: 100px;
+				top: 0px;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				
+				var Td = new _Td("box1");
+				Td.init();
+				var Td = new _Td("box2");
+				Td.init();
+			}	
+				function _Td(id){
+					this.obox1 = document.getElementById(id);
+					this.divx = 0;
+					this.divy = 0;
+				}
+				
+				
+				_Td.prototype.init = function(){
+					console.log(this);//这里的This是Td
+					var This = this
+					this.obox1.onmousedown = function (e){
+						This._down(e);
+					}
+				}
+				_Td.prototype._down = function(){
+					console.log(this)//这里的This是Td
+					var This=this;
+					var e = e||event;
+						this.divx = e.clientX - this.obox1.offsetLeft;
+						this.divy = e.clientY - this.obox1.offsetTop;
+					
+					document.onmousemove = function (e){
+						console.log(this)
+						This._move(e)
+					}
+					
+					document.onmouseup = This._up;
+				}
+				_Td.prototype._move = function(e){
+					this.obox1.style.left = e.clientX - 50+"px";
+					this.obox1.style.top = e.clientY - 50+"px";
+				}
+				_Td.prototype._up = function (){
+					document.onmouseup = null;
+					document.onmousemove = null;
+				}
+				
+		</script>
+	</head>
+	<body>
+		<div id="box1"></div>
+		<div id="box2"></div>
+	</body>
+</html>

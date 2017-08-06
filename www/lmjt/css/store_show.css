@@ -1,0 +1,71 @@
+html,body,ul,section,nav,footer,header{
+	margin : 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+}
+body{
+	font-family: "微软雅黑";
+}
+a{
+	text-decoration: none;
+}
+.link ul:after,
+.store .show ul:after,
+header nav ul:after{
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	clear: both;
+}
+
+/*店面展示*/
+.store{
+	background: #f8ecdc;
+	padding-top: 20px;
+}
+.store .show{
+	width: 998px;
+	margin: 0 auto;
+}
+.store .show .show_title{
+	font-size:24px;
+	color:#212121;
+	text-align: center;
+	font-weight: bold;
+}
+.show ul{
+	list-style: none;
+}
+.show ul li{
+	float: left;
+	width : 320px;
+	padding: 10px 0px 0px 10px;
+}
+.show ul li p{
+	text-align: center;
+	margin: 0px;
+	color: #212121;
+	font-weight: bold;
+	font-size: 16px;
+}
+ .page_num{
+	text-align: center;
+}
+.page_num .current{
+	background: #e1dbd7;
+	color: #411900;
+}
+ .page_num a{
+	margin: 50px 0px;
+	display: inline-block;
+	padding: 5px 10px;
+	font-size: 14px;
+	border: 1px solid #411900;
+	text-align: center;
+	border-radius : 5px;
+	background: #411900;
+	color: #e1dbd7;
+}

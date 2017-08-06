@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script>
+			/*
+				两种方法定义正则表达式
+					1.var reg = /[ab]c/g
+					2.var reg = new RegExp('[ab]c','g');
+						注意：1.传递给RegExp构造函数的两个参数都是字符串
+								2.由于RegExp构造函数的模式参数都是字符串，所以在某些情况下，要对字符串进行双重转义，所有的元字符都必须进行双重转义
+								例如：	字面量模式		等价的字符串
+										/\[bc\]at/		'\\[bc\\]at'
+										/\.at/			'\\.at'
+				使用正则表达式字面量和使用RegExp构造函数创建的正则表达式不一样，在【ECMAscript3】中正则表达式字面量始终会共享同一个RegExp实例，而使用构造函数创建的每一个新的RegExp实例都是一个新的实例
+				
+				在正则表达式被匹配之后，返回一个匹配信息项的数组，或者在没有匹配项的情况下返回null，返回的数组是array的实例，但是包含两个额外的属性:index和input，index表示匹配项在字符串中的位置，input表示应用正则表达式的字符串，第一项是与整个模式匹配的字符串，其它项是与模式中的捕获组匹配的字符串，
+				
+			*/
+				//*
+				var re = null;
+				for(var i = 0;i < 10;++i){
+					re = /cat/g;
+					console.log(re.source);
+					console.log(re.test('catastrophe'));
+				}
+				//*/
+				//*
+				for(var i = 0;i < 10;++i){
+					re = new RegExp('cat','g');
+					console.log(re.test('catastrophe'));
+				}
+				//*/
+				
+				var str = "mom and dad and baby and dad and baby";
+				var reg = /mom (and dad (and baby)?)?/g;
+				var res = reg.exec(str);
+				console.log(res);
+				console.log(res.__proto__.constructor);	//返回的是一个数组对象，是array的实例
+		</script>
+	</head>
+		<body>
+		</body>
+</html>

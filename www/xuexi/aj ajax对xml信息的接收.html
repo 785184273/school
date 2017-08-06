@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<input type = "button" value = "触发" onclick = "f1()">
+		<div id = "result"></div>
+	</body>
+		<script type="text/javascript">
+			function f1(){
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function (){
+					if(xhr.readyState == 4){
+						//alert(xhr.responseXML);	//返回是XMLdocument对象，其是xml根节点的父节点对象
+						var xmldom = xhr.responseXML;
+						
+						//console.log(xmldom.firstChild);
+						
+						var citys = xmldom.getElementsByTagName('city');
+						
+						//for(var k in citys[1]){//k代表元素节点对象的成员
+							//有输出一个成员方法：getElementsByTagName()
+							//结论：document对象和普通的元素对象都可以调用getElementsByTagName()
+							//console.log(k);
+						//}
+						
+						var s = "";
+						for(var i = 0;i < citys.length;++i){
+							var nm = citys[i].getElementsByTagName('name')[0].firstChild.nodeValue;
+							var temp = citys[i].getElementsByTagName('temp')[0].firstChild.nodeValue;
+							var wind = citys[i].getElementsByTagName('wind')[0].firstChild.nodeValue;
+							s += "城市：" + nm + " 温度: " + temp + " 风向: " + wind + "<br />";
+						}
+						document.getElementById("result").innerHTML = s;
+						window.alert(s);
+					}
+				}
+				
+				xhr.open("get","./aj weather.xml");
+				xhr.send(null);
+			}
+		</script>
+</html>
+<!--
+	aj对xml信息的接收和处理
+		ajax负责请求xml和接收xml信息，dom负责处理xml信息
+		dom：
+			php里边，dom是php与xml(html)之间的沟通桥梁
+			js里边，dom是js与html(xml)之间沟通桥梁
+	xml需要从服务器端返回到客户端被js处理
+		aj：辅助请求xml回来
+		dom(js)：辅助处理xml信息
+-->

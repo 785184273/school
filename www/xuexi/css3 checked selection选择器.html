@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<style>
+			/*
+				:checked选择器匹配每个已被选中的input元素(只用于单选框和复选框)
+				::selection伪元素选择器匹配突出显示的文本(匹配被用户选取的部分)
+				
+			*/
+			input[type='checkbox']:checked + span{
+				background:pink;
+			}
+			::selection{
+				color:green;
+				background:pink;
+			}
+		</style>
+	</head>
+		<body>
+			<input type = "checkbox" value = "1" checked = "checked"><span>the one</span>
+			<div>
+					怎么说我不爱你
+				捡了一会那刺激浪漫当下的欲望
+				过了一程那冲动盲目之下的疯狂
+				品那些遐想尝那些火花
+				然后坠落，又坠落
+				旋转流离在迷乱的网
+				
+			</div>
+		</body>
+</html>

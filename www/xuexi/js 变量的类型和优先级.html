@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			var tianqi = "sun";	//外部变量
+			function f1(){
+				function f2(tianqi){	//形参
+				
+					function tianqi(){		//内部函数
+						document.write("<br />" + tianqi);
+					}
+					
+					var tianqi = "rain"		//内部变量
+					
+					document.write("<br />" + tianqi);
+					//tianqi();
+					
+				}
+				f2("snow");	//内部变量>>>>>内部函数>>>>>形参>>>>>外部变量(内部变量,形参,函数)
+			}
+			f1();
+		//全局变量和局部变量
+			var weather = "sun";
+			var week = "sunday";
+			//全局变量是活动对象window的直接成员属性
+			document.write("<br />" + window.weather);
+			
+			function f4(){
+				alert(123);
+				
+				var day = "29";//这是一个局部变量，相对概念上
+				//可以成为全局变量，能被深层次的环境和本环境访问
+				
+				function f5(){
+					document.write("<br />" + day);
+				}
+				f5()
+			}
+			window.f4();
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+	变量的类型和优先级
+		内部变量>>>>>内部函数>>>>>形参>>>>>外部变量(内部变量,形参,函数)
+	全局变量
+		声明
+			在函数外部声明的变量
+			在函数内部不使用var声明的变量(前提是函数执行之后才起作用)
+		重新认识
+			全局变量是活动对象window的成员信息
+			在访问的时候，window是否设置都可以，如果设置window可以提高代码可读性
+	局部变量
+		声明
+			在函数内部通过var声明的变量就是局部变量
+		重新认识
+			局部变量相对概念上看在一定范围内可以看做是"全局变量"
+			其在本环境，内部环境，内部深层环境都能被访问
+	
+-->

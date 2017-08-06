@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<!--Bootstrap不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--移动设备优先,响应式布局-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<style>
+			.scrollspy-example{
+				height:500px;
+				font-size:20px;
+				overflow:auto;
+			}
+		</style>
+	</head>
+		<body>
+			<div role="navigation" class="navbar navbar-default navbar-static" id="navbar-example2">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button data-target=".bs-example-js-navbar-scrollspy" data-toggle="collapse" type="button" class="navbar-toggle collapsed">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="#" class="navbar-brand">Project Name</a>
+					</div>
+					<div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
+						<ul class="nav navbar-nav">
+							<li><a href="#fat">@fat</a></li>
+							<li><a href="#mdo">@mdo</a></li>
+							<li class="dropdown">
+								<a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" id="navbarDrop1" href="#">Dropdown <span class="caret"></span></a>
+								<ul aria-labelledby="navbarDrop1" role="menu" class="dropdown-menu">
+									<li><a tabindex="-1" href="#one">one</a></li>
+									<li><a tabindex="-1" href="#two">two</a></li>
+									<li class="divider"></li>
+									<li><a tabindex="-1" href="#three">three</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="scrollspy-example" data-offset="0" data-target="navbar-example2" data-spy="scroll" id="scrollspy">
+				<h4 id="fat">@fat</h4>
+				<p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+				<h4 id="mdo">@mdo</h4>
+				<p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+				<h4 id="one">one</h4>
+				<p>Occaecat commodo aliqua delectus. Fap craft beer deserunt skateboard ea. Lomo bicycle rights adipisicing banh mi, velit ea sunt next level locavore single-origin coffee in magna veniam. High life id vinyl, echo park consequat quis aliquip banh mi pitchfork. Vero VHS est adipisicing. Consectetur nisi DIY minim messenger bag. Cred ex in, sustainable delectus consectetur fanny pack iphone.</p>
+				<h4 id="two">two</h4>
+				<p>In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.</p>
+				<h4 id="three">three</h4>
+				<p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+				<p>Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda. Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.</p>
+			</div>
+		<!--bootstrap模板为使IE6、7、8版本（IE9以下版本）浏览器兼容html5新增的标签。-->
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<!--为使IE6、7、8版本浏览器兼容css3样式-->
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		</body>
+</html>
+<!--
+	滚动监控器的实现
+		1.加载对应的插件
+		2.设计一个带有下拉菜单的导航条,分别为导航条和下拉菜单项定义一个锚点,同时为导航条定义一个id值(id可以随便定义)
+			例如：#blog,#html,#css
+		3.设计监控的对象，将监控对象都放在一个div中，其中放了多个子内容框，每个子内容框有一个标题，而且每个标题的id值和导航菜单中的锚点链接相对应，并且注意加入"data-target = (这个属性值要与前面的nav标签的id名称保持一致)"
+		4.为监控的对象定义样式，设置容器的大小(设置高度的目的是为了产生垂直滚动条)
+	js触发滚动监控器
+		在bs框架中，使用js触发滚动监控器相对来说较为简单，只需要指定两个容器的名称即可
+		
+		<div id = "navbar-menu" class = "navbar navbar-default navbar-static" role = "navigation">]
+			......
+		</div>
+		<div class = "scrollspy" id = "scrollspy">
+			......
+		</div>
+		
+		$(function (){
+			$("#scrollspy").scrollspy({
+				target:"#navbar-menuu"
+			})
+		})
+-->

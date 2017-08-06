@@ -1,0 +1,14 @@
+@color:red;
+@width : 100px;
+@height : 100px;
+.box{
+    background: @color;
+    width:@width;
+    height: @height;
+    border: 1px solid @color;
+    a{
+        &:hover{
+            color:@color;
+        }
+    }
+}

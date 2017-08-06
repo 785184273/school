@@ -1,0 +1,12 @@
+@charset = utf8
+*{margin:0px;padding:0px;}
+
+a:hover{text-decoration:none;}
+body{margin: 0px;padding: 0px;font-family: "微软雅黑";}
+.box{border:1px solid #dddddd;border-radius: 3px;}
+.box h4{margin-top: 10px;}
+span{border:1px solid #dddddd;}
+.circle{border-radius: 30px;}
+.btn-add,.btn-reduce{color:#bbbbbb;}
+.add,.reduce{border:none;}
+.footer{color:#777777;border:px solid red;margin-top: 20px;}

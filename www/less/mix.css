@@ -1,0 +1,9 @@
+p,
+div {
+  border: 12px solid yellow;
+  color: yellow;
+}
+h {
+  border: 6px solid red;
+  color: red;
+}

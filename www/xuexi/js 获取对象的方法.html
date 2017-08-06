@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript">
+			function init(){
+				/*
+					obj = [
+						div1对象,
+						div2对象,
+						div3对象
+					];
+				*/
+				var obj = document.getElementsByTagName("div");
+				//alert(obj);
+				//obj[0].style.color = "red";
+				//document.write(obj);
+				for(var i = 0;i <= obj.length;++i){
+					obj[i].style.color = "red";
+				}
+			}
+			function init1(){
+				//获取所有的image对象
+				var allImage = document.images;
+				//allImage[0].src = "./img/1.jpg";
+				for(var i = 0;i <= allImage.length;++i){
+					allImage[i].src = "./img/" + (i+1) + ".jpg"; 
+				}
+				//alert(allImage);			
+			}
+			function init2(){
+				var allLink = document.links;
+				for(var i = 0;i <= allLink.length;++i){
+					allLink[i].style.textDecoration = "none";
+				}
+			}
+			function init3(){
+				var obj =  document.getElementById("a");
+				var obj1 = document.getElementsByName("a");
+				var obj2 = document.getElementsByTagName("a");
+				console.log(obj);
+				console.log(obj1);
+				console.log(obj2);
+			}
+			//获得文本节点对象
+			</script>
+	</head>
+		<body>
+			<div id = "d1">div2</div>
+			<div>
+				div2
+			</div>
+			<div>
+				div3
+			</div>
+			<image src = "">
+			<image src = "">
+			<image src = "">
+			<a href = "">1</a>
+			<a href = "">2</a>
+			<a href = "">3</a>
+			<a href = "" id = "a" name = "a">4</a>
+			<input type = "submit" value = "点击" onclick = "init()">
+			<input type = "submit" value = "点击" onclick = "init1()">
+			<input type = "submit" value = "点击" onclick = "init2()">
+			<input type = "submit" value = "点击" onclick = "init3()">
+		</body>
+</html>
+<!--
+	通过id找对象
+		document.getElementById("id名")
+	通过标签名称找对象
+		document.getElementsByTagName("标签名")
+		注意：获取的是对象的集合，是一个数组
+	通过name找对象
+		document.getElementsByName("name名")
+		注意：form集合，是一个数组
+	获取所有的image对象
+		document.images
+	获取所有的链接对象
+		document.links
+	获取表单对象
+		document.forms
+		数组
+	获取body对象
+		document.body
+	获取html对象
+		document.documentElement
+	
+-->

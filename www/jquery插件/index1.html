@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body,ul{
+				margin: 0px;
+				padding: 0px;
+			}
+			#demo{
+				width: 680px;
+				border: 1px solid red;
+				//overflow: hidden;
+			}
+			a{
+				overflow: hidden;
+			}
+			a,img{
+				float: left;
+			}
+			ul{
+				width: 1340px;
+				list-style: none;
+			}
+			li{
+				display: inline-block;
+				margin: 10px 0px 10px 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="demo" class = "scroll-img">
+			<ul>
+				<li><a href = "#"><img src="img/normal_1.png"/></a></li><!--
+			--><li><a href = "#"><img src="img/normal_2.png"/></a></li><!--
+			--><li><a href = "#"><img src="img/normal_3.png"/></a></li><!--
+			--><li><a href = "#"><img src="img/normal_4.png"/></a></li><!--
+			--><li><a href = "#"><img src="img/normal_5.png"/></a></li><!--
+			--><li><a href = "#"><img src="img/normal_6.png"/></a></li><!--
+			--><li><a href = "#"><img src="img/normal_7.png"/></a></li><!--
+			--><li><a href = "#"><img src="img/normal_8.png"/></a></li><!--
+			--><li><a href = "#"><img src="img/normal_9.png"/></a></li><!--
+			--><li><a href = "#"><img src="img/normal_10.png"/></a></li>
+			</ul>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/scrollbox.js"></script>
+		<script type="text/javascript">
+			$('#demo').scrollbox({
+			  direction: 'h',
+			  distance: 140
+			});
+		</script>
+	</body>
+</html>

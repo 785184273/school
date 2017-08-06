@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<style>
+			/*
+				在web表单中，有些表单元素有可用(:enabled)和不可用(:disabled)状态，比如输入框，密码框，复选框，在默认情况下， 这些表单元素都处在可用的状态
+				:disabled选择器刚好和:enabled选择器相反，用来选择不可用表单元素，要正常的使用:disabled选择器，需要在表单中设置disabled属性
+			*/
+			input[type='text']:enabled{
+				background:pink;
+			}
+			input[type='password']:disabled{
+				background:red;
+			}
+		</style>
+	</head>
+		<body>
+			<input type = "text" placeholder = "请输入帐号" name = "username"/>
+			<input type = "password" placeholder = "不可用表单不能被选择" name = "password" disabled = "disabled"/>
+		</body>
+</html>

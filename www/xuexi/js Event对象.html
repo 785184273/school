@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style type = "text/css">
+		
+		</style>
+		<script type = "text/javascript">
+		//DOM中的event对象
+		/*function get_xy(e)
+			{
+				//获取单击时，距离窗口左边和上边的距离
+				var str = "窗口左边距离："+e.clientX+".窗口顶边距离："+e.clientY;
+				str += "\n网页左边距离："+e.pageX+".网页顶边距离："+e.pageY;
+				str += "\n屏幕左边距离："+e.screenX+".屏幕顶边距离："+e.screenY;
+				str += "\n事件类型："+e.type;
+				alert(str);
+			}
+		window.onload = function ()
+		{
+			//获取id = img01的图片对象
+			var imgObj = document.getElementById("img01") 
+			//增加事件
+			imgObj.onclick = get_xy //传地址不带括号
+			//不能传event参数，但是形参必须接收，第一个参数一定是event对象
+		}*/
+		//IE中的event对象
+		function get_xy()
+		{
+			var imgObj = document.getElementById("img01") 
+			var str = "窗口左边距离：" + window.event.clientX + ".窗口上边距离：" + window.event.clientY;
+			str += "\n网页左边距离：" + window.event.pageX + ".网页上边距离：" + window.event.pageY;
+			str += "\n屏幕左边距离：" + window.event.screenX + ".屏幕上边距离：" + window.event.screenY;
+			str += "\n事件类型：" + window.event.type;
+			alert(str);
+			
+		}
+		</script>
+	</head>
+		<body>
+			<!--<img src = "img/443.jpg" id = "img01" /><!--onclick = "get_xy(event)"-->
+			<img src = "img/443.jpg" id = "img01" onclick = "get_xy()"/>
+		</body>
+</html>
+<!--
+Event对象简介
+	当事件发生时，向调用函数传递一个event参数，这个event参数是一个事件对象
+	该event对象中记录了当前对象发生的环境信息，如：单击时的坐标，事件类型等
+	注意：这个event对象是“短暂存在的”新的事件发生，新的event对象产生，原来的event对象就消失
+DOM中的event对象
+	DOM中引入event对象(DOM浏览器就是标准浏览器)
+		通过html标记的事件属性来传递event对象
+			在DOM中，event对象是作为事件调用函数时的参数，传递给函数的
+			该event参数，是系统固定的，全小写，不能加引号，它就是event对象参数
+		使用元素对象的事件属性来传递event对象
+DOM中的event对象属性
+	type：当前的事件类型
+	clientX和clientY；距离窗口左边和上边的距离
+	pageX和pageY：距离网页左边和上边的距离
+	screenX和screenY：距离屏幕左边和上边的距离
+IE中的event对象
+	IE中的event对象，是window对象的一个属性，可以通过window对象调用，而不需要传参数
+		如：window.event
+IE中的event对象属性
+	type：当前的事件类型
+	clientX和clientY；距离窗口左边和上边的距离
+	pageX和pageY：距离网页左边和上边的距离
+	screenX和screenY：距离屏幕左边和上边的距离
+
+
+
+
+
+
+
+-->

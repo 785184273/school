@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-app = "App" ng-controller = "demo">
+			<a href = "">baidu</a>	<!--指令标签a在没有href值的时候阻止了默认行为的触发-->
+			<select>
+				<option ng-repeat = "x in list">{{x}}</option>
+			</select>
+			<select ng-options = "x for x in list" ng-model = "mycolor">
+				<!--
+					ng-options指令用于使用<options></options>填充<select>元素的选项
+					ng-options指令使用数组来填充下拉列表，在多数的情况下于ng-repeat指令一起使用
+					注意
+						在使用ng-options的时候必须配合使用ng-model一起使用才有效果
+				-->
+			</select>
+			<form novalidate>
+				<!--novalidate属性阻止form表单的一些默认属性-->
+				<input type="email" />
+			</form>
+		</div>
+		<a href = "">baidu</a>	<!--非指令标签触发了默认行为-->
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			var App = angular.module("App",[]);
+			App.controller("demo",["$scope",function ($scope){
+				$scope.list = ['html',"css","js"];
+			}])
+		</script>
+	</body>
+</html>

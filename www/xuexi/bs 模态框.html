@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<!--Bootstrap不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--移动设备优先,响应式布局-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	</head>
+		<body>
+			<div class = "container">
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+
+			</div>
+			<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+				<div class = "modal-dialog">
+					<div class = "modal-content">
+						<div class = "modal-header">
+							<button type = "button" class = "close" data-dismiss = "modal"><span aria-hidden = "true">&times;</span><span class = "sr-only">Close</span></button>
+							<div class = "h4 modal-title">模态框标题</div>
+						</div>
+						<div class = "modal-body">
+							<p>模态框内容</p>
+						</div>
+						<div class = "modal-footer">
+							<button class = "btn btn-default" data-dismiss = "modal" type = "button">关闭</button>
+							<button type = "button" class = "btn btn-primary">保存</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--bootstrap模板为使IE6、7、8版本（IE9以下版本）浏览器兼容html5新增的标签。-->
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<!--为使IE6、7、8版本浏览器兼容css3样式-->
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		</body>
+</html>
+<!--
+	模态框是固定在浏览器中的，而且是自适应的，而且modal-dialog水平居中
+	当浏览器视窗大于768px时，模态框的宽度是600px
+	
+	.fade为模态框增加过度动画效果
+	
+	参数说明
+		属性名称			类型		默认值				描述
+		data-toggle			字符		modal			用来控制模态弹出框的显示，必须要在出发元素上定义的属性，值只能是modal
+		data-target			字符		用户自定义		data-target用来定义要触发的模态弹出框是哪一个，其值必须是元素独有的类名，或者是id名，必须要在触发元素上定义的一个属性，而且需要与div.modal中的独有类名或id匹配
+		data-show			布尔值		true			初始化时，弹出框是否显示
+		
+	js触发
+		$('.btn').click(function (){
+			$('#mymodal').modal();
+			})
+		})
+-->

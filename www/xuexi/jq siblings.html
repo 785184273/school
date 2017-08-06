@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				siblings()方法返回被选元素的所有同胞元素
+					语法：
+						siblings(selector)	可以带选择器，带选择器表示进行筛选
+			*/
+			$(function (){
+				//$('h2').siblings().css({border:'1px solid red'});	//将h2的所有同胞元素的边框设置为1px的红色实线
+				
+				//筛选指定的同胞元素
+				$('h2').siblings('p').css({background:'pink'});
+			})
+		</script>
+	</head>
+	<body>
+		<div>div (父)
+			<p>p</p>
+			<span>span</span>
+			<h2>h2</h2>
+			<h3>h3</h3>
+			<p>p</p>
+		</div>
+	</body>
+</html>

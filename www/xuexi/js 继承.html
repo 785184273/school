@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		//继承的作用：代码的复用
+		//继承的特点：可以使用父类的属性和方法，但是不影响父类
+			function parent(){
+				this.name = "小强";
+				this.age = 20;
+			}
+			parent.prototype.showName = function (){
+				alert(this.name);
+			}
+			function child(){
+				console.log(this);	//
+				//parent();
+				window.parent.call(this);	//继承了父类的属性
+			}
+			//child.prototype = parent.prototype;	//这样就是相当于是对象的引用了
+			child.prototype.sayhello = function (){//跟child.prototype对象添加一个方法，那么parent.prototype也会添加，因为它们指向同一个地址
+				alert("我已经20岁了!");
+			}
+			extend(parent.prototype,child.prototype);
+			function extend(parent,child){
+				for(attr in parent){
+					child[attr] = parent[attr];
+				}
+			}
+			var c1 = new child();	//当对象实例化的时候调用了child函数
+			var c2 = new parent();
+			//alert(c1.name);
+			c1.showName();
+			c1.sayhello();
+			//c2.sayhello();
+			//child();
+		</script>
+	</body>
+</html>

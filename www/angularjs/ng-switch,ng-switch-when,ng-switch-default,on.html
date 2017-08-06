@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app>
+		<select ng-model = "test">
+			<option value="四川" ng-selected = "true">四川</option>
+			<option value="陕西">陕西</option>
+		</select>
+		<div ng-switch on = "test">
+			<p ng-switch-default >默认显示</p>
+			<p ng-switch-when = "陕西">切换显示</p>
+		</div>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+	</body>
+</html>

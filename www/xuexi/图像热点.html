@@ -1,0 +1,35 @@
+<html>
+	<head>
+	</head>
+		<body>
+			<image src="img/12.png" usemap="#map" border="0"/>
+			<!--
+				注意:这里的name = "map" 对应 img 的usemap = "#map"
+			-->
+				<map name = "map">
+					<area shape="rect" coords="40 70 80 90" href="http://www.baidu.com">
+				</map>
+		</body>
+</html>
+<!--
+	图片热点:
+		给一张图片加多个链接，默认情况下只能给一张图加一个链接。
+	标记结构；
+		<img src="" usemap="#Map"/>
+		<map id="Map">
+			<area shape="热区形状" coords="热区坐标" href="链接地址"    />
+			<area shape="热区形状" coords="热区坐标" href="链接地址"    />
+			<area shape="热区形状" coords="热区坐标" href="链接地址"    />
+		</map>
+	<area>标记的常用属性：
+		shape：表示热区的形状，取值：rect（矩形），circle（圆形），（polygom多边形）
+		coords：地区的坐标（位置）
+				如果shape="rect"时，那么，coords="x1,y1,x2,y2" 例如coords="50,50,200,150"（其中x1,y1是矩形左上角的坐标值，x2，y2是矩形右下角的坐标值）
+				如果shape="circle"时，那么，coords="x,y,r",（其中x，y是圆心坐标，r为半径）
+				
+	
+
+
+
+
+-->

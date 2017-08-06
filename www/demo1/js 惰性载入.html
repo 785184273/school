@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*函数的惰性载入是用来减少每次代码执行时的重复性的分支判断，通过对象的重重新定义来屏蔽原来对象的分支判断
+			 * 
+			 */
+			//最原始的写法，这种方法每次调用都把所有判断都走了一遍，这样让机器看起来很傻，只会一次又一次的执行重复性的代码
+			var itsource = {};
+			//添加绑定事件方法的on
+			itsource.on = function (dom,type,fn){
+				if(dom.addEventListener){	//w3c
+					dom.addEventListener(type,fn,false);
+				}else if(dom.attachEvent){	//ie
+					dom.attachEvent("on" + type,fn);
+				}else{						//原始方法
+					dom['on' + type] = fn;
+				}
+			}
+			//第一次优化之后的代码加载即执行，但是如果我们的程序不需要这些代码，就会产生浪费
+			itsource.on = (function (dom,type,fn){
+				if(dom.addEventListener){	//w3c
+					//返回新的定义方法
+					return function (dom,type,fn){
+						dom.addEventListener(type,fn,false);
+					}
+				}else if(dom.attachEvent){	//ie
+					return function (dom,type,fn){
+						dom.attachEvent("on" + type,fn);
+					}
+				}else{						//原始方法
+					return function (dom,type,fn){
+						dom["on" + type] = fn;
+					}
+				}
+			})();
+			//第二次优化,惰性方法相对于前者可以在需要时来初始化，避免页面初次加载就执行而消耗性能
+			itsource.on = function (dom,type,fn){
+				if(dom.addEventListener){	//w3c
+					//返回新的定义方法
+					itsource.on = function (dom,type,fn){
+						dom.addEventListener(type,fn,false);
+					}
+				}else if(dom.attachEvent){	//ie
+					itsource.on = function (dom,type,fn){
+						dom.attachEvent("on" + type,fn);
+					}
+				}else{						//原始方法
+					itsource.on =  function (dom,type,fn){
+						dom["on" + type] = fn;
+					}
+				}
+				itsource.on(dom,type,fn);
+			};
+		</script>
+	</body>
+</html>

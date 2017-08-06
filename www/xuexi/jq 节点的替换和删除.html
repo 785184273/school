@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			$(function (){
+				$('#replace').click(function (){
+					//被动替换
+					//$("#fei").replaceWith("<li>赵云</li>");
+					
+					//主动替换
+					//console.log($('input'));
+					$('<li>马超</li>').replaceAll($("#fei"));
+					
+					//已有节点的替换会调换物理位置
+					//$('#wu li:eq(3)').replaceAll($("#fei"));
+					//$("#wu li:eq(2)").replaceAll($("#shu li:eq(0)"));
+				});
+				$('#empty').click(function (){
+					//节点的清空,本身的节点还在
+					$('#wu').empty();
+				});
+				$('#remove').click(function (){
+					$('#wei').remove();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<ul id = "shu">
+			<li>刘备</li>
+			<li>关羽</li>
+			<li id= "fei">张飞</li>
+		</ul>
+		<ul id = "wu">
+			<li>孙权</li>
+			<li>周瑜</li>
+			<li>鲁肃</li>
+			<li id = "wei">魏延</li>
+		</ul>
+		<input type = "submit" id = "replace" value = "jq节点的替换">
+		<input type = "submit" id = "empty" value = "jq节点的清空">
+		<input type = "submit" id = "remove" value = "jq节点的删除">
+	</body>
+</html>
+<!--
+	节点替换
+		$().replaceWith();	被动替换
+		$().replacAll();	主动替换
+		replaceWith和replaceAll会删除与节点相关联的所有数据和事件处理程序
+	节点删除
+		$(父节点).empty();	父节点清空子节点
+			注意：通过empty这个方法不仅移除子元素和其他的后代元素，同样移除元素里面的文本
+		$(匹配节点).remove();	删除指定的节点
+			注意：通过remove方法删除节点，其节点内部的所有元素都将被删除，节点上绑定的事件也会被销毁
+-->

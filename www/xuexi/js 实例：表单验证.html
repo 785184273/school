@@ -1,0 +1,121 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript">
+		function focus_username()
+		{
+			//获取id
+			var divObj = document.getElementById("username_result");
+			divObj.innerHTML = "请输入你的用户名！";
+			divObj.style.color = "grey";
+			//给文本框加一个边框
+			document.form1.username.style = "border:px solid red;";
+		}
+		function blur_username()
+		{	
+			//获取id
+			var divObj = document.getElementById("username_result");
+			//用户名的验证
+			var str = document.form1.username.value;
+			var arr = ["*","&","^","%","$","#","@","!","<",">","|","_","+","\\","=","(",")"," ","（","）"];
+			for(var i = 0;i < arr.length;i++)
+			{
+				//window.alert(arr[i]);
+				for(var a = 0;a < str.length;a++)
+				{
+					if(str.charAt(a) == arr[i])
+					{
+						//window.alert("用户名不合法！")
+						divObj.innerHTML = "用户名不合法"
+						
+						divObj.style.color = "red";
+						return false;
+					}
+				}
+			}
+			if(document.form1.username.value == "")
+			{
+				divObj.innerHTML = "用户名不能为空！";
+				divObj.style.color = "red";
+				return false;
+			}else if(document.form1.username.value.length < 5 || document.form1.username.value.length > 20)
+			{
+				divObj.innerHTML = "用户名的长度介于5-20个字符之间！";
+				
+				divObj.style.color = "red";
+				return false;
+			}else
+			{
+				//divObj.innerHTML =	'<img src = "img/zhengque.png"/>';
+				return true;
+			}
+		}
+		function focus_password()
+		{
+			//获取id
+			var divObj = document.getElementById("password_result")
+			divObj.innerHTML = "请输入你的密码！";
+			divObj.style.color = "grey";
+			//给文本框加一个边框
+			document.form1.username.style = "border:px solid red;"
+		}
+		function blur_password()
+		{
+			//获取id
+			var divObj = document.getElementById("password_result");
+			//用户名的验证
+			if(document.form1.password.value == "")
+			{
+				divObj.innerHTML = "密码不能为空！";
+				divObj.style.color = "red";
+				return false;
+			}else if(document.form1.password.value.length < 5)
+			{
+				divObj.innerHTML = "你的密码过于简单请重新设置！"
+				
+				divObj.style.color = "red";
+				return false;
+			}else
+			{
+				//divObj.innerHTML = '<img src = "img/zhengque.png"/>';
+				return true;
+			}
+		}
+		function checkForm()
+		{
+			var flag_username = blur_username();
+			var flag_password = blur_password();
+			if(flag_username == true && flag_password ==true)
+			{
+				return true;
+			}else
+			{
+				return false;
+			}
+		}
+		</script>
+		<style type = "text/css">
+		
+		
+		</style>
+	</head>
+		<body>
+			<form name = "form1" action = "login.php" method = "posr" onsubmit = "return checkForm()">
+			<table border = 1 align = "center" width = "700" rules = "all" cellpadding = "6">			
+					<tr>
+						<td width = "75px">用户名：</td>
+						<td width = "280px"><input type = "text" name = "username" onfocus = "focus_username()" onblur = "blur_username()" style = "width:275px"/></td>
+						<td><div id = "username_result"></div></td>
+					</tr>
+					<tr>
+						<td>密码：</td>
+						<td><input type = "password" name = "password" onfocus = "focus_password()" onblur = "blur_password()" style = "width:275px"/></td>
+						<td><div id = "password_result"></div></td>
+					</tr>
+					<tr>
+						<td colspan = "3" align = "center"><input type = "submit" value = "提交表单" /></td>
+					</tr>
+			</table>
+			</form>
+		</body>
+</html>

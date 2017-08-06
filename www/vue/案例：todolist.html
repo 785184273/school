@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+	</head>
+	<body>
+		<div class = "container box">
+			<form>
+				<div class="form-group">
+			    	<label for="username">Name</label>
+			    	<input type="text" class="form-control" v-model = "user" id="username" placeholder="请输入用户名">
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="password">Password</label>
+			    	<input type="email" class="form-control" v-model = "pass" id="password" placeholder="请输入密码">
+			  	</div>
+			  	<input type = "button" class = "btn btn-success" @click = "add" value = "提交"/>
+			  	<input type="reset" class = "btn btn-info" value = "重置"/>
+			</form>
+			<table class = "table table-bordered table-condensed table-hover table-striped">
+				<caption>用户个人信息</caption>
+				<tr>
+					<td class = "text-center">序号</td>
+					<td class = "text-center">用户名</td>
+					<td class = "text-center">密码</td>
+					<td class = "text-center">操作</td>
+				</tr>
+				<tr v-for = "(x,index) in info">
+					<td class = "text-center">{{ ++index }}</td>
+					<td class = "text-center">{{ x.username }}</td>
+					<td class = "text-center">{{ x.password }}</td>
+					<td class = "text-center">
+						<input type="button" class = "btn btn-danger btn-xs" @click = "nowIndex = --index;del = '删除'" data-toggle="modal" data-target="#myModal" value="删除" />
+					</td>					
+				</tr>
+				<tr v-show = "info.length === 0">
+					<td class = "text-center" colspan="4">数据为空</td>
+				</tr>
+				<tr v-show = "info.length !== 0">
+					<td class = "text-center" colspan = "4">
+						<input type="button" class = "btn btn-danger" data-toggle="modal" @click = "nowIndex = -1;del = '全部删除'" data-target="#myModal" value = "删除全部数据"/>
+					</td>
+				</tr>
+			</table>
+			<!--模态框-->
+			<div class="modal fade bs-example-modal-sm"  tabindex="-1" id = "myModal" role="dialog" aria-labelledby="mySmallModalLabel">
+				<div class="modal-dialog modal-sm" role="document">
+			    	<div class="modal-content">
+					   	<div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					        	<span aria-hidden="true">&times;</span>
+					       	</button>
+					        <h4 class="modal-title" id="myModalLabel">提示</h4>
+					   	</div>
+					    <div class="modal-body text-center text-info">
+					        你确认要{{del}}吗？
+					    </div>
+					    <div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal" >取消</button>
+					        <button type="button" class="btn btn-primary" data-dismiss="modal" @click = "deleteInfo()">确认</button>
+					    </div>
+			    	</div>
+			  	</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : ".box",
+				data : {
+					user: "",
+					pass : "",
+					nowIndex : -1,
+					del : "删除",
+					info :	[
+						{username : "zhangsan",password : 123}
+					]
+				},
+				methods : {
+					add : function(){
+						this.info.push({username : this.user,password : this.pass});
+					},
+					deleteInfo : function (){
+						this.nowIndex == -1 ? (this.info = []) : this.info.splice(this.nowIndex,1);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

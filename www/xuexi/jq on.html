@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				on()在选择元素上绑定一个或多个事件的事件处理函数
+					on()方法包含bind(),delgate(),live()方法	的所有功能
+				语法
+					$(selector).on(events,[selector],[data],fn){}
+					events	一个或多个用空格分隔的事件类型和可选的命名空间
+					selector 一个选择器字符串用于过滤的触发事件的选择器元素的的后代
+					data 当一个事件比触发时，要传递给event.data给事件处理函数
+					fn	该事件被触发时执行的函数，false值也可以做一个函数的简写，返回false
+					
+			*/
+			$(function (){
+				$('input:submit').on('click',function(){
+					$('div').append('<p>我是新增的段落</p>');
+				})
+				$('a').on('click',false);	//阻止默认事件的执行，false也可以当一个函数，返回false的时候a标签停止跳转
+				$('p').on('click',{str:'one'},function(event){
+					alert(event.data.str);	//将{str:'one'}对象传递给了event.data
+				});
+				$('div').on('click','#one',function(){
+					alert('be my love,be the one');
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div style = "border:1px solid red;">
+			<p id = "one">fate stay night</p>
+		<div>
+		<input type = "submit" value = "点击">
+		<a href = "http://www.baidu.com">百度</a>
+		<p>the one</p>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style type = "text/css">
+		
+		</style>
+		<script type = "text/javascript">
+		function checkForm()
+		{
+			//判断用户名是否为空
+			var str = document.form1.username.value;
+			var arr = ["*","&","^","%","$","#","@","!","<",">","|","_","+","\\"];
+			if(str == "")
+			{
+				window.alert("用户名不能为空！");
+				return false;
+			}
+			for(var i = 0;i < arr.length;i++)
+			{
+				//window.alert(arr[i]);
+				for(var a = 0;a < str.length;a++)
+				{
+					if(str.charAt(a) == arr[i])
+					{
+						window.alert("用户名不合法！")
+						return false;
+					}
+				}
+			}
+			window.alert("用户名合法！")
+			return true;
+		}
+		</script>
+	</head>
+		<body>
+			<form name = "form1" method = "post" action = "login.php" onsubmit = "return checkForm()">
+				用户名：<input type = "text" name = "username"/>
+				密码：<input type = "password" name = "password"/>
+				<input type = "submit" value = "提交表单"/>
+			</form>
+			<a href = "http://www.baidu.com" onclick = "return false">百度</a>
+		</body>
+</html>
+<!--
+事件返回值
+	事件的返回值，会影响对象的默认动作 如:<a>标记的默认动作是打开一个网址
+	如果事件返回false,则阻止默认动作的执行，如果事件返回true或空，则默认动作继续执行
+	受返回值影响的事件有两个：onsubmit onclick
+提交和验证方法总结
+	1.使用submit按钮，结合onsubmit事件来实现(最常用)
+	
+
+
+
+
+
+
+
+
+
+-->

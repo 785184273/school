@@ -1,0 +1,40 @@
+<html>
+	<head>
+	</head>
+		<body>
+			<script>
+				function person(){
+				}88888888888888888888888888888888888888888888888888888888888888888888888888888888
+				person.prototype = {
+					name:'小美',
+					age:29,
+					friends:['小名','小花']
+				}
+				var p1 = new person();
+				var p2 = new person();
+				
+				p1.name = "张三";	//对象在查找某一个属性的时候，现在对象本身中查找，要是没找到，则在原型对象中查找
+				p1.friends.push('小二');
+				alert(typeof p1.friends);
+				alert(p1.friends);
+				alert(p2.friends);
+				alert(p1.name);
+				
+				function p(name){
+					this.name = name;
+					this.sayname = 123;
+				}
+				if(this.sayname != "function"){
+					p.prototype.sayname = function (){
+						console.log(123);
+					}
+				}
+				p.prototype.sayname = function (){
+					alert(123);
+				}
+				var pp = new p();
+				var pp1 = new p("张三");
+				console.log("name" in pp1);
+			</script>
+		</body>
+</html>

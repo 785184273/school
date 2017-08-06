@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			$(function (){
+			/*
+				$("div").bind("click",function (){
+					$(this).addClass("apple");
+				});
+			*/
+			//多个事件彼此用一个空格连接
+			//*
+				$('div').bind('mouseover',function f1(){
+					$(this).css("font-size","20px");
+				});
+				$('div').bind('mouseout',function f2(){
+					$(this).css("font-size","5px");
+				});
+				$('div').bind({click:f1,click:function f2(){console.log(234)}})
+			//*/
+			/*
+				$('div').bind({click:function (){
+					console.log(123);
+				},mouseover:function (){
+					console.log(234);
+				}});
+			*/
+				//$('div').unbind();
+				
+				//$('div').unbind('mouseout');
+				
+			});
+			function f1(){console.log(123)}
+			$('div').unbind('click',f1);
+		</script>
+		<style>
+			div{width:300px;height:200px;background:pink;}
+			.apple{border:1px solid red;background:lightblue;}
+		</style>
+	</head>
+	<body>
+		<div>today is rain</div>
+	</body>
+</html>	
+<!-->
+		jquery事件的简单操做
+			$().事件类型(function (){处理事件});
+			$().事件类型()	触发事件的执行
+		jq事件绑定
+			$().bind(事件类型,事件处理);
+			$().bind(类型1 类型2 类型3 ,处理事件)	//给许多不同类型的事件绑定同一个处理
+			$().bind(json对象)		//同时绑定多个不同类型的事件
+		事件处理
+			有名函数
+			匿名函数
+	取消事件绑定
+		dom2级取消事件的绑定
+			node.onclick = null;
+			node.removeEventListener(类型,处理,事件流)
+			node.detachEvent(类型,处理)
+		jq方式取消事件绑定
+			$().unbind();	取消全部的事件
+			$().unbind(事件类型);	取消指定的事件类型
+			$().unbind(事件类型,有名(事件)处理函数);	取消指定类型的指定处理事件
+	事件对象，组织浏览器默认动作，阻止事件冒泡
+		$().bind('click',function (evt){})
+		$().click(function (evt){})
+		$().bind('mouseover',f1)
+		function f1(evt){}
+		事件对象：就使用evt即可，在jquery框架内部有做浏览器兼容处理，evt对主流的事件对象和ie的事件对象有较好的封装
+		
+		阻止浏览器默认动作
+			dom2级浏览器默认动作的阻止
+				preventDefault();	主流浏览器
+				returnValue = false		LE浏览器
+			dom2级事件冒泡阻止
+				stopPropagation()	主流浏览器
+				cancelBubble = true		IE浏览器
+			jq对象里面(jq做到了浏览器的兼容处理)
+				$().bind(click,function (evt){
+					evt.preventDefault();
+					evt.stopPropagation();
+				});
+				
+				
+				
+		
+			
+-->

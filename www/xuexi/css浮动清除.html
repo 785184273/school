@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<style type="text/css">
+			.box{
+				width:800px;
+				rules:all;
+				border:1px solid red;
+				margin:10px auto;
+				background:blue;
+				overflow:hidden;
+			}
+			.box .aa{
+				width:200px;
+				height:100px;
+				border:1px solid red;
+				background:red;
+				float:right
+			}
+			.box .bb{
+				width:200px;
+				height:100px;
+				border:1px solid red;
+				background:green;
+				float:right
+			}
+			.box .cc{
+				width:200px;
+				height:100px;
+				border:1px solid red;
+				background:grey;
+				float:right
+			}
+
+		</style>
+	</head>
+		<body>
+			<div class="box">
+				<span class="aa"></span>
+				<div class="bb"></div>
+				<div class="cc"></div>
+				<div class="dd"></div>
+			</div>
+		</body>
+</html>
+
+
+
+
+<!--
+css清除和浮动
+float:让元素浮动，取值:left(左浮动),right(右浮动)
+clear:清除浮动，取值:left(清除左浮动),right(清除右浮动),both(同时清除上面的左浮动和右浮动)
+1.css浮动
+	浮动的元素，将向左或向右，浮动到包围元素的边上，或上一个浮动元素的边上为止，
+	浮动的元素，不再占空间了，并且浮动元素的层级要高于普通元素。
+	浮动的元素一定是块元素，不管它原来是什么元素，
+	浮动的元素，没有指定宽度的话，浮动后他将尽可能的变窄，因此，浮动元素一般都要定宽和定高
+浮动的功能：可以实现将多个块元素并列排版
+如何让包围元素包住浮动元素？
+	你就需要在浮动元素的下边使用清除浮动操作
+	clear：both;
+
+	
+
+-->

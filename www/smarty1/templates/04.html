@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type = "text/css">
+			
+		</style>
+		<script type = "text/javascript">
+			
+		</script>
+	</head>
+		<body>
+			<div> 
+				单模版多缓存制作<br />
+				显示商品信息<br />
+				第{$smarty.get.page}页数据<br />
+				局部不缓存<br />
+				{$smarty.now}<br />
+				{$smarty.now nocache}<br />
+				{$time}<br />
+				缓存集合<br />
+				商品展示<br />
+				条件:<br />
+				品牌:{$smarty.get.brand}<br />
+				价格:{$smarty.get.price}<br />
+				大小:{$smarty.get.big}<br />
+			</div>
+		</body>
+</html>

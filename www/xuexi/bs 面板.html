@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<!--Bootstrap不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--移动设备优先,响应式布局-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	</head>
+		<body>
+			<div class = "container">
+				<div class = "panel panel-default">
+					<div class = "panel-heading">图解</div>
+					<div class = "panel-body">我是一个基础面板</div>
+					<div class = "panel-footer">作者:大漠</div>
+				</div>
+				<div class = "panel panel-success">
+					<div class = "panel-heading">图解</div>
+					<div class = "panel-body">我是一个基础面板</div>
+					<div class = "panel-footer">作者:大漠</div>
+				</div>
+				<div class = "panel panel-info">
+					<div class = "panel-heading">图解</div>
+					<div class = "panel-body">我是一个基础面板</div>
+					<div class = "panel-footer">作者:大漠</div>
+				</div>				
+				<div class = "panel panel-primary">
+					<div class = "panel-heading">图解</div>
+					<div class = "panel-body">我是一个基础面板</div>
+					<div class = "panel-footer">作者:大漠</div>
+				</div>
+				<div class = "panel panel-warning">
+					<div class = "panel-heading">图解</div>
+					<div class = "panel-body">我是一个基础面板</div>
+					<div class = "panel-footer">作者:大漠</div>
+				</div>
+				<div class = "panel panel-danger">
+					<div class = "panel-heading">图解</div>
+					<div class = "panel-body">我是一个基础面板</div>
+					<div class = "panel-footer">作者:大漠</div>
+				</div>
+			</div>
+		<!--bootstrap模板为使IE6、7、8版本（IE9以下版本）浏览器兼容html5新增的标签。-->
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<!--为使IE6、7、8版本浏览器兼容css3样式-->
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		</body>
+</html>
+<!--
+	面板非常简单，就是在一个div容器运用了panel样式，产生一个具有边框的文本显示块，由于panel不控制主题颜色，所以在panel的基础上增加了一个控制颜色的主题panel-default，另外在里面添加了一个div.panel-body来放置面板的主题内容
+	panel-heading:用来设置面板的头部样式
+	panel-footer:用来设置面板的尾部样式
+	
+	面板样式
+		panel-primary:重点蓝
+		panel-success:成功绿
+		panel-info:信息蓝
+		panel-warning:警告黄
+		panel-danger:危险红
+-->

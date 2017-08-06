@@ -1,0 +1,31 @@
+<html>
+	<head>
+	</head>
+		<body>
+			<script>
+				function person(name){
+					var o = new Object();
+					o.name = name
+					return o;
+				}
+				var p = person('小米');	//这里可以使用new也可以不使用new·
+				console.log(p.name);
+				console.log(typeof p)
+				alert(p.constructor);	//Object
+				alert(p instanceof Object);
+				
+				function student(){
+					this.name = "小美";
+				}
+				var s = new student();
+				var s1 = new student();
+				
+				var d = new Date();
+				console.log(s.constructor == student);	//true
+				console.log(p.constructor == Object);	//true
+				
+				console.log(d.constructor == Date);		//true
+				console.log(d.constructor == Object);	//false
+			</script>
+		</body>
+</html>

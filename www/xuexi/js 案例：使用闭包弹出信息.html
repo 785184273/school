@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			window.onload = function (){
+				var arr = ['四川','陕西','湖北','湖南'];
+				var len = arr.length; 
+				var ul = document.createElement("ul");
+				document.body.appendChild(ul);
+				for(var i = 0;i < len;++i){
+						var li = document.createElement("li");
+						ul.appendChild(li);
+						var texti = document.createTextNode(arr[i]);
+						li.appendChild(texti);
+						li.onclick = click(i);
+				}
+			}
+			
+			function click(i){
+				var li = document.getElementsByTagName("li")[i];
+				function f2(){
+					window.alert(li.innerHTML);
+				}
+				return f2;
+			}
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>

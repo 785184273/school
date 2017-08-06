@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 sort()方法规定对数组的元素进行排序
+			 sort()方法会根据测试字符串的结果改变原来的顺序
+			 	语法
+			 		arrObj.sort(sortby)
+			 		参数
+			 			sortby		可选，规定排序顺序， 必须是函数,比较函数
+			*/
+			var arr = [1,2,3,4,10,11,13];
+			console.log(arr.sort());	//1,10,11,13,2,3,4
+			
+			
+			function compare(a,b){
+				if(a < b){
+					return -1;
+				}else if(a > b){
+					return 1;
+				}else{
+					return 0;
+				}
+			}
+			console.log(arr.sort(compare));	//1,2,3,4,10,11,13
+		</script>
+	</body>
+</html>

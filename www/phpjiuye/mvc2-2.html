@@ -1,0 +1,81 @@
+<html>
+	<head>
+	</head>
+		<body>
+			<a href = './mvc2-7.php?act=showuser'>用户列表</a>
+<?php
+	echo "<table align = 'center' border = '1' rules = 'all'>";
+	while($rows = mysql_fetch_array($model1)){
+		echo "<tr>";
+		/*
+		$count = mysql_num_fields($model1);
+		for($i = 0;$i < $count;++$i){
+			echo "<th>".$rows[$i]."<th/>";
+		}
+		echo "<br />";
+		*/
+			echo "<th>".$rows[0]."</th>";
+			echo "<th>".$rows[1]."</th>";
+			echo "<th>".$rows[2]."</th>";
+			echo "<th>".$rows[3]."</th>";
+			echo "<th>".$rows[4]."</th>";
+			echo "<th>".$rows[5]."</th>";
+			echo "<th><a href ='?act=del&id=".$rows[0]."' onclick = 'return jump(".$rows[0].")'>删除</a></th>";
+			echo "<th><a href ='?act=detai&id=".$rows[0]."'>详细</a></th>";
+			echo "<th><a href ='?act=add'>添加</a></th>";
+			echo "<th><a href ='?act=alter&id=".$rows[0]."'>修改</a></th>";
+		echo "<tr/>";
+	}
+	echo "<table/>";
+	echo "<hr />";
+	while($rows = mysql_fetch_array($model2)){
+		$count = mysql_num_fields($model2);
+		for($i = 0;$i < $count;++$i){
+			echo "商品的总数为：".$rows[$i];
+		}
+	}
+	//注释：以前的做法大多数都是这样的，而现在我们学习了mvc需要改变以前的做法
+	//	视图文件一般都是html文件，我们要做到php代码和html，css代码互不影响
+	/*
+		视图层的典型做法
+			功能：展示页面的静态内容，以及相关的变量数据
+			数据分为：
+				普通标量数据：echo $v1;
+				数组数据：foreach($arr as $key => $value){
+					
+				}
+	*/
+?>
+<script>
+	function jump(id){
+		return window.confirm("你确认要删除吗？");
+	}
+</script>
+		</body>
+</html>
+<!--
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+	</head>
+		<body>
+			<table border = '1'>
+				<?php
+				//	foreach($model1 as $key => $rec){
+				?>
+					<tr>
+						<td><?php// echo $rec['pro_id'];?></td>
+						<td><?php //echo $rec['pro_name'];?></td>
+						<td><?php// echo $rec['protype_id'];?></td>
+						<td><?php// echo $rec['price'];?></td>
+						<td><?php //echo $rec['pinpai'];?></td>
+						<td><?php //echo $rec['chandi'];?></td>
+					</tr>
+				<?php
+					//}
+				?>
+			</table>
+			当前用户总数：<?php //echo $model2;?>
+		</body>
+</html>
+-->

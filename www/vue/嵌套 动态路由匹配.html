@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id = "box">
+			<input type="button" name="" id="" value="go" @click = "go"/>
+			<p>
+				<router-link to = "/user">用户</router-link>
+				<router-link to = "/password">密码</router-link>
+			</p>
+			<router-view></router-view>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+		<script type="text/javascript">
+			var user = {
+				template : `<div>
+								<ul>
+									<li><router-link to = "/user/join/10">join</router-link></li>
+									<li><router-link to = "/user/tom/30">tom</router-link></li>
+								</ul>
+								<router-view></router-view>
+							</div>`
+			}
+			var pass = {
+				data : function (){
+					return {
+						pass : "lw199549"
+					}
+				},
+				template : "<div>密码:{{ pass }}</div>"
+			}
+			var users = {
+				template : "<div>{{$route.params}}</div>"
+			}
+			var routes = [
+				{
+					path : "/user",
+					component : user,
+					children : [
+						{path : ":username/:age",component : users}
+					]
+				},
+				{path : "/password",component : pass},
+				
+				{path : "*",redirect : "/user"}
+			]
+			var router = new VueRouter({
+				routes : routes
+			})
+			new Vue({
+				router,
+				el : "#box",
+				methods : {
+					go : function (){
+						router.go(-3);
+					}
+				}
+			})
+			//router.go()这个方法的参数是一个整数，意思是在history记录中向前或者后退多少步
+		</script>
+	</body>
+</html>

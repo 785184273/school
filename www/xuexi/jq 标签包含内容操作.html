@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js">
+
+		</script>
+	</head>	
+	<body>
+		<div>we are <span>the world</span></div>
+		<input type = "button" value = "$().html()一系列的操作" onclick = "f1()"/>
+	</body>
+	<script>
+		function f1(){
+			//获取div标签中的内容
+			//能获取html标签内容
+			//console.log($('div').html());
+			
+			//设置div标签中的内容
+			//$('div').html('<a href = "">百度</a>')
+			
+			//使用node.text()方法
+			//不能获取html标签内容
+			//console.log($('div').text());
+			
+			//使用node.text(信息)进行设置
+			$('div').text('<a href = "">百度</a>');
+		}
+	</script>
+</html>
+
+<!--
+	js中的操作
+		node(节点对象).innerHTML:获得节点对象包含的信息
+		node.innerHTML = XXXX；设置节点对象中的内容
+		注意：innerHTML不是w3c标准技术，许多浏览器对其有支持而已
+	jq操作
+		$().html()		获得节点包含的信息能够获取包括html标签
+		$().html(信息)	设置节点包含的内容
+		$().text()		获得节点包含的文本字符串信息内容
+		$().text(信息)	设置节点包含的内容(有html标签把"><"符号变为符号实体)
+-->

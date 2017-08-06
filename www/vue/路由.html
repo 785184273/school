@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			[v-cloak]{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" v-cloak>
+			<input type="button" name="" id="" value="push" @click = "push"/>
+			<input type="button" name="" id="" value="replace" @click = "replace"/>
+			<p>
+				<!--通过router-link来导航，通过传入to属性来指定链接，router-link会默认渲染成一个a标签-->
+				<router-link to = "/home">主页</router-link>
+				<router-link to = "/news">新闻中心</router-link>
+			</p>
+			<!--路由出口，路由匹配到的组件将渲染到这里-->
+			<router-view></router-view>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+		<script type="text/javascript">
+			//1.定义路由组件
+			var home = {
+				template : "<div>我是主页</div>"
+			}
+			var news = {
+				template : "<div>我是新闻中心</div>"
+			}
+			//2.定义路由
+			var routes = [
+				{path : "/home",component :home},
+				{path : "/news",component :news},
+				//重定向
+				{path : "*",redirect : "/home"}
+			]
+			//3.创建router实例
+			var router = new VueRouter({
+				routes : routes
+			})
+			//4.创建和挂在根实例
+			new Vue({
+				router,
+				el : "#box",
+				methods : {
+					push : function (){
+						router.push("name");
+					},
+					replace : function (){
+						router.replace("news");
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				filter()方法匹配元素缩减为匹配指定选择器元素
+					语法
+					filter(selector)	字符串，包含供匹配当前元素集合的选择器表达式
+			*/
+			$(function (){
+				/*
+				$('div').css({background:'pink'})	//全部的div背景颜色都是pink
+					.filter('.middle')				//指定class = middle的div边框为1px的黑色实线
+					.css({border:'1px solid black'});
+				
+				*/
+				
+				//其实不用filter也可以用别的实现
+				$('div').css({background:'pink'})
+					.not('div:first,div:last')
+					.css({border:'1px solid black'});
+			})
+			
+		</script>
+		<style>
+			div{ width:60px; height:60px;
+			margin:5px; float:left;
+			border:2px red solid; }
+		</style>
+	</head>
+	<body>
+		<div></div>
+
+		<div class="middle"></div>
+		<div class="middle"></div>
+		<div class="middle"></div>
+		<div class="middle"></div>
+
+		<div></div>
+	</body>
+</head>

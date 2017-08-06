@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			function cat(){
+				this.weapon = "伶牙俐齿";
+			}
+			var kitty = new cat();
+			
+			function tigger(){
+				this.color = "yellow and black";
+			}
+			tigger.prototype = kitty;
+			var north = new tigger();
+			
+			function wolf(){
+				this.eye = "闪闪发光";
+			}
+			wolf.prototype = north;
+			var seven = new wolf();
+			seven.hand = "毛毛的";
+			
+			function dog(){
+				this.hobby = "看家";
+			}
+			dog.prototype = seven;	//注意：继承是(构造)函数继承对象
+			var wangcai = new dog();
+			console.log(wangcai);
+			console.log(wangcai.weapon);
+			console.log(wangcai.hand);
+			console.log(wangcai.constructor);	//构造器
+			
+			var arr = [];
+			//该数组原型链的结构是 arr - > Array.prototype - > Object.prototype - > null 
+			
+			var shabu = new Object();
+			//该对象的原型链的结构是 O - > Object.prototype - > null
+			
+			var person = function (){}
+			var p = new person();
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+	原型链
+		什么是原型链
+			构造函数继承一个对象
+			继承对象也有构造函数，其构造函数还去继承其他对象
+			其他对象也有构造函数，构造函数还去继承其他对象
+			其他对象也有构造函数，构造函数还去继承其他对象
+			如此反复.....
+			形成了一个继承的链条，称为"原型链"，原型链的顶端是object
+-->

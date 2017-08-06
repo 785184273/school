@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>html5地理定位</h1>
+		<script type="text/javascript">
+			var geo = window.navigator.geolocation;
+			geo.getCurrentPosition(function (pos){
+				console.log(pos.coords.latitude,pos.coords.longitude);	//获取经度和纬度
+			},function (err){
+				console.log(err);
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app" class = "active" :class = "{box : isbox,text : istext}">
+			{{ message }}
+			<p :class = "classObj"></p>
+			<div :class = "[parents,time]">
+				
+			</div>
+			<div :class = "[{box : isbox},parents]">
+				
+			</div>
+			<div :class = "[ trs ? trs : time]">
+				
+			</div>
+			<div :style = "[{border : styles},{height : heights},{width : widths}]">
+				
+			</div>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					message : "class和style的绑定",
+					isbox : true,
+					trs : false,
+					istext : true,
+					classObj : {
+						flow : true,
+						hello : true
+					},
+					parents : "par",
+					time : "tim",
+					styles : "1px solid red",
+					widths : "100px",
+					heights : "100px"
+				}
+			})
+			/*
+			 	class的绑定，可以使用v-bind绑定一个class,他可以和普通的class共存
+			 		:class = "{active : isactive,box : isbox}"
+			 			通过判断isactive，和isbox是否为true
+			 		:class = "classObj"
+			 			classObj是Vue实例化对象下data中的对象
+			 		:class = "[active,box]"
+			 			使用数组的方法
+			 		:class = "[{active : isactive},parents]"
+			 			使用数组对象混合的语法
+			 		:class = "[tr ? tr : time]"
+			 			使用三元表达式的语法
+			 * */
+		</script>
+	</body>
+</html>

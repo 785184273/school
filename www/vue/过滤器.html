@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			{{ message | capitalize }}
+			<input type="button" value = "延迟执行" @click = "show" />
+			<ul>
+				<li v-for = "x in arr">{{x}}</li>
+			</ul>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	Vue2.0版本中，debounce属性已经被移除了
+			 	limitBy已经被移除
+			 * */
+			var vm = new Vue({
+				el : "#box",
+				data : {
+					message : "hello vue!",
+					arr : [1,2,3,4,5,6]
+				},
+				methods : {
+					show : function (){
+						alert("hello Vue!");
+					}
+				},
+				filters: {
+				    capitalize: function (value) {
+				    	//过滤器函数的第一个形参总是接收表达式的值
+				    	console.log(value);
+					    if (!value) return '';
+					    value = value.toString()
+					    return value.charAt(0).toUpperCase() + value.slice(1)
+				    }
+				}
+			})
+			/*
+			 	当然过滤器也可以传递一些参数
+			 		例如：uppercase("ad");
+			 		传递的值将是过滤器函数的第二个参数
+			 		注意：过滤器也是一个js函数
+			 * */
+		</script>
+	</body>
+</html>

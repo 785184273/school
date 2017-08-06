@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html ng-app = "App">
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller = "demo">
+			<h1>{{name}}</h1>
+		</div>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			var App = angular.module("App",[]);
+			App.controller("demo",["$scope","$timeout",function ($scope,$timeout){
+				$scope.name = "小明";
+//				setTimeout(function (){
+//					$scope.name = "hello";
+//					console.log($scope);	//$scope.name已经改变成hello了但是并没显示在页面上，我们需要使用$timeout
+//				},2000)
+				$timeout(function (){
+					$scope.name = "hello";
+				},2000);
+			}]);
+		</script>
+	</body>
+</html>

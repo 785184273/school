@@ -1,0 +1,8 @@
+@charset = utf8
+
+*{margin:0px;padding: 0px;}
+body{margin:0px;padding: 0px;font-family:'Microsoft Yahei';}
+.box{border-radius: 3px;border:1px solid #dddddd;}
+.box h4{margin-top: 10px;}
+.select{max-width: 10%;min-width: 5%;}
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		var f1 = (function (a,b,c){
+//				if(a > 0){
+//					if(b > 0){
+//						return 9;
+//					}else{
+//						return 8;
+//					}
+//				}else{
+//					if(c > 0){
+//						return 7;
+//					}else{
+//						return 6;
+//					}
+//				}
+				if(a > 0){
+					return b > 0 ? 9 : 8;
+				}else{
+					return c > 0 ? 7 : 6;
+				}
+			})(-1,0,9);
+			console.log(f1);
+		</script>
+	</body>
+</html>

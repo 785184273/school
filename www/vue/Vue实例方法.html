@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			{{ a }}
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				//el : "#box",
+				b : 2,	//自定义属性
+				data : {
+					a : "hello Vue"
+				}
+			})
+			vm.$mount("#box");	//当vm中的el不存在的时候，可以在vm对象后面挂载一个$mount
+			console.log(vm.$options.b);	//可以使用$.options访问自定义属性
+			console.log(vm);
+			console.log(vm.$el);	//---> 指向vm下的el
+			console.log(vm.$data);	//---> 指向vm下的data
+			console.log();
+		</script>
+	</body>
+</html>

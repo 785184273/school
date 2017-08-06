@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body ng-app = "App">
+		<div id="shopping" ng-controller = "demo">
+			单价：<input type = "text" ng-model = "iphone.price"/>
+			数量：<input type = "text" ng-model = "iphone.num"/>
+			<h1>运费：<span>{{iphone.freight| currency : "￥"}}</span></h1>
+			<h1>总价：<span>{{allprice()| currency : "￥"}}</span></h1>
+		</div>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			var App = angular.module("App",[]);
+			App.controller("demo",["$scope",function ($scope){
+				$scope.iphone = {
+					price : 5388,
+					num : 1,
+					freight : 10
+				}
+				//数据改变的监听$watch()
+				/*
+				 	$watch是一个scope函数，用于监听模型的变化，当你的模型部分发生变化时会通知你
+				 	语法
+				 		$watch(watchExpression,listener,objectEquality)
+						参数
+							watchExpression:监听的对象，它可以是一个angular表达式如"name"或者函数如function(){return $scope.name};
+							listener:当watchExpression改变时会被调用的函数或者表达式，它接受3个参数：newValue(新值)，oldValue(旧值)，scope(作用域的引用)
+							objectEquality:是否深度监听，如果设置为true，它告诉angular检查所监听的对象中的每一个的变化
+				 * */
+				$scope.allprice = function (){
+					return $scope.iphone.price * $scope.iphone.num + $scope.iphone.freight;
+				}
+				$scope.$watch("iphone.num",function (newVal,oldVal){	//监控一个对象
+					$scope.iphone.freight = newVal >= 10? 0 : 10;
+				})
+				$scope.$watch($scope.allprice,function (newVal,oldVal){	//监控一个函数
+					console.log(newVal);
+					console.log(oldVal);
+				})
+			}])
+		</script>
+	</body>
+</html>

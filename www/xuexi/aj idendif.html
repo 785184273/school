@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<script>
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function (){
+				if(xhr.readyState == 4){
+					alert(xhr.responseText);
+				}
+			}
+			//xhr.open('get','./aj get.php?name=tom',true);
+			xhr.open('get','./aj get.php?name=tom',false);
+			xhr.send(null);
+		</script>
+	</head>
+		<body>
+			<img src = "./img/1.png">
+		</body>
+</html>
+<!--
+	同步，异步
+		ajax对象.open(方式get/post,url地址,[异步true/同步false])
+		ajax是可以与服务器进行(异步/同步)交互的技术之一
+		异步：同一个时间点允许执行多个进程
+		同步：同一个时间点只允许执行一个进程
+	
+-->

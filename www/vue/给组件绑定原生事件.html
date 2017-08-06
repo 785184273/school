@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<showme @click.native = "doing"></showme>
+		</div>
+
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	在某个组件的根元素上监听一个事件，可以使用.native来修饰v-on
+			 * */
+			Vue.component("showme",{
+				template : "<div>{{ num }}</div>",
+				data : function (){
+					return  {
+						num : "the one"
+					}
+				}
+			})
+			new Vue({
+				el : "#app",
+				methods : {
+					doing : function (){
+						alert("showme");
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+			//其他类型转成布尔型
+			//var a = "abc";			//true
+			//var a = "123";			//true
+			//var a = "";				//false
+			//var a = 100;				//true
+			//var a = 0;				//false
+			//var a = NaN;				//false
+			//var a = undefined;		//false
+			//var a = null;				//false
+			//验证
+			//我们可以使用Boolean()全局函数，强制转成布尔型
+			//var result = Boolean(a);
+			//输出变量的类型和结果
+			//document.write("类型："+typeof(result)+".值："+result);
+			//其他类型转换成字符串
+			//var a = true;		//"true"
+			//var a = false;		//"false"
+			//var a = 100;		//"100"
+			//var a = 0;			//"0"
+			//var a = NaN;		//"NaN"
+			//var a = undefined;	//"undefined"
+			//var a = null;		//"null"
+			//验证
+			//我们可以使用String()全局函数，强制转成字符型
+			//var result = String(a);
+			//输出变量的类型和结果
+			//document.write("类型："+typeof(result)+".值："+result);
+			//var a = "";
+			//var b = a + "ture";
+			//document.write(b);
+			//其他类型转换成数值型
+			//var a = "abc";		// NaN	
+			//var a = "123px";		// NaN	
+			//var a = "";			// 0						
+			//var a = NaN;			// NaN	
+			//var a = undefined;	// NaN
+			//var a = null;			// 0
+			//var a = true;			// 1
+			//var a = false;		// 0
+			//var a = "100"			// 100
+			//使用Number()全局函数，进行强制转换转换；
+			//全局函数或系统函数，是js内置的函数，名称或大小写必须一致。
+			//var result = Number(a);
+			//输出变量的类型和值
+			//document.write("类型："+typeof(result)+".值："+result);
+			//var a =1;
+			//var	b=2.2;
+			//var	c="3.3";
+			//var d = a + b + c; d=3.23.3
+			//document.write(d)
+			//var i=10;
+			//var j=i++;
+			//alert(i+","+j); //11 10
+			//var i=10;
+			//var j=i++;
+			//var i=j++;
+			//alert(i+","+j); //10 11
+			//var i=10;
+			//var j=++i; i=++j;	//j=12 i=12
+			//alert(i+","+j);
+			//判断用户输入的年份是不是闰年
+			var year=window.prompt("请输入一个年份",'2015');
+			//判断用户是否选择取消
+			if(year==null)
+			{
+				window.alert("你已经取消");
+			}else
+			{
+				if(year%4 == 0 && year%100 != 0 || year%400 == 0)
+				{
+					window.alert(year+"是闰年");
+				}else
+				{
+					window.alert(year+"不是闰年");
+				}
+			}
+		</script>	
+	</head>
+		<body>
+			
+		</body>
+</html>

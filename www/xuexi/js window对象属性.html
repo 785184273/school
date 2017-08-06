@@ -1,0 +1,100 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type="text/javascript">
+			//循环变量window对象的所有属性
+			/*
+			for( name|index in obj|arr)
+			{
+			
+			}
+			描述：只能循环数组的小标，或对象的属性
+			说明：如果循环数组的话，每次循环将取元素的下标值
+				  对于数组中值为undefined的不会循环
+				  循环数组只返回有效的值
+				  如果循环对象的话，每次循环取对象属性
+				  严格的来说,对象中没有方法一说，所有的都是属性
+				  将一个函数赋给一个属性后，这个属性就变成方法了
+			*/
+			/*var i = 1;
+			for(var name in location)
+			{
+				document.write(i+" "+name+"<br>");
+				i++;
+			}*/
+			//window.name = "傻逼";
+			//alert(window.name);
+			//测试，当前网页的宽高
+			//var width = window.innerWidth ? window.innerWdith : document.documentELement.clientWidth;
+			//var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight;
+			//输出结果
+			//document.write("宽："+width+"<br>"+"高："+height)
+		</script>
+	</head>
+		<body>
+		</body>
+</html>
+<!--
+BOM和DOM简介
+	BOM,Browser Object Model，浏览器对象模型
+	BOM主要提供了访问和操作浏览器各组件的方法
+	浏览器组件：window(浏览器窗口)
+				location(地址栏)
+				history(浏览历史)
+				screen(显示器屏幕)
+				navigator(浏览器软件)
+				document(网页)
+	DOM,Document Object Model,文档对象模型
+	DOM主要提供了访问和操作HTML标记的方法
+	HTML标记
+		图片标记
+		表格标记
+		表单标记
+		body，html标记
+		......
+	BOM和DOM不是js的内容，它们是W3C制定的规范，但是，BOM和DOM在浏览器中以对象的形式得以实现
+	换句话说：BOM和DOM都是由一组对象构成
+	W3C是制定互联网标准的一个国际化的组织，如 XHTML CSS JavaScript AJAX等
+	1 （1）包含关系
+	1.window浏览器创建对象是js中最大的对象，其他所有的对象都是window的子对象
+	（1.1）document文档对象代表一个网页
+	（1.1.1）img对象
+	（1.1.2）table对象
+	（1.1.3）form对象
+	（1.1.4）input对象
+	（1.1.5）body对象
+	（1.1.6）html对象
+	（1.1.7）div对象
+	（1.1.8）span对象
+	......
+	（1.2）location地址栏对象，对地址栏的访问和操作
+	（1.3）history历史记录对象，对浏览的历史记录进行操作
+	（1.4）navigator浏览器软件对象，判断客户用的是什么浏览器，可以解决兼容性的问题
+	（1.5）screen屏幕对象，获取显示器屏幕的相关信息
+	各对象之间是有层级关系的，那么各对象之间如何访问呢？
+		window.document.write("ok");
+		window.document.body.bgColor = "#FF0000";
+	window对象是所有其他对象的最顶层对象，因此可以省略
+		document.write("ok");
+		window.alert("ok")------alert("ok")
+		......
+	window对象的属性
+		name:指浏览器窗口的名字或框架的名字，这个名字是给<a>标记的target属性来用的
+			 可以设置窗口的名字；window.name = "newWin"
+			 获取窗口的名字：document.write(name)
+		top：代表最顶层窗口，如：window.top
+		parent:代表父级窗口，主要用于框架
+		self：代表当前窗口，主要用于框架中
+		innerWidth：指浏览器窗口的内宽(不含菜单栏，工具栏，地址栏，状态栏)，该属性火狐浏览器支持,ie不支持
+			在ie下使用 document.documentElement.clientWidth来代替window.innerWidth
+		innerHeight：指浏览器窗口的内高(不含菜单栏，工具栏，地址栏，状态栏)，该属性火狐浏览器支持,ie不支持
+			在ie下使用 document.documentElement.clientheight来代替window.innerHeight
+			Document.document.Element就是<html>标记对象
+			document.body 就是<body>标记对象
+
+
+
+
+
+
+-->

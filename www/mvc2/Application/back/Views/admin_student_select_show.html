@@ -1,0 +1,84 @@
+<html>
+	<head>
+		{literal}
+		<style type = "text/css">
+			body{margin:0px;padding:0px;}
+			.main{width:1000px;height:485px;border:1px solid #278296;margin:0px auto;}
+			h5{border:px solid red;text-align:center;margin:0px;}
+			table{font-size:12px;font-weight:bold;margin:0px auto;}
+		</style>
+		{/literal}
+		<script type = "text/javascript">
+		</script>
+	</head>
+		<body>
+			<div class = "main">
+				<h5>学生信息查询</h5>
+				<table border = "1" rules = "all">
+					<form method = "POST" action = "?p=back&c=admin&act=stu_select">
+						<tr>
+							<td>学号</td>
+							<td><input type = "text" name = "number" value = "{$number}"/></td>
+							<td>姓名</td>
+							<td><input type = "text" name = "name" value = "{$name}"/></td>
+							<td>专业</td>
+							<td>
+								<select name = "major">
+									<option value = 1>所有专业</option>
+									<option value = 2>计算机</option>
+									<option value = 3>通信工程</option>
+									<option value = 4>信息安全</option>
+								</select>
+							</td>
+							<td><input type = "submit" name = "button" value = "查询"></td>
+						</tr>
+					</form>
+				</table>
+				<h5>学生信息查询结果</h5>
+				<table border = 1 rules = all>
+					<tr>
+						<th>学号</th>
+						<th>姓名</th>
+						<th>性别</th>
+						<th>出生日期</th>
+						<th>专业</th>
+						<th>总学分</th>
+						<th>备注</th>
+						<th>photo</th>
+					</tr>
+				<?php
+				//	if(is_array($result)){
+				//	foreach($result as $val){
+				?>
+				<!--
+							<tr>
+								<td><?php echo $val['学号'];?></td>
+								<td><?php echo $val['姓名'];?></td>
+								<td><?php echo $val['性别'];?></td>
+								<td><?php echo $val['出生日期'];?></td>
+								<td><?php echo $val['专业'];?></td>
+								<td><?php echo $val['总学分'];?></td>
+								<td><?php echo $val['备注'];?></td>
+								<td><?php echo $val['photo'];?></td>
+							</tr>
+				-->
+				<?php
+				//		}
+				//	}
+				?>
+					{foreach $result as $val}
+							<tr>
+								<td>{$val['学号']}</td>
+								<td>{$val['姓名']}</td>
+								<td>{$val['性别']}</td>
+								<td>{$val['出生日期']}</td>
+								<td>{$val['专业']}</td>
+								<td>{$val['总学分']}</td>
+								<td>{$val['备注']}</td>
+								<td>{$val['photo']}</td>
+							</tr>						
+					{/foreach}
+				</table>
+			</div>
+		</body>
+</html>

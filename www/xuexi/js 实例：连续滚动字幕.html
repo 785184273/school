@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style type = "text/css">
+		body,ul,li,{margin:0px;padding:0px;}
+		ul,li{list-style:none;padding:4px 0px;}
+		ul{padding:5px 5px;}
+		body{font-size:12px;}
+		#dome{
+				width:180px;
+				height:230px;
+				border:1px solid red;
+				margin:0px auto;
+				padding:0px;
+				overflow:hidden;
+			}
+		
+
+		</style>
+		<script type = "text/javascript">
+		/*
+			取得三个对象的id
+			三个div的高度一致
+			dome2中的内容与dome1的内容一样
+			dome的scrollTop属性来实现滚动
+			鼠标放上dome停止滚动，鼠标移开dome继续滚动
+		*/
+		function init()
+		{
+			//获取三个对象的id
+			var domeObj = document.getElementById("dome");
+			var dome1Obj = document.getElementById("dome1");
+			var dome2Obj = document.getElementById("dome2");
+			//alert(domeObj.id);
+			//三个div的高度一样
+			//
+			//dome1Obj.style.height = domeObj.offsetHeight + "px";
+			dome1Obj.setAttribute("style","height:230px");
+			dome2Obj.setAttribute("style","height:230px");
+			//alert(dome1Obj.getAttribute("style"));
+			//将dome1中的内容复制到dome2中
+			dome2Obj.innerHTML = dome1Obj.innerHTML;
+			//dome的scrollTop属性来实现滚动
+			window.setInterval("start2(dome)",40)
+		}
+		function start2(dome)
+		{
+			//alert(dome);
+			if(dome.scrollTop == dome.offsetHeight)
+			{
+				dome.scrollTop = 0;
+			}else
+			{
+			dome.scrollTop++;
+			}
+		}
+		</script>
+	</head>
+		<body onload = "init()">
+			<div id = "dome">
+				<div id = "dome1">
+					<ul>
+						<li>2010考研英语大纲到货75折...</li>
+						<li>权威定本四大名著（人民文...</li>
+						<li>口述历史权威唐德刚先生国...</li>
+						<li>袁伟民与体坛风云：实话实...</li>
+						<li>我们台湾这些年：轰动两岸...</li>
+						<li>畅销教辅推荐：精品套书50...</li>
+						<li>2010版法律硕士联考大纲75...</li>
+						<li>计算机新书畅销书75折抢购...</li>
+						<li>2009年孩子最喜欢的书是这...</li>
+						<li>弗洛伊德作品精选集59折抢...</li>
+					</ul>
+				</div>
+				<div id = "dome2">
+				</div>
+			</div>
+		</body>
+</html>

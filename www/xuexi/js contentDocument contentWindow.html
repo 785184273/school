@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<iframe src="./innerText textContent.html" width="500" height="500" id = "iframe"></iframe>
+	</body>
+	<script type="text/javascript">
+		/*
+		 	contentDocument属性以HTML对象返回框架容纳的文档
+		 	也可以使用contentWindow.document来获取框架容纳的文档
+		 * */
+		var iframe = document.querySelector("iframe");
+		console.log(iframe.contentDocument);
+		console.log(iframe.contentWindow.document);
+	</script>
+</html>

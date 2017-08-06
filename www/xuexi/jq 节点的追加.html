@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			//dom对象方式创建节点并追加节点
+			function f1(){
+				var liObj = document.createElement('li');
+				var txtObj = document.createTextNode('赵云');
+				var shuObj = document.getElementById('shu');
+				
+				shuObj.appendChild(liObj);
+				liObj.appendChild(txtObj);
+			}
+			
+			//jq对象方式追加节点
+			$(function (){
+				$('input')[1].onclick = f2;
+				$('input')[2].onclick = f3;
+			});
+			
+			function f2(){
+				//后置追加节点
+				$('#shu').append("<li>马超</li>");
+				//前置追加节点
+				$('#shu').prepend("<li>诸葛亮</li>");
+				//已有节点的追加会发生物理关系的移动
+				$('#shu').append($("#wu li:eq(1)"));
+			}
+			
+			function f3(){
+				//兄弟节点的追加(后置)
+				$('#fei').after("<li>黄忠</li>");
+				//兄弟节点的追截(前置)
+				$("#fei").before("<li>魏延</li>");
+			}
+		</script>
+	</head>
+	<body>
+		<ul id = "shu">
+			<li>刘备</li>
+			<li>关羽</li>
+			<li id= "fei">张飞</li>
+		</ul>
+		<ul id = "wu">
+			<li>孙权</li>
+			<li>周瑜</li>
+			<li>鲁肃</li>
+		</ul>
+		<input type = "submit" value = "dom对象(父子)追加节点" onclick = "f1()">
+		<input type = "submit" value = "jq对象(父子)追加节点">
+		<input type = "submit" value = "jq对象(兄弟)追加的节点">
+	</body>
+</html>
+<!--
+	jq对文档的操作
+		节点追加(父子)
+			主动
+				父节点.append(追加的节点)
+					向每个匹配的元素内部后置追加内容
+				父节点.prepend(追加的节点)
+					向每个匹配的元素内部前置追加内容
+			被动
+				被追加的节点.appendTo(父节点)
+					把所有匹配的元素后置追加到的另一个，指定的元素元素集
+				被追加的节点.preppendTo(父节点)
+					把所有匹配的元素前置追加到另一个，指定的元素集合中
+		节点追加(兄弟)
+			主动
+				兄弟节点.after(追加的节点)
+					在每个匹配的元素之后插入内容
+				兄弟节点.before(追加的节点)
+					在每个匹配的元素之前插入内容
+			被动
+				被追加的节点.insertAfter(兄弟节点)
+					把所有匹配的元素插入到另一个，指定的元素集合的后面
+				被追加的节点.insertBefore(兄弟节点)
+					把所有匹配的元素插入到另一个，指定的元素集合的前面
+-->

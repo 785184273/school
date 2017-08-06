@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			
+		</style>
+	</head>
+		<body>
+			<div id = "result">123</div>
+			<input type = "button" value = "����" onclick = "f1()">
+		</body>
+</html>
+<script>
+	//����ajax����
+	//��ie���������
+	/*
+	if(typeof(ActiveXObject) !== "undefined"){
+		var xhr = new ActiveXObject("Microsoft.XMLHTTP");	//��ԭʼ��ʽ
+		//var xhr = new ActiveXObject("Msxml2.XMLHTTP");
+		//var xhr = new ActiveXObject("Msxml2.XMLHTTP.3.0");
+		//var xhr = new ActiveXObject("Msxml2.XMLHTTP.5.0");
+		//var xhr = new ActiveXObject("Msxml2.XMLHTTP.6.0");
+		alert(xhr)
+	}else{
+	//�������������������(firefox,chrome,safari,opera)
+		var xhr = new XMLHttpRequest();	
+		console.log(xhr);
+	}
+	*/
+	function f1(){
+		//����ajaxȥ����aj.php�������˶���
+		//�ٴ���ajax����
+		var xhr = new XMLHttpRequest();
+		
+		//�ܸ�ajax�����¼�
+		xhr.onreadystatechange = function (){
+			//��.1��ȡ���ص���Ϣ
+			console.log(xhr.readyState);
+			if(xhr.readyState == 4){
+				//console.log(xhr.responseText);
+				document.getElementById("result").innerHTML = xhr.responseText;
+			}
+		}
+		
+		//������������󣺴���������������󣬰��س���������
+		//�ڴ����µ�http����(�����������ַ)
+		//	open(����ʽget/post,url�����ַ)
+		//xhr.open('get','aj.php');
+		
+		xhr.open('get','./aj return.php');
+		
+		//�۷�������
+		//	send(get-null/post-����������ݵ���Ϣ)
+		xhr.send(null);
+		
+
+	}
+</script>
+<!--
+	ajax�����ͼ����ļ���
+		xhtml css js xml xmlhttprequest����(ajax����)
+		����xmlhttprequest��ajax�Ĺٷ������
+	����ajax����
+		�����������ʽ
+			var xhr = new XMLHttpRequest();
+	���ͶԷ�����������
+		����:
+			open(����ʽget/post,url�����ַ)
+				�����µ�http����
+			send(get-null/post-����������ݵ���Ϣ)
+				�������͸��������
+	ajax���շ�����������Ϣ
+		��������Խ��յ���Ϣajax�����Խ��գ��ַ�html��ǩ��css��ʽ���ݣ�xml���ݣ�json����
+		���ԣ�
+			responseXML:����Ӧ��Ϣ��ʽ��Ϊxml document���󲢷��أ�ֻ��
+			responseText:(���ַ���ʽ���շ������˷��ص���Ϣ)
+			readyState:
+						0:�մ���ajax����
+						1���Ѿ�����open����
+						2���Ѿ�����send����
+						3���Ѿ����ز������
+						4��������ɣ���ݷ�������
+			onreadystatechang:�¼�����ajax״̬(readyState)����仯��ʱ��Ҫ����ִ��
+				Ϊ�˻�ý϶��״̬������ڴ�����ajax����������
+				����֪1��2��3��4�ĸ�״̬
+		
+-->

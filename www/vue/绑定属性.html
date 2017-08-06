@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<img :src="url"/>			
+		</div>
+
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	属性绑定使用v-bind
+			 * */
+			new Vue({
+				el : "#app",
+				data : {
+					url : "https://www.baidu.com/img/bd_logo1.png"
+				}
+			})
+		</script>
+	</body>
+</html>

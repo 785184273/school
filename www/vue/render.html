@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.active{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<child>
+				<p>什么都可以</p>
+				<ul>
+					<li>html</li>
+					<li>css</li>
+				</ul>
+			</child>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component("child",{
+				render : function(createElement){
+					return createElement(
+						"div",
+						{
+							'class' : {
+								active : true
+							},
+							style : {
+								border : "1px solid red"
+							}
+						},
+						[
+							this.$slots.default,
+							createElement("ul",this.arr.map(function (item){
+								return createElement("li",item);
+								//console.log(item)
+							})),
+							//重复胜场20个P标签
+							Array.apply(null, { length: 20 }).map(function () {
+      							return createElement('p', 'hi')
+    						})
+						]
+					)
+				},
+				data : function (){
+					return {
+						arr : ["html","css","js"]
+					}
+				}
+			})
+			new Vue({
+				el : "#app",
+				data : {
+					
+				}
+			})
+		</script>
+	</body>
+</html>

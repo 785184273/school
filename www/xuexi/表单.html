@@ -1,0 +1,218 @@
+<html>
+	<head>
+	</head>
+		<body> 
+			<form name="balabala" method="post" action="xxx.php">
+				用户名:<input type="text" name="username"/></br></br>
+				  密码:<input type="password" name="password"/></br></br>
+				  <input type="submit"  name="submit" value="确定"/>
+				  
+				  
+				  
+				  
+			</form>
+			<table width="780" height="400" align="center" border="1" bgcolor="yellow">
+				<caption><font size="4" color="green"><b>学生成绩表</b></font></caption>
+				<tr>
+					<td>学号</td>
+					<td>姓名</td>
+					<td>成绩</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<form method="poost" action=""align="center"> 
+				<input type="radio" name="sex" value="男"/>男
+				<input type="radio" name="sex" value="女" checked="checked"/>女</br>
+			 <select name="deu" style="width:200">
+				<option value="高中">高中</option>
+				<option value="大专" selected="selected">大专</option>
+			 </select>
+			 </br>
+			    <input type="checkbox" name="like" value="艹唐磊"/>艹唐磊
+			</form>
+		</body>
+</html>
+
+<!-- 
+	表单的概念
+		表单主要获取客户端用户的数据 如：注册表单，查询表单，登录表单等
+	表单的工作原理
+		浏览有表单的网页，填写一些必要的信息，然后单击某些按钮来提交
+		这些表单数据，通过互联网，传递到服务器上。
+		服务器上有专门的程序，对表单数据进行验证，如果验证成功，将你的数据存入数据库，则返回一个验证成功的信息。
+		如果验证失败将返回一个错误的信息
+	从上面表单的工作原理来看，表单的制作分两个部分，
+		一个是前台页面的制作
+		二是后台php对表单数据的处理
+		
+	表单的结构
+	<form>标记属性------块元素
+		name：给表单取名字，这个名字主要给javascript来用，js主要用来做客户端表单验证。
+		method:表单的提交方式，取值:get或post。
+		align:取值：center left right
+		action:指定表单的处理程序，一般是php文件。
+				如果action为空，那么表单数据发到哪去了？
+				结果：如果action为空，那么表单数据提交到了当前文件处理
+				file:///F:/wamp/www/学习/表单.html?username=?ó?ì?Y?ó???ò&password=qwe+q+&submit=??¨
+		enctype：指定表单数据的编码方式(解密方式)。这个属性只能用作在提交方法是post的情况下
+			有两个取值：
+				application/x-www-form-urldecoded  // 默认的加密方式。
+				multipart/form-data //如果你要上传文件，该值必须它自己
+	get方法和post方法
+		get提交方式（基本上都用不着）；
+				 注意：地址栏传数据的方式，默认就是get方式
+				 是将表单数据追加到action指定的处理程序的后面，然后向服务器发出请求。
+				 找不到与以下网址对应的网页：file:///F:/wamp/www/学习/XXX.php?username=%C7%FD%CE%C3%C6%F7+&password=wqe+qe+q+
+                 上面url的说明；
+				 xxx.php 是表单处理程序的文件
+				 username=%C7%FD%CE%C3%C6%F7+&password=wqe+qe+q+ // 是表单提交的数据，又称之为"查询字符串"
+				 action 文件和查询字符串之间用"?"分隔
+				 每两个表单元素的"名称=值"之间用"&"分隔
+				 表单名称和表单的值之间用"="分开
+		get方式的特点：
+				get 方式不能提交敏感数据，如：密码
+				get方式只能提交少量数据，因为地址栏的长度有限制，大约100来个字符
+				get方式下不能上传附件。
+		post表单提交方式：
+				post提交方式，它不是将表单数据追加到地址栏上，而是直接传给表单处理程序
+				post方式的特点：
+					post提交的数据相对安全
+					post可以提交海量的数据
+					post方式可以上传附件
+		如果某个表单元素不想往服务器传递数据，那么我们可以不给他加name属性，传递到服务器的属性如果没有name，则无法获取它的值。
+	单行文本域
+		语法格式：<input type="text" 属性="值"/>
+		常用属性
+			name：文本框的名字，命名规则：可以包含字母，数字，下划线只能以字母开头。
+			type：表单元素的类型
+			value；文本框中的值
+			size：文本框的长度，以"字符"为单位
+			maxlength：最多可以输入多少个字符，超出的就输不进去了
+			readonly：只读属性，可以选中，不能修改，如：readonly="readonly"
+			disable:禁用属性，不能选中，不能修改，如：disable="disable"
+	单行密码域
+		语法格式：<input type="text" 属性="值"/>
+		和上面当行为文本域差不多参考上面
+	单选按钮
+		语法格式：<input type="radio" 属性="值"/>
+		常用属性：
+				name：元素的名称
+				value；元素的值，该value中数据将发往服务器。
+				checked：默认选择哪一项，如：checked="checked"
+			注意；一组单选按钮，只能选择一个，但name的值必须一致，如；name="sex"
+				 单选按钮用户自己不能输入内容，用户只能选择，因此必须为它指默认值value。
+	
+				 <input type="radio" name="sex" value="男">男
+			     <input type="radio" name="sex" value="女">女
+	复选框
+		语法格式:<input type="checkbox" 属性="值">
+		常用属性
+				name：元素的名称
+				value：元素的值
+				checked：默认选项中，如：checked="checked"
+						<input type="checkbox" name="like" value="游戏" />游戏
+						<input type="checkbox" name="like" value="杀人" />杀人
+						<input type="checkbox" name="like" value="撸管" />撸管<br>
+						<input type="checkbox" name="like" value="抢劫" />抢劫
+						<input type="checkbox" name="like" value="放火" />防火
+						<input type="checkbox" name="like" value="讽刺二狗"/>讽刺二狗
+				注意：复选框也是一组选项，因此name 的值必须一致。
+					  在php中，使用数组来获取多个同名的name值。
+					  复选框可以同时选择多个，也可以一个都不选。
+	下拉列表
+		<select name="city">
+			<option value="北京市">北京市</option>
+			<option value="天津市">天津市</option>
+		</select>
+			<select>标记的属性，只有一个name属性
+			<option>标记的属性有两个：value属性，selected属性
+					selected：默认选中。如：selected="selected"
+					<select name="edu">
+								<option value="本科" selected="selected">本科</option>
+								<option value="大专">大专</option>
+								<option value="高中">高中</option>
+								<option value="初中">初中</option>
+								<option value="小学">小学</option>
+					</select>
+	文本区域
+		<textarea name="名称" cols="宽度" rows="高度"></textarea>
+		常用属性
+			name：元素名称
+			value；文本内容
+			cols：宽度，是指多少个字符宽
+			rows：高度，是指几行高。
+			提示:<textarea>和</textarea>之间是默认文本
+	各种按钮
+		提交按钮<input type="submit" value="确定"/>
+		重置按钮<input type="reset" value="重置"/>
+		图片按钮<input type="image"  src="" value=""/> 功能就是提交表单，与submit按钮一样
+		普通按钮<input type="button" value=""/> 普通按钮是不具备任何功能的，一般要与js程序配合使用，来实现相应的功能。
+	上传文件域
+		语法格式
+			<input type="file" 属性="属性"/>
+		常用属性
+			name：表单元素的名称
+			value：表单元素的值，其实就是上传的文件名（文件路径），value属性是只读属性，这个属性的值内容只能来自于手动选择上传的文件，而不能用户自己指定一个路径。为了安全起见，value是只读属性。
+			<input type="file" name="uploadfile"  />
+			注意：现在只能实现上传文件框，而不能真正的实现上传功能，真正的上传功能是php来实现的。
+	隐藏域
+		功能；隐藏域就是看不见的一个框，传递一些值或一些数据，而这个值又不想让别人看见。
+		用处；主要用于php后面程序，如；修改某些新闻的内容时，需要传递一个新闻的id号。
+			<input type="hidden" name="id" value="123"/></th>
+	表格标题
+		语法格式；<caption></caption>
+		提示；<caption>标记是<table>的子标记，<caption>放在<table>开始标记之后
+			
+			
+			
+			
+					
+	
+	
+				 
+			
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>空白符的处理</title>
+	<style type="text/css">
+		div{background: green;
+			width:100px;
+			height:200px;
+			border:1px solid red;
+		}
+		.normal{
+			white-space: normal;
+		}
+		.nowrap{
+			white-space:nowrap;
+		}
+		.pre{
+			white-space: pre;
+		}
+	</style>
+</head>
+<body>
+	<div class = "normal">
+		var obj = document.getElementById("席吧");
+		window.alert(obj);
+	</div>
+	<div class = "pre">
+		var obj = document.getElementById("席吧");
+		window.alert(obj);
+	</div>
+	<div class = "nowrap">
+		var obj = document.getElementById("席吧");
+		window.alert(obj);
+	</div>
+</body>
+</html>
+<!-- 
+	white-space:空白符处理
+		使用html制作网页时，不论源代码中有多少空格，在浏览器中只会显示以个字符的空白，在css中，使用white-space属性可设置空白符的处理方式，其属性值如下
+			-normal：常规(默认值，文本中的空白符，空行无效，满行（到达区域边界）)后自动换行
+			-pre：预格式化，按文档的书写格式保留空格，空行原样显示
+			-nowrap：空格空行无效，强制文本不能换行，除非遇到换行标记<br />内容超出元素的边界也不能换行，若超出浏览器页面则会自动
+ -->

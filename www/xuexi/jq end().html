@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+	</head>
+	<body>
+		<ul id = "first">
+			<li class = "html">html</li>
+			<li>css</li>
+			<li>js</li>
+			<li class = "bt">bootstrap</li>
+		</ul>
+		<script type="text/javascript">
+			/*
+			 	end()方法结束当前链条中最近的筛选操作，并将匹配元素还原为之前的状态
+			 * */
+			$("#first").find(".html").css("background","red").end().find(".bt").css("background","blue");
+		</script>
+	</body>
+</html>

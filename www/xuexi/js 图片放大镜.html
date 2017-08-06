@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<style>
+			*{
+				padding:0px;
+				margin:0px;
+			}
+			#small{
+				position:relative;
+				border:1px solid red;
+				width:400px;
+				height:255px;
+			}
+			#float-box{
+				display:none;
+				position:absolute;
+				top:0px;
+				left:0px;
+				height:120px;
+				width:160px;
+				border:1px solid blue;
+				background:#ffffcc;
+				opacity:0.5;
+				filter:alpha(opacity = 50);
+			}
+			#big{
+				display:none;
+				position:absolute;
+				top:0px;
+				left:460px;
+				border:1px solid red;
+				width:400px;
+				height:300px;
+				overflow:hidden
+			}
+			#big img{
+				position:absolute;
+			}
+		</style>
+	</head>
+		<body>
+		
+				<div id = "small">
+					<img src = "./img/macbook-small.jpg"/>
+					<div id = "float-box"></div>
+				</div>
+				<div id = "big">
+						<img src = "./img/macbook-big.jpg"/>
+				</div>
+		</body>
+		<script>
+			window.onload = function (){
+				var floatbox = document.getElementById('float-box');
+				var smallbox = document.getElementById('small');
+				var bigbox = document.getElementById('big');
+				var smallbox_img = document.getElementsByTagName('img')[0];
+				var bigbox_img = document.getElementsByTagName('img')[1];
+				smallbox.onmouseover = function (){
+					floatbox.style.display = "block";
+					bigbox.style.display = "block";
+				}
+				smallbox.onmousemove = function (event){
+					var evt = event || window.event;
+					var f_left = evt.clientX - 80;
+					var f_top = evt.clientY - 60;
+					//*
+					if(f_left < 0){
+						f_left = 0;
+					}else if(f_left > (smallbox.offsetWidth - floatbox.offsetWidth)){
+						f_left = (smallbox.offsetWidth - floatbox.offsetWidth);
+					}
+					if(f_top < 0){
+						f_top = 0;
+					}else if(f_top > (smallbox.offsetHeight - floatbox.offsetHeight)){
+						f_top = (smallbox.offsetHeight - floatbox.offsetHeight);
+					}
+					//*/
+					floatbox.style.left = f_left;
+					floatbox.style.top = f_top;
+					//alert(1/-(smallbox_img.width - 160)/((bigbox_img.width - 400) * f_left));
+			       //*
+					bigbox_img.style.left = (bigbox_img.width - 400) * f_left/-(smallbox_img.width - 160);
+					bigbox_img.style.top = (bigbox_img.height - 300) * f_top/-(smallbox_img.height - 120);
+					//*/
+					//alert(-smallbox_img.width/(bigbox_img.width * f_left));
+				}
+				smallbox.onmouseout = function (){
+					floatbox.style.display = "none";
+					bigbox.style.display = "none";
+				}
+			}
+		</script>
+</html>

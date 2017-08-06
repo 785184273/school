@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style>
+			/*
+				属性选择器
+					E[att^='val']			选择匹配元素E，且E元素定义了属性att，其值以val开头的任何字符串
+					E[att$='val']			选择匹配元素E，且E元素定义了属性att，其值以val结尾的任何字符串
+					E[att*='val']			选择匹配元素E，且E元素定义了属性att，其值包含val的任何字符串
+			*/
+			a[id$='col']{background:yellow;}
+			a[class$='col']{background:green;}
+			a[title$='jie']{background:blue;}
+		</style>
+	</head>
+		<body>
+			<a href = "##" id = "col">css3属性选择器</a>
+			<a href = "##" class = "col">css3属性选择器</a>
+			<a href = "##" title = "lianjie">css3属性选择器</a>
+		</body>
+</html>

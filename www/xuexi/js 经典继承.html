@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<script>
+			//在实际的开发中，如果希望获得一个继承自对象o的对象
+			//可以是有那个Object.create方法
+			//ES5提供的方法(IE9+以上)
+			
+			//新对象 Object.create(作为原型对象的对象)
+			
+			var o1 = {name:'jim'};
+			function person(){
+				this.name = "tom";
+			}
+			var p = new person();
+			
+			var o2 = Object.create(p);	//创建一个新的对象o2继承自参数对象p
+			console.log(o2);
+			
+			function create(obj){
+				function F(){
+				
+				}
+				F.prototype = obj;
+				return new F();
+			}
+			console.log(create(o1));
+			
+			//在实际的开发过程中，往往为了解决浏览器的兼容问题,我们需要先判断该浏览器是否支持该方法，如果支持则优先使用浏览器的方法，如果不支持则才用自己的方法
+			var create = function (obj){
+				if(Object.create){
+					return Object.create(obj);
+				}else{
+					function F(){}
+					F.prototype = obj;
+					return new F();
+				}
+			} 
+			console.log(create(o1));
+			
+			function cat(){
+				this.name = "kitty";
+			}
+			
+			cat.prototype = p;
+			var m = new cat();
+			
+			
+			console.log(m.constructor.name);
+		</script>
+	</head>
+</html>

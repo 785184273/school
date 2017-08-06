@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+		var str = "this is 20150812";
+		var reg = /\d+/;
+		
+		reg = /\D+/;
+		
+		str = "miss77_@163.com";
+		reg = /\w+/;
+		
+		str = "Today    sun";
+		reg = /[a-z]+    [a-z]/i;
+		reg = /\w+\s+\w+/;
+		
+		str = "this clss is php39";
+		reg = /\bis\b/;	//严格匹配到第二个is
+		reg = /\Bis\b/;
+		//replace(被替换的内容[字符串/正则模式],替换内容)
+		
+		//var new_str = str.replace(reg,"was");
+		//console.log(new_str);
+		
+		var rst = str.match(reg);
+		console.log(rst);
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+组合字符
+	\d:表示数字
+	\D:表示非数字[^0-9]
+	\w:表示字母，数字，下划线其中一个[a-zA-Z0-9_]
+	\W:表示非字母，数字，下划线
+	\s:表示空格
+	\S:表示非空格
+	\b:表示单词边界
+	\B:表示非单词边界
+-->

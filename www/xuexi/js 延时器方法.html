@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+		window.onload = init;	//是将函数的地址传给了事件，而不是将函数的执行结果传给事件，
+								//有名函数或普通函数，作为地址引用，不能带括号。
+		function init()
+			{
+				//变量初始化
+				var screenWidth = screen.availWidth;	//屏幕的有效宽度
+				var screenHeight = screen.availHeight;	//屏幕的有效高度
+				var width = 400;	//新窗口的宽度
+				var height = 300;	//新窗口的高度
+				var x = (screenWidth-width)/2;	//左距离
+				var y = (screenHeight-height)/2-80;		//上距离
+				var url2 = "";
+				var name2 = "win2";
+				var options2 = "width="+width+",height="+height+",left="+x+",top="+y+",menubur=no,toolbar=no";
+				//根据上面的规格来打开新的窗口
+				var winObj = window.open(url2,name2,options2);
+				//往新的窗口中输入一个字符串.winObj就是新窗口的对象 
+				winObj.document.write("这是新窗口的内容");
+				//10秒后自动关闭
+				winObj.setTimeout("window.close()",3000);
+			}
+		</script>
+	</head>
+		<body>
+		</body>
+</html>
+<!--
+延时器方法-----setTimeout
+setTimeout()
+	功能：设置一个延时器，换句话：说就是时间一到就执行js代码一次
+	语法：var timer = window.setTimeout(code,millisec)
+	参数：
+		code：是任何合法的js代码，一般情况下是js函数，该函数要放在引号中
+			举例：window.setTimeout("close()",2000)
+				  window.setTimeout(init,2000);传函数地址，因此不需要加小括号，如果加括号，是将函数的执行结果传到方法中。
+		millisec：毫秒值。1秒 = 1000毫秒
+	返回值：返回一个延时器的id变量，这个id变量给clearTimeout()用来清除变量。
+clearTimeout()
+	功能：清除延时器id变量
+	语法：window.clearTimeout(timer)
+	参数：timer就是由setTimeout()设置的延时器变量
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->

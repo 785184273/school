@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+			.apple{width:300px;height:300px;background:pink;}
+			.pear{color:blue;}
+			.ban{font-family:"微软雅黑";}
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js">
+		</script>
+	</head>
+	<body>
+		<div class = "zhangsan">today we are studying jQury</div>
+		<input type = "button" value = "toggleClass" onclick = "f1()">
+		<input type = "button" value = "设置" onclick = "f2()">
+		<input type = "button" value = "删除属性" onclick = "f3()">
+	</body>
+	<script>
+		function f2(){
+			//用attr方法来实现后面的属性会覆盖前面设置的属性
+			//$('div').attr('class','apple');
+			//$('div').attr('class','pear');
+			//$('div').attr('class','ban');
+			
+			//使用addClass会追加信息值
+			$('div').addClass('apple');
+			$('div').addClass('pear');
+			$('div').addClass('ban');
+		}
+		function f3(){
+			//删除class属性值
+			$('div').removeClass('pear');
+		}
+		function f1(){
+			$('div').toggleClass('pear');
+		}
+	</script>
+</html>
+<!--
+	$().addClass(class属性值)	给class属性增加属性值
+	$().removeClass(class属性值)	删除class属性中的某个信息值
+	$().toggleClass(class属性值)	开关效果，有就删除，没有就添加
+-->

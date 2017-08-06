@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			//each遍历方法
+			//数组的遍历
+			var arr = [1,2,3,4,5,6];
+			var len = arr.length;
+			//for循环遍历
+			//for(var i = 0;i < len;++i){
+			//	console.log(arr[i]);
+			//}
+			
+			//for-in遍历
+			//arr[9] = "mdzz";
+			//arr[10] = 11;
+			//for(var k in arr){
+			//	console.log(k + "----->" + arr[k]);
+			//}
+			
+			//each遍历
+			//$.each(数组,function(k每个元素的下标,v每个元素的值){})
+			$.each(arr,function(k,v){
+				//遍历的主体实现
+				document.write(k + "---- >" + v + "<br />");
+			});
+			
+			//对象的遍历
+			function animal(){
+				this.name = "kitty";
+				this.color = "withe";
+				this.climb = function (){
+					console.log('在爬树');
+				}
+			}
+			var cat = new animal();
+			//each()遍历
+			$.each(cat,function(k,v){
+				document.write(k + "----- >" + v + "<br />");
+			});
+			//for-in遍历
+			//for(var k in cat){
+			//	console.log(k + "---- > " + cat[k]);
+			//}
+			
+			//jq对象的遍历
+			window.onload = function (){
+				//$('li').each(function (k-dom对象的下标,v-dom对象){});
+				$('li').each(function (k,v){
+					console.log("k" + "---- >" + k);
+					//转化成jq对象使用
+					//$(v).css({background:'pink',border:'1px solid red'});
+					$(this).css({background:'pink',border:'1px solid red'});
+					//转化成dom对象使用
+					v.style.listStyle = "none";
+					//this关键字代表"每个"li的当前对象(dom对象)
+					console.log(this);
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>四川</li>
+			<li>陕西</li>
+			<li>湖南</li>
+			<li>湖北</li>
+		</ul>
+	</body>
+</html>
+<!--
+	遍历方法
+		each()遍历方法
+		$.each(数组/对象.function处理)		//$对象		调用的
+		$(选择器).each(function处理)		//jq对象	调用的
+-->

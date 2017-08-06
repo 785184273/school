@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+		//1.计时器
+		var i = 0;
+		function init()
+		{
+			var inputObj = document.getElementById("LED");
+			inputObj.value = "程序运行了"+i+"秒";
+			i = i + 1;
+			//设置一个延时器，1000毫秒一到执行函数init()一次，不断的执行下去
+			//延时器的不断的调用自己，而定时器是不断的调用别个函数;
+			timer = window.setTimeout("init()",1000);
+		}
+		function top1()
+		{
+			window.clearTimeout(timer);
+		}
+		//2.图片不断的循环
+		/*function init1()
+		{
+			timer = window.setInterval("init2()",1000);
+		}
+		var i1 = 443;
+		function init2()
+		{
+			var imgObj = document.getElementById("tupian");
+			imgObj.src="img/"+i1+".jpg";
+			i1 = i1 + 1;
+			if(i1 > 445)
+			{
+				i1 = 443;
+			}
+		}*/
+		//3.图片循环使用延时器做
+		var i1 = 443;
+		function init1()
+		{
+			var imgObj = document.getElementById("tupian");
+			imgObj.src="img/"+i1+".jpg";
+			i1 = i1 + 1;
+			if(i1 > 445)
+			{
+				i1 = 443;
+			}
+			window.setTimeout("init1()",1000);
+		}
+		</script>
+	</head>
+		<body align="center" onload="init1()">
+		<input id="LED" type=button name="显示器" value="程序运行了0秒"/>
+		<input type=submit name="start1" value="开始" onclick="init()"/>
+		<input type=submit name="top2" value="停止" onclick="top1()"/><br/>
+		<img  id="tupian" src="img/443.jpg" width=358 height=428/>
+		</body>
+</html>

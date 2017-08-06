@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<meta name="description" content="luanzuo">
+
+	</head>
+		<body>
+		
+			<form name="wangnima" method="post" action="cc.php" enctype="multipart/form-data"> <!--上传文件必须加上这句话 enctype="multipart/form-data"-->
+				<table style=color:grey align="center" border="0"  rules="" bordercolor="gray"  cellpadding="5" cellspacing="5">
+					<tr>
+						<th width="180">1.会员登录名和密码</th>
+						<td colspan="3"></td>
+						
+					</tr>
+					<tr>
+						<th align="right">用户名:</th>
+						<td><input type="text" name="username"  size="25" placeholder="请输入帐号" maxlength="16"/></td>
+						<th colspan="2"><input type="submit" value="检测用户名">&nbsp;5-15位，请使用英文（a-z）,数字（0-9）。</th>
+					</tr>
+					<tr>
+						<th align="right">密码:</th>
+						<td><input type="password" name="password" size=25 maxlength="16" /></td>
+						<td colspan="2"></td>
+					</tr>
+					<tr>
+						<th align="right">再次输入密码:</th>
+						<td><input type="password" name="newspassword" size=25 maxlength="16"/></td>
+						<td colspan="2"></td>
+					</tr>
+					<tr>
+						<th>2.姓名和联系方式</th>
+						<td colspan="3"></td>
+					</tr>
+					<tr>
+					    <th align="right">真实姓名:</th>
+						<td><input type="text" name="name" size="25"/></td>
+						<th colspan="2">
+						<input type="radio" value="先生" checked="checked"/>先生&nbsp;&nbsp
+						<input type="radio" value="小姐"/>小姐
+						</th>
+					</tr>
+					<tr>
+						<th align="right">电子邮箱:</th>
+						<td><input type="text" name="mail" size="25"/></td>
+						<th colspan="2"> 非常重要；这是客户与您联系的重要方式，请您认真填写。</th>
+					</tr>
+					<tr>
+						<th align="right">学历:</th>
+						<td>
+							<select name="edu" style="width:100">  <!-- 运用层叠样式表修改宽度-->
+								<option value="本科" selected="selected">本科</option>
+								<option value="大专">大专</option>
+								<option value="高中">高中</option>
+								<option value="初中">初中</option>
+								<option value="小学">小学</option>
+							</select>
+						</td>
+						
+						<th colspan="2"></th>
+					</tr>
+					<tr>
+						<th align="right">固定电话:</th>
+						<td><input type="text" name="phonenumber" size="25"/></td>
+						<th colspan="2">区号+电话号码。</th>
+					</tr>
+					<tr>
+						<th align="right">街道地址:</th>
+						<td colspan="2" width=55><input type="text" name="address" size="55"/></td>
+						<th>填写县（区）,街道,门牌号。</th>
+					</tr>
+					<tr>
+						<th align="right">传真号码:</th>
+						<td><input type="text" name="iphone" size="25"/></td>
+						<th colspan="2"></th>
+					</tr>
+					<tr>
+						<th align="right">手机号码:</th>
+						<td><input type="text" name="iphone2" size="25" /></td>
+						<th colspan="2"></th>
+					</tr>
+					<tr>
+						<th align="right">邮政编码:</th>
+						<td><input type="text" name="youzheng" size="25" /></td>
+						<th colspan="2"></th>
+					</tr>
+					
+					<tr>
+					
+		                <th align="right">兴趣爱好:</th>
+						<th></th>
+						<th colspan="2">
+						<input type="checkbox" name="like" value="游戏" />游戏
+						<input type="checkbox" name="like" value="杀人" />杀人
+						<input type="checkbox" name="like" value="撸管" />撸管<br>
+						<input type="checkbox" name="like" value="抢劫" />抢劫
+						<input type="checkbox" name="like" value="放火" />防火
+						<input type="checkbox" name="like" value="讽刺二狗"/>讽刺二狗
+						</th>
+					</tr>
+					<tr>
+						<th align="right">上传头像:</th>
+						<td>
+							<input type="file" name="uploadfile"  /> <!-- 上传文件框-->
+						</td>
+					</tr>
+					<tr>
+						<th colspan="4"><input type="submit" value="确定">
+						<input type="reset" value="重新填写"/>
+						<input type="hidden" name="id" value="123"/></th>
+					</tr>
+					
+					
+				</table>
+			</form>
+		
+		</body>
+</html>

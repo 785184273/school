@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.active{
+				color:red;
+			}
+		</style>
+	</head>
+	<body ng-app = "App" ng-controller = "demo">
+		<p ng-cloak ng-class = "{active : true}">hello world</p>
+		<p ng-style = "{color : 'red'}">hello world</p>
+		<p ng-style = "sstyle">hello world</p>
+		<a ng-attr-href = "{{baidu}}" ng-attr-title = "{{title}}">baidu</a>
+		<!--ng-attr-(suffix)只能使用变量定义-->
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			var App = angular.module("App",[]);
+			App.controller("demo",["$scope",function ($scope){
+				$scope.sstyle = {
+					color : "red"
+				}
+				$scope.baidu = "http://www.baidu.com";
+				$scope.title = "百度的title";
+			}])
+		</script>
+	</body>
+</html>

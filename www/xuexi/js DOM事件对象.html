@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+		/*
+			在事件的处理处理程序内部，对象this始终等于currentTarget的值，而target则只包含事件的实际目标
+				currentTarget	其事件处理程序当前正在处理事件的那个元素
+				target			事件的目标
+		*/
+		</script>
+	</head>
+		<body>
+			<div id = "div1">事件对象</div>
+		<script>
+			var div = document.getElementById('div1');
+			div.onclick = info;
+			function info(){
+				console.log(event.currentTarget === this);
+				console.log(event.target === this);
+				console.log(event.srcElement === this);
+			}
+		</script>
+		</body>
+</html>

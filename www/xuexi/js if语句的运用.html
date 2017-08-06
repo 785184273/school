@@ -1,0 +1,100 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+		/*	//根据ismarried的值，来输出是“未婚”，还是“已婚”
+			var name = "周财神";
+			var ismarried = true;
+			//进行判断
+			if(ismarried)
+			{
+				document.write(name+"的婚否状态是：已婚！");
+			}
+			document.write("<hr>");
+			//根据ismarried的值，来输出是“未婚”，还是“已婚”
+			var name = "周财神";
+			var ismarried = false;
+			//进行判断：二选一，不能同时执行。
+			if(ismarried)
+			{
+				document.write(name+"的婚否状态是：已婚！");
+			}else
+			{
+				document.write(name+"的婚否状态是：未婚！")
+			}
+			document.write("<hr>");
+			//比较大小
+			var a = 10;
+			var b = 5;
+			if(a>b)
+			{
+				document.write(a+"大");
+			}else
+			{
+				document.write(b+"大");
+			} */
+			//例子，根据用户的分数，判断其评语
+				var marks = window.prompt("请输入你的分数");
+			//alert(marks);
+				//if(marks=null)
+				//{
+					//window.alert("对不起，你取消了该项操作");
+				//}else
+				if(marks>=90 && marks<=100)
+				{
+					window.alert("你太优秀了");
+				}else if(marks>=80 && marks<90)
+				{
+					window.alert("哎哟不错哦");
+				}else if(marks>=70 && marks<80)
+				{
+					window.alert("咳咳,掌握了大部分知识了");
+				}else if(marks>=60 && marks<70)
+				{
+					window.alert("孩子，再接再厉吧");
+				}else  if(marks>0 && marks<=59)
+				{
+					window.alert("孩纸，你学习的时间都去撸管了吧,快醒醒吧");
+				}else
+				{
+					window.alert("不查分数就滚犊子");
+				}
+		</script>
+	</head>
+		<body>
+		</body>
+</html>
+<!--
+if条件判断语句；条件成立，执行什么代码，条件不成立，执行什么代码
+	结构1；只判断真(true)
+	if(条件判断；判断的结果是一个布尔值)
+	{
+		条件为真(true),执行的代码
+	}
+	结构2；既判断真，也判断假
+	if()
+	{
+		条件为真，执行的代码
+	}else
+	{
+		条件为假，执行的代码
+	}
+	结构3；多条件判断
+	if(条件1)
+	{
+		代码1；
+	}else if(条件2)
+	{
+		代码2；
+	}else if(条件3)
+	{
+		代码3；
+	}else
+	{
+		如果以上条件都不成立则执行该代码
+	}
+	注意：虽然有多个条件，但是条件之间是"或"的关系，每时每刻，只能有一个条件成立，不能同时满足多个条件
+	
+	
+	
+-->

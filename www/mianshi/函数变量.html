@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			(function (){
+				var a = b = 5;	//可以这样理解 var a = 5;b = 5;a是局部变量，b是全局变量
+			})();
+			console.log(b);		//5
+			console.log(a);		//a is not defined
+		</script>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<style type="text/css">
+			.red{
+				color: red;
+			}
+		</style>
+	</head>
+	<body ng-app = "App" ng-controller = "demo">
+		<!--公共头部-->
+		<div ng-include = "'header.html'"></div>
+		<div id="box">
+			<ul>
+				<li ng-repeat = "x in list">{{x}}</li>
+			</ul>
+			<p ng-show = "show">ng-show的值等于false的时候不显示，为true的时候显示</p>
+			<p ng-hide = "true">ng-hide的值等于true的时候隐藏，为false的时候显示</p>
+			<p ng-if = "false">ng-if的值等于true元素存在，为false元素不存在</p>
+			<input type="button" name="" id="" value="切换" ng-click = "toggle()"/>
+			<img ng-src = "{{src}}"  width = "100"/>
+			<a ng-href = "{{baidu}}" ng-class = "{red:className}">baidu</a>
+			<a ng-href = "{{jd}}" class = "{{classjd}}">京东</a>
+		</div>
+		<!--公共底部-->
+		<div ng-include = "'footer.html'"></div>
+		<input type="text" name="" id="" value="" ng-disabled="disable"/>
+		<input type="text" name="" id="" value="123" ng-readonly = "false"/>
+		<br/>
+		爱好：<input type="checkbox" ng-checked = "true" name = "hobby"/>踢足球
+			  <input type="checkbox" name="hobby"/>篮球
+		<br/>
+		<select name="">
+			<option value="0">四川</option>
+			<option value="1" ng-selected = "true">陕西</option>
+			<option value="2">湖北</option>
+			<option value="3">湖南</option>
+		</select>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 内置指令
+			 	ng-app:指定应用根元素，至少有一个元素指定了此属性
+			 	ng-controller:指定控制器
+			 	ng-show:控制元素是否显示，true显示，false不显示
+			 	ng-hide:控制元素是否隐藏，true隐藏，false不隐藏
+			 	ng-if:控制元素是否存在，true存在，false不存在
+			 		注意：ng-show和ng-if的区别是ng-show相当于css中的display:none,ng-if相当于删除了一个元素节点
+			 	ng-src:增强图片路径
+			 	ng-href:增强地址
+			 	ng-class:控制类名
+			 	ng-include:引入模版
+			 	ng-disabled:表单禁用
+			 	ng-readonly:表单只读
+			 	ng-checked:单/复选框表单选中
+			 	ng-selected:下拉框表单选中
+			 * */
+			var App = angular.module("App",[]);
+			App.controller("demo",["$scope",function ($scope){
+				$scope.list = ['html','css','javascript','php'];
+				$scope.show = true;
+				$scope.toggle = function (){
+					$scope.show = !$scope.show;
+				}
+				$scope.src = "./img/1.png";
+				$scope.baidu = "http://www.baidu.com";
+				$scope.jd = "http://www.jd.com";
+				$scope.className = "red";
+				$scope.classjd = "red";
+				$scope.disable = false;
+			}])
+		</script>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#tabs{
+				border: 1px solid red;
+			}
+			ul{
+				width: 100%;
+				padding: 0px;
+				list-style: none;
+			}
+			ul:after{
+				content: "";
+				width: 0px;
+				height: 0px;
+				display: block;
+				clear: both;
+			}
+			li{
+				float: left;
+				border: 1px solid red;
+				padding: 5px;
+			}
+			.active{
+				background: green;
+			}
+			#tab-show{
+				width: 310px;
+				height: 100px;
+				overflow: hidden;
+			}
+			#select{
+				width: 310px;
+				height: 100px;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="tabs" ng-app = "tabs" ng-controller = "tab"> 
+			<ul>
+				<li class = "tab1" ng-class = "{active:num == 1}" ng-click = "show(1)">大事记</li>
+				<li class = "tab2" ng-class = "{active:num == 2}" ng-click = "show(2)">公司向导</li>
+				<li class = "tab3" ng-class = "{active:num == 3}" ng-click = "show(3)">关于我们</li>
+				<li class = "tab4" ng-class = "{active:num == 4}" ng-click = "show(4)">公司简介</li>
+			</ul>
+			<div id="tab-show" ng-switch on = "num">
+				<div id="select" ng-switch-when = "1">1</div>
+				<div id="select" ng-switch-when = "2">2</div>
+				<div id="select" ng-switch-when = "3">3</div>
+				<div id="select" ng-switch-when = "4">4</div>
+			</div>
+		</div>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			var tab = angular.module("tabs",[]);
+			tab.controller("tab",["$scope",function ($scope){
+				$scope.num = 1;
+				$scope.show = function (num){
+					$scope.num = num;
+				}
+			}])
+		</script>
+	</body>
+</html>

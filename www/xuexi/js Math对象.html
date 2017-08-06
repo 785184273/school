@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<!--<meta http-equiv = "refresh" content = "1 ">-->
+		<script type="text/javascript">
+		document.write(Math.sqrt(144));
+		document.write("<hr>")
+		//实例：求0-10之间的随机整数：求10-20之间的随机整数；求20-30之间的随机整数
+		document.write("1-10之间的随机小数："+Math.floor(10*Math.random()));
+		document.write("<hr>") 
+		document.write("10-20之间的随机小数："+Math.floor(10*Math.random()+10));
+		document.write("<hr>")
+		document.write("20-30之间的随机小数："+Math.floor(10*Math.random()+20));
+		document.write("<hr>")
+		var mat = Math.random();
+		var mat_10 = 10 * mat;
+		document.write(Math.ceil(mat_10) + "<br />");
+		document.write("圆周率：" + Math.PI);
+		//在页面输出10-30之间的两位数
+		for(var i = 1;i <= 6;++i){
+			//10-30一般的做法是取不到两端的任意一个数，需要多乘一个再向下取整
+			var num =21 * Math.random() + 10;
+			document.write(Math.floor(num) + "<br />");
+		}
+		//特殊字符
+		//   \	转移字符
+		//	 \r	回车
+		//	 \n 换行
+		document.write("某些傻逼说：\"劳资就爱自娱自乐！\"<br />" );
+		window.alert("某些傻逼说：\n\"劳资就爱自娱自乐！\"");
+		//圆周率的5次方并四舍五入取整
+		var mathlist = Math.pow(Math.PI,5);
+		document.write("圆周率的5次方为：" + Math.round(mathlist) + "<br />");
+		//
+		function nummber(n,m){
+			for(var a = 1;a <= n;++a){
+				if(a % 3 == 0 && a % 5 == 0){
+					m++;
+					if(m % 6 == 0){
+						document.write(a + "<br />");
+					}else{
+						document.write(a + "&nbsp;");
+					}
+				}
+			}
+		}
+		nummber(300,0);
+		</script>
+	</head>
+		<body>
+		</body>
+			<script type = "text/javascript">
+			//实例：随机网页背景色
+			//求100000-999999之间的随机整数
+		function getmath(){
+			var max = 999999;
+			var min = 100000;
+			var random = Math.random()*(max - min) + min;
+			random = Math.floor(random);
+			//return random;
+			//直接查找body对象
+			document.body.bgColor = "#"+random;
+			/*
+				document代表网页对象
+				body对象是document对象的子对象
+				body对象有一个bgColor的属性
+				访问网页中所有的标记的起点是document
+				除了body和html对象意外，其他标记的访问必须使用id访问。
+			*/
+		}
+		//函数的调用
+		getmath();
+		
+		//document.write("100000-999999之间的随机整数"+getmath(999999,100000));
+		//document.write("<br>100-200之间的整数："+getmath(200,100));
+	
+			</script>
+</html>
+<!--
+math数学对象
+	math对象是一个静态对象，在使用math对象时不需要创建实例
+	PI属性：圆周率	Math.PI
+	abs():绝对值	Math.abs(-9) = 9 
+	ceil():向上取整(整数加1，小数去掉)	Math.ceil(3.4) = 4
+	floor():向下取整(直接去掉小数)	Math.floor(9.99) = 9
+	round():四舍五入	Math.round(9.8) = 10
+	pow(x,y):求x的y次方		Math.pow(2,3) = 8
+	sqrt():求平方根 Math.sqrt(121) = 11
+	random():返回0-1之间的随机小数
+		注意：能取到0，不能取到1
+		注意：求任意随机整数之间的公式 Math.random() * (max - min + 1) + min 
+	特殊字符
+	\	转义字符
+	 \r	回车
+	 \n 换行
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->

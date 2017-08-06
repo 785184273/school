@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title></title>
+		<script src="./js/jquery.min.js"></script>
+		<script src = "./jq/jquery.dataTab.js"></script>
+		<script src="./jq/jquery.remoteData.js"></script>
+		<script type="text/javascript">
+			$(function (){
+				$("#table1").dataTab({
+					width: "300",
+					height : "300",
+					url : "./js/employee.json",
+					rightclick : function (data){	//自定义事件
+						//此时这里的data是js原生对象
+						$(data).closest("tr").siblings("tr").css("background","#FFFFFF");
+						$(data).closest("tr").css("background","red");
+					}
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<table border="1" cellspacing="0" cellpadding="0" id = "table1">
+			<tr>
+				<th>id</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>职位</th>
+			</tr>
+		</table>
+	</body>
+</html>

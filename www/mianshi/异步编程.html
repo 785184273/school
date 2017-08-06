@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 回调函数
+			 * 		在普遍的情况下是：
+			 * 		f1();
+			 * 		f2();
+			 * 		如果f1执行时间较长，可以使用回调函数的模式
+			 */
+			function f1(callback){
+				setTimeout(function (){
+					console.log("a");
+				},1000)
+				callback();
+			}
+			function f2(){
+				console.log("b");
+			}
+			f1(f2);
+		</script>
+	</body>
+</html>

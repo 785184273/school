@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			@font-face {
+				font-family:"raphaelicons";
+				src: url("./fonts/raphaelicons-webfont.eot"),
+					 url("./fonts/raphaelicons-webfont.svg"),
+					 url("./fonts/raphaelicons-webfont.ttf"),
+					 url("./fonts/raphaelicons-webfont.woff");
+				font-weight: normal;
+				font-style: normal;
+			}
+			/*
+			 注意：font-face只是将字体引入进来了，要使用还需要用font-family
+			 * */
+			html,body{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;     
+				font-family: georgia,serif;
+			}
+			.container,.nav-container{
+				width: 100%;
+				height: 100%;
+			}
+			a{
+				text-decoration: none;
+			}
+			/*导航条*/
+			.nav-container input,.nav-container input + a{
+				width: 20%;
+				height: 30px;
+				line-height: 30px;
+				position: fixed;
+				bottom: 0px;
+				text-align: center;
+				background: #e3396f;
+				font-weight: bold;
+				color: white;
+			}
+			.nav-container a {
+				position: relative;
+			}
+			.nav-container input:hover + a{
+				background: #ad234f;
+			}
+			.nav-container input:checked + a{
+				background: #831134;
+			}
+			.nav-container input:checked + a:after{
+				content: " ";
+				width: 0px;
+				height: 0px;
+				display: inline-block;
+				border:20px solid white;
+				border-bottom: 20px solid #831134;
+				position: absolute;
+				top:-40px;
+				left: 50%;
+				margin-left: -20px;
+			}
+			.nav-container input{
+				opacity: 0;
+				z-index: 999;
+			}
+			.nav-container #input1,.nav-container #input1 + a{
+				position: fixed;
+				left: 0%;
+			}
+			.nav-container #input2,.nav-container #input2 + a{
+				position: fixed;
+				left: 20%;
+			}
+			.nav-container #input3,.nav-container #input3 + a{
+				position: fixed;
+				left: 40%;
+			}
+			.nav-container #input4,.nav-container #input4 + a{
+				position: fixed;
+				left: 60%;
+			}
+			.nav-container #input5,.nav-container #input5 + a{
+				position: fixed;
+				left: 80%;
+			}
+			/*滑动页面*/
+			.scroll{
+				transform: translate3d(0,0,0);
+				backface-visibility:hidden;
+			}
+			.scroll,.scroll .sc-panel{
+				width: 100%;
+				height: 100%;
+			}
+			.scroll,.sc-panel{
+				transition: all .5s ease .1s;
+			}
+			.sc-panel{
+				position: relative;
+				overflow: hidden;
+			}
+			.sc-panel .sc-desc{
+				width: 300px;
+				height: 300px;
+				background: #fa96b5;
+				position: absolute;
+				top:0px;
+				left: 50%;
+				margin-left: -150px;
+				transform: translateY(-50%) rotate(45deg);
+				-webkit-transform: translateY(-50%) rotate(45deg);
+				-ms-transform: translateY(-50%) rotate(45deg);
+				-o-transform: translateY(-50%) rotate(45deg);
+				-moz-transform: translateY(-50%) rotate(45deg);
+			}
+			.sc-panel .sc-desc:after{
+				font-family:"raphaelicons";
+				content: attr(data-icon);
+				width: 200px;
+				height: 200px;
+				color: white;
+				font-weight: bold;
+				font-size: 80px;	
+				text-align: center;
+				line-height: 200px;
+				position: absolute;
+				top: 30%;	
+				left: 30%;
+				transform:rotate(-45deg);
+				-webkit-transform:rotate(-45deg);
+				-ms-transform:rotate(-45deg);
+				-o-transform:rotate(-45deg);
+				-moz-transform:rotate(-45deg);
+			}
+			.sc-panel p{
+				color: #e23a6e;
+				text-align: center;
+				font-weight: 900;
+				font-size: 54px;
+				line-height: 50px;
+				position: absolute;
+				width: 80%;
+				top: 40%;
+				left: 10%;
+				text-shadow: 2px 2px 10px #e23a6e;
+				-ms-text-shadow: 2px 2px 10px #e23a6e;
+			}
+			}
+			#input1:checked ~ .scroll{
+				transform: translateY(0%);
+				-webkit-transform: translateY(0%);
+				-ms-transform: translateY(0%);
+				-moz-transform: translateY(0%);
+				-o-transform: translateY(0%);
+			}
+			#input2:checked ~ .scroll{
+				transform: translateY(-100%);
+				-webkit-transform: translateY(-100%);
+				-ms-transform: translateY(-100%);
+				-moz-transform: translateY(-100%);
+				-o-transform: translateY(0%);
+			}
+			#input3:checked ~ .scroll{
+				transform: translateY(-200%);
+				-webkit-transform: translateY(-200%);
+				-ms-transform: translateY(-200%);
+				-moz-transform: translateY(-200%);
+				-o-transform: translateY(0%);
+			}
+			#input4:checked ~ .scroll{
+				transform: translateY(-300%);
+				-webkit-transform: translateY(-300%);
+				-ms-transform: translateY(-300%);
+				-moz-transform: translateY(-300%);
+				-o-transform: translateY(0%);
+			}
+			#input5:checked ~ .scroll{
+				transform: translateY(-400%);
+				-webkit-transform: translateY(-400%);
+				-ms-transform: translateY(-400%);	
+				-moz-transform: translateY(-400%);
+				-o-transform: translateY(0%);
+			}
+			#input1:checked ~ .scroll #pane1 p,
+			#input2:checked ~ .scroll #pane2 p,
+			#input3:checked ~ .scroll #pane3 p,
+			#input4:checked ~ .scroll #pane4 p,
+			#input5:checked ~ .scroll #pane5 p{
+				-webkit-animation: movedown 1s ease-in-out .2s;
+				-ms-animation: movedown 1s ease-in-out .2s;
+				-o-animation: movedown 1s ease-in-out .2s;
+				-moz-animation: movedown 1s ease-in-out .2s;
+				animation: movedown 1s ease-in-out .2s;
+			}
+			@keyframes movedown{
+				from{
+					-webkit-transform: translateY(-40px);
+					-ms-transform: translateY(-40px);
+					-o-transform: translateY(-40px);
+					-moz-transform: translateY(-40px);
+					transform: translateY(-40px);
+					opacity: 0;
+				}
+				to{
+					-webkit-transform: translateY(0px);
+					-ms-transform: translateY(0px);
+					-o-transform: translateY(0px);
+					-moz-transform: translateY(0px);
+					transform: translateY(0px);
+					opacity: 1;					
+				}
+			}
+			@-webkit-keyframes movedown{
+				from{
+					-webkit-transform: translateY(-40px);
+					-ms-transform: translateY(-40px);
+					-o-transform: translateY(-40px);
+					-moz-transform: translateY(-40px);
+					transform: translateY(-40px);
+					opacity: 0;
+				}
+				to{
+					-webkit-transform: translateY(0px);
+					-ms-transform: translateY(0px);
+					-o-transform: translateY(0px);
+					-moz-transform: translateY(0px);
+					transform: translateY(0px);
+					opacity: 1;					
+				}
+			}
+			@-ms-keyframes movedown{
+				from{
+					-webkit-transform: translateY(-40px);
+					-ms-transform: translateY(-40px);
+					-o-transform: translateY(-40px);
+					-moz-transform: translateY(-40px);
+					transform: translateY(-40px);
+					opacity: 0;
+				}
+				to{
+					-webkit-transform: translateY(0px);
+					-ms-transform: translateY(0px);
+					-o-transform: translateY(0px);
+					-moz-transform: translateY(0px);
+					transform: translateY(0px);
+					opacity: 1;					
+				}
+			}
+			@-moz-keyframes movedown{
+				from{
+					-webkit-transform: translateY(-40px);
+					-ms-transform: translateY(-40px);
+					-o-transform: translateY(-40px);
+					-moz-transform: translateY(-40px);
+					transform: translateY(-40px);
+					opacity: 0;
+				}
+				to{
+					-webkit-transform: translateY(0px);
+					-ms-transform: translateY(0px);
+					-o-transform: translateY(0px);
+					-moz-transform: translateY(0px);
+					transform: translateY(0px);
+					opacity: 1;					
+				}
+			}
+			@-o-keyframes movedown{
+				from{
+					-webkit-transform: translateY(-40px);
+					-ms-transform: translateY(-40px);
+					-o-transform: translateY(-40px);
+					-moz-transform: translateY(-40px);
+					transform: translateY(-40px);
+					opacity: 0;
+				}
+				to{
+					-webkit-transform: translateY(0px);
+					-ms-transform: translateY(0px);
+					-o-transform: translateY(0px);
+					-moz-transform: translateY(0px);
+					transform: translateY(0px);
+					opacity: 1;					
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class = "container">
+			<div class = "nav-container">
+				<input type="radio" checked="checked" name = "input" id = "input1"/>
+				<a href = "#pane1">Serendipity</a>
+				<input type="radio" name = "input" id = "input2"/>
+				<a href = "#pane2">Happiness</a>
+				<input type="radio" name = "input" id = "input3"/>
+				<a href = "#pane3">Tranquillity</a>
+				<input type="radio" name = "input" id = "input4"/>
+				<a href = "#pane4">Positivity</a>
+				<input type="radio" name = "input" id = "input5"/>
+				<a href = "#pane5">Passion</a>
+				<div class = "scroll">
+					<div class = "sc-panel" id = "pane1">
+						<div class = "sc-desc" data-icon = "H"></div>
+						<p>Serendipity</p>
+					</div>
+					<div class = "sc-panel" id = "pane2">
+						<div class = "sc-desc" data-icon = "2"></div>
+						<p>Happiness</p>
+					</div>
+					<div class = "sc-panel" id = "pane3">
+						<div class = "sc-desc" data-icon = "B"></div>
+						<p>Tranquillity</p>
+					</div>
+					<div class = "sc-panel" id = "pane4">
+						<div class = "sc-desc" data-icon = "X"></div>
+						<p>Positivity</p>
+					</div>
+					<div class = "sc-panel" id = "pane5">
+						<div class = "sc-desc" data-icon = "C"></div>
+						<p>Passion</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

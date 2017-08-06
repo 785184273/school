@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="button" value = "普通文本" @click = "get()"/>
+			<input type="button" value="get请求php文件" @click = "getP()"/>
+			<input type="button" value="post请求php文件" @click = "postP()"/>
+			<input type="button" value="jsonp请求" @click = "jsonpP()"/>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="js/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+				el : "#app",
+				data : {
+					
+				},
+				methods : {
+					get : function (){
+							this.$http.get("./a.txt").then(function (res){
+								//第一个函数表示请求成功的函数
+								//alert("成功了!");
+								//console.log(res.status)	//状态码
+								console.log(res.data)	//输出文本的结果
+							},function (res){
+								//第二个函数表示请求失败的函数
+								alert("失败了!");
+							})
+					},
+					getP : function (){
+							this.$http.get("./php/get.php",{
+								//发送的数据
+								a : 1,
+								b : 2
+							}).then(function (res){
+								console.log(res.data)	//输出文本的结果
+							},function (res){
+								//第二个函数表示请求失败的函数
+								alert("失败了!");
+							})
+					},
+					postP : function (){
+							this.$http.post("./php/post.php",{
+								//发送的数据
+								a : 1,
+								b : 2
+							},{
+								emulateJSON : true	//post必须设置的头部
+							}).then(function (res){
+								console.log(res.data)	//输出文本的结果
+							},function (res){
+								//第二个函数表示请求失败的函数
+								alert("失败了!");
+							})
+					},
+					jsonpP : function (){
+ 							this.$http.jsonp('https://sug.so.360.cn/suggest',{
+ 								params : {
+ 									word:'a'
+ 								},
+ 								jsonp:'callback'
+ 							}).then(function(res){
+             					console.log(res.data.s);
+            					},function(res){
+              					console.log(res.status);
+           					 });
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

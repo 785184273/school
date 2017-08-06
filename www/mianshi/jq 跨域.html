@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function (){
+				jsonp();
+			}
+			function jsonp(){
+				var callback = null;
+				var jsTag = document.createElement("script");
+				jsTag.src = "http://cdn.weather.hao.360.cn/api_weather_info.php?app=hao360";
+				jsTag.type = "text/javascript";
+				document.body.appendChild(jsTag);
+			}
+		</script>
+	</head>
+	<body>
+
+	</body>
+
+</html>

@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+	</head>
+	<body>
+		<script>
+			function supertype(name){
+				this.name = name;
+				this.colors = ['red','blue','green'];
+			}
+			
+			supertype.prototype.sayname = function (){
+				alert(this.name);
+			}
+			
+			function subtype(name,age){
+				supertype.call(this,name);
+				
+				this.age = age;
+			}
+			function Object(o){
+				function F(){}
+				F.prototype = o;
+				return new F;
+			}
+			
+			//*
+			function inheritprototype(subtype,supertype){
+				var prototype = Object(supertype.prototype);
+				prototype.constructor = subtype;
+				subtype.prototype = prototype;
+			}
+			
+			inheritprototype(subtype,supertype);
+			subtype.prototype.sayage = function (){
+				alert(this.age);
+			};
+			//*/
+			
+			/*
+			subtype.prototype = new supertype();
+			subtype.prototype.constructor = subtype;
+			subtype.prototype.sayage = function (){
+				alert(this.age);
+			};
+			//*/
+			
+			var instance = new subtype('小美',20);
+			//*
+			instance.colors.push("black");
+			alert(instance.colors);
+			instance.sayname();
+			//*/
+		</script>
+	</body>
+</html>

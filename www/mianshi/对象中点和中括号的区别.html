@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [1,2,3,5,6,7,8,9,10,10,10,10],
+				obj = {},
+				len = arr.length;
+				for(var i = 0;i < len;++i){
+					var t = arr[i];
+					if(obj[t]){
+						++obj[t].count;
+					}else{
+						obj[t] = {};
+						obj[t].value = t;
+						obj[t].count = 1;
+					}
+				}
+				console.log(obj);
+			/*
+			 	1.中括号运算符总能替代点运算符，点运算符不能全部替代中括号运算符
+			 	2.中括号运算符可以用字符串变量的内容作为属性名，点运算符不能
+			 	3.中括号运算符可以用纯数组作为属性名，点运算符不能
+			 	4.中括号运算符可以用js的关键字和保留字作为属性名，点运算符不能
+			 * 	
+			 *
+			 * */
+		</script>
+	</body>
+</html>

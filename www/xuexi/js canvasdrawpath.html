@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<script>
+			/*
+				绘制路径
+					2d绘制上下文支持很多在画布绘制路径的方法，通过路径可以创造出复杂的形状和线条，要绘制路径首先必须调用beginPath()方法，表示要开始绘制新路径
+						arc(x,y,radius,startAngle,endAngle,counterclockwise)
+							x,y：为圆心绘制一条弧线
+							radius：弧线半径
+							startAngle,endAngle：起始角度和结束角度
+							counterclockwise: 表示是否按逆时针方向计算，值为false表示按顺时针方向计算
+						arcTo(x1,y1,x2,y2,radius)：从上一点开始绘制一条曲线,到x2,y2为止，并且以给定的半径radius穿过(x1,y1)
+						bezierCurveTo(c1x,c1y,c2x,c2y,x,y)：从上一点开始绘制一条曲线，到(x,y)为止，并且以(c1x,c1y)和(c2x,c2y)为控制点
+						lineTo(x,y): 从上一点开始绘制一条曲线，到(x,y)为止
+						moveTo(x,y)：讲绘图的游标移动到(x,y),不画线
+						quadraticCurveTo(cx,cy,x,y)：从上一点开始绘制一条二次曲线，到(x,y)为止，并且以(cx,cy)作为控制点
+						rect(x,y,width,height): 从点(x,y)开始绘制一个矩形，宽度和高度分别由width和height指定，这个方法绘制的是矩形的路径，而不是strokeStyle()和fillStyle()所绘制的独立的形状
+					创建了路径后，如果想绘制一条连接到路径起点的线条，可以调用closePath()，如果路径已经完成，你想用fillStyle填充它，可以调用fill方法，另外还可以调用stroke()方法对路径描边，描边使用的是strokeStyle,最后还可以调用clip(),这个方法可以在路径上创建一个剪切区域
+					isPointInPath(x,y)方法，这个方法接收x,y坐标作为参数，用于在路径被关闭之前确定画布上的某一点是否位于路径上
+						if(context.isPointInPath(100,100)){
+							alert("Point (100,100) is in the path");
+						}
+							
+				绘制文本
+					绘制文本主要有两个方法fillText('文本字符串',x,y,[最大像素宽度])和strokeText('文本字符串',x,y,[最大像素宽度])，这两个方法都有四个参数,这两个方法都有下列的三个属性
+						font: 表示文本的样式，大小及字体，例如：10px Arial
+						textAlign: 表示文本的对其方式，可能的值有start,end,left,right和center,建议使用start和end，不要使用left和right
+						textBaseline: 表示文本的基线，可能的值有"top,hanging,middle,alphabetic,ideographic,bottom"
+						
+			*/
+			window.onload = function (){
+				var clock = document.getElementById('draw');
+				if(clock.getContext){
+					var clockmap = clock.getContext('2d');
+					
+					//开始路径
+					clockmap.beginPath();
+					
+					//绘制外圆
+					clockmap.arc(100,100,99,0,(2 * Math.PI),false);
+					
+					//绘制内圆
+					clockmap.moveTo(194,100);
+					clockmap.arc(100,100,94,0,(2 * Math.PI),false);
+					
+					//绘制分针
+					clockmap.moveTo(100,100);
+					clockmap.lineTo(100,15);
+					
+					//绘制时针
+					clockmap.moveTo(100,100);
+					clockmap.lineTo(35,100);
+					
+					//绘制文本
+					clockmap.font = "bold 14px Mircosoft Yahei";
+					clockmap.textAlign = "center";
+					clockmap.textBaseline = "middle";
+					clockmap.fillText('12',100,15);
+					//描边路径
+					clockmap.stroke();
+				}
+			} 
+		</script>
+	</head>
+		<body>
+			<canvas id = "draw" width = "300" height = "300"></canvas>
+		</body>
+</html>

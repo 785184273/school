@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+	</head>
+	<body>
+		<ul>
+			<li>html</li>
+			<li>css</li>
+			<li>js</li>
+			<li>bootstrap</li>
+		</ul>
+		<div>
+			be my love,be the one
+		</div>
+		<script type="text/javascript">
+			/*
+			 遍历节点操作
+			 	children(selector),next(),prev(),siblings()和closest()
+			 		children(selector)方法用于取得匹配元素的子元素集合
+			 			方法如下：
+			 				$(selector).children();
+			 		next()方法用于有匹配元素的下一个兄弟节点
+			 			方法如下：
+			 				$(selector).next();
+			 		prev()方法用于匹配元素的上一个兄弟节点
+			 			方法如下
+			 				$(selector).prev();
+			 		siblings()方法用于匹配目标元素的所有兄弟元素
+			 			方法如下
+			 				$(selector).siblings()
+			 		closest()方法用来取得最近的祖先元素，首先检查当前元素是否匹配，如果匹配则直接返回，否则继续查找父元素中符合条件的元素返回，如果没有匹配的元素则直接返回空JQ对象
+			 * */
+			console.log($("ul").children().length);	//4
+			console.log($("ul li:first-child").next().addClass("active"));
+			console.log($("ul li:last-child").prev().text());
+			console.log($("ul").siblings("div").text());
+			$("div").closest().css("background","red");
+		</script>
+	</body>
+</html>

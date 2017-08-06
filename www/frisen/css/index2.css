@@ -1,0 +1,187 @@
+@media screen and (max-width: 640px) {
+	html,body,ul,li,header,nav,section,footer{
+		padding: 0;
+		margin: 0;
+	}
+	ul{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+	}
+	/*banner*/
+	.banner{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.banner:after{
+		content: "";
+		width: 0;
+		height: 0;
+		clear: both;
+		display: block;
+	}
+	.banner img{
+		width: 100%;
+		float: left;
+	}
+	/*菜单*/
+	.menu{
+		width: 100%;
+		margin: 0 auto;
+		padding: 1.5rem 0;
+		background: #127c77
+	}
+	.menu p{
+		font-size: 0.9rem;
+		padding: 0 0.5rem;
+	}
+	.menu .title,.menu .content{
+		color: #FFFFFF;
+		font-size: 0.;
+	}
+	.menu .title{
+		font-size: 1rem;
+		font-weight: bold;
+	}
+	.menu ul{
+		width: 100%;
+	}
+	.menu ul:after{
+		content: "";
+		display: block;
+		height: 0;
+		width: 0;
+		clear: both;
+	}
+	.menu ul li{
+		float: left;
+		width: 24%;
+		margin-left: 1%;
+	}
+	.menu ul li img{
+		width: 90%;
+	}
+	.menu ul li .title{
+		font-weight: bold;
+		font-size: 0.9rem;
+		margin-top: 0.5rem;
+		color: #FFFFFF
+	}
+	.menu ul li p{
+		text-align: center;
+		margin: 0px;
+		font-size: 0.9rem;
+	}
+	.menu ul li .design{
+		color: #FFFFFF
+	}
+	/*案例展示*/
+	.case_show{
+		width: 100%;
+		margin: 0 auto;
+		padding: 1rem 0;
+	}
+	.case_show .title{
+		margin: 0;
+		padding-top: 0.5rem;
+		padding-left: 1rem;
+		color: #02b5ac;
+		font-size: 1rem;
+		font-weight: bold;
+	}
+	.case_show ul:after{
+		content: "";
+		display: block;
+		height: 0;
+		width: 0;
+		clear: both;
+	}
+	.case_show ul{
+		margin-top: 1rem;
+	}
+	.case_show li{
+		float: left;
+		width: 45%;
+		margin-left: 3%;
+	}
+	.case_show img{
+		width: 100%;
+	}
+	.case_show ul p{
+		text-align: center;
+		color: #000000;
+		font-size:0.9rem;
+		margin: 0.5rem 0;
+		font-weight: bold;
+	}
+	/*常见问题及解答*/
+	.problem{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.problem .title{
+		margin: 0;
+		padding-top: 0.5rem;
+		padding-left: 1rem;
+		color: #02b5ac;
+		font-size: 1rem;
+	}
+	.problem div{
+		padding: 0.6rem 0 0 0;
+	}
+	.problem div p{
+		font-size: 0.9rem;
+		margin: 0 0.8rem;
+	}
+	.problem .ask{
+		color: #ffffff;
+		padding: 0.5rem;
+		background: #127c77;
+	}
+	.problem .answer{
+		padding: 0.5rem 0;
+	}
+	/*新闻中心*/
+	.news_Center{
+		width: 100%;
+		margin: 0 auto;
+		background: #333636;
+		padding-bottom: 0.5rem;
+	}
+	.news_Center p{
+		text-align: center;
+	}
+	.news_Center .title{
+		margin: 0;
+		padding-top: 0.5rem;
+		padding-left: 1rem;
+		color: #FFFFFF;
+		font-size: 1rem;
+		text-align: left;
+		font-weight: bold;
+	}
+	.news_Center ul{
+		margin-top: 1rem;
+	}
+	.news_Center ul li{
+		line-height: 1.2rem;
+		border-bottom: 1px solid #02b5ac;
+		margin-left: 1rem;
+		margin-right: 1rem;
+		padding: 0.4rem 0;
+		font-size: 0.9rem;
+	}
+	.news_Center ul li a{
+		color: #FFFFFF;
+	}
+
+	.news_Center .more{
+		text-align: center;
+		display: inline-block;
+		width: 30%;
+		margin: 0 auto;
+		font-size: 0.9rem;
+		color: #ffffff;
+	}
+}

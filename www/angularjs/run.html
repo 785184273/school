@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app = "App">
+		<h1>{{name}}</h1>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 run()用于初始化全局的数据，仅仅对全局作用域起作用
+			 * */
+			var App = angular.module("App",[]);
+			console.log(App);
+			App.run(["$rootScope",function($rootScope){
+				$rootScope.name = "小明";
+			}])
+		</script>
+	</body>
+</html>

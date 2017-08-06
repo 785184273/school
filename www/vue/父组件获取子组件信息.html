@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<one></one>
+		</div>
+		<template id = "parent">
+			<!--父组件内部-->
+			<div>
+				<p>我是父级组件</p>
+				信息：{{ b }}
+				<two @create = "show"></two>
+			</div>
+		</template>
+		<template id = "child">
+			<!--子组件内部-->
+			<div>
+				<p>我是子组件</p>
+				<input type = "button" value = "点击" @click = "show"/>
+			</div>
+		</template>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	子组件传递给父组件，需要用自定义事件，$emit传递子组件的信息
+			 		$emit("事件名称",传递的数据)
+			 	父组件用v-on接收
+			 * */
+			Vue.component("one",{
+				template : "#parent",
+				data : function (){
+					return {
+						a : "show",
+						b : "我是父组件的信息"
+					}
+				},
+				methods : {
+					show : function (val){
+						this.b = val;
+					}
+				},
+				components : {
+					"two" : {
+						data : function (){
+							return {
+								b : "我是子组件的信息"
+							}
+						},
+						template : "#child",
+						methods : {
+							show :  function (){
+								this.$emit("create",this.b);
+							}
+						}
+					}
+				}
+			})
+			new Vue({
+				el : "#app"
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				list-style: none;
+				border: 1px solid red;
+			}
+			li{
+				font-size: 16px;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-size-adjust:none;
+				display: inline-block;
+				/*
+				 消除display：inline-block的空隙
+				 	1.可以使用<!---->注释空格
+				 	2.代码
+				 		<li></li
+				 		><li</li
+				 	3.<li></li><li></li>
+				 	4.margin设为负值
+				 	5.给父元素设置font-size:0px,给自身设置实际需要的字体大小
+				 * */
+				border: 1px solid red;
+			}
+			.box li{
+				font-style:oblique;
+				margin: -4px;
+			}
+			#box{
+				font-size: 0px;
+			}
+			#box li{
+				font-style:italic;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>html</li><!--
+			--><li>css</li><!--
+			--><li>js</li><!--
+			--><li>bootstrap</li><!--
+			--><li>jquery</li>
+		</ul>
+		<ul>
+			<li>html</li
+			><li>css</li
+			><li>js</li
+			><li>bootstrap</li
+			><li>jquery</li>
+		</ul>
+		<ul>
+			<li>html</li><li>css</li><li>js</li><li>bootstrap</li><li>jquery</li>
+		</ul>
+		<ul class = "box">
+			<li>html</li>
+			<li>css</li>
+			<li>js</li>
+			<li>bootstrap</li>
+			<li>jquery</li>
+		</ul>
+		<ul id = "box">
+			<li>html</li>
+			<li>css</li>
+			<li>js</li>
+			<li>bootstrap</li>
+			<li>jquery</li>
+		</ul>
+	</body>
+</html>

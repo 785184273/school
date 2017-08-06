@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<script>
+			window.onload = function (){
+				var canvas = document.getElementById('canvas');
+				canvas.width = 1500;
+				canvas.height = 768;
+				canvas.border = "1px solid red";
+				if(canvas.getContext){
+					var context = canvas.getContext('2d');
+					
+					context.strokeStyle = "blue";
+					for(var i = 0;i < 10;++i){
+						context.beginPath();
+						context.arc(50+i*100,80,40,0,2*Math.PI*(i+1)/10);
+						//context.closePath();
+						context.stroke();
+					}
+					for(var i = 0;i < 10;++i){
+						context.beginPath();
+						context.arc(50+i*100,160,40,0,2*Math.PI*(i+1)/10);
+						context.closePath();
+						context.stroke();
+					}
+					context.fillStyle = "blue";
+					for(var i = 0;i < 10;++i){
+						context.beginPath();
+						context.arc(50+i*100,240,40,0,2*Math.PI*(i+1)/10);
+						//context.closePath();
+						context.fill();
+					}
+					for(var i = 0;i < 10;++i){
+						context.beginPath();
+						context.arc(50+i*100,320,40,0,2*Math.PI*(i+1)/10);
+						context.closePath();
+						context.fill();
+					}
+				}
+			}
+		</script>
+	</head>
+		<body>
+			<canvas id = "canvas">对不起你的浏览器不支持canvas!</canvas>
+		</body>
+</html>

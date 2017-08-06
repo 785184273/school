@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+	</head>
+		<body>
+			用户名:<input type = "text" name = "username" onblur = "checkname()" id = "name"><br />
+			密码:<input type = "text" name = "password"  id = "pas">
+		</body>
+</html>
+<script>
+		function checkname(){
+		
+		var nm = document.getElementById("name").value;
+
+		//对传递的特殊符号进行编码处理(不是所有东西都进行编码处理)
+		nm = encodeURIComponent(nm);
+		
+		//把要传递的信息变为"请求字符串"
+		var info = "name=" + nm + "&age=20";		
+		//ajax方式校验
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function (){
+			if(xhr.readyState == 4){
+				window.alert(xhr.responseText);
+			}
+		}
+		
+		xhr.open('post','./aj post.php?addr=beijing');
+		//post方式传递数据是模拟form表单传递数据
+		//form表单的post格式数据是通过xml形式传递给服务器的
+		xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+		
+		xhr.send(info);
+		
+	}
+</script>
+<!--
+	ajax之post方式请求
+		注意：
+			给服务器传递数据需要请求send(请求字符串数据)方法
+			调用方法setRequestHeader()把传递的数据组织为xml格式(模仿form表单数据传递)
+			setRequsetHeader("content-type","application-x-www-form-urlencoded");
+			传递的中文信息无需编码，特殊符号(&,=)等仍然需要编码
+			该方式请求的同时也可以传递get参数信息，同样使用$_GET接收该信息
+-->

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table,tr{
+				border: 1px solid red;
+			}
+		</style>
+		<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>序号<input type = "checkbox"></th>
+				<th>名称</th>
+				<th>价格</th>
+				<th>数量</th>
+			</tr>
+			<tr>
+				<td>1<input type = "checkbox"></td>
+				<td>iphone</td>
+				<td>5388</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>2<input type = "checkbox"></td>
+				<td>htc</td>
+				<td>1988</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>3<input type = "checkbox"></td>
+				<td>Nokia</td>
+				<td>1688</td>
+				<td>7</td>
+			</tr>
+			<tr>
+				<td>4<input type = "checkbox"></td>
+				<td>lenovo</td>
+				<td>2388</td>
+				<td>6</td>
+			</tr>
+		</table>
+		<h1>选择器练习h1</h1>
+		<h2 style = "display: none;">选择器练习h2</h1>
+		<h3>选择器练习h3</h1>
+		<ul>
+			<li>html</li>
+			<li class = "css">css</li>
+			<li>js</li>
+			<li>bootstrap</li>
+		</ul>
+		<a href="">百度</a>
+		<input type="hidden" name="" id="" value="123" />
+		<script type="text/javascript">
+			$(":header").css("border","1px solid red");	//:header选择器选择标题标签
+			$("li").css({"color" : "red"});
+			$("ul>li").css({"font-size" : "20px"});	//选择ul下的所有li标签
+			$(".css+li").css({"font-size" : "30px"}); //选择class = "css"的标签的后一个li标签
+			$(".css~li").css({"background" : "pink"}) //选择class = "css"的标签的后面所有的同级标签
+			//$(":hidden").css({"display" : "block"});	//匹配所有不可见的元素
+			$(":visible").css({"text-align" : "center"});	//匹配所有可见元素
+
+			//$("tr").css("background","yellow");
+			$("tr:even").css("background","#ffffff");
+			$("tr:odd").css("background","blue");
+			$("tr:eq(0)").css("background","yellow");
+			$("tr:eq(0) :checkbox").click(function (){
+				$("[type=checkbox]").attr("checked",this.checked);
+			})
+		</script>
+	</body>
+</html>

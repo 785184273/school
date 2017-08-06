@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<script>
+			function functionname(){
+			
+			}
+			alert(functionname.name);	//ie下无效，其余浏览器下弹出functionname
+			
+			var condition = 1;
+			var say;
+			if(condition){
+				
+				say = function (){
+					alert('yes');
+				};
+				//say();
+			}else{
+				
+				say = function (){
+					alert('no');
+				};
+				//say();
+			}
+			say();
+		</script>
+	</head>
+		<body>
+		</body>
+</html>

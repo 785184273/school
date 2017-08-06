@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+		//加载事件
+			$(function (){
+			//点击事件
+				$('div').click(function (){
+					//this代表当前的dom对象
+					$(this).css({border:'1px solid red',width:'300px',height:'300px',background:'pink'});
+					//window.alert(event.clientX);
+				});
+			});
+			
+			//触发事件的执行
+			function f1(){
+				$('div').click();
+			}
+		</script>
+	</head>
+	<body>
+		<div>today is sunshine</div>
+		<div>陈慧娟是傻逼</div>
+		<input type = "submit" onclick ="f1()" value = "触发事件的执行">
+	</body>
+</html>
+<!--
+	dom1级事件设置
+		<input type = "text" onclick = "过程代码" value = "">
+		<input type = "text" onclick = "函数()">
+		node.onclick = function (){}
+		node.onclick = 函数名
+	dom2级事件设置
+		主流浏览器
+			node.addEventListener(类型，处理事件，事件流)
+			node.removeEventListener(类型，处理事件，事件流)
+		非主流浏览器
+			node.attachEvent();
+			node.detachEvent();
+	jq事件设置
+		$().事件类型(事件处理函数fn)	设置事件
+		$().事件类型()		触发事件执行
+		例如
+			$('form').submit()可以使得表单进行提交
+			$('div').click(function (){事件触发过程});
+		
+-->

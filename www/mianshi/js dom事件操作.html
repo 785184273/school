@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			hello word
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+	 dom2级事件，规定的事件流包括三个阶段：事件捕获阶段,处于目标阶段,和事件冒泡阶段
+	 dom2级事件，定义了两个方法， addEventListener()和removeEventListener()
+	 	接收三个参数，事件名，事件处理程序的函数，布尔值
+	 		布尔值：true(表示在捕获阶段调用事件处理程序)
+	 			    false(表示在冒泡阶段调用事件处理程序)
+	 dom0级事件，不能设置多个事件处理程序，后面的事件处理程序会覆盖前面的事件处理程序
+	 dom2级事件，可以设置多个事件处理程序
+	 IE事件处理程序
+	 	ie实现了与dom中类型的两个方法：attachEvent()和detachEvent(),这两个方法接受相同的两个参数：事件处理程序名称，事件处理程序函数
+	 	由于IE8及更早的版本只支持事件冒泡，所有通过attachEvent()添加的事件处理程序都会被添加到冒泡的阶段
+	 	ie中事件处理程序名称和别的主流浏览器中的不同，主流浏览器中是click,ie是onclick
+	 	attachEvent和addEventListener类似，也可以用来为一个元素添加多个事件处理程序
+	 */
+	var div = document.getElementById("div1");
+//	div1.onclick = function (){
+//		alert(this.innerHTML);
+//	}
+//	div1.onclick = function (){
+//		alert(this.id)
+//	}
+	div.addEventListener("click",function (){
+		alert("hello word");
+	})
+	div.addEventListener("click",function (){
+		alert(this.id);
+	})
+</script>

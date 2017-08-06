@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				indexOf(value,index)
+				参数说明：
+					value:需要检索的字符串
+					index:可选的整数参数，规定在字符串中开始检索的位置，他的合法取值是0 ~ str.length-1,省略该参数则将从字符串的首字符开始检索，如果找到value则返回第一次出现的位置，如果没找到则返回-1
+				
+			**/
+			//字符串类型的使用
+				var str = "orange";
+				console.log(str.indexOf("o"));
+			//Number类型的使用
+				var num = 2016;
+				console.log((num + "").indexOf("6"));
+			//Array类型的使用
+				var arr = [1,2,3,4];
+				console.log(arr.indexOf(2,2));		//从下标为2开始检索，查不到2返回-1
+		</script>
+	</body>
+</html>

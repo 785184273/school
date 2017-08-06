@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript">
+			/*
+				当onclick事件发生时，点出小星星
+			*/
+			//window.onload = start;
+			var i = 0;
+			var timer;
+			var j = 1;
+			var sj;
+			function start(){
+				window.clearInterval(sj);
+				window.clearInterval(timer);
+				//init();
+				//shijian();
+				sj = window.setInterval("shijian()",1000);
+				timer = window.setInterval("init()",1000);
+			}
+			function init()
+			{
+				document.body.bgColor = "#" + getRandom(100000,999999);
+				//创建图片
+				var imgObj = document.createElement("img");
+				//将创建的节点放在body下
+				document.body.appendChild(imgObj);
+				//绑定一个conclick事件
+					//在绑定事件中，this可以直接使用不需要传参
+				imgObj.onclick = clearimg;
+				//添加src属性
+				imgObj.src = "img/piaofu.gif";
+				//增加width属性
+				imgObj.width = getRandom(20,60);
+				//增加style属性
+				imgObj.style.position = "absolute";
+				//var x = e.clientX;
+				//var y = e.clientY;
+				var x = getRandom(0,window.innerWidth)
+				var y = getRandom(0,window.innerHeight);
+				imgObj.style.left = x - (imgObj.width/2)+"px";
+				imgObj.style.top = y - (imgObj.width/2)+"px";
+				//计数
+				i++;
+				//游戏结束页面重新加载
+				if(i >= 10){
+					alert("页面有10个泡泡未消除,游戏结束!");
+					window.clearInterval(timer);
+					location.reload();
+				}
+				//var str = "窗口左边距离：" + window.event.clientX + ".窗口上边距离：" + window.event.clientY;
+				//str += "\n网页左边距离：" + window.event.pageX + ".网页上边距离：" + window.event.pageY;
+				//str += "\n屏幕左边距离：" + window.event.screenX + ".屏幕上边距离：" + window.event.screenY;
+				//str += "\n事件类型：" + window.event.type;
+				//alert(str);
+			}
+			function shijian(){
+				var obj = document.getElementById("time");
+				obj.value = "游戏进行了" + j + "秒";
+				j++;
+			}
+			function getRandom(min,max)
+			{
+				var random = Math.random()*(max - min) + min;
+				random = Math.floor(random);
+				return random;
+			}
+			//绑定游戏功能
+			function clearimg(){
+				document.body.removeChild(this);
+				i--;
+			}
+			function stop(){
+				//window.clearInterval(timer);
+				window.alert("游戏暂停！");
+			}
+		</script>
+	</head>
+		<body>
+			<input type = "submit" value = "开始游戏" onclick = "start()">
+			<input type = "submit" value = "暂停游戏" onclick = "stop()">
+			<input id = "time" type = "submit" value = "游戏进行了0秒">
+		</body>
+</html>

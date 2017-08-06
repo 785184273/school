@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js">
+		</script>
+	</head>
+	<body>
+		<input type = "checkbox" name = "hobby[]" class = "hby" value = "1">篮球
+		<input type = "checkbox" name = "hobby[]" class = "hby" value = "2">足球
+		<input type = "checkbox" name = "hobby[]" class = "hby" value = "3">排球
+		<input type = "checkbox" name = "hobby[]" class = "hby" value = "4">乒乓球
+		<input type = "checkbox" name = "hobby[]" class = "hby" value = "5">橄榄球
+		<br />
+		<select multiple = "multiple">
+			<option value = "A">北京</option>
+			<option value = "B">天津</option>
+			<option value = "C">上海</option>
+			<option value = "D">深圳</option>
+		</select>
+		<input type = "radio" name = "sex" class = "sex" value = "1">男
+		<input type = "radio" name = "sex" class = "sex" value = "2">女
+		<input type = "radio" name = "sex" class = "sex" value = "0">保密
+		<hr />
+		<input type = "submit" name = "sub" value = "value的一系列操作" onclick = "f1()">
+	</body>
+	<script>
+		function f1(){
+			//使用非快捷操作
+			/*
+			var s = "";
+			var len =  $('.hby:checked').length;
+			for(var i = 0;i < len;++i){
+				//console.log($('.hby:checked:eq(' + i +')').attr("value"));
+				if(i == (len - 1)){
+					s = s + $('.hby:checked:eq(' + i + ')').attr('value');
+				}else{
+					s = s + $('.hby:checked:eq(' + i + ')').attr('value') + ",";
+				}
+			}
+			console.log(s);
+			*/
+			//使用快捷操作选中一部分爱好
+			//$(全部的复选框).val([元素值，元素值])	可以设置value值 = 元素值的被选中
+			//$('.hby').val(["1","2"]);
+			
+			//获取被选择的城市的value,一下适合单选的下拉列表
+			//window.alert($('option:selected').val());
+			//window.alert($('option:selected').attr('value'));
+			
+			//多选的情况，$(下拉列表).val()	获得全部被选中的下拉列表的value值
+			//console.log($('select').val());
+			
+			//设置默认选中
+			//$('select').val(['A','B']);
+			
+			//单选框的操作
+			//window.alert($('.sex').val(['2']));
+			//获取单选框value的值
+			//window.alert($('.sex:checked').val());
+		}
+	</script>
+</html>
+<!--
+	$('').attr("value")		获得value值
+	$('').attr("value","信息值")	设置value的值
+	
+	快捷操作
+	$('').val()		获得value的值
+	$('').val('信息值')		设置value的信息值
+	该val()方法在单选框，复选框，下拉列表的使用有突出表现
+-->

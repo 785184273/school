@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				clone()方法生成被选元素的副本，包含子节点，文本和属性
+				语法
+					clone(includeEvents)
+						includeEvents	可选，布尔值，规定是否复制元素的所有类型，在默认下，副本中不包含事件处理器,为true时，包含事件处理器
+			*/
+			
+			$(function (){
+				$('p').bind('click',function (){
+					$(this).animate({fontSize :"+=1px"});
+				})
+				$('input:button').bind('click',function (){
+					$('body').append($('p:first').clone(true));	
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<p>fate stay night</p>
+		<input type = "button" value = "clone">
+	</body>
+</html>

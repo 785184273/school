@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<script>
+			//制作函数(ajax去获取分页信息)
+			window.onload = function (){
+				showpage();
+			}
+			
+			function showpage(){
+				var xhr = new XMLHttpRequest();
+				//alert(123);
+				xhr.onreadystatechange = function (){
+					if(xhr.readyState == 4){
+						document.getElementById("tab").innerHTML = xhr.responseText;
+					}
+				}
+				
+				xhr.open("get",'./aj fenye.php');
+				xhr.send();
+			}
+		</script>
+		<style>
+			div{text-align:center;border:1px solid red;}
+		</style>
+	</head>
+		<body>
+			<div id = "tab"></div>
+		</body>
+</html>
+<!--
+	ajax分页效果是对传统分页效果的封装
+-->

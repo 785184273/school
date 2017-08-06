@@ -1,0 +1,93 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+/*
+  在编译less时，可以使用命令行进行编译，有三种方式
+  	1.直接编译，显示在命令行当中
+  		lessc style.less
+  	2.将编译的结果生成为一个单独的文件
+  		lessc style.less > style.css
+  	3.将编译的结果进行压缩，生成一个独立的文件
+  		lessc style.less > style.css -x
+ 	代码注释
+ 		//css里面没有单行注释，less里面有单行注释，如果进行压缩编译，所有的注释都会被忽略
+ 	变量
+ 		在less中，可以使用变量，来统一设置一类可以重复使用的值
+ 			使用@符号定义，语法如下
+ 			1.定义变量
+ 				@变量名：变量值
+ 				@base:#ffffff;
+ 			2.使用变量
+ 				作为属性值进行使用
+ 					color:@base
+ 		混入(重点中的重点)
+ 			Mixins有点像函数，在定以后，可以通过名称调用(也支持动态传参)
+ 			混入也叫混合，可以将一个定义好的classA轻松的引入到另一个classB中，从而简单的实现classB继承classA中的所有属性，我们还可以带参数的调用，就想使用函数一样
+ 			//定义混合
+ 				.error(@borderWidth：2px){
+ 					border:@borderWidth solid red;
+ 					color:red;
+ 				}
+ 			//使用混合
+ 				p{.error;}
+ 				h1(.error(10px);)
+ 		    匹配模式
+		        根据条件进行样式显示，类似js中的switch
+		    	有些情况下，我们想根据传入的参数来改变混合的默认呈现，比如下面这个例子
+		    
+		    .class{
+		        .mixin(@switch,#888)
+		    }
+		    	如果想让mixin根据不同的@switch值而表现各异，可以按下面配置
+		    .mixin(dark,@color){
+		        color:darken(@color,10%);
+		    }
+		    .mixin(light,@color){
+		        color:lighten(@color,10%);
+		    }
+		  嵌套
+		  	可以在一个选择器中嵌套另一个选择器来实现继承，这样可以很大程度的减少代码量，并且代码看起来更加的清晰
+		  	例如：
+		  		header{
+		  			h1{
+		  				font-size:12px
+		  			}
+		  			p{
+		  				font-size:16px;
+		  				a{
+		  					text-decoration:none;
+		  					&:hover{
+		  						border:1px solid red;
+		  					}
+		  				}
+		  			}
+		  		}
+		  颜色函数
+				css预处理器一般都会内置一些颜色处理函数用来对颜色值进行处理，例如：加亮，变暗，颜色梯度等
+					语法：
+						函数名（颜色，变化程度）
+					lighten(@color,10%);
+						变亮
+					darken(@color,10%);
+						变暗
+					saturate(@color,10%);
+						饱和
+					desaturate(@color,10%);
+						不饱和
+					spin(@color,10);
+					spin(@color,-10);
+					
+					mix(@color1,@color2);
+						混合两种颜色
+			运算符
+				+	- * /
+				注意：
+					几乎所有的数字数据都可以进行运算，长度单位，颜色，角度单位等
+				数学相关的函数
+					ceil() 向上取整
+					floor() 向下取整
+					round() 四舍五入
+					...
+ * */

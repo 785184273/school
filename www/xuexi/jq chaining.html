@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+			chaining技术，允许我们在相同的元素上运行多条 jQuery 命令，一条接着另一条。
+			*/
+			$(function (){
+				//注意：虽然这样连着写没什么错误，但是代码的可读性降低了不少
+				//$('p').css({color:'red',fontFamily:'Mircosoft Yahei'}).slideUp(2000).slideDown(2000);
+				
+				$('p').css({color:'red',fontSize:'12px'})
+					.slideUp(2000)
+					.slideDown(2000);
+			})
+		</script>
+	</head>
+		<body>
+			<p>jQuery 乐趣十足</p>
+		</body>
+</html>

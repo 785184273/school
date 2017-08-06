@@ -1,0 +1,428 @@
+@media screen and (max-width:1200px){
+	nav{
+		width :970px;
+	}
+	.nav-list li{
+		margin: 0px 10px;
+	}
+	.banner aside{
+		width : 100%;
+		left: 0;
+		margin: 0;
+	}
+	.banner-info{
+		bottom: 30%;
+		right: 25%;
+	}
+	.iphone,.android{
+		width: 7rem;
+		height: 2.5rem;
+		line-height: 2.5rem;
+	}
+	.other{
+		height: 330px;
+		width: 1200px;
+		margin: 0 auto;
+		margin-top: 70px;
+	}
+	.other{
+		width: 100%;
+		margin: 0 auto;
+		margin-top: 70px;
+	}
+	.Tab{
+		width: 100%;	
+	}
+	.tab{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.footer{
+		width: 100%;
+		margin: 0 auto;
+		padding-top: 70px;
+	}
+	.footer-logo{
+		margin: 0 auto;
+		width: 388px;
+		height: 55px;
+		background: url(../img/111_03.png) no-repeat center center;
+	}
+}
+@media screen and (max-width:970px){
+	nav{
+		width :100%;
+	}
+	.nav-list li{
+		margin: 0px 5px;
+	}
+	.banner aside{
+		width : 100%;
+		left: 0;
+		margin: 0;
+	}
+	.banner-info{
+		bottom: 25%;
+		right: 15%;
+	}
+	.iphone,.android{
+		width: 5rem;
+		height: 2rem;
+		line-height: 2rem;
+		font-size: 0.8rem;
+	}
+	.other{
+		width: 100%;
+		margin: 0 auto;
+		margin-top: 50px;
+	}
+	.other p{
+		font-size: 0.9rem;
+	}
+	.other{
+		width: 100%;
+		height: 300px;
+		margin: 0 auto;
+		margin-top: 30px;
+	}
+	.Tab{
+		width: 100%;	
+	}
+	.tab{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.footer{
+		width: 100%;
+		margin: 0 auto;
+		padding-top: 60px;
+	}
+	.footer-logo{
+		margin: 0 auto;
+		width: 388px;
+		height: 55px;
+		background: url(../img/111_03.png) no-repeat center center;
+	}
+	
+}
+@media screen and (max-width:768px){
+	nav{
+		width :100%;
+	}
+	.nav-list li{
+		margin: 0px 3px;
+	}
+	.banner aside{
+		width : 100%;
+	}
+	.banner aside{
+		width : 100%;
+		left: 0;
+		margin: 0;
+	}
+	.banner-info{
+		bottom: 25%;
+		right: 18%;
+	}
+	.iphone,.android{
+		width: 3.5rem;
+		height: 1.5rem;
+		line-height: 1.5rem;
+		background-size: 1rem 1rem;
+		padding-left: 1.5rem;
+		font-size: 0.8rem;
+	}
+	.other{
+		width: 100%;
+		height: 600px;
+		margin: 0 auto;
+		margin-top: 30px;
+	}
+	.other .security,
+	.other .lease,
+	.other .Administration,
+	.other .UBI,
+	.other .platform{
+		float: left;
+		width: 30%;
+		margin: 0px 1.5%;
+		height: 330px;
+		text-align: center;
+	}
+	.other p{
+		font-size: 0.8rem;
+	}
+	.Tab{
+		width: 100%;	
+	}
+	.tab{
+		width: 100%;
+		margin: 0 auto;
+		padding-bottom: 100px;
+	}
+	.tab-right,.tab-left{
+		float: none;
+		width: 80%;
+		text-align: center;
+		margin: 30px auto;
+		
+	}
+	.Tab{
+		width: 100%;	
+	}
+	.tab{
+		width: 100%;
+		margin: 0 auto;
+		padding: 50px 0px;
+	}
+	.tab-right,.tab-left{
+		float: none;
+		width: 80%;
+		text-align: center;
+		margin: 30px auto;
+	}
+	.contact span{
+		font-size: 0.9rem;
+	}
+	.footer{
+		width: 100%;
+		margin: 0 auto;
+		padding-top: 50px;
+	}
+	.footer-logo{
+		background-size: 270px;
+	}
+	.footer-logo:hover{
+		background-size: 270px;
+	}
+	.footer-info{
+		text-align: center;
+		background: #202022;
+		padding: 0.8rem 0px;
+		margin-top: 2.5rem;
+		color: #818080;
+		font-size: 0.9rem;
+	}
+}
+@media screen and (max-width:595px){
+	nav{
+		width :100%;
+	}
+	.nav-logo{
+		display: none;
+	}
+	.nav-list{
+		float: left;
+	}
+	.nav-list li{
+		float: left;
+		margin-left: 15px;
+	}
+	.nav-list li:first-child{
+		margin-left: 3rem;
+	}
+	.banner aside{
+		width : 100%;
+	}
+	.banner aside{
+		width : 100%;
+		left: 0;
+		margin: 0;
+	}
+	.banner-info{
+		bottom: 25%;
+		right: 15%;
+	}
+	.iphone,.android{
+		width: 2.5rem;
+		height: 1rem;
+		line-height: 1rem;
+		background-size: 1rem 1rem;
+		padding-left: 1.5rem;
+		font-size: 0.5rem;
+	}
+	.other{
+		width: 100%;
+		margin: 0 auto;
+		margin-top: 20px;
+	}
+	.other{
+		width: 100%;
+		height: 850px;
+		margin: 0 auto;
+		margin-top: 30px;
+	}
+	.other .security,
+	.other .lease,
+	.other .Administration,
+	.other .UBI,
+	.other .platform{
+		float: left;
+		width: 45%;
+		margin: 0px 2.5%;
+		height: 300px;
+		text-align: center;
+	}
+	.other p{
+		font-size: 0.6rem;
+	}
+	.Tab{
+		width: 100%;	
+	}
+	.tab{
+		width: 100%;
+		margin: 0 auto;
+		padding: 50px 0px;
+	}
+	.tab-right-title{
+		margin: 0px;
+	}
+	.tab-right-title li{
+		float: none;
+		display: inline-block;
+		margin : 0px
+	}
+	.tab-right,.tab-left{
+		float: none;
+		width: 80%;
+		text-align: center;
+		margin: 30px auto;
+		
+	}
+	.contact span{
+		font-size: 0.9rem;
+	}
+	.footer{
+		width: 100%;
+		margin: 0 auto;
+		padding-top: 40px;
+	}
+
+	.footer-logo{
+		background-size: 250px;
+	}
+	.footer-logo:hover{
+		background-size: 250px;
+	}
+	.footer-info{
+		text-align: center;
+		background: #202022;
+		padding: 0.8rem 0px;
+		margin-top: 2.5rem;
+		color: #818080;
+		font-size: 0.9rem;
+	}
+}
+@media screen and (max-width:400px){
+	nav{
+		width :100%;
+	}
+	.nav-list li{
+		text-align: center;
+		float: none;
+		display: inline;
+		margin: 0px 0px;
+	}
+	.nav-list li:first-child{
+		margin-left:1rem;
+	}
+	.banner aside{
+		width : 100%;
+	}
+	.banner aside{
+		width : 100%;
+		left: 0;
+		margin: 0;
+	}
+	.banner-info{
+		bottom: 25%;
+		right: 18%;
+	}
+	.iphone,.android{
+		display: none;
+	}
+	.other{
+		width: 100%;
+		height: 1250px;
+		margin: 0 auto;
+		margin-top: 30px;
+	}
+	.other .security,
+	.other .lease,
+	.other .Administration,
+	.other .UBI,
+	.other .platform{
+		float: left;
+		width: 90%;
+		margin: 0px 5%;
+		height: 250px;
+		text-align: center;
+	}
+	.other p{
+		font-size: 0.5rem;
+	}
+	.Tab{
+		width: 100%;	
+	}
+	.tab{
+		width: 100%;
+		margin: 0 auto;
+		padding: 50px 0px;
+	}
+	.tab-right,.tab-left{
+		float: none;
+		width: 80%;
+		text-align: center;
+		margin: 30px auto;
+		
+	}
+	.tab-right-title{
+		margin: 0;
+	}
+	.tab-right-title li a{
+		font-size: 1rem;
+	}
+	.tab-right-title li{
+		float: none;
+		display: inline-block;
+		margin: 0px;
+	}
+	.tab-info-list li .date{
+		display: none;
+	}
+	.footer{
+		width: 100%;
+		margin: 0 auto;
+		padding-top: 30px;
+	}
+	.footer-logo{
+		width: 200px;
+		background-size: 200px;
+	}
+	.footer-logo:hover{
+		background-size: 200px;
+	}
+	.contact span{
+		margin-bottom: 20px;
+		font-size: 0.8rem;
+	}
+	.erweima{
+		transform: rotate(90deg);
+		position: absolute;
+		bottom : -300px;
+		left : 50%;
+		margin-left: -62px;
+		opacity: 0;
+		display: none;
+		transition: all .5s ease .1s;
+	}
+	.footer-info{
+		text-align: center;
+		background: #202022;
+		padding: 0.8rem 0px;
+		margin-top: 2.5rem;
+		color: #818080;
+		font-size: 0.8rem;
+	}
+}
+

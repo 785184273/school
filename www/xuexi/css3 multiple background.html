@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<style>
+			/*
+				多重背景，就是在css2里background的属性外加origin，clip，size值组成的新background的多次叠加，缩写时为用逗号隔开的没组值，用分解写法时，如果有多个背景图片，而其他的属性只有一个，表明所有的背景图片应用该属性
+				语法
+					background : color | image | position/size | repeat | attachment | clip | origin
+				注意：
+					1.用逗号隔开每组background的缩写值
+					2.如果有size值，需要紧跟position并且用/隔开
+					3.如果有多个背景图片，而其他的属性只有一个，表名所有的背景图片应用该属性值
+					4.background-color只能设置一个
+			*/
+			.demo{width:300px;
+				height:140px;
+				border:1px solid red;
+				background-color:pink;
+				background-image:url(http://img.mukewang.com/54cf2365000140e600740095.jpg),url(http://img.mukewang.com/54cf238a0001728d00740095.jpg),url(http://img.mukewang.com/54cf23b60001fd9700740096.jpg);
+				background-position:0px 0px,100px 0px,200px 0px;
+				background-repeat:no-repeat;
+				}
+		</style>
+	</head>
+		<body>
+			<div class = "demo"></div>
+		</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+			.even{
+				color:yellow;
+			}
+			.odd{
+				color:green;
+			}
+			.active{
+				color: blue;font-size: 30px;
+			}
+		</style>
+	</head>
+	<body ng-app = "App" ng-controller = "demo">
+		<p ng-cloak ng-class = "{active : true}">{{name}}</p>
+		<p ng-cloak ng-style = "mystyle">我的名字叫：{{name}}</p>
+		<ul>
+			<li ng-class-even = "'even'" ng-class-odd = "'odd'" ng-repeat = "x in list">{{x}}</li>
+		</ul>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 ng-style
+			 	为html元素添加style属性
+			 	ng-style属性值必须是对象，表达是返回的也是对象
+			 	对象由css属性和值注册，即是key => value对
+			 ng-class指令用于给html元素动态绑定一个或多个css类
+			 	ng-class指令的值可以是字符串，对象，数组
+			 	如果是字符串，多个类名使用空格分割
+			 	如果是对象，需要使用key = > value对，key为你想要添加的类名，value是一个布尔值，只有在value为true时才会被添加
+			 	如果是数组，可以由字符串或对象组成，数组的元素可以是字符串或对象
+			 ng-class-even
+			 	指令用于为html元素动态的绑定一个或多个类，但是只作用于偶数行
+			 	ng-class-even指令需要和ng-repeat指令配合使用
+			 ng-class-odd
+				指令用于为html元素动态的绑定一个或多个类，但是只作用于奇数行
+				ng-class-odd指令需要和ng-repeat指令配合使用
+			* * */
+			var App = angular.module("App",[]);
+			App.controller("demo",["$scope",function ($scope){
+				$scope.name = "小明";
+				$scope.classname = "active";
+				$scope.mystyle = {
+					"color" : "red",
+					"border" : "1px solid red"
+				}
+				$scope.list = [
+					"html",
+					"css",
+					"js",
+					"php"
+				]
+			}])
+		</script>
+	</body>
+</html>

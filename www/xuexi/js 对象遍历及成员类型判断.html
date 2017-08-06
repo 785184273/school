@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			var dog = {
+				hobby:"看家",
+				run:"在跑步"
+			};
+			
+			function cat(){
+				this.mingzi = "bosi";
+				this.color = "white";
+				this.age = 4;
+			}
+			cat.prototype = dog;
+			var kitty = new cat();
+			console.log(kitty.run);
+			
+			//对象访问成员：对象[成员名称],对象.成员名称
+			for(var k in kitty){
+				//区分本身的成员和继承的成员
+				//对象.hasOwnProperty(成员名称),判断该成员是否是本身拥有的，返回boolean
+				if(kitty.hasOwnProperty(k)){
+					console.log("自己的：" + k + "--- >" + kitty[k]);
+				}else{
+					console.log("继承的：" + k + "--- >" + kitty[k]);
+				}
+				
+			}
+			document.write("<hr />");
+			console.log("对象的遍历");
+			
+			function cat(){
+				this.name = "hello";
+				this.age = function (){
+					console.log(123);
+				}
+			}
+			var mm = new cat();
+			
+			for(var k in mm){
+				console.log(mm[k]);
+			}
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+	for-in
+	for(var 成员变量 in 对象){
+	
+	}
+	遍历成员的同时判断该成员是否是本身自己所拥有
+		对象.hasOwnProperty(成员名称);
+-->

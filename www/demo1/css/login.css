@@ -1,0 +1,21 @@
+@charset ut8;
+*{margin:0px;padding: 0px;}
+html,body,.container,.row,.form{
+	height:100%;
+}
+body{
+	font-family: "Microsoft Yahei";
+}
+body{background:url("../img/bg-login.jpg") no-repeat;background-size: cover;}
+.blank{height:20%;}
+.h4{
+	padding-top:9px;
+	padding-left: 30px;
+}
+.login{
+	background: #ffffff;
+	border-radius: 5px;
+}
+ul{
+	font-size: 12px;
+}

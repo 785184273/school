@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>data-*属性</title>
+	</head>
+	<body>
+		<ul id = "box">
+			<li data-age = "20" data-height = "180" class = "3">张三</li>
+			<li data-age = "18" data-height = "176" class = "4">李四</li>
+			<li data-age = "23" data-height = "177" class = "5">王五</li>
+		</ul>
+		<script type="text/javascript">
+			var ul = document.getElementById("box");
+			var lis = ul.getElementsByTagName("li");
+			/*
+			 获取属性的方法
+			 	1.obj.属性名字
+			 	2.getAttribute()
+			 获取自定义属性的方法
+			 	dataset['键名'];
+			 	只能获取自定义属性
+			 * */
+			for(var i = 0;i < lis.length;++i){
+				lis[i].innerHTML  = lis[i].innerHTML + " 年龄：" + lis[i].dataset["age"] + "，身高：" + lis[i].dataset["height"] + "，class：" + lis[i].className;
+			}
+			console.log(lis[0].className);
+			console.log(lis[0].getAttribute("data-age"));
+			//获取多个自定义属性
+			console.log(lis[0].dataset);
+			//获取单个自定义属性
+			console.log(lis[0].dataset["age"]);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style type = "text/css"> 
+		</style>
+		<script type = "text/javascript">
+		
+			/*
+			var formObj = document.form1;
+			formObj.province.selectedIndex = 1;
+			formObj.province.options[1].text = "传智播客";
+			window.alert(formObj.province.options[1].text);
+			*/
+			/*
+			二级菜单初始化
+				当网页加载完成时，将arr_province中的数据写入到name_province下拉列表中
+				name=city下拉列表数据，要根据name=provinc列表的默认选择(selectedIndex)而改变
+			根据name=province的选择，来改变name=city中的内容
+				当改变时，获取选择中的省份的索引值
+				城市列表，会根据传递过来的索引值，索取对应的二维数组中的数据，并写入city列表中
+			*/
+			var arr_province = ["请选择省/城市","北京市","上海市"];
+			var arr_city = [
+							["请选择省/城市"],
+							["东城区","西城区","朝阳区","宣武区"],
+							["宝山区","长宁区","丰贤区"]
+			];
+		window.onload = function()
+		{
+			//获取name=province和name=city的对象
+			var province = document.form1.province;
+			var city = document.form1.city;
+			//指定省份下拉列表中option标记的个数
+			province.length = arr_province.length
+			//循环将arr_province中的数据写入到<option>标记中
+			for(var i = 0;i < arr_province.length;i++)
+			{
+				province.options[i].text = arr_province[i];
+				province.options[i].value = arr_province[i];
+			}
+			//修改省份列表中默认选择项
+			var index = 0;
+			province.selectedIndex = index;
+			//指定城市下拉列表中option标记的个数
+			city.length = arr_city[index].length;
+			//循环将arr_city中对应的数据写入到option标记中
+			for(var j = 0;j < arr_city[index].length;j++)
+			{
+				city.options[j].text = arr_city[index][j];
+				city.options[j].value = arr_city[index][j];
+			}
+		}
+		function change(index)
+		{
+			//alert(index);
+			//获取name=province和name=city的对象
+			var province = document.form1.province;
+			var city = document.form1.city;
+			//修改省份列表中默认选择项
+			//指定城市下拉列表中option标记的个数
+			city.length = arr_city[index].length;
+			//循环将arr_city中对应的数据写入到option标记中
+			for(var j = 0;j < arr_city[index].length;j++)
+			{
+				city.options[j].text = arr_city[index][j];
+				city.options[j].value = arr_city[index][j];
+			}
+		}
+		</script>
+	</head>
+		<body>
+			<form name = "form1" method = "post" action = "login.php">
+				省份：<select name = "province" onchange = "change(this.selectedIndex)">
+				</select>
+				城市：<select name = "city">
+				</select>
+			</form>
+		</body>
+</html>

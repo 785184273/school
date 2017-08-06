@@ -1,0 +1,114 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript">
+		//图片自动切换   
+		/*
+		var timer;
+		function init()
+		{
+			//定时器:每隔一秒，调start2()函数一次
+			//定时器总是调用其他函数，而延时器总是调用自己所在的函数
+			timer = window.setInterval("start2()",500);
+		}
+		var i = 443;
+		function start2()
+		{
+			var imgObj = document.getElementById("img01")
+			//alert(imgObj);
+			imgObj.src = "img/"+i+".jpg";
+			i = i + 1;
+			//如果超过6则i = 443;
+			if(i > 445)
+			{
+				i = 443;
+			}
+			//window.clearInterval(timer);
+		}
+		*/
+		//一次性定时器
+		//window.setTimeout(alert("123"),1000);
+		//反复性定时器 
+		/*
+		var timer = window.setInterval("fn()",2000);
+		function fn(){
+			window.alert("席吧");
+		}
+		function fun(){
+			window.clearInterval(timer);
+		}
+		*/
+		//网页版的时钟
+		window.onload = init;
+		function init(){
+			//注意：在每次做时都提前调用时间，覆盖页面信息的时间差
+			fn();
+			var timer = window.setInterval("fn()",1000);
+		}
+		function fn(){
+			var today = new Date();
+			var obj = document.getElementById("date");
+			var year = today.getFullYear();
+			var month = today.getMonth() + 1;
+			var date = today.getDate();
+			var hours = today.getHours();
+			var min = today.getMinutes();
+			var sec = today.getSeconds();
+			var day = today.getDay();
+			if(sec < 10){
+				sec = "0" + sec;
+			}
+			if(day == 0){
+				day = "日";
+			}else if(day == 1){
+				day = "一";
+			}else if(day == 2){
+				day = "二";
+			}else if(day == 3){
+				day = "三";
+			}else if(day == 4){
+				day = "四";
+			}else if(day == 5){
+				day = "五";
+			}else{
+				day = "六"
+			}
+			//obj.innerHTML = year + "-" + month + "-" + date + "&nbsp" +hours + ":" + min + ":" + sec + "&nbsp星期：" + day;
+			//document.write(obj);
+			obj.innerHTML = today.toLocaleString();
+		}
+		</script>
+	</head>
+		<body  align="center">
+			<img id= "img01" src="img/kj11.jpg" width=358 height=428>
+			<input type = "submit" value = "清除" onclick = "fun()">
+			<div id = "date">
+			</div>
+		</body>
+<html>
+<!--
+定时器方法
+	一次性定时器： var timer = window.setTimeout("js代码","时间")
+		执行：是在时间过后就会执行js代码(只会执行一次)
+		时间：以毫秒为单位的
+	反复性定时器：var timer = window.setInterval("js代码","时间")
+		执行：是没过时间就会执行js代码(n次)
+		时间：以毫秒为单位的
+	setInterval()
+	功能：设置一个定时器，重复不断的执行js代码（周期性）
+	语法：var timer = window.setInterval(code,millisec)
+	参数：
+		code：是任何合法的js代码，一般情况下是js函数，该函数要放在引号中
+			举例：window.setInterval("close()",2000)
+				  window.setInterval(init,2000);传函数地址，因此不需要加小括号，如果加括号，是将函数的执行结果传到方法中。
+		millisec：毫秒值。1秒 = 1000毫秒
+	返回值：返回一个定时器的id变量，这个id变量给clearInterval()用来清除变量。
+	clearTimeout()
+	功能：清除一次性定时器id变量
+	语法：window.clearTimeout(timer)
+	参数：timer就是由setTimeout()设置的一次性定时器变量
+	clearInterval()
+	功能：清除重复性定时器id变量
+	语法：window.clearInterval(timer)
+	参数：timer就是由setInterval()设置的重复性定时器的id变量
+-->

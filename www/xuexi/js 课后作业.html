@@ -1,0 +1,177 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type="text/javascript">
+			//(函数)定义一个函数，求数组中的最大值
+			
+			/*var arr = [10,20,30,40,50];
+			//函数的定义 
+			function getMax(arr2){
+			//假设一个最大值
+									var max = arr2[0];	
+									var i;
+									for(i = 0;i < arr2.length;i++)
+										{
+											if(max<arr2[i])
+											{
+												max = arr2[i];
+											}
+												//document.write(arr[i]+" ");
+										}
+												document.write(max);
+								   }
+			//函数的调用 先执行函数的调用，把数组里面的参数传到函数里面
+			getMax(arr);
+			//(函数)定义一个函数，让用户输入一个年份，来判断是否是闰年，如果是闰年，输出发放双倍2月份工资，否则输出2月份工资减半
+			//这种函数不需要传值，利用全局变量来实现，全局变量要放在调用之前
+			var year = window.prompt("请输入一个年份");
+			function hanshu(){	
+				var  b;
+				if(year == null || year == 0)
+				{
+					b = "你取消了该项操作";
+				}else 
+				{
+					if(year%4 == 0 && year%100 != 0 || year%400 == 0)
+					{
+						b = "发放双倍2月份工资";
+					}else
+					{
+						b = "2月份工资减半";
+					}
+				}
+				return b;
+			   }
+			//函数调用
+			window.alert(hanshu());*/
+			//定义一个二维数组,(比如3行4列),输入任意12个数值,求该数组的平均值，最大值，最小值。
+			var arr = [
+						[10,20,30,40],
+						[50,60,70,80],
+						[90,100,110,120]
+					  ];
+			//注意；一维数组一层循环，二维数组两层循环
+			//注意：数组对象的length属性，只能统计每一维数组的长度，而不能统计多维数组的长度
+			//函数定义
+			function getNumber(){
+					var i = 0;	//代表行
+					var a = 0;	//代表列
+					var b = 0;	//
+					var max = arr[0][0];
+					var min = arr[0][0];
+					var sum = 0;
+					var len = 0;	//代表个数
+					for(i = 0;i < arr.length;i++)
+					{
+						//document.write(arr[i]+" <br>");
+						for(a = 0;a < arr[i].length;a++)
+						{
+							sum = sum + arr[i][a];
+							len++;
+							if(max < arr[i][a])
+							{
+								max = arr[i][a];
+							}
+							if(min > arr[i][a])
+							{
+								min = arr[i][a];
+							}
+						}
+					}
+					document.write("最大值为："+max+"<br>最小值为："+min+"<br>平均值为："+sum/len);
+			}
+			//函数的调用
+			getNumber();
+			document.write("<hr>");
+			//1.
+			var str = "itcaset/class/php/js/day2/abc.html";
+			//使用斜线分割字符串
+			var a = str.lastIndexOf(".")
+			var b = str.substr(a+1,4)
+			var c = str.substr(a-3,3)
+			document.write(b+" "+c+"<hr>");
+			//计算自己能再活多少天就能活到一百岁
+			var today = new Date();
+			var future = new Date(1995+100,5,8);
+			today = today.getTime();
+			future = future.getTime();
+			document.write((future-today)/86400000/365+"<hr>");
+			//
+			//var str = prompt(); 
+			/*
+				获取输入的单词
+				将单词转成全小写
+				将字符串转成数组
+				将数组反转
+				数组中的首位大写
+				将数组转成字符串
+			*/
+		//	if(str == null || str == 0)
+		//	{
+		//		window.alert("对不起你取消了该项操作");
+		//	}else
+		//	{
+		//		str = str.toLowerCase();
+		//		var arr = str.split("");
+		//		arr = arr.reverse();
+		//		arr[0] = arr[0].toUpperCase();
+		//		arr[arr.length-1] = arr[arr.length-1].toUpperCase();
+		//		arr = arr.join("");
+		//		window.alert(arr);
+		//	}
+			//定义一个函数，获取任意邮箱的用户名和域名
+			/*var email = window.prompt("请任意输入一个邮箱账号");
+			function getEmailName()
+			{
+				if(email == null || email == 0)
+				{
+					window.alert("对不起你取消了该项操作，或者你未输入内容");
+				}else
+				{
+					//第一种方法，用数组来做
+					//var arr = email.split("@");
+					//window.alert("用户名："+arr[0]+"\n"+"域名为："+arr[1]);
+					//第二种方法，用字符串来做
+					var index = email.indexOf("@");
+					var username = email.substr(0,index);
+					var hostname = email.substr(index+1);
+					window.alert("用户名："+username+"\n"+"域名为："+hostname)
+				}
+			}
+			getEmailName();
+			document.write("<hr>");*/
+			//函数：检查用户输入的用户名，是否含有[*,&,^,%,$,#,@,!,<,>,|,_,+,]等特殊字符.
+			var str  = window.prompt();
+			function jiancha(){
+			var arr = ["*","&","^","%","$","#","@","!","<",">","|","_","+","\\"];
+			if(str == null || str == 0 )
+			{
+				alert("对不起你取消了该项操作");
+			}
+			for(var a = 0;a < arr.length;a++)
+			{
+				//document.write(arr[a]);
+				for(var i = 0;i < str.length;i++)
+				{
+					//document.write(str.charAt(i));
+					if(str.charAt(i) == arr[a])
+					{
+		
+						return true;
+					}
+				}
+			}
+			return false;
+			}
+			if(jiancha())
+			{
+				window.alert("用户名不符合要求");
+			}else
+			{
+				window.alert("用户名符合要求");
+			}
+		</script>
+	</head>
+		<body>
+		</body>
+</html>

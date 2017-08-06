@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			var arr = new Array();
+			//*
+			var j = 0;
+			
+			for(var i = 0;i < 4;++i){
+				arr[i] = function (){
+							document.write("<br />" + (j++));
+							//可以用以上代码来实现还可以用闭包来实现
+							//document.write("<br />" + i);
+						}
+				//arr[i]();在for循环的内部可以进行调用访问到不同的值
+			}
+			//*/
+			//遍历之后此时数组是
+			/*
+				arr[0] = function (){document.write("<br />" + 0);}
+				arr[1] = function (){document.write("<br />" + 1);}
+				arr[2] = function (){document.write("<br />" + 2);}
+				arr[3] = function (){document.write("<br />" + 3);}
+			*/
+			//for循环遍历到最后的时候，i = 4不满足循环的条件
+			/*
+				下面的四行代码输出的结果和我们想象的结果不一样
+				原因：
+					通过for循环可以生成4个function,并且全部的function都要访问i变量，而系统里面的i变量只有一个，就是全局变量i，该i变量在for循环循环之后就定格为了4，而各个元素函数调用是在for循环之后进行的，因此调用的结果为4
+			*/
+			/*以上for循环的代码如以下6行代码
+			for(var i = 0;i < 4;++i){
+			}
+			arr[0] = function (){document.write("<br />" + i)}
+			arr[1] = function (){document.write("<br />" + i)}
+			arr[2] = function (){document.write("<br />" + i)}
+			arr[3] = function (){document.write("<br />" + i)}
+			*/
+			/*而我们需要的数字元素是这样的是4个独立的function,并且每个function都有自己可以访问的个性化信息
+			arr[0] = function (){document.write("<br />" + 0);}
+			arr[1] = function (){document.write("<br />" + 1);}
+			arr[2] = function (){document.write("<br />" + 2);}
+			arr[3] = function (){document.write("<br />" + 3);}				
+			*/
+			//*
+			arr[0]();	//0		4
+			arr[1]();	//1		4
+			arr[2]();	//2		4
+			arr[3]();	//3		4
+			//*/
+		</script>
+	</head>
+		<body>
+		</body>
+</html>

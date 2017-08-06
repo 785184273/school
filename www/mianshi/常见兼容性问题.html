@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body{
+				margin: 0px;
+				padding: 0px;
+				/*
+				 浏览器默认的margin和padding不同，解决方案是加一个全局的*(margin:0;padding:0)来统一
+				 * */
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				float: left;
+				margin: 5px 0px 5px 150px;
+				border: 1px solid red;
+				//display: inline;
+				/*
+				 	IE6双边距BUG：块属性标签float后，又有横行的margin情况下，在IE6显示的margin比设置的大，解决方案是在float的标签控制样式中加入display:inline；将其转化为行内属性
+				 * 	
+				 * */
+			}
+			#objheight{
+				height: 5px;
+				width: 100px;
+				border: 1px solid red;
+				//overflow: hidden;
+				line-height: 2px;
+				/*
+				 	在IE6,7中元素高度超出自己设置高度，原因是IE8以前的浏览器中会给元素设置默认的行高的高度导致的，解决的方案是加上overflow:hidden或设置line-height为更小的高度
+				 * */
+			}
+			#alpha{
+				opacity: 0.1;
+				filter: alpha(opacity=10);
+				/*
+				 	透明度IE用filter：alpha(opacity = 60),其他的主流浏览器用opacity = 0.6
+				 * */
+				background: red;
+				width: 100px;
+				height: 100px;
+			}
+			.a img{
+				border: none;
+				/*
+				 a标签(有href属性)嵌套下的img标签，在IE下带有边框，解决的办法是加上a img{border:none}
+				 * */
+			}
+			input{
+				border: none;
+				border-color: transparent;
+				/*
+				 input标签在去掉边框是border:none，在IE6下由于bug的问题，不会去掉边框，解决办法是border：none;border-color:transparent;或者border:0;或者border：0 none;
+				 * */
+			}
+			#father{
+				height: 300px;
+				width: 300px;
+				border: 1px solid red;
+			}
+			#father #son{
+				height: 100px;
+				width: 100px;
+				margin-top: 100px;
+				/*
+				 父子标签间用margin的问题，表现在有时除IE(6/7)外的浏览器子标签margin转移到了父标签上，IE6&7下没有转移,解决办法是父子标签之间用padding,兄弟标签之间用margin
+				 * */
+				border: 1px solid red;
+			}
+			#left{
+				width: 100px;
+				height: 100px;
+				border: 1px solid red;
+				float: left;
+				/*
+				 	假设两块DIV，第一块浮动，第二块没有浮动，在IE6下第二块会跑到第一块边上，并且两者之间还留有间距，单标准浏览器第二块重合与第一块，解决办法：改变设计思路，用 一个父div包住两个小DIV，父div使用相对定位，其中一个使用绝对定位
+				 * */
+			}
+			#parent{
+				border: 1px solid red;
+				width: 100px;
+				height: 100px;
+			}
+			.img_blank{
+				overflow: hidden;
+			}
+			.img{
+				//display: block;
+				float: left;
+				/*
+				 在进行页面的DIV css排版时，遇到IE6（firefox下也会偶遇）浏览器中的图片元素img下出现多余空白问题
+				 	解决办法
+				 		1.将图片转换为块级对象
+				 			设置img为：display:block;
+				 		2.设置图片的浮动属性
+				 			float:left
+				 * */
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<div id="objheight">
+			
+		</div>
+		<div id="alpha">
+			
+		</div>
+		<a href = "#" class = "a"><img src="img/001.jpg"/></a>
+		<input type="text" name="" id="" value="the one" />
+		<div id="father">
+			<div id="son">
+				
+			</div>
+		</div>
+		<div id="left">
+			
+		</div>
+		<div id="parent">
+			
+		</div>
+		<div class = "img_blank">
+			<img class = "img" src="img/001.jpg"/>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		document.write(123);
+	</script>
+</html>

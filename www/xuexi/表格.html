@@ -1,0 +1,102 @@
+<html>
+	<head>
+	</head>
+		<body>
+			<table align="center" border="0" width="600"  bordercolor="green" bgcolor="#f0f0f0" cellspacing="0" cellpadding="20" rules="all">
+				<tr>
+					<th>编号</th>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>学历</th>
+				<tr   align="center">
+					<td>1000</td>
+					<td>张三</td>
+					<td>男</td>
+					<td>初中</td>
+				</tr>
+				<tr height="100">
+					<td width="200"></td>  <!-- 单元格的宽就是行宽-->
+					<td height="200">赵梓健</td> <!--单元格的高就是行高-->
+					<td></td>
+					<td></td>
+				</tr>
+				<tr align="center" valign="top" bgcolor="red">
+					<td></td>
+					<td>吴开</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr align="center" valign="bottom">
+					<td rowspan="3"></td> <!--合并是有增就有减，要保证每一行的单元格个数不变-->
+					<td>陈龙</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>
+						<table border="4" width="70%">
+							<tr>陈龙是傻逼</tr>
+							
+						</table>
+					</td>
+					<td></td>
+					<td></td>
+				
+				</tr>
+				<tr>
+				
+					<td></td>
+					<td colspan="2"> 魔法少女吴开</td>
+				<!--<td></td>-->
+				</tr>
+				
+			</table>
+			
+		</body>
+</html>
+<!--
+表格是块元素
+	表格的结构
+		<table>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+table属性
+	width:表格宽度，单位可以是百分比，也可以是固定值
+	height:表格高度
+	border；边框粗细
+	align:表格水平对齐方式 center right left
+	bgcolor：表格背景色
+	background:表格背景图片
+	cellpadding:单元格边线到内容之间的距离（填充距离）
+	cellspacing:单元格与单元格之间的距离（间距）
+	rules:合并单元格边框线，取值：all
+	注意：rules兼容性不好，请使用css来取代它。
+<tr>属性————行
+	bgcolor：行的背景色
+	height：行的高度
+	注意：行没宽度，行的宽度就是表格的宽度
+	align：center(行中的文本水平居中)
+	valign:垂直居中，取值:top(上)，middle(中)，bottom（下）
+<td>或<th>属性	
+	<td>是普通单元格，<th>是标题单元格，居中加粗显示。
+	width:单元格宽度
+	height:单元格高度
+	bgcolor:单元格背景色
+	background:单元格背景图片
+	align：水平对齐
+	valign：垂直对齐
+	rowspan：上下单元格合并 合并的属性必须要放在第一个单元格中
+	colspan：左右单元格合并
+表格嵌表格
+	只能在<td>中嵌套一个表格
+
+	
+	
+	
+	
+-->

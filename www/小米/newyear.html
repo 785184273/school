@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body{
+				padding: 0;
+				margin: 0;
+				width: 100%;
+			}
+			#newyear{
+				height: 447px;
+				width: 100%;
+				overflow: hidden;
+				background: url("./images/newyearb.jpg");
+				text-align: center;
+			}
+			.bg{
+				width: 100%;
+			}
+			.snow{
+				opacity: 0.6;
+				background: rgba(255,255,255,0);
+				font-size: 100px;
+				position: absolute;
+				color: #FFFFFF;
+				transition: all 15s ease .1s;
+	
+			}
+		</style>
+	</head>
+	<body>
+		<div id="newyear">
+			<img src="./images/newyear.png"/>			
+		</div>
+		<img  class = "bg" src="./images/newyearR.jpg"/>
+	</body>
+	<script type="text/javascript">
+		var box = null;
+		var bg = null;
+		window.onload = function (){
+			var ny = new newYear();
+			ny.init();	
+		}
+		function newYear(){
+			this.box = document.querySelector("#newyear");
+			this.bg = document.querySelector(".bg");
+		}
+		newYear.prototype.init = function (){
+			this.bg.style.height = (document.documentElement.clientHeight - this.box.offsetHeight) + "px";
+			window.setInterval(this.createSnow,200);
+		}
+		newYear.prototype.createSnow = function (){
+			var snow = document.createElement("div");
+			var text = document.createTextNode("❉");
+			snow.appendChild(text);
+			document.body.appendChild(snow);
+			snow.style.fontSize = Math.random() * 30 + 20 + "px";
+			snow.className = "snow";
+			snow.style.top = -(Math.random() * 80 + 20) + "px";
+			snow.style.top = document.documentElement.clientHeight + "px";
+			snow.style.transform = "rotate(360deg)";
+			snow.style.left = Math.random() * document.documentElement.clientWidth + "px";
+			snow.style.left = Math.random() * document.documentElement.clientWidth + 2 + "px";
+			window.setTimeout(function (){
+				document.body.removeChild(snow);
+			},5800)
+		}
+	</script>
+</html>

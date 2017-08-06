@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 数据类型的转换
+			 * */
+			//转换成字数字
+				var str = "aasd";
+				console.log(str*1);	//NaN str先转成数值，str不能转成数值变成NaN
+			//转换成字符串
+				var a = 10;
+				console.log(a + "");//10 变量a先转成字符串，再相加，变成字符串的10
+			/*
+			 字符串中提取数值
+				parseInt()
+				parseFloat()
+				如果参数字符串第一个字符不能解析成数字，则返回NaN
+				
+			* */
+			//基本数据类型的转换
+				console.log(String(3432));	//3432
+				console.log(Number("123我的"));	//NaN
+				console.log(Boolean("我的"))		//true
+				console.log(parseInt(" 12 3.7我的"))	//123
+				console.log(parseInt("我的123.4"))	//NaN
+				console.log(parseFloat(" 13.00asd"))		//13
+			</script>
+	</body>
+</html>

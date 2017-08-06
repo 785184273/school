@@ -1,0 +1,40 @@
+@media screen and (max-width:640px){
+	/*脚部*/
+	footer{
+		width: 100%;
+	}
+	footer .concat{
+		background: #ffffff;
+		padding: 1.5rem 0;
+	}
+	footer .concat p{
+		font-size: 0.9rem;
+		margin-top: 0;
+		margin-left: 1rem;
+	}
+	footer .footer_info{
+		background: #0d0d0d;
+		padding: 1.5rem 0;
+	}
+	footer .footer_info ul:after{
+		content : "";
+		display: block;
+		height: 0;
+		width: 0;
+		clear: both;
+	}
+	footer .footer_info ul li{
+		float: left;
+		width: 24%;
+		text-align: center;
+		border-right: 1px solid #139e96;
+	}
+	footer .footer_info p{
+		margin: 0;
+		font-size: 0.8rem;
+		color: #c5c5c5;
+	}
+	footer .footer_info img{
+		width: 60%;
+	}
+}

@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<style type = "text/css">
+			ul{list-style:none;}
+			.box{border:px solid red;overflow:hidden;}
+			.left{border:1px solid red;width:150px;height:200px;float:left;}
+			.center{border:1px solid red;width:170px;height:200px;float:left;}
+			input{display:block;border:1px solid red;}
+			.right{border:1px solid red;height:200px;width:150px;float:left;}
+		</style>
+	</head>
+	<body>
+		<div class = "box">
+			<div class = "left">
+				<select multiple = "multiple">
+					<option value = "1">选项1</option>
+					<option value = "2">选项2</option>
+					<option value = "3">选项3</option>
+					<option value = "4">选项4</option>
+					<option value = "5">选项5</option>
+					<option value = "6">选项6</option>
+					<option value = "7">选项7</option>
+					<option value = "8">选项8</option>
+					<option value = "9">选项9</option>
+				</select>
+			</div>
+			<div class = "center">
+				<input type = "submit" value = "-->" onclick = "right()">
+				<input type = "submit" value = "==>" onclick = "rightAll()">
+				<input type = "submit" value = "<--" onclick = "left()">
+				<input type = "submit" value = "<==" onclick = "leftAll()">
+			</div>
+			<div class = "right">
+				<select multiple = "multiple">
+
+				</select>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(function (){
+			$("option").dblclick(function (){
+				if(this.parentNode.parentNode.class == "left"){
+					$(this).appendTo($(".right select"));
+				}else{
+					$(this).appendTo($(".left select"));
+				}
+			});
+		});
+		function right(){
+			$(".left select option:selected").appendTo($(".right select"));
+		}
+		function rightAll(){
+			$(".left select option").appendTo($(".right select"));
+		}
+		function left(){
+			$(".right select option:selected").appendTo($(".left select"));
+		}
+		function leftAll(){
+			$(".right select option").appendTo($(".left select"));
+		}
+	</script>
+</html>

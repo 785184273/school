@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script>
+			//短路操作
+				/*
+					逻辑与(如果第一个操作数能够决定结果，那么就不会在对第二个操作数求值，如果第一个操作数是false，无论第二个操作数是什么值，结果都不可能是true)
+						如果第一个操作数是对象，则返回第二个操作
+						如果第二个操作数对象，则只有在第一个操作数的求值结果为true的情况下才会返回该对象
+						如果有两个操作数都是对象，则返回第二个操作数
+						如果有一个参数是null则返回null
+						如果有一个参数是NaN则返回NaN
+						如果有一个参数是undefined则返回undefined
+				*/
+				/*
+					逻辑或(如果第一个操作数能够决定结果，那么就不会在对第二个操作数求值，如果第一个操作数是false,返回是结果就是false)
+						如果第一个操作数是对象，则返回第一个操作数
+						如果第一个操作数的求值结果是false，则返回第二个操作数
+						如果两个操作数都是对象，则返回第一个操作数
+						如果两个操作数都是null，则返回null
+						如果两个操作数都是NaN，则返回NaN
+						如果两个操作数都是undefined，则返回undefined
+						
+				*/
+			var found = true;
+			//var result = (found && some);
+			//alert(result);
+			
+			function person (){}
+			var p = new person();
+			var a = undefined && null;	//undefined
+			var a = NaN && null;	//NaN
+			var a = Object && null;	//null
+			var a = 123 && Object;	//Object
+			var a = p && Object;	//Object
+			var a = null && Object;	//null
+			alert(a);
+			
+			alert(31 * "nima");		//NaN
+			alert(null == 0);
+		</script>
+	</head>
+</html>

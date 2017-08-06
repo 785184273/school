@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<style>
+			/*
+			animation属性是一个简写属性，用于设置6个动画属性
+				animation-name		规定需要绑定到选择器keyframe名称
+				animation-duration		规定完成动画所花费的时间，以秒或毫秒计
+				animation-timing-function		规定动画的速度曲线
+				animation-delay			规定在动画开始之前的延迟
+				animation-iteration-count		规定动画应该播放的次数
+				animation-direction			规定是否应该轮流反向播放动画
+				
+			简写属性
+				animation name duration timing-function delay iteration-count  direction
+			*/
+			div{
+				width:100px;
+				height:100px;
+				background:pink;
+				position:relative;
+				animation:mymove 5s infinite;
+				-webkit-animation:mymove 5s infinite;
+			}
+			@keyframes mymove{
+				0%{left:0px;
+					top:0px;
+					}
+				
+				10%{left:50px;
+					top:100px;
+					transform:rotate(30deg);
+					background:green;
+					}
+				100%{
+					left:300px;
+					top:300px;
+					transform:rotate(80deg);
+					background:blue;
+				}
+			}
+		</style>
+	</head>
+		<body>
+			<div>
+			</div>
+		</body>
+</html>

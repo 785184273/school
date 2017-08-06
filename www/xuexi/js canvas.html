@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<style>
+			canvas{border:1px solid red;}
+		</style>
+		<script>
+			/*
+				出现在开始和结束标签中的内容是后备信息，如果浏览器不支持<canvas></canvas>，就会显示这些信息
+				canvas带有width和height属性
+					不带width和height默认宽是300px高150px
+				
+				和矩形的有关的方法有fillRect(),strokeRect(),clearRect(),
+					fillRect()方法在画布上绘制的矩形会填充指定的颜色，根据fillStyle属性来确定
+					strokeRect()方法在画布上绘制的矩形会使用指定的颜色描边，描边的颜色通过strokeStyle确定
+					clearRect()方法用于清除画布上的矩形区域，本质上这个方法可以把绘制上下文中的某个区域变的透明
+			*/
+			window.onload = function (){
+				var draw = document.getElementById('draw');
+				var draw1 = document.getElementById("draw1");
+				
+				//确定浏览器是否支持canvas元素
+				if(draw.getContext){
+					var context = draw.getContext("2d");	
+					var context1 = draw1.getContext("2d");	
+					//该方法返回一个用于在画布上绘图的环境
+					
+					//使用fillRect方法绘制蓝色矩形
+					context.fillStyle = "blue";
+					context.strokeStyle = "pink";	//描边，颜色和填充fillStyle的颜色规定一样，可以是字符串，渐变对象，模式对象
+					context.fillRect(0,0,100,100);
+					
+					//使用fillRect绘制红色矩形
+					context.fillStyle = "rgba(255,0,0,0.5)";	//透明度为0.5
+					context.fillRect(10,10,100,100);
+					
+					//使用clearRect方法清除画布上的矩形区域
+					context.clearRect(30,30,50,50);
+					
+					
+					//使用strokeRect方法绘制蓝色矩形
+					context1.strokeStyle = "blue";
+					context1.strokeRect(0,0,100,100);
+					
+					//使用strokeRect方法绘制红色矩形
+					context1.strokeStyle = "rgba(255,0,0,0.5)";
+					context1.strokeRect(10,10,100,100);
+				}
+			}
+		</script>
+	</head>
+		<body>
+			<canvas id = "draw"></canvas>
+			<canvas width = "200" height = "200" id = "draw1"></canvas>
+		</body>
+</html>

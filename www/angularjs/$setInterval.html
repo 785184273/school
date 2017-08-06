@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app = "App" ng-controller = "demo">
+		<input type="submit" ng-value = "text" ng-disabled = "isabled"/>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			var APP = angular.module("App",[]);
+			APP.controller("demo",["$scope","$interval",function ($scope,$interval){
+				var num = 5;
+				$scope.isabled = true;
+				$scope.text = num + "秒";
+				var timer = $interval(function (){
+					num--;
+					$scope.text = num + "秒";
+					if(num == 0){
+						$interval.cancel(timer);	//清除定时器
+						$scope.isabled = false;
+						$scope.text = "你可以点击了";
+					}
+				},1000)
+			}])
+		</script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<script>
+			var arr = [1,2,3,4];
+			arr[99] = 0;
+			// 注意：js中的length长度是数组的最大下标+1
+			console.log(arr.length);	//100
+			//数组的length是100，将数组的length改为4之后，4之后的所有项都变为undefined
+			arr.length = 4;
+			alert(arr[99]);	//undefined
+			
+			//数组的length是4，将数组的length改为101之后，4之后的所有项都变为undefined
+			arr.length = 101;
+			alert(arr[100]);	//undefined	
+			
+			console.log(Array.isArray(arr));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name = "viewport" content="width = device-width,initial-scale = 1,user-scalable = no">
+	<!--引入外部bootstrap的css文件-->
+	<link rel = "stylesheet" href = "./css/bootstrap.min.css">
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src = "./js/jquery.min.js"></script>
+	<!--再引入bootstrap.min.js文件-->
+	<script src = "./js/bootstrap.min.js"></script>
+	<script type="text/javascript" src = "./js/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>	
+<body>
+	<!-- 导航栏 -->
+	<div class = "container">
+		<nav class = "navbar navbar-fixed-top navbar-default navbar-inverse" style = "background:#000000;">
+			<div class = "container">
+				<div class = "navbar-header">
+					<button class = "navbar-toggle" type = "button" data-toggle = "collapse" data-target = ".navbar-responsive-collapse">
+					<span class = "sr-only">Toggle Navigation</span>
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+					</button>
+					<img style = "width:184px;"src = "./img/neu.jpg"/>
+				</div>
+				<div class = "collapse navbar-collapse navbar-responsive-collapse">
+					<ul class = "nav navbar-nav">
+						<li>
+							<a href = "">Dashboard<span class = ></span></a>
+						</li>
+						<li class = "dropdown">
+							<a href = "javascript:;" class = 'safe1'>安全服务<span class = "caret"></span></a>
+								<ul class = "dropdown-menu">
+									<li><a href= "./index_menu.html" target = "showpage">GitHub Scan</a></li>
+									<li><a href = "./scan_resultlist.html" target = "showpage">结果列表</a></li>
+									<li><a href = "./conf_keyword.html" target = "showpage">关键字配置</a></li>
+									<li><a href = "./conf_list.html" target = "showpage">白名单配置</a></li>
+									<li><a href= "./att_soft.html" target = "showpage">关注软件</a></li>
+									<li><a href= "./history_bug.html" target = "showpage">历史漏洞</a></li>
+									<li><a href= "./conf_url.html" target = "showpage">URL配置</a></li>
+									<li><a href= "">天眼</a></li>
+								</ul>
+						</li>
+						<li class = "dropdown disabled">
+							<a href= "javascript:;" class = 'safe'>业务安全<span class = "caret"></span></a>
+								<ul class = "dropdown-menu">
+									<li class = "disabled"><a href = "">当前状态</a></li>
+									<li class = "disabled"><a href = "">报表统计</a></li>
+									<li class = "disabled"><a href = "">详细日志</a></li>
+									<li class = "disabled"><a href = "">修改密匙</a></li>
+									<li class = "disabled"><a href = "">查询Token</a></li>
+									<li class = "disabled"><a href = "">IP白名单</a></li>
+									<li class = "disabled"><a href = "">帮助文档</a></li>
+								</ul>
+						</li>
+						<li class = "dropdown disabled">
+							<a href = "javascript:;"  class = 'user'>帐号管理<span class = "caret"></span></a>
+								<ul class = "dropdown-menu">
+									<li class = "disabled"><a href= "">联系人修改</a></li>
+									<li class = "disabled"><a href= "">密码修改</span></a></li>
+								</ul>
+						</li>
+						<li class = "dropdown disabled">
+							<a herf = "" data-toggle = "dropdown">意见反馈</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<!-- 一下使用mvc可以改变文件名进行文件加载 -->
+	<!--
+	<div class = "">
+		<iframe src="./index_menu.html" name = "showpage" scrolling="auto" frameborder="0" width = "100%" height = "550px" id = "iframe" ></iframe>
+	</div>
+	-->
+	<div class="embed-responsive embed-responsive-16by9 container-fluid divifr">
+		<iframe class="embed-responsive-item" src="./index_menu.html" name = "showpage"></iframe>
+	</div>
+</body>
+</html>
+

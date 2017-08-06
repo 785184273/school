@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app = "App">
+		<div ng-controller = "demo">
+			<h1>{{name}}</h1>
+		</div>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 $apply用于传播Model的变化
+			 $watch用于监视Model的变化
+			 * */
+			var App = angular.module("App",[]);
+			App.controller("demo",["$scope",function ($scope){
+				$scope.name = "hello world";
+				setTimeout(function (){
+					$scope.$apply(function (){
+						$scope.name = "hi";
+					})
+				},2000)
+			}]);
+		</script>
+	</body>
+</html>

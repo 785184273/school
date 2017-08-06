@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>配置列表</title>
+	<meta name = "viewport" content="width = device-width,initial-scale = 1,user-scalable = no">
+	<!--引入外部bootstrap的css文件-->
+	<link rel = "stylesheet" href = "./css/bootstrap.min.css">
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src = "./js/jquery.min.js"></script>
+	<!--再引入bootstrap.min.js文件-->
+	<script src = "./js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/conf_list.css">
+	<script type="text/javascript" src = "./js/conf_list.js"></script>
+</head>
+<body>
+	<div class = "container table-responsive">
+		<ul class = "nav nav-tabs">
+			<li class = "active" data-toggle = "tab" id = "obj_w"><a href = "" >项目白名单</a></li>
+			<li data-toggle = "tab" id = "doc_w"><a href = "">文件白名单</a></li>
+		</ul>
+		<div class = "insert">
+			<button  class = "btn btn-success btn-xs list" id = "addobj" value = "添加项目白名单">添加项目白名单</button>
+			<div class = "query" id = "select">
+				<span><strong>模糊查询：</strong></span>
+				<input type="text" name="select" class = "select"/>
+			</div>
+		</div>
+		<div id = "key_table">
+			<table class = "table table-bordered table-hover table-condensed table-striped " >
+				<tr>
+					<td>路径</td>
+					<td>创建时间</td>
+					<td>操作</td>
+				</tr>
+			</table>
+		</div>
+		<div id = "doc_table">
+			<table class = "table table-bordered table-hover table-condensed table-striped" >
+				<tr>
+					<td>路径</td>
+					<td>创建时间</td>
+					<td>操作</td>
+				</tr>
+				<tr>
+					<td colspan="3" style = "text-align:center;">暂无数据</td>
+				</tr>
+			</table>
+		</div>
+		<p id = "num">总计0条</p>
+		<p id= "err_list">可将误报的文件路径配置到白名单，以将其从结果列表剔除。</p>
+		<p id = "doc_list">文件白名单是点击“加白”按钮自动添加的，无需手动维护。</p>
+	</div>
+</body>
+</html>

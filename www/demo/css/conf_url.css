@@ -1,0 +1,7 @@
+@charset = utf-8
+*{margin:0px;padding: 0px;}
+body{margin:0px;padding: 0px;font-family:'微软雅黑';}
+.box{border-radius: 3px;border: 1px solid #dddddd;}
+.conf{margin-top: 10px;}
+.none{text-align:center;}
+.num{color:#777777;}

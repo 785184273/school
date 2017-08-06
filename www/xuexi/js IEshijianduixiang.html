@@ -1,0 +1,33 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<input type = "submit" id = "btn" value = "click me">
+		<script>
+			/*
+				属性/方法			说明
+				cancelBubble		默认值为false，但将其设置为true就可以取消事件冒泡(和dom中的stopPropagation()方法相同)
+				returnValue			默认值为true，但将其设置为false时将取消事件的默认行为(和dom中的preventDefault()方法的作用相同)
+				srcElement			事件的目标(和dom中的target属性相同)
+				type				被触发是事件类型
+				在ie中尽量少用this
+			*/
+			var btn = document.getElementById('btn');
+			//*
+			btn.onclick = function (){
+				alert("btn");
+				//window.event.cancelBubble = true;	//阻止事件流
+				//alert(window.event.srcElement === this);	//dom0级下，event.srcElement 和 this全等 			
+			}
+			//*/
+			/*
+			btn.attachEvent("onclick",function (event){
+				alert(event.srcElement === this);	//在ie中event.srcElement 和 this不全等
+			})
+			//*/
+			document.body.onclick = function (){
+				alert('body');
+			}
+		</script>
+	</body>
+</html>

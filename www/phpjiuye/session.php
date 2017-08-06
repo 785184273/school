@@ -1,0 +1,152 @@
+<?php
+	ini_set("session.save_path","f:");
+	//开启session
+	ini_set("session.cookie_lifetime",300);
+	//var_dump($_SESSION);
+	session_start();
+	//增加2个session数据
+	//$_SESSION['name'] = 'zhao';
+	$_SESSION['gender'] = 'male';
+	//删除session数据
+	//unset($_SESSION['gender']);
+	//修改
+	//$_SESSION['name'] = 'itcast';
+	//查询
+	$_SESSION = array();
+	//session_destroy();
+	//var_dump($_SESSION);
+	//清空session数据
+	//$_SESSION = array();
+	//var_dump($_SESSION);
+?>
+<!--
+Session技术
+	将会话数据存储在服务器端
+		如何区分会话数据属于哪台浏览器？
+			思路如下：
+				1.将不同的会话的session数据分别存储，存在session数据区
+				2.为每个数据区，设置一个唯一的标识
+				3.将给唯一的标识，分配到浏览器端
+		session技术，基于cookie技术，session的标识(session-ID)是存储于浏览器的cookie中
+			对比与cookie：
+				会话数据,本身安全性较高
+				请求时携带的数据量减少
+session基本操作
+	开启session
+		只有开启了session，php核心session功能才能生成唯一的标识
+		分配标识到浏览器，存储数据到数据区
+		session_start();
+	管理会话数据
+		超全局数组：$_SESSION，完成所有的功能
+		增删改查
+	有效期
+		常规情况下(绝大多数情况)
+		session在浏览器关闭时失效
+	项目中的登录凭证一般都选择session
+session机制运行流程
+	服务器端session会话数据区
+		默认：
+			存储在服务器端操作系统临时目录中的一个个独立的session数据区文件
+		存储方式(文件),及其存储位置(系统临时目录),都是可以被配置的php.ini
+		session.save_handler	存储形式
+		session.save_path	存储位置
+		注意:
+			ini_set("session.save_path","f:")一个会话对应一个存储文件
+			该存储文件是存储在服务器端的
+	浏览器端cookie中存储的session-ID
+		两种情况
+			1.浏览器端不存在session-ID
+				浏览器向服务器请求时，不会携带session-ID
+				服务器端由于要使用session机制，就回生成一个session-ID,在响应时就会分配给浏览器端
+			2.浏览器端已经存在session—ID
+				浏览器向服务器发出请求时，携带session-ID到服务器端
+				服务器端需要开启session机制，但由于浏览器已经携带了session-ID,就不需要重新生成，直接使用浏览器携带的就好了
+php对于session数据的处理
+	php代码中:$_SESSION完成session数据的操作
+	脚本执行结束后：session数据区(默认文件)中存储session数据
+	$_SESSION与session数据区(默认文件)之间的同步交互流程
+		要点：
+			1.session_id的确定
+			2.$_SESSION这个变量是在session_start()过程中，初始化的(定义并设置值),session_start()前，没有$_SESSION变量存在
+			3.仅仅在脚本周期内，操作$_SESSION，而不是去操作数据区
+			4.只有在脚本周期结束时，才会将当前脚本周期内处理好的session数据，
+			  存储到session数据区中去
+			5.每次请求都是相同的逻辑(无论所谓的第一次，还是第N次，服务器认为每次都是第一次)
+session数据的属性
+	session数据不像cookie数据，每个值都可以设置属性
+	session数据的属性值针对于所有的session数据
+	其次：导致session数据属性的原因，是存储在浏览器端cookie中的session-ID的属性导致的
+如何修改，修改该cookie变量的属性即可
+	1.ini_set()
+		在开启session之前，每次开启之前都要设置
+	2.session_set_cookie_params();
+		推荐做法
+		session机制专门为设置cookie的属性而创建的函数
+		session_set_cookie_params(有效期,有效路径,有效域,是否secure,是否httponly);
+强调
+	虽然session的属性可以被设置，但是几乎不会修改有效期，有效路径这两个属性
+数据类型的支持
+	session支持多种数据类型，除了资源
+session如何做大存储各种类型？
+	序列化&反序列化
+		在存储session数据时，同时记录下数据的类型和内容，
+		将某个php数据转换成可以记录内容和类型的字符串，该操作就称为序列化，其目的就是
+		通过字符串，来存储数据的内容和类型，为了将来再使用该字符串时，可以获取
+		原始数据的内容个类型
+		通过记录了内容和类型的字符串，获取原始php数据的转换工作，就称反序列化
+		序列化和反序列化，用于将php数据，永久存储时不丢失其内容和类型时使用，session就选择了使用序列化和反序列化
+	函数：
+		serialize()序列化
+		序列化后包含内容和类型的字符串 = serialize(php数据)
+		unserialize()反序列化
+		php数据 = unserialize(包含内容和类型的字符串)
+销毁sssion
+	调用了函数
+	session_destroy()
+	销毁session包含了两个工作
+		1.删除session对应的数据区(文件)
+		2.关闭session
+	导致的结果是，在下个脚本周期开启时，就不能再获取已经处理的session数据
+	语法上注意
+		session_destroy()仅仅会删除对应的数据区文件，而不会删除$_SESSION这个变量
+	实际操作：如何完全删除和当前sssion相关的内容？
+		function sessiondelete(){
+			//销毁，删除数据区
+			session_destory();
+			//删除$_SESSION变量
+			unset($_SESSION);
+			//删除cookie中的session-ID cookie变量
+			setcookie(session_name(),'','time()-1','/')//携带上所有设置的属性
+			//session_name()可以获取到php配置项session.name的值
+		}
+session的垃圾回收
+	php的session功能，会自动的删除那些过期的服务器端sssion数据区文件
+	如何判别垃圾？
+		判断数据区文件，是否超过了多久，没有被使用，默认是1440s
+		该值也可以被配置
+		session.gc_maxlifetime
+		配合上次修改的时间，计算出是否过期
+			当前时间-上次修改的时间>1440s
+	如何删除？
+		当我们开启session_start()，有概率的去执行删除过期session数据区文件的操作
+		默认的概率是：1/1000。由下面的配置：
+session和cookie的区别?
+	存储位置：
+	安全性：
+	数据量：
+	类型支持：
+	属性默认区别：
+session和cookie的联系
+	session依赖于cookie，session标识存储在cookie中！
+	cookie禁用session是否可用？
+		是可能的，
+			get	url
+			post 表单元素
+		php支持该配置，支持从url或者表单post数据中获取session-ID，并且支持自动
+	在url后和表单内，增加session-ID数据，自动传输
+	配置如下：
+		是否仅仅使用cookie传输session-idate
+		session.use_only_cookies
+		是否通过get，post或其他方式自动传输session-ID
+		session.use_trans_sid
+-->

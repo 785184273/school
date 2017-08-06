@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<script type = "text/javascript">
+			window.onload = init;
+			var i = 1
+			var setobj;
+			function init(){
+				var obj = document.getElementById("li1");
+				obj.style.background = "pink";
+				setobj = window.setInterval("change()",1000);
+			}
+			function change(){
+				var imgObj = document.getElementById("d1");
+				i++;
+				if(i > 5){
+					i = 1;
+				}
+				imgObj.src = "./img/" + i + ".jpg";
+				bgcolor();
+				var obj = document.getElementById("li" + i);
+				obj.style.background = "pink";
+			}
+			//鼠标放上图片切换停止
+			function stop(){
+				//清除定时器
+				window.clearInterval(setobj);
+			}
+			//鼠标离开图片恢复切换
+			function start(){
+				setobj = window.setInterval("change()",1000);
+			}
+			function stoptu(t){
+				//注意：切换图片的变量一定要一致，不然切换的图片顺序会变乱
+				var obj = document.getElementById("d1");
+				var n = t.innerHTML;
+				i = n;
+				//注意：先把所有标签的颜色都改为白色
+				bgcolor();
+				t.style.background = "pink";
+				obj.src = "./img/" + i + ".jpg";
+				window.clearInterval(setobj);
+			}
+			function starttu(){
+				setobj = window.setInterval("change()",1000);
+			}
+			function bgcolor(){
+				for(var j = 1;j < 6;++j){
+					var liObj = document.getElementById("li" + j);
+					liObj.style.background = "white";
+				}
+			}
+		</script>
+		<style type = "text/css">
+			div{border:1px solid red;
+				width:1065px;
+				height:400px;}
+			ul{border:px solid red;
+				float:right;
+				height:400px;
+				margin-top:0px;
+				padding:0px;
+				margin-right:20px;
+				margin-bottom:0px;}
+			ul li{list-style:none;
+				border:1px solid red;
+				margin:0px 0px;
+				width:70px;
+				height:78px;
+				text-align:center;
+				line-height:78px;}
+		</style>
+	</head>
+		<body>
+			<div>
+				<img src = "./img/1.jpg" id = "d1" onmouseover = "stop()" onmouseout = "start()">
+				<ul>
+					<li id = "li1" onmouseover = "stoptu(this)" onmouseout = "starttu()">1</li>
+					<li id = "li2" onmouseover = "stoptu(this)" onmouseout = "starttu()">2</li>
+					<li id = "li3" onmouseover = "stoptu(this)" onmouseout = "starttu()">3</li>
+					<li id = "li4" onmouseover = "stoptu(this)" onmouseout = "starttu()">4</li>
+					<li id = "li5" onmouseover = "stoptu(this)" onmouseout = "starttu()">5</li>
+				</ul>
+			</div>
+		</body>
+</html>

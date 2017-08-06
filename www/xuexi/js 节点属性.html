@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type = "text/javascript">
+		function init()
+		{
+		var node_html = document.firstChild;
+		var node_body = node_html.lastChild;
+		var node_img = node_body.firstChild;
+		//alert(node_img)
+		node_img.setAttribute("src","img/443.jpg");
+		node_img.setAttribute("border","1");
+		node_img.setAttribute("style","cursor:pointer")
+		node_img.removeAttribute("border")
+		}
+		function show()
+		{
+			//var node_body = document.body;
+			//var node_img = node_body.firstChild;
+			//node_img.getAttribute("border");
+			var obj = document.getElementsByTagName("input");
+			var str = obj[0].getAttribute("type");
+			obj[0].setAttribute("value","轻轻一点");
+			obj[0].style.border = "1px solid red";
+			console.log(obj[0].attributes);
+		}
+		</script>
+	</head>
+		<body onload="init()"><input type="submit" onclick="show()"/></body>
+</html>
+<!--
+节点属性
+		setAttribute(name,value):给某个节点添加一个属性
+		getAttribute(name):获取某个节点属性的值
+		removeAttribute(name)：删除某个节点的属性
+
+
+
+
+
+
+
+-->

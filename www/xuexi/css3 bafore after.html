@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<style>
+			/*
+			:before在被选元素的内容前面插入内容
+			:after在被选元素的内容后面插入内容
+			*/
+			p:before{
+				content:'歌名: ';
+				background:red;	//在被选元素的前面添加内容并设置样式
+			}
+			p:after{
+				content:' 演唱-林峰 ';
+				background:pink;	//在被选元素的后面添加内容并设置样式
+			}
+		</style>
+	</head>
+		<body>
+			<p>the one</p>
+		</body>
+</html>

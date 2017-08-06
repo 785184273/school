@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			//闭包
+			function f1(//week
+			){
+				//var week = "sunday";
+				var num = 200;
+				function f2(){
+					//document.write("<br />" + week);
+					document.write("<br />" + (++num));
+					//先++num再返回
+					//document.write("<br />" + (num++));	
+					//先返回num再++
+				}
+				return f2;
+			}
+			//var ff = f1(100);	//f1执行后会返回f2函数，函数(对象)对ff进行赋值
+			//document.write(ff);
+			//var fc = f1(110);
+			var ff = f1();	
+			var fc = f1();
+			ff();	//200
+			ff();	//201
+			//注意：生成的多个闭包函数彼此之间没有联系
+			fc();	//200
+			//通过ff()调用，输出sunday,不容易理解(sunday本身是week的局部变量信息，原则上是不能在外部环境进行访问)
+			
+			//f2和ff是同一个function两个不同名字,f2是局部变量,ff是全局变量，因此该function可以在内部,外部环境同时访问
+			
+			//无论是内部还是外部环境只要function执行，就与具体上下级环境没有直接关系，内部的week永远都是我们AO活动对象的属性，因此只要该function能访问到，就无视内部变量的来源，其就是AO活动对象的属性固话好的
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+	闭包
+		闭包就是一个函数，两个函数彼此嵌套，内部函数就是闭包
+		形成闭包条件是内部函数需要return给返回出来
+	闭包的特点
+		闭包有权利调用其父级环境的变量信息，父级环境的信息已经固话为本身AO的成员了
+	闭包使用规则
+		同一个闭包机制可以创建多个闭包函数出来，他们彼此没有联系，都是独立的，并且每个闭包可以保存自己个性化的信息
+-->

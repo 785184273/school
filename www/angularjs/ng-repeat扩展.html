@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.active{
+				background: red;
+			}
+			.active1{
+				background: green;
+			}
+		</style>
+	</head>
+	<body ng-app = "App" ng-controller = "demo">
+		<ul ng-repeat = "x in list">
+			<li>{{$index}}</li>	<!--0,1,2,3,4,5,6,7-->
+			<li>{{$first}}</li> <!--true,false,false,false,false,false,false,false,第一个为true，其余都是false-->
+			<li>{{$last}}</li> <!--false,false,false,false,false,false,false,true,最后一个为true，其余都是false-->
+			<li>{{$middle}}</li><!--第一个和最后一个是false，其余都为true-->
+			<li class = "{{$even? 'active' : 'active1'}}">{{x}}</li><!--奇数行为true，偶数行为false-->
+			<li>{{$odd}}</li><!--偶数行为true,奇数行为false-->
+		</ul>
+		<p ng-repeat-start = "x in list">{{x}}</p>
+		<p ng-repeat-end>{{x}}</p>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+		   * ng-repeat扩展
+		   * 	
+		   * */
+			var App = angular.module("App",[]);
+			App.controller("demo",["$scope",function ($scope){
+				$scope.list = ["html","css","js","jq","bootstrap","ajax","php","angular"];
+				console.log($scope);
+			}])
+		</script>
+	</body>
+</html>

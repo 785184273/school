@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+		<script type="text/javascript">
+			var name,sex,age,edu,time,school;
+			name="周财神";
+			sex="男";
+			age=20;
+			edu="大专";
+			time="2014年9月";
+			school="成都东软学院";
+			var str=" ";
+			str+='<table width="660" height="150" border="1" align="center" rules="all">';
+			str+=	'<tr>';
+			str+=		'<th colspan="4">'+name+'个人简历</th>';
+			str+=	'</tr>';
+			str+=	'<tr>';
+			str+=		'<td width="80">姓名：</td>';
+			str+=		'<td>'+name+'</td>';   // 注意：在这提示下，'<td>+name+</td>'不能这么写，我们需要的是变量的值，这样写就成字符串了，所有的都一样
+			str+=		'<td width="80">性别：</td>';
+			str+=		'<td>'+sex+'</td>';
+			str+=	'</tr>';
+			str+=	'<tr>';
+			str+=		'<td>年龄：</td>';
+			str+=		'<td>'+age+'</td>';
+			str+=		'<td>学历：</td>';
+			str+=		'<td>'+edu+'</td>';
+			str+=	'</tr>';
+			str+=	'<tr>';
+			str+=		'<td>毕业时间：</td>';
+			str+=		'<td>'+time+'</td>';
+			str+=		'<td>毕业学校：</td>';
+			str+=		'<td>'+school+'</td>';
+			str+=	'</tr>';
+			str+='</table>';
+			document.write(str);
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>

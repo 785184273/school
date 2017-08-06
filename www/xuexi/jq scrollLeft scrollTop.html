@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				scrollLeft
+					返回或设置匹配元素的滚动条的水平位置，滚动条的水平位置指的是从其左侧滚动过的像素数。当滚动条位于最左侧时，位置是 0。
+					语法：
+						$(selector).scrollLeft()	//获取滚动条的位置
+						$(selector).scrollLeft(position)	//设置滚动条的位置
+				scrollTop
+					方法返回或设置匹配元素的滚动条的垂直位置。
+					
+				
+			*/
+			$(function (){
+				$('input:eq(0)').click(function (){
+				
+					//获取匹配元素滚动条的位置
+					//alert($('.box').scrollLeft());
+					
+					//设置匹配元素滚动条的位置
+					$('.box').scrollLeft(300);
+				})
+				$('input:eq(1)').click(function (){
+					
+					//获取匹配元素滚动条的位置
+					//alert($('.box').scrollTop());
+				
+					//设置匹配元素滚动条的位置
+					$('.box').scrollTop(300);
+				})
+			})
+		</script>
+		<style>
+			.box{width:100px;height:100px;overflow:auto;}
+		</style>
+	</head>
+		<body>
+			<div class = "box">
+				<pre>
+				如果时间来到-林峰
+				就让剧情来预告
+				地设与天造
+				他配合你，谁亦看好
+				就像突然明白到
+				就算倾慕
+				退出了沉默更好
+				太想走进竟使我放慢脚步
+				人越近伤心更早
+				</pre>
+			</div>
+			<input type = "submit" value = "scrollLeft"/>
+			<input type = "submit" value = "scrollTop"/>
+		</body>
+</html>

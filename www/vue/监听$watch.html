@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#box",
+				data : {
+					a : 1,
+					arr : [1,2,3,4],
+					obj : {
+						name : "小明",
+						age : 20
+					}
+				}
+			});
+			vm.$watch("a",function (n,o){
+				console.log(n + "," + o);
+			})
+			vm.$watch("arr",function(n,o){
+				console.log(n + "," + o);
+			})
+			vm.$watch("obj",function(n,o){
+				console.log(JSON.stringify(n) + "," + JSON.stringify(o));
+			},{deep:true})
+		</script>
+	</body>
+</html>

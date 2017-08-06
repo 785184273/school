@@ -1,0 +1,42 @@
+<html>
+	<head>
+	</head>
+		<body>
+			<script>
+				//Object.getPrototypeOf()在所有支持的实现中，这个方法返回__prototype__的值
+				//hasOwnProperty()方法可以检测一个属性是否存在于实例中(true)，还是原型中(false)
+				function person(name){
+					this.name = name
+				}
+				person.prototype.sayhello = function (){
+					console.log(this.name);
+				}
+				person.prototype.age = 10;
+				var p1 = new person("小美");
+				var p2 = new person('小明');
+				p1.age = 20;
+				
+				//注意：读取对象中的属性时，现在对象的本身中开始找，如果找到该属性则返回属性的值，如果没找到再在原型对象中找，找到了就在返回该属性的值,如果没找到就在返回undefined
+				//alert(p1.age);	//20
+				alert(p1.we);	//undefined
+				
+				delete p1.age;	//使用delete操作符可以删除实例对象的属性
+				alert(p1.age);
+				
+				console.log(p1.sayhello === p2.sayhello);
+				console.log(person.prototype.isPrototypeOf(p1));
+				console.log(person.prototype.isPrototypeOf(p2));
+				console.log(Object.getPrototypeOf(p1) == person.prototype);
+				console.log(person.prototype);
+				console.log(Object.getPrototypeOf(p1));
+				console.log(p1.__proto__.constructor);
+				console.log(person.prototype.constructor);
+				
+				for(var k in p1){
+					if(p1.hasOwnProperty(k)){
+						console.log(p1[k]);
+					}
+				}
+			</script>
+		</body>
+</html>

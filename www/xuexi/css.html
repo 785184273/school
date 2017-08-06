@@ -1,0 +1,138 @@
+<html>
+	<head>
+		
+		<meta http-equiv="refresh" content="2">
+		<style type="text/css">
+			
+			h1{color:green;} /*将所有h1标签的内容颜色改变为绿色*/
+			.myclass{
+					color:red;
+					background-color:yellow;
+					} /* 将class为myclass的内容颜色变为红色，背景色变为黄色*/
+			#hehe{color:blue;}
+			h4,h6,.youqu{color:yellow;}
+			div h1.hh{color:blue;}
+		</style>
+		
+	</head>
+		<body>
+			<h1>chenlong nidaye</h1>
+			<h2 class="myclass">小开</h2>
+			
+			<p class="myclass">小小开</p>
+			<h5 id="hehe">魔法少女伍尚川</h5>
+			<h4>啊啊啊啊</h4>
+			<h6>哈哈哈</h6>
+			<h3 class="youqu">哦哦哦哦哦</h3>
+			<div>
+				<h1>绿色</h1>
+				<h1 class="hh">huangse</h1>
+			</div>
+		</body>
+</html>
+
+
+<!--
+	css语法
+		css，称为”层叠样式表“。
+		css就是给html标记来指定格式的。
+		一个css规则，由“选择器和“格式说明语句”构成。
+		”选择器“；就是选择html标记，换句话说：就是给哪个html标记加样式
+		”格式声明语句“；由｛｝构成，｛｝中是各种格式语句。
+		一条格式语句，由”属性名：属性值“构成。
+		每一条格式语句，必须用英文下的分号“;”结束
+		属性名，就是css中的各种属性，这些属性名都是固定的。
+		属性值，一个属性名可以取不同的值，这个值不加引号。
+		css中的数字单位都是px，这个px不能省略
+	css选择器
+		基本选择器
+			“*”选择器；通配符
+			描述，将匹配所有的html标记，所有的标记都会改变的。
+			语法*｛color：red;｝
+			注意：“*”尽量少用，因为ie6不支持。
+		标签选择器
+			描述；将匹配指定的html标记。
+			语法：h1{color:red;}
+			注意：css标签选择器，与html标记的名称一样，但是不能加尖括号
+		class选择器（类选择器）-----是使用频率最高的选择器
+			描述：给一类html标记加样式，这里所指的“一类”是；每个html标记都有一个class属性，且class的值一样，class属性是公共属性，每个html标记都有。
+			类选择器的名称，必须以”.“开头，后跟html标记的class属性的值，如.box{color:red;}
+			html标记的class属性的值，不能以数字开头
+		id选择器
+			描述：给指定id的元素添加样式
+			注意：同一个网页中html标记的id属性的值，必须是唯一的
+			没一个html标记都有一个id 的公共属性
+			id选择器的名称，必须以“#”开头，后跟html标记的id属性的值，
+			注意：id属性一般都是给js用的，不是让你加样式的，class属性，只能给css用，不能给js用
+		组合选择器
+			多元素选择器
+			给多个元素加同一个样式
+			举例：h1，p，div，body｛color：red;｝
+		后代元素选择器
+			描述；给某个标签的某一个后代元素加样式。选择器之间用”空格“隔开
+			举例：div .title{color:red;}
+		子元素选择器
+			描述；给某个元素的子元素添加样式。
+			举例：div > h1.title{color:red;} 查找div的子元素h1
+		伪类选择器：给超链接加的样式（链接的不同状态加样式）
+			一个超链接有四个状态
+			正常状态，（；link）鼠标没放上之前链接的样式
+			放上状态，（；hover）鼠标放到连接上的样式
+			激活状态，（；active）按住鼠标左键不松开的样式，这个状态很短暂
+			访问过的状态（；visited），按下鼠标左键并弹起，这时的样式效果
+		 *	在工作中，会使用一下的写法，来给链接加不同的样式；
+			a:link,a:visited{color:#444;text-decoration:none;} 将”正常状态“和”访问过的状态“合二为一
+			a:hover{color:#9900000;text-decoration:underline;} ”鼠标放上“单做一种效果
+		css注释
+			/*注释内容*/
+		css背景图片的添加：background-image:uri()
+			设置背景图片平铺：background-repeat:
+			取值：repeat-x,在水平方向使背景图片重复显示
+			repeat-y,在垂直方向使背景图片重复显示
+			repeat默认显示,
+			norepeat仅显示一次背景图像
+			background-position:改变图像在背景中的位置。
+	
+		css尺寸属性
+			width；元素宽度，一定要加px单位
+			height：元素高度。
+		css字体属性
+			font-size:文字大小 如；font-size：14px;
+			font-family；字体。如：font-family：微软雅黑;
+			font-style：斜体.取值；italic 如：font-style：italic
+			font-weight:粗体，取值；bold 如；font-weight；bold
+		css文本属性
+			color：文本颜色
+			text-decoration：文本修饰线，取值：none（无），underline（下划线），overline（上划线），line-through（删除线）
+			text-align：文本水平对齐方式，取值，left，right，center
+			line-height：行高，可以用固定值，也可以用百分比，如；line-height：24px; line-height：150%;
+			text-indent:首行缩进
+				只能设置为块级标签
+				其值可以为不同单位的数值，em字符宽度的倍数，或相对于浏览器窗口宽度的百分比%,允许使用负值，建议使用em作为设置单位
+				如；text-indent；28px;
+			letter-spacing；字间距。
+		css列表属性
+			list-style:列表样式，取值：none，去掉项目符号或编号前面的各种符号
+		css背景属性
+			background-color:背景颜色
+			background-image：背景图片地址 如：background-image：url（img/77.jpg）
+			
+		
+		css边框属性
+			每个元素都可以加边框线
+			border-left；左边框线。
+				格式：border-left：粗细 线型 线的颜色；
+				线型：none（无线），solid（实线），dashed(虚线)，dotted（点状线）
+				举例：border-left；5px dashed red：
+			border-right：右边框线
+			border-top：上边框线
+			border-bottom：下边框线
+			border：同时给四个框加边框线
+			注意：行内元素是没有宽高属性的，
+				  块元素才有宽高属性
+		
+		
+			
+			
+	
+-->

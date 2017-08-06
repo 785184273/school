@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 	IE4最早为document.readyState属性，然后其他浏览器也陆续添加了这个属性，最终html5吧这个属性纳入标准中，document的readyState有两个可能的值：
+			 		loading		正在加载文档
+			 		complete	已经加载完成
+			 	支持readyState属性的浏览器有IE4+,FF3.6+,Safari,Chrome和Opear9+
+			 * */
+			window.onload = function (){
+				console.log(document.readyState);	//complete
+				(function (){
+					alert(123);
+				})()
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app>
+		<input type="text" ng-model = "text" ng-model-options = "{debounce:3000}" />
+		<p ng-bind = "text"></p>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 	ng-model-options指令绑定了HTML表单元素到scope变量中
+			 	你可以指定绑定数据触发的时间，或者指定等待多少毫秒
+			 	语法
+			 		ng-model-options = "options"
+			 		参数值					描述
+			 			options				指定了绑定数据的规则
+			 								{updateOn:'event'}规定指定事件发生后绑定数据
+			 								{debounce:1000}规定等待多少毫秒后绑定数据
+			 								{allowinvalid:true|false}规定是否需要验证后绑定数据
+			 								{getterSetter:true|false}规定了是否作为getters/setters绑定到模型
+			 								{timezone:'0100'}规定是否使用时区
+			 * */
+		</script>
+	</body>
+</html>

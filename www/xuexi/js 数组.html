@@ -1,0 +1,309 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+			//99乘法表
+			//var str="";
+			//var a;
+			//var b;
+			//str += "<table width=600 border=0 align=center >";
+			//for(a = 1;a <= 9;a++)
+			//{
+			//str +=  	"<tr>";
+			//for(b = 1;b <= a;b++)
+			//{
+			//str += 			"<td>"+a+"&times"+b+"="+a*b+"</td>";
+			//}
+			//str +=  	"</tr>";
+			//}
+			//str += "</table>";
+			//document.write(str);
+			//实例，循环输出数组中所有元素的值
+			//var arr = ["张三","男",23,"未婚","大专","北京科技大学"];
+			//var i;
+			//for(i = 0;i < 6;i++)
+			//{
+			//	document.write(arr[i]+"<br>");
+			//}
+			//创建一个没有任何元素的数组 ,使用new关键字创建
+			//var arr = new Array();
+			//增加数组元素
+			//arr[0] = "周财神";
+			//arr[1] = "男";
+			//document.write(arr)
+			//创建一个数组，使用[]
+			//var arr = [10,29];
+			//arr[2] = "周财神";//增加元素只能往后面添加，往前面添加，得使用数组对象的方法
+			//arr[8] = "喔哟哟，好叼哦"; //添加的下标可以是不连续的
+			//delete arr[8];//删除的只是元素的值，而下标还有，空间还在
+			//document.write(arr[8]);
+			//使用数组保存个人信息
+			//var arr = ["张三","男",30,true,"大专",];
+			//构建输出结果
+			//var  str ="<h2>"+arr[0]+"的基本变量</h2>";
+			//str += "姓名："+arr[0];
+			//str += "<br>性别："+arr[1];
+			//str += "<br>年龄："+arr[2];
+			//str += "<br>婚否："+(arr[3] ? "已婚":"未婚");
+			//str += "<br>学历："+arr[4];
+			//str += "<br>毕业院校："+(arr[5] ?arr[5]:"未填写");
+			//document.write(str);
+			//2使用数组保存个人信息
+			//var arr = ["张三","男",30,true,"大专",];
+			//构建输出结果
+			//var  str ="<h2>"+arr[0]+"的基本变量</h2>";
+			//str += "姓名："+arr[0];
+			//str += "<br>性别："+arr[1];
+			//str += "<br>年龄："+arr[2];
+			//if(arr[3])
+			//{
+			//	str += "<br>婚否: 已婚";
+			//}else
+			//{
+			//	str += "<br>婚否：未婚";
+			//}
+			//str += "<br>婚否："+(arr[3] ? "已婚":"未婚");
+			//str += "<br>学历："+arr[4];
+			//if(arr[5])
+			//{
+			//	str += "<br>毕业院校"+arr[5];
+			//}else
+			//{
+			//	str += "<br>毕业院校：未填写";
+			//}
+			//str += "<br>毕业院校："+(arr[5] ?arr[5]:"未填写");
+			//document.write(str);
+			//例子：数组求平均值
+			//var arr = [1,2,3,4,5,6,7,8,9,10,11,12,90,57,40];
+			//var sum = 0;
+			//var a;
+			//var len = arr.length;
+			//for(a = 0;a < len;a++)
+			//{
+			//	sum = sum + arr[a];
+			//}
+			//document.write("平均值为："+sum/len);
+			/*1
+			var marks = window.prompt("请输入你的成绩",90);
+			if(marks==null)
+			{
+				document.write("你取消了操作");
+			}else if(marks >= 90)
+			{
+				document.write("优秀");
+			}else if(marks >= 80)
+			{
+				document.write("良好");
+			}else if(marks >= 70)
+			{
+				document.write("中等");
+			}else if(marks >= 60)
+			{
+				document.write("及格");
+			}else if(marks < 60)
+			{
+				document.write("不及格");
+			}
+			3.
+			var a;
+			var b = 0;
+			for(a = 1;a <= 100;a++)
+			{
+				
+				if(a%3==0)
+				{
+					b++;
+				}
+			}
+			document.write(b)
+			5.
+			var year;
+			var b = 0;
+			for(year = 2000; year <= 3000; year++)
+			{
+				if(year%4 == 0 && year%100 != 0 || year%400 == 0)
+				{
+					document.write(year+" ");
+					b++;
+				}
+			}
+			document.write("<br>"+b);
+			7.
+			var arr = [21,23,20,18,19,18];
+			var length = arr.length
+			var sum = 0;
+			var a;
+			for(a = 0; a < length;a++)
+			{
+				sum = sum + arr[a];
+			}
+			document.write(Math.round(sum/length));
+			9.
+			var arr = [10,23,45,342,12,45,32,45,21]
+			var a;
+			var sum = 0;
+			var b = 0;
+			var length = arr.length;
+			for(a = 0;a < length;a++)
+			{
+				
+				if(arr[a]%2==1)
+				{
+				document.write(arr[a]+" ")
+				b++;
+				sum = sum + arr[a];
+				}
+			}
+			document.write("<br>"+sum/b);
+			6.
+			var a = 0.00001;
+			var b = 0;
+			for(i = 1;i <= 30;i++)    
+			{
+				a = a * 2;
+				if(a<1)
+				{
+					b++;
+				}
+			}
+			document.write(a);
+			document.write("<br>"+b);
+			var arr = [1,4,5,8,13,45,12];
+			//假设一个最大值
+			var max = arr[0];
+			var maxIndex = 0;
+			//假设一个最小值
+			var min = arr[0];
+			var minIndex = 0;
+			var length = arr.length;
+			//循环比较
+			for(var i = 0;i < length;i++)
+			{
+				if(max < arr[i])
+				{
+					max = arr[i];
+					maxIndex = i;
+				}
+				if(min > arr[i])
+				{
+					min = arr[i];
+					minIndex = i;
+				}
+			}
+			document.write("最大值为："+max+"<br>"+"最大值的下标为："+maxIndex+"<br>");
+			document.write("最小值为："+min+"<br>"+"最小值的下标为："+minIndex);*/
+			//求数组中的最大值
+			var arr = [-1,-2,-3,-4,-5,-6,-7];
+			var len = arr.length;
+			var max = arr[0];
+			var sum = 0;
+			for(var i = 0;i < len;++i){
+				sum = sum + arr[i];
+				if(arr[i] > max){
+					max = arr[i];
+				}
+			}
+			document.write("数组中的平均值为：" + sum/len + "<br />");
+			document.write("数组中的最大值为：" + max + "<br />");
+			//求一个三行四列的数组的所有项的和 
+			var arr = [
+					[1,2,3,4],
+					[5,6,7,8],
+					[9,10,11,12]
+			];
+			var len = arr.length;
+			var sum = 0;
+			for(var i = 0;i < len;++i){
+				var temp = arr[i];
+				var count = arr[i].length;
+				for(var a = 0;a < count;++a){
+					sum = sum + temp[a];
+				}
+			}
+			document.write(sum + "<br />");
+			//求二维数组的最大值
+			var arr = [
+					[14,2,3,14],
+					[5,6,75,8],
+					[9,10,75 ,12]
+			];
+			var len = arr.length;
+			var max = arr[0][0];
+			for(var i = 0;i < len;++i){
+				var count = arr[i].length;
+				for(var a = 0;a < count;++a){
+					if(arr[i][a] >= max){
+						max = arr[i][a]
+						var btm ="[" + i + "]" + "[" + a + "]";
+					}
+				}
+			}
+			document.write("数组的最大值为: " + max + "下标为：" + btm);
+			document.write("<br />数组的遍历:")
+			var a = [1,2,3,4,5];
+			a['animal'] = "xiba";
+			a[21] = 7;
+			for(var k in a){
+				document.write("<br />" + k + "---" + a[k]);
+			}
+			//document.write(a.animal);
+			//console.log(a.length);
+		</script>
+	</head>
+		<body>
+		</body>
+</html>
+<!--
+数组
+	1数组的概念：一组数的集合，称为"数组"
+		var arr = [10,20,30,40,50];
+		var age1 = 20;
+		var age2 = 23;
+		var age3 = 24;
+		var sum = age1 + age2 + age3;
+		var arr = ["张三"，"男",24,"大专","成都东软学院"];
+	2数组的元素
+		数组中的每个值，称为一个"数组元素";
+	3数组索引
+		数组中有很多个值，每个值都有一个"编号"，通过编号可以访问到数组中的每个值
+		数组中的编号，又称为"下标"，或"索引号"
+		数组中的"下标号"，是从0开始的正整数，也就是说，第1个数组元素的下标为0，第2个数组元素的下标为1
+		第3个数组元素下标为2，然后依次类推
+		第一个数组元素的下标一定是0，最后一个数组元素的下标是：长度-1
+		使用数组的目的，就是使用循环遍历数组很方便
+	4数组元素的访问方法
+		var arr = [10,20,30,40,50];
+		var arr = ["张三"，"男",24,"大专","成都东软学院"];
+		访问的方法，数组变量名，后跟中括号[],[]中括号之内是数组元素的下标，例如arr[3];
+	5数组的长度；就是指数组中元素的总个数
+	6数组的创建方法：
+		使用new关键字和Array()来创建数组
+		var arr = new Array(); //创建一个空数组
+		var arr = new Array("周财神","男","未婚","傻逼") //创建一个数组，并初始化数组的元素
+		使用[]中括号的方式创建数组
+		var arr = [10,20,30,40,50];
+		中括号内，使用英文下的逗号分隔多个值
+		数组元素的值，可以是任何类型，如，字符型，数值型，布尔型，数组型，对象型，函数
+	7数组的操作
+		增加元素；添加一个不存在的下标的元素
+		删除元素；delete 删除的只是元素的值，而下标还有，空间还在
+		读取元素；读取已经存在的下标的元素，如 var age = arr[2];
+		修改元素；修改已经存在的下标的元素的值(重新赋值)，如 arr[2] = 26;
+	8数组对象属性length
+		一个数组其实就是一个"数组对象",把数组看成对象，是为了使用数组对象的属性方法
+		在js中所有的内容都是"对象"
+		那么，length就是数组对象的一个属性 var len = arrObj.length;
+		length属性，可以动态获取数组的长度，是数组最大下标加1
+	9数组的遍历
+		当数组下标不是数字的时候就成了数组对象，访问需要用对象的形式访问
+		for循环遍历
+			for循环遍历必训下标是连续的0，1，2，3....
+		for-in遍历
+			for(var 下标变量 in 数组/对象){
+			
+			}
+
+
+
+
+-->

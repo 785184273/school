@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<script>
+			var str = "http://www.123.com/shop/index.php?name=tom&age=23&addr=beijing";
+			//可以根据前面所学的知识进行拆分
+			/*
+			var arr = str.split("?");
+			//document.write(arr[1]);
+			var arr1 = arr[1].split("&");
+			console.log(arr1);
+			*/
+			var reg = /\w+=\w+/g;
+			
+			//正向预查:右边必须出现先"="信息,"="是辅助条件
+			reg = /[a-z]+(?==)/ig	
+			
+			var rst = str.match(reg);
+			console.log(rst);
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+	正向预查
+		辅助条件，都在查找内容的右边
+		正向匹配
+			我们要查找出来的内容，右边必须出现指定的信息，并且其实辅助条件，不是结果的一部分
+				var reg = /pattern(?=模式)/;	模式是辅助的条件(可以通过具体的"正则模式"进行设置);
+				例如
+					小写字母字符串右边要出现连续数字信息
+						var reg = /[a-z]+(?=\d+)/;
+		正向不匹配
+			我们要查找出来的内容，右边不能出现指定的信息，右边的信息是辅助条件非结果部分
+				var reg = /pattern(?!模式 )
+				模式是辅助的条件(可以通过具体的"正则模式"进行设置);
+				例如
+					today后面不能出现连续数字信息
+					var reg = /today(?!\d+)/;
+	反向预查(php支持)
+		辅助条件在被匹配字符串的左边
+		反向匹配
+			var reg = /(?<=模式)pattern/;
+				模式是辅助的条件(可以通过具体的"正则模式"进行设置);
+		反向不匹配
+			左边不能出现指定的信息
+			var reg = /(?<!模式)pattern/;
+				模式是辅助的条件(可以通过具体的"正则模式"进行设置);
+			
+		
+-->

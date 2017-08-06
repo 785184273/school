@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			html5可以在本地存储用户的浏览数据 
+				早些时候，本地存储使用的是cookie，但是web存储需要更加的安全于快速，这些数据不会被保存在服务器上，但是这些数据只用于用户请求网站数据上，他也可以存储大量的数据，而不影响网站的性能
+				数据以键/值对存在，web网页的数据只允许该网页访问使用
+			html5的web存储提供两种方式：
+				sessionStorage 会话存储(一次页面操作)
+				localStorage 本地存储(永久存储)
+			sessionStorage 会话级存储
+				sessionStorage用于本地存储一个会话(session)中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后，数据也随之销毁，会话是一个周期，会话开始的周期就是当你打开网页的那一刻直到网页被关闭的时候
+				sessionStorage方法：
+				方法名				参数名				描述
+				setItem(key,value)  key:存储数据的键		指定key和value保存数据
+									value:存储数据的值
+				getItem(key)		key:键名				通过key来获取数据
+				removeItem(key)		key:键名				通过key删除数据
+				clear()									清除所有数据
+			localstorage永久及存储
+				localstorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的
+				localStorage方法
+				方法名				参数名				描述
+				setItem(key,value)  key:存储数据的键		指定key和value保存数据
+									value:存储数据的值
+				getItem(key)		key:键名				通过key来获取数据
+				removeItem(key)		key:键名				通过key删除数据
+				clear()									清除所有数据	
+				
+				localStorage于sessionStorage最大的区别在于，使用sessionStorage保存数据只对当前窗口有效，这个窗口一旦关闭，数据也会被销毁
+		-->
+	</body>
+</html>

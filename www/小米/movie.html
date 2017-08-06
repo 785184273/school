@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				margin: 0px auto;
+				text-align: center;
+				height: 100px;
+				overflow: hidden;
+				position: relative;
+				transition: all 1s ease .1s;
+				background: #fdecd2;
+			}
+			.btn{
+				display: block;
+				width: 120px;
+				height: 12px;
+				background: url("./images/up-down_01.png");
+				position: absolute;
+				left: 50%;
+				margin-left: -60px;
+				bottom: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="./images/movie-1.jpg"/>
+			<a href = "javascript:void(0);" class = "btn">&nbsp;</a>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var btn = document.querySelector(".btn");
+		var box = document.querySelector("#box");
+		var flage = true;
+		window.setTimeout(function(){
+			down();
+			falge = true;	
+		},2000);
+		window.setTimeout(function(){
+			up();	
+			falge = false;
+		},1000);
+		btn.onclick = function (){
+			if(flage){
+				up();
+				flage = false;
+			}else{
+				down();
+				flage = true;
+			}
+		}
+		function up(){
+			box.style.height = "500px";
+			window.setTimeout(function (){
+				btn.style.background = "url(./images/up-down_02.jpg)";
+			},1000)
+		}
+		function down(){
+			box.style.height = "100px";
+			window.setTimeout(function (){
+				btn.style.background = "url(./images/up-down_01.png)";
+			},1000)
+		}
+	</script>
+</html>

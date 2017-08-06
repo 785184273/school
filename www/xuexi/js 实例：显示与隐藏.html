@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style type = "text/css">
+			#top{border:1px solid red;width:400px;height:30px;margin:0px auto;text-align:center;}
+			#buttom{border:px solid red;width:400px;height:300px;margin:0px auto;text-align:center;}
+			img{margin-left:20px;}
+		</style>
+		<script type = "text/javascript">
+			function shopping()
+			{
+				//通过id找对象
+				var divObj = document.getElementById("buttom")
+				var imgObj = document.getElementById("img1")
+				//alert(divObj.nodeName);
+				//divObj.style.backgroundColor = "green";
+				//判断divObj的display值
+				if(divObj.style.display == "block")
+				{
+					divObj.style.display = "none";
+					imgObj.src = "img/shangxia.png";
+				}else
+				{
+					divObj.style.display = "block";
+					imgObj.src = "img/shangxia1.png";
+				}
+			}
+		</script>
+	</head>
+		<body>
+			<div id = "top">
+				<div>根据你选择的商品,当当为您推荐<img onclick = "shopping()" src = "img/shangxia1.png" id = "img1"/></div>			
+			</div>
+			<div id = "buttom">
+				随风儿子大煞笔
+			</div>
+		</body>
+</html>

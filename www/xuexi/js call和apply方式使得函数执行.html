@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+		//函数的执行方式：call和apply方式
+		//函数(方法).call(函数内部this的指引,实参,实参,实参...)
+		//对象调用其他函数或(其他对象的)方法
+		//*
+		var name = "赵梓健"
+		function getInfo(){
+			document.write(name + "在爬树！<br />")
+		}
+		//getInfo();
+		
+		function f1(addr){
+			document.write("名字:" + this.mingzi + " 地址：" + addr + "<br />");
+		}
+		var pen = {
+			mingzi:'tom',
+		}
+		f1.call(pen,"四川");
+		//cat对象调用getInfo函数
+		var cat = {
+			name:"陈龙",
+			run:function (){
+				document.write(this.name + "在跑步!<br />");
+			}
+		}
+		getInfo.call(cat);	//call()使得cat调用getInfo函数
+		cat.run();
+		
+		var people = {
+			name:"唐磊",
+			active:function (){
+				document.write(this.name + "正在运动<br />");
+			}
+		}
+		people.active();
+		getInfo.call(people);
+		//*/
+		//对象调用其他方法
+		/*
+		var cat = {
+			name:"陈龙",
+			run:function (addr){
+				document.write(this.name + "在" + addr + "跑步!<br />");
+			}
+		}
+		var people = {
+			name:"唐磊",
+			active:function (){
+				document.write(this.name + "正在运动<br />");
+			}
+		}
+		cat.run.call(people,"院子");
+		//*/
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+	
+-->

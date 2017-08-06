@@ -1,0 +1,145 @@
+html,body,header,footer,nav,ul,section{
+	margin : 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+}
+body{
+	font-family: "微软雅黑";
+}
+
+a{
+	text-decoration: none;
+}
+.news_info:after,
+.info_cons:after,
+.link ul:after,
+header nav ul:after{
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	clear: both;
+}
+/*资讯中心*/
+.news_center{
+	background: #f8ecdc;
+	padding: 35px 0px;
+}
+.news_info{
+	width: 998px;
+	margin: 0 auto;
+}
+.info_left{
+	float: left;
+	width: 48%;
+	background: #f4e4cf;
+	padding: 10px 0px 0px 10px;
+}
+.info_right{
+	float: right;
+	width: 48%;
+}
+.info_con{
+	float: right;
+	width: 58%;
+	margin-right: 20px;
+}
+.info_con .info_title{
+	margin-top: 0px;
+	font-size: 16px;
+	font-weight: bold;
+	margin : 0px 0px 10px 0px
+}
+.info_con .info_title a{
+	color: #484848;
+}
+.info_con .info_center{
+	font-size: 14px;
+	color: #787878;
+	margin : 0px 0px 10px 0px
+}
+.info_con .info_more{
+	font-size: 14px;
+	margin : 0px 0px 10px 0px
+	
+}
+.info_con .info_more a{
+	color: #cd2525;
+}
+.info_right li{
+	font-size: 16px;
+	line-height: 35px;
+	border-bottom: 1px solid #d3b284;
+	position: relative;
+}
+.info_right li a:hover{
+	color: #FF6600;
+}
+.info_right li span{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.info_right li a {
+	color: #262525;
+}
+/*关于我们*/
+.about{
+	background: #d4bea0;
+	padding: 35px 0px;
+}
+.about_con{
+	width: 998px;
+	margin: 0 auto;
+}
+.about_con .about_info{
+	float : right;
+	width: 52%;
+	margin-right: 25px;
+}
+.about_con .about_info_con{
+	font-size: 16px;
+	text-indent: 2em;
+	line-height: 25px;
+	color : #212121;
+	
+}
+.about_con .about_info_con a{
+	color : #212121;
+}
+.about_con .about_info_con a:hover{
+	color : #FF6600
+}
+/*加盟问答*/
+.content{
+	background: #f8ecdc;
+	padding-top: 20px;
+}
+.content .join,.con_left{
+	width: 998px;
+	margin: 0px auto;
+}
+.con_main_title{
+	font-size: 16px;
+	font-weight: bold;
+	padding-top: 12px;
+	margin:0px;
+}
+.con_main_title a{
+	color: #000000;
+}
+.con_left_main{
+	margin: 0px;
+	padding: 18px 0px;
+	font-size: 14px;
+	color: #908e8b;
+}
+.con_title{
+	color: #920011;
+	font-size: 24px;
+	font-weight: bold;
+	margin-top: 0;
+	text-align: center;
+}

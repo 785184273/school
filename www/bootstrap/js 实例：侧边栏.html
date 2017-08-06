@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sidebar</title>
+	<!--引入外部bootstrap的css文件-->
+	<link rel = "stylesheet" href = "./css/bootstrap.min.css">
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src = "./js/jquery.min.js"></script>
+	<!--再引入bootstrap.min.js文件-->
+	<script src = "./js/bootstrap.min.js"></script>
+	<style type="text/css">
+		html,body{
+			/*height: 100%;*/
+			font-size: 12px;
+			font-family: "微软雅黑";
+			margin: 0px;
+			padding: 0px;}
+		.bar{width: 35px;
+			/*height: 100%;*/
+			min-height: 100%;
+			background: #e1e1e1;
+			border: px solid red;
+			position: fixed;}
+		ul{list-style: none;
+			/*height: 100%;*/
+			width:35px;
+			margin-top: 200px;
+			padding: 0px;}
+		li{border: px solid red;
+			text-align: center;
+			margin-top: 5px;}
+		.closebar{border: px solid red;
+			text-align: center;
+			position: absolute;
+			width: 35px;
+			bottom: 30px;
+			cursor: pointer;}
+		.nav-content{width: 200px;
+			position: fixed;
+			min-height: 100%;
+			background: #e1e1e1;
+			z-index: -1;
+			opacity: 0;}
+		.nav-back{border: px solid red;
+			text-align: right;}
+		.content{text-align: center;}
+	</style>
+</head>
+<body>
+	<div class="bar">
+		<ul>
+			<li id = "prof" class = "item">
+				<span class = "glyphicon glyphicon-user"></span>
+				<div>我</div>
+			</li>
+			<li id = "asset" class = "item">
+				<span class = "glyphicon glyphicon-usd"></span>
+				<div>资产</div>
+			</li>
+			<li id = "brand" class = "item">
+				<span class = "glyphicon glyphicon-heart"></span>
+				<div>品牌</div>
+			</li>
+			<li id = "broadcast" class = "item">
+				<span class = "glyphicon glyphicon-facetime-video"></span>
+				<div>直播</div>
+			</li>
+			<li id = "foot" class = "item">
+				<span class = "glyphicon glyphicon-eye-open"></span>
+				<div>看过</div>
+			</li>
+			<li id = "calendar" class = "item">
+				<span class = "glyphicon glyphicon-dashboard"></span>
+				<div>日历</div>
+			</li>
+		</ul>
+		<div class = "closebar">
+			<span class = "glyphicon glyphicon-remove"></span>
+		</div>
+	</div>
+	<div class="nav-content" id = "prof-content">
+		<div class = "nav-back">
+			<span class = "glyphicon glyphicon-chevron-left"></span>
+		</div>
+		<div class = "content">我</div>
+	</div>
+	<script type="text/javascript">
+		
+	</script>
+</body>
+</html>
+ 

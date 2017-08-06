@@ -1,0 +1,507 @@
+ <!DOCTYPE html> 
+<html lang = "zh-cn">
+	<head>
+		<meta charset = "utf-8"/>
+		<!--屏幕和设备的屏幕保持一直，初始缩放为1:1，禁止用户缩放-->
+		<meta name = "viewport" content = "width=device-width,initial-scale=1,user-scalable=no">
+		<style type = "text/css">
+			div[class*="col-"]{border:px solid red;}
+			p{border:px solid red;}
+			.clearfix{border:1px solid red;width:500px;margin:5px auto;}
+			.pull-left{width:100px;height:50px;border:1px solid red;}
+			.pull-right{width:100px;height:50px;border:1px solid red;}
+		</style>
+		<!--引入外部bootstrap的css文件-->
+		<link rel = "stylesheet" href = "./css/bootstrap.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src = "./js/jquery.min.js"></script>
+		<!--再引入bootstrap.min.js文件-->
+		<script src = "./js/bootstrap.min.js"></script>
+	</head>
+		<body style = "background:grey">
+			<div class = "container table-responsive" style = "background:white;border:1px solid red;">
+				<h1 class = "page-header text-center">大家好</h1>
+				<h3 class = "page-header text-right">产品<small>展示</small></h3>
+				<p>
+					<sub>KGI给出的预测数据显示</sub>，<em>苹果iPhone在今年出货量大约在2.05亿部左右</em>，
+					要比去年暴跌11.6％，而最差的话，则只有1.9亿部，相比过去锐减18％，
+					甚至低于2014年的业绩。<del>无论在哪种情况下，</del>
+					苹果在今年五大智能手机品牌中也会是唯一出现负增长的厂商，<strong>可谓危机重重</strong>。
+				</p>
+				<p class = "text-lowercase text-capitalize">
+					The sudden change of direction caught many by surprise including CRI,
+					which said breaking the deal was irresponsible and a violation
+					of the agreement it had signed last year with XpressWest.
+				</p>
+				<h3 class = "page-header">列表</h3>
+					<ul class = "list-unstyled list-inline">
+						<li><a href= "">html</a></li>
+						<li>css</li>
+						<li>mysql</li>
+					</ul>
+				<table class = "table table-bordered text-center table-hover table-striped table-condensed>
+					<tr class = "active">
+						<td>编号</td>
+						<td>产品的名称</td>
+						<td>状态</td>
+					</tr>
+					<tr class = "info">
+						<td>0001</td>
+						<td>奥迪</td>
+						<td>未发货</td>
+					</tr>
+					<tr class = "danger">
+						<td>0002</td>
+						<td>奥拓</td>
+						<td>已发货</td>
+					</tr>
+				</table>
+				<div class = "row">
+					<div class = "col-md-1">col-1</div>
+					<div class = "col-md-1">col-2</div>
+					<div class = "col-md-1">col-3</div>
+					<div class = "col-md-1">col-4</div>
+					<div class = "col-md-1">col-5</div>
+					<div class = "col-md-1">col-6</div>
+					<div class = "col-md-1">col-7</div>
+					<div class = "col-md-1">col-8</div>
+					<div class = "col-md-1">col-9</div>
+					<div class = "col-md-1">col-10</div>
+					<div class = "col-md-1">col-11</div>
+					<div class = "col-md-1">col-12</div>
+					<div class = "col-md-1">col-13</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-4 text-center">4列</div>
+					<div class = "col-md-8 text-right">8列</div>
+				</div> 
+				<div class = "row">
+					<div class = "col-md-2">2</div>
+					<div class = "col-md-3">3</div>
+					<div class = "col-md-7">7</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-4">
+						<image src = "./img/kj1.jpg" class = "img-responsive img-thumbnail">
+					</div>
+					<div class = "col-md-4">
+						<image src = "./img/kj1.jpg" class = "img-responsive img-rounded">
+					</div>
+					<div class = "col-md-4">
+						<image src = "./img/kj1.jpg" class = "img-responsive img-circle">
+					</div>
+				</div>
+				<div class = "row">
+					<div class = " col-xs-6 col-sm-3">col-1</div>
+					<div class = " col-xs-6 col-sm-3">col-2</div>
+					<div class = " col-xs-6 col-sm-3">col-3</div>
+					<div class = " col-xs-6 col-sm-3">col-4</div>
+					<div class = " col-xs-6 col-sm-3">col-5</div>
+					<div class = " col-xs-6 col-sm-3">col-6</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-1">col-1</div>
+					<div class = "col-md-1">col-2</div>
+					<div class = "col-md-1">col-1</div>
+					<div class = "col-md-1">col-2</div>
+					<div class = "col-md-1">col-1</div>
+					<div class = "col-md-1">col-2</div>
+					<div class = "col-md-1">col-1</div>
+					<div class = "col-md-1">col-2</div>
+					<div class = "col-md-1">col-1</div>
+					<div class = "col-md-1">col-2</div>
+					<div class = "col-md-1">col-1</div>
+					<div class = "col-md-1">col-2</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-4">col-1</div>
+					<div class = "col-md-2 col-md-offset-7">col-2</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-4">col-1</div>
+					<div class = "col-md-8">col-2</div>
+				</div>
+				<div class = "row">
+					<div class = "col-md-4 col-md-push-8">col-1</div>
+					<div class = "col-md-8 col-md-pull-4">col-2</div>
+				</div>
+				<p class = "text-muted text-capitalize text-center bg-success">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+				<p class = "text-danger text-capitalize text-center bg-info">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+				<p class = "text-warning text-capitalize text-center bg-warning">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+				<p class = "text-info text-capitalize text-center bg-primary">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+				<p class = "text-primary text-capitalize text-center bg-danger">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+				<p class = "text-success text-capitalize text-center" style = "background:red;">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+				<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<span class="caret"></span>
+				<div class = "clearfix">
+					<div class = "pull-left bg-primary">席吧</div>
+					<div class = "pull-right">啊啊</div>
+				</div>
+				<!--响应式表单-->
+				<form class = "form-horizontal">
+					<div class = "form-group">
+						<label for = "email" class = "col-md-2 col-xs-2 col-sm-2 text-right">邮箱</label>
+						<div class = "col-md-10 col-xs-10 col-sm-10">
+							<input class = "form-control" type = "emali" name = "email" id = "email" style = "width:200px;">
+						</div>
+					</div>
+					<div class = "form-group">
+						<label for = "pwd" class = "col-md-2 col-xs-2 col-sm-2 text-right">密码</label>
+						<div class = "col-md-10 col-xs-10 col-sm-10">
+							<input class = "form-control" type = "password" name = "pwd" id = "pwd" style = "width:200px;">
+						</div>
+					</div>
+					<!--复选框-->
+					<div class = "form-group">
+						<label class = "checkbox-inline">
+							<input type = "checkbox" name = "fav">唱歌
+						</label>
+						<label class = "checkbox-inline">
+							<input type = "checkbox" name = "fav">旅游
+						</label>
+						<label class = "checkbox-inline">
+							<input type = "checkbox" name = "fav">睡觉
+						</label>
+						<label class = "checkbox-inline disabled">
+							<input type = "checkbox" name = "fav" disabled>上网
+						</label>
+					</div>
+					<!--单选框-->
+					<div class = "form-group">
+						<label class = "radio-inline">
+							<input type = "radio" name = "sex" value = "男">男
+						</label>
+						<label class = "radio-inline disabled">
+							<input type = "radio" name = "sex" value = "女" disabled>女
+						</label>
+					</div>
+					<!--输入框组-->
+					<div class = "form-group input-group">
+						<div class = "input-group-addon">@</div>
+						<input type = "text" name = "sc"  class = "form-control">
+					</div>
+					<div class = "form-group input-group">
+						<input type = "text" name = "sc"  class = "form-control">
+						<span class = "input-group-addon">@</span>
+					</div>
+					<!--注意：这里的span和div都可以用-->
+					<div class = "form-group input-group">
+						<div class = "glyphicon glyphicon-search input-group-addon"></div>
+						<input type = "text" name = "sc" class = "form-control">
+					</div>
+					<!--按钮-->
+					<div class = "form-group">
+						<input type = "button" value = "确定" class = "btn btn-default active">
+						<input type = "button" value = "确定" class = "btn btn-warning btn-xs info">
+						<input type = "button" value = "确定" class = "btn btn-danger btn-lg">
+						<input type = "button" value = "确定" class = "btn btn-success btn-md">
+						<input type = "button" value = "确定" class = "btn btn-primary btn-sm">
+					</div>
+					<!--按钮组-->
+					<div class = "btn-group">
+						<input type = "button" value = "确定" class = "btn btn-default active">
+						<input type = "button" value = "确定" class = "btn btn-warning btn-xs info">
+						<input type = "button" value = "确定" class = "btn btn-danger btn-lg">
+						<input type = "button" value = "确定" class = "btn btn-success btn-md">
+						<input type = "button" value = "确定" class = "btn btn-primary btn-sm">
+					</div>
+				</form>
+				<!--缩略图-->
+				<div class = "row">
+					<div class = "col-lg-3 col-md-4 col-sm-6 col-xs-6">
+						<div class = "thumbnail">
+							<image src = "./img/kj1.jpg" class = " img-thumbail img-responsive">
+							<div class = "caption">
+								<h3 class = "">Thumbnail label</h3>
+								<p class = "text-muted">
+									Cras justo odio, dapibus ac facilisis in, 
+									egestas eget quam. Donec id elit non mi porta gravida at eget metus. 
+									Nullam id dolor id nibh ultricies vehicula ut id elit.
+								</p>
+								<div class = "text-right">
+									<a  href = "" class = "btn btn-sm btn-primary">看看</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class = "col-lg-3 col-md-4 col-sm-6 col-xs-6">
+						<div class = "thumbnail">
+							<image src = "./img/kj2.jpg" class = " img-thumbail img-responsive">
+							<div class = "caption">
+								<h3 class = "">Thumbnail label</h3>
+								<p class = "text-muted">
+									Cras justo odio, dapibus ac facilisis in, 
+									egestas eget quam. Donec id elit non mi porta gravida at eget metus. 
+									Nullam id dolor id nibh ultricies vehicula ut id elit.
+								</p>
+								<div class = "text-right">
+									<a  href = "" class = "btn btn-sm btn-primary">看看</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class = "col-lg-3 col-md-4 col-sm-6 col-xs-6">
+						<div class = "thumbnail">
+							<image src = "./img/kj3.jpg" class = " img-thumbail img-responsive">
+							<div class = "caption">
+								<h3 class = "">Thumbnail label</h3>
+								<p class = "text-muted">
+									Cras justo odio, dapibus ac facilisis in, 
+									egestas eget quam. Donec id elit non mi porta gravida at eget metus. 
+									Nullam id dolor id nibh ultricies vehicula ut id elit.
+								</p>
+								<div class = "text-right">
+									<a  href = "" class = "btn btn-sm btn-primary">看看</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class = "col-lg-3 col-md-4 col-sm-6 col-xs-6">
+						<div class = "thumbnail">
+							<image src = "./img/kj4.jpg" class = " img-thumbail img-responsive">
+							<div class = "caption">
+								<h3 class = "">Thumbnail label</h3>
+								<p class = "text-muted">
+									Cras justo odio, dapibus ac facilisis in, 
+									egestas eget quam. Donec id elit non mi porta gravida at eget metus. 
+									Nullam id dolor id nibh ultricies vehicula ut id elit.
+								</p>
+								<div class = "text-right">
+									<a  href = "" class = "btn btn-sm btn-primary">看看</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--下拉列表-->
+				<div class = "dropdown ">
+					<button class = "btn btn-success" data-toggle = "dropdown">
+						登录
+						<span class = "caret"></span>
+					</button>
+					<ul class = "dropdown-menu ">
+						<li><a href = "">QQ</a></li>
+						<li><a href = "">微博</a></li>
+						<li class = "divider"></li>
+						<li><a href = "">微信</a></li>
+						<li><a href = "">手机</a></li>
+					</ul>
+				</div>
+				<!--标签页-->
+					<ul class = "nav nav-tabs">
+						<li class = "active" data-toggle = "tab"><a href = "">home</a></li>
+						<li data-toggle = "tab"><a href = "">profile</a></li>
+						<li data-toggle = "tab"><a href = "">messages</a></li>
+					</ul>
+					<!--胶囊式-->
+					<ul class = "nav nav-pills">
+						<li class = "active"><a href = "">home</a></li>
+						<li><a href = "">profile</a></li>
+						<li><a href = "">messages</a></li>
+					</ul>
+					<ul class = "nav nav-pills nav-stacked">
+						<li class = "active"><a href = "">home</a></li>
+						<li><a href = "">profile</a></li>
+						<li><a href = "">messages</a></li>
+					</ul>
+				<!--导航栏-->
+				<nav class = "navbar navbar-fixed-top navbar-default navbar-inverse">
+						<div class = "container">
+							<div class = "navbar-header">
+								<img src = "./img/logo.png" height = "50"/>
+							</div>
+							<div class = "collapse navbar-collapse">
+								<ul class = "nav navbar-nav">
+									<li class = "active"><a href = "">home</a></li>
+									<li><a href = "">profile</a></li>
+									<li><a href = "">messages</a></li>
+									<li class = "dropdown">
+										<a herf = "" data-toggle = "dropdown">登录<span class = "caret"></span></a>
+												<ul class = "dropdown-menu">
+													<li><a href= "">QQ登录</a></li>
+													<li><a href= "">手机登录</a></li>
+													<li><a href= "">微信登录</a></li>
+												</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+				</nav>
+				<!--分页-->
+				<div class = "">
+					<ul class = "pagination">
+						<li><a href = "">&laquo;</a></li>
+						<li class = "active	"><a href = "">1</a></li>
+						<li><a href = "">2</a></li>
+						<li><a href = "">3</a></li>
+						<li><a href = "">4</a></li>
+						<li><a href = "">5</a></li>
+						<li><a href = "">&raquo;</a></li>
+					</ul>
+				</div>
+			</div>
+		</body>
+</html>
+<!--
+	bootstrap介绍
+		引入bootstrap环境的方法之一
+			1.文档要求必须是html5
+			2.以文件外链方式引入
+			以移动设备为优先
+			屏幕和设备的屏幕保持一直，初始缩放为1:1，禁止用户缩放
+			<meta name = "viewport" content = "width=device-width,initial-scale=1,user-scalable=no">
+		bootstrap布局容器
+			<div class = "container">	固定宽度 1170px
+				...
+			</div>
+			<div class = "container-fluid"> 宽度为100%
+				...
+			</div>
+			.排版的标签
+				<h1></h1> 36px
+				<h2></h2> 30px
+				<h3></h3> 24px
+				<h4></h4> 18px
+				<h5></h5> 14px
+				<h6></h6> 12px
+			.page-header	
+				设置页头，给标题加一个分隔线
+				<small></small>		副标题，小一号
+				<big></big>		副标题，大一号
+				<strong></strong>	推荐使用的加粗
+				<em></em>	推荐使用的斜体
+				<del></del>		推荐使用的删除线
+			文本对齐方式
+				.text-left	 左对齐
+				.text-center	居中对齐
+				.text-right	   右对齐
+			英文大小写问题
+				.text-uppercase		英文大写
+				.text-lowercase		英文小写
+				.text-capitalize	首字母大写
+			列表
+				.list-unstyled		去掉列表前面的符号，和原有的格式
+				.list-inline		把<li></li>之间的内容变成横向排列
+			自定义列表
+				.dl-horizontal		变成横向排列
+			表格
+				.table		表格的一个基类，如果加其他的样式都在.table的基础上
+				.table-bordered		给表格加外边框
+				.table-hover		鼠标悬停效果，鼠标移到行和单元格上，变色
+				.table-striped		斑马线效果，隔行换色
+				.table-condensed	让表格变得紧凑
+				.table-responsive	给table的父元素加，以移动设备为优先，如果内容不能完全的显示，会出现滚动条
+			状态类：可以为行或单元格设置颜色
+					class				描述
+					.active				鼠标悬停在行或单元格上时所设置的颜色
+					.success			标识成功或积极的动作
+					.info				标识普通的提示信息或动作
+					.warning			标识警告或需要用户注意
+					.danger				标识危险或潜在的带来负面影响的动作
+			响应式图片
+				.img-responsive
+			图片形状
+				.img-circle		椭圆形图片
+				.img-rounded	圆角矩形
+				.img-thumbnail	给图片加圆角的边框
+			栅格系统
+				栅格系统一定要放入容器中
+					<div class = "container"></div>
+					或
+					<div class = "container-fluid"></div>
+				栅格系统把浏览器窗口自动分配，自动12列
+					栅格系统是由(row)和列(column)
+					如果一“行（row）”中包含了的“列（column）”大于 12，多余的“列（column）”所在的元素将被作为一个整体另起一行排列。
+				如果想要做成响应式效果要做成栅格系统的参数
+			栅格系统偏移
+				注意：只能向右偏移
+				语法：col-xs/sm/md/lg-offset-数值
+				col-md-offset-2	pc中等屏幕向右偏移2个列
+				注意：如果偏移的列数在整行实现不了，则在下一行从第一列开始偏移
+			排列
+				语法：col-xs/sm/md/lg-pull	向左偏移
+					  col-xs/sm/md/lg-push	向右偏移
+			辅助类
+				情景文本颜色
+					.text-muted	柔和色
+					.text-primary
+					.text-success
+					.text-info
+					.text-warning
+					.text-danger
+				情景背景色
+					.bg-primary
+					.bg-success
+					.bg-info
+					.bg-warning
+					.bg-danger
+			关闭按钮
+				<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			三角符号
+				<span class="caret"></span>
+			快速浮动
+				pull-left	左浮动
+				pull-right	右浮动
+			清除浮动
+				clearfix	给父盒子加
+			表单
+				单独的表单控件会被自动赋予一些全局样式
+				所有设置了 .form-control 类的 <input>、<textarea> 和 <select> 元素都将被默认设置宽度属性为 width: 100%;
+				将 label 元素和前面提到的控件包裹在 .form-group 中可以获得最好的排列。
+				checkbox-inline 给label标签加，给包含<input>和内容加样式
+				radio-inline 给label标签加，给包含<input>和内容加样式
+			禁用状态
+				为输入框设置 disabled 属性可以禁止其与用户有任何交互（焦点、输入等）
+			分组
+				form-group	产生一定的距离
+			输入框组
+				input-group-addon	给组合的内容加
+				input-group		给父元素加
+			表单行内显示
+				form-inline		给表单加
+				form-horizontal	给表单加，变成响应式效果，必须结合栅格系统
+				注意：输入框不能使用栅格系统
+			按钮
+				<input type = "button" value = "">
+				<button>按钮</button>
+				<a href = ""></a>
+				.btn	是按钮样式的基类
+				.btn-primary
+				.btn-default
+				.btn-success
+				.btn-warning
+				.btn-danger
+				按钮大小
+				.btn-lg
+				.btn-sm
+				.btn-md
+				.btn-xs
+				按钮组
+				btn-group
+			下拉菜单
+				dropdown-menu	给下拉列表中的内容	给ul加样式
+				dropdown	包含触发的按钮和下拉列表加样式	--父元素
+				jquery{data-toggle = "dropdown"}		按钮的触发器
+				dropdown-menu-left	下拉列表的左对齐	
+				dropdown-menu-right		下拉列表的右对齐
+				divider 给<li></li>加，且之间没有内容
+			标签页
+				nav		是标签页的一个基类是给ul加的
+				nav-tabs	普通标签页
+				nav-pills	胶囊式的标签页
+				nav-pills	nav-stacked	
+			导航
+				在html5中用<nav>标签做导航
+				navbar		导航类的基类，用于<nav>元素
+				navbar_default		导航栏默认样式，用于<nav>元素
+				container		是<nav>的子元素,导航栏内容都放入其中
+				navbar-header	导航栏头部样式
+				navbar-fixed-top	导航栏固定到顶端用于<nav>元素
+				navbar-fixed-buttom		导航栏固定到底部用于<nav>元素
+				navbar-inverse		可以实现反色导航栏，用于<nav>元素
+				collapse	是折叠导航栏的样式的基类
+				navbar-collapse		是折叠
+			分页
+				pagination	ul上加
+				
+-->

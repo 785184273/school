@@ -1,0 +1,19 @@
+			body,img,table,form{margin:0px;padding:0px;background:#F0F8FF;color:grey;font-size:15px;}
+			.header{height:110px;border-bottom:1px solid grey;}
+			img{margin-left:253px;margin-top:32px;}
+			.artic{width:1000px;height:780px;margin:65px 0px;text-align:center;border:px solid red;margin-bottom:0px;margin-left:330px;}
+			form{border:px solid red;text-align:center;}
+			table{border:px solid red;margin:0px auto;}
+			.neirong{width:292px;height:30px;}
+			.menu{padding:0px 15px;}
+			input{width:292px;height:28px;border-radius:3px;border:1px solid grey;}
+			tr{height:58px;}
+			.tupian{float:left;}
+			.dianji{float:right;margin:25px 0px;margin-left:0px;color:#6A5ACD;}
+			.footer{height:125px;border-top:1px solid grey;}
+			ul{margin:50px auto;text-align:center;margin-bottom:;padding-left:280px;}
+			li{list-style:none;font-size:12px;border-right:1px solid grey;width:70px;float:left;text-align:center;}
+			a{float:left;}
+			a:link,a:visited{color:grey;text-decoration:none;}
+			a:hover{color:grey;text-decoration:underline;}	
+		

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function (){
+				createTable();
+			}
+			function createTable(){
+				var doc = document;
+				var table = doc.createElement("table");
+				var tr = doc.createElement("tr");
+				var td = doc.createElement("td");
+				var tdText = doc.createTextNode("四川");
+				doc.body.appendChild(table);
+				table.appendChild(tr);
+				tr.appendChild(td);
+				td.appendChild(tdText);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

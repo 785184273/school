@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+		<script type="text/javascript">
+//			window.onload = function (){
+//				alert(1);
+//			}
+//			window.onload = function (){
+//				alert(2);
+//			}
+			/*
+			 	原生加载事件第二个会覆盖第一个
+			 	jq加载事件不会覆盖，都会依次执行
+			 * */
+//			$(function (){
+//				alert(1);
+//				var ul = $("<ul></ul>");
+//				var li = $("<li>html</li>");
+//				$("body").append(ul);
+//				ul.append(li);
+//			})
+//			$(function (){
+//				alert(2);
+//			})
+
+			//原生js创建标签
+			
+		</script>
+	</head>
+	<body>
+		<img src="img/001.jpg"/>
+		<script type="text/javascript">
+			var ul = document.createElement("ul");
+			document.body.appendChild(ul);
+			var arr = ["html","css","js"];
+			for(var i = 0;i < 3; ++i){
+				var li = document.createElement("li");
+				var text = document.createTextNode(arr[i]);
+				li.appendChild(text);
+				ul.appendChild(li);
+			}
+			//
+			var liObj = document.createElement("li");
+			litext = document.createTextNode("bootstrap");
+			liObj.appendChild(litext);
+			ul.insertBefore(liObj,ul.firstChild);
+		</script>
+	</body>
+</html>

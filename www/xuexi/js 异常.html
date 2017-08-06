@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+		/*
+			var week = "sunday";
+			var weather = "sun";
+		try{
+			//有可能产生异常的语句
+			console.log("星期：" + week);
+			console.log("城市：" + city);	//undefined
+			//如果有异常异常就会被catch捕捉，该try后续的代码不给输出，中止执行
+			console.log("气候：" + weather);
+		}catch(ex){
+			//捕捉异常，ex是对象，可以获得异常错误信息
+			//错误的信息一般都存在日志文件中，给管理员查看
+			console.log(ex.message);
+		}finally{
+			console.log(111);
+		}
+		*/
+		function fnerror(){
+			throw new Error("我是一个自定义错误");
+		}
+		function func(){
+			fnerror();
+		}
+		func();
+		</script>
+	</head>
+		<body>
+		</body>
+</html>
+<!--
+	异常Exception
+		异常就是程序运行时的一种错误(语法错误)
+		在没有异常的时候，程序遇到"问题/错误"通常就会停止执行，给用户了一种不好的体验，使用异常后，即使程序有运行错误，我们也要把程序完整的运行完毕，以便给用户好的使用效果
+		代码：
+		try{
+			//有可能产生异常的语句
+		}catch(){
+			//捕捉异常,异常信息一般都是存在日志文件中的
+		}finall{
+			//在php里面没有finally
+			//最后必须,一定执行的语句
+			//无论代码是否有错误，代码都会在finally这部分给予执行
+		}
+	抛出异常
+		throw
+		语法：throw 对象
+		一般对象是new Error("错误消息");
+	异常使用注意
+		1.并不是全部代码都放在try里面，而是有可能产生异常的代码放在try里面
+		2.有一定容忍度的错误，可以设置异常，敏感错误不要设置异常
+		3.最后的finally根据情况需要使用，可以不设置
+-->

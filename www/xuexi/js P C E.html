@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			select{
+				min-width: 80px;
+			}
+		</style>
+	</head>
+	<body>
+		<select id = "province" name = "province" onchange = "selectC(this.value)">
+			<option>请选择</option>
+		</select>
+		<select id = "city" name="city" onchange = "selectA(this.value)">
+		</select>
+		<select id = "area" name="area">
+		</select>
+	</body>
+	<script src = "./js/template.js" type="text/javascript"></script>
+	<script id = "pce" type="text/html">
+		<option value="{{ProID}}">{{name}}</option>
+	</script>
+	
+	<script type="text/javascript">
+		window.onload = function (){
+			init();
+		}
+		function init(){
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function (){
+				if(xhr.readyState == 4 && xhr.status == 200){
+					var jsondata = JSON.parse(xhr.responseText);
+					for(var i in jsondata){
+						var data = jsondata[i];
+						var tmp = template("pce",data);
+						document.getElementById("province").innerHTML += tmp;
+					}
+				}
+			}
+			xhr.open("GET","./data/province.js");
+			xhr.send(null);
+		}
+		function selectC(ProID){
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function (){
+				if(xhr.readyState == 4 && xhr.status == 200){
+					var jsondata = JSON.parse(xhr.responseText);
+					var str = "";
+					str += "<option value = 0>请选择</option>"
+					for(var i in jsondata){
+						if(jsondata[i].ProID == ProID){
+							str += "<option value = " + jsondata[i].CityID + ">" + jsondata[i].name + "</option>";
+						}
+					}
+				 	document.getElementById("city").innerHTML = str;
+				}
+			}
+			xhr.open("GET","./data/city.js");
+			xhr.send(null);
+		}
+		function selectA(CityID){
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function (){
+				if(xhr.readyState == 4 && xhr.status == 200){
+					var jsondata = JSON.parse(xhr.responseText);
+					var str = "";
+					str += "<option value = 0>请选择</option>";
+					for(var i in jsondata){
+						if(jsondata[i].CityID == CityID){
+							str += "<option value = " + jsondata[i].Id + ">" + jsondata[i].DisName + "</option>";
+						}
+					}
+				 	document.getElementById("area").innerHTML = str;
+				}
+			}
+			xhr.open("GET","./data/area.js");
+			xhr.send(null);
+		}
+	</script>
+</html>

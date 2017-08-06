@@ -1,0 +1,178 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style>
+			h2{border:1px solid red;background:pink;width:500px;height:500px;}
+			div{width:300px;height:300px;background-color:pink;}
+			p{width:200px;height:200px;background-color:lightblue;}
+			span{background-color:lightgreen;}
+		</style>
+		<script>
+			window.onload = function(){
+				//匿名函数加载事件可以加载多个函数
+				f22();
+				fclick();
+			}
+			function fclick(){
+				var h3 = document.getElementsByTagName("h3")[0];
+				h3.onclick = function(){
+						window.alert(123);
+				}
+			}
+			function f22(){
+				var h3 = document.getElementsByTagName("h3")[0];
+				h3.style.background = "pink";
+			}
+		</script>
+	</head>
+		<body>
+			<h2>dom2级事件的设置</h2>
+			<input type = "submit" value = "取消事件(obj.removeEventListener())" onclick = "cancel()">
+			<input type = "text" id = "name"/>
+			<div>
+				<p>
+					<span>事件流</span>
+				</p>
+			</div>
+			<h3>加载事件</h3>
+			<form action = "./25.php" method = "POST">
+				<input type = "text" name = "username">
+				<input type = "submit" name = "button" value = "提交">
+			</form>
+		</body>
+		<script>
+			//设置事件
+			var hh = document.getElementsByTagName("h2")[0];
+			hh.addEventListener("mouseover",function (){
+				hh.style.border = "0px";
+				hh.style.background = "lightblue";
+			});
+			hh.addEventListener("mouseout",function (){
+				hh.style.border = "1px solid red";
+				hh.style.background = "pink";
+			})
+			hh.addEventListener("click",f1);
+			hh.addEventListener("click",f2);
+			//f1没有()括号，是函数的名字对click进行赋值
+			//为同一个元素绑定多个类似的事件
+			function f1(){
+				window.alert("有名函数");
+			}
+			function f2(){
+				document.write("啊席吧");
+			}
+			
+			//取消事件
+			//注意：事件取消的参数和绑定的参数必须一致
+			//事件取消的函数必须是有名函数
+			function cancel(){
+				hh.removeEventListener("click",f1);
+			}
+			var div = document.getElementsByTagName("div")[0];
+			var p = document.getElementsByTagName("p")[0];
+			var span = document.getElementsByTagName("span")[0];
+			div.addEventListener("click",function f1(event){
+				window.alert("X坐标：" + event.clientX + "\nY坐标：" + event.clientY);
+				document.write("<br />div对象");
+				event.stopPropagation();	//阻止事件流产生
+			});
+			p.addEventListener("click",function f2(event){
+				document.write("<br />p对象");
+				event.stopPropagation();	//阻止事件流产生
+			});
+			span.addEventListener("click",function f3(event){
+				document.write("<br />span对象");
+				event.stopPropagation();	//阻止事件流产生
+			});
+			document.write(navigator.userAgent);
+			//感知被触发键子信息
+			var text = document.getElementById("name");
+			text.addEventListener("keydown",function key(event){
+				window.alert(event.keyCode);
+			});
+			//阻止浏览器默认动作，
+			var form = document.getElementsByTagName("form")[0];
+			/*
+			form.onsubmit = function (){
+				return false;
+				//return false其只针对dom1级事件起作用
+			}
+			*/
+			form.addEventListener("submit",function (event){
+				event.preventDefault();	//停止浏览器跳转
+			});
+			</script>
+</html>
+<!--
+常用事件
+	onload:当网页加载完成时，只能给<body>用
+	onclick:当点击时，所有的标记都适用
+	onscroll:当拖动滚动条时
+	onMouseOver:当鼠标放上时
+	onmousemove:当鼠标移动时
+	onMouseOut:当鼠标移开时
+	onSubmit:当提交表单时
+	onReset:当重置表单时
+	ondblclick:双击事件
+	onFocus：当获得焦点是，把光标定位到文本框中
+	onBlur：当失去焦点时，把光标从文本框中移开
+	onchange：当下拉列表内容改变时，用在下拉列表，上传文件
+	onselect：当选中文本时
+	onresize：当改变窗口的大小时，发生的事件
+	onkeydown：键盘按下
+	onkeyup:键盘抬起
+	onkeypress：键盘按键一次
+	
+	event:保存事件发生时的相关信息
+		当事件发生的时候,event
+			全局变量event是事件对象
+			Event.clientX:事件发生时的X坐标
+			Event.clientY:事件发生时的Y坐标
+			event.pageX/pageY:相对dom区域坐标，给考虑滚动条距离
+			event.screenX/screenY:相对于屏幕坐标
+			Event.target:事件源
+			event.type:当前事件的类型
+			event必须要调用才能实现innerHTML:对象中所有的内容(文本内容和标签内容)指的是双标签和容器标签
+			
+	阻止事件流
+		event.stopPropagation();	//主流浏览器
+		window.event.cancelBubble = true  	//IE(678)浏览器
+		
+	阻止浏览器默认动作
+		浏览器默认动作，注册form表单页面，提交表单的时候，浏览器的页面会根据action的属性进行跳转，这个动作称为"浏览器默认动作"
+		event.preventDefault();
+	感知被触发键盘键子信息
+		event.keyCode 获得键盘对应的键值码信息
+		通过事件触发时候获得的keyCode数值码信息可以对应键盘的键子信息
+	innerText:获取对象中所有的文本内容
+	
+	this；代表当前对象
+dom2级方式事件设置
+	1.主流浏览器方式(包括IE9以上版本浏览器)：
+		设置事件
+		itnode.addEventListener(事件类型，事件处理[,事件流])
+		取消事件
+		itnode.removeEventListener(事件类型，事件处理[,事件流])
+	2.IE浏览器方式(6/7/8)
+		设置事件
+		itnode.attachEvent(事件类型，事件处理)
+		取消事件
+		itnode.detachEvent(事件类型，事件处理)
+	3.事件流
+		多个彼此嵌套元素，他们拥有相同事件，最内部元素事件被触发后，外边多个同类型事件也会被触发，多个元素他么同类型事件同时执行的效果称为"事件流"
+		事件类型:	就是我们设置的具体事件，例如：onclick
+					主流浏览器方式没有"on"标志，例如addEventlistener("click"...)
+					IE浏览器方式有"on"标志，例如attachEvent("onclick")
+		事件处理:	事件驱动，可以是一个有名/匿名函数
+					例如：addEeventListener("click",function (){}/有名函数)
+		事件流:		true捕捉型,[false]冒泡型
+		
+		事件取消(rmoveEventListener/detachEvent)操作具体要求：
+			1.事件处理必须是有名函数，不可以是匿名函数
+			2.事件取消的参数与绑定的参数完全一致(数量,内容)
+	3.dom2级事件设置的特点
+		1.可以为同一个对象设置多个同类型事件
+		2.事件取消也非常灵活
+		3.对事件流也有很好的处理
+
+-->

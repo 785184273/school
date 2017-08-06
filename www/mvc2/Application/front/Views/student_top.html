@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<style type = "text/css">
+			.top{background-color:#278296;height:50px;width:1000px;margin:0px auto;border:px solid red;}
+			a{color:white;text-decoration:none;}
+			.img{border:px solid red;}
+			ul{list-style:none;border:px solid red;float:right;margin-top:5px;margin-right:60px;}
+			li{border:px solid red;float:right;font: 12px "sans-serif","Arial","Verdana";color:white;margin-right:30px;}
+			.blank{background-color:white;height:1px;}
+			.menu{background-color:#80bdcb;height:25px;}
+			.menu{text-align:left;width:1000px;margin:0px auto;}
+			.menu ul{margin-left:30px;border:px solid red;margin-top:2px;float:left;margin-bottom:0px;padding:0px;}
+			.menu ul li{border:px solid red;float:left;margin:0px 10px;padding:1px}
+			.menu ul a{border-right:1px solid red;float:left;border-color:#192e32;padding:2px 0px;}
+		</style>
+		<script>
+			function show(){
+				var date = new Date(); //日期对象
+				var now = "";
+				now = date.getFullYear()+"-"; //读英文就行了
+				now = now + (date.getMonth()+1)+"-"; //取月的时候取的是当前月+1就可以了
+				now = now + date.getDate()+" ";
+				now = now + date.getHours()+":";
+				now = now + date.getMinutes()+":";
+				now = now + date.getSeconds()+" ";
+				document.getElementById("nowDiv").innerHTML = now; //div的html是now这个字符串 
+				setTimeout("show()",1000); //设置过1000毫秒就是1秒，调用show方法
+			}
+		</script>
+	</head>
+		<body margin = '0' onload = "show()">
+			<div class = "top">
+				<image class = 'img'src = "./img/ecshop_logo.gif">
+				<ul>
+					<li>
+						<a href = "?p=front&c=stu&act=destroy" onclick = "return jump()" target = "jump">
+						退出
+						</a>
+					</li>
+					<li id = 'nowDiv'></li>
+					<li>欢迎！:(学号)
+					<?php
+						echo $_SESSION['resources']['username'];
+						$username = $_SESSION['resources']['username'];
+					?>同学
+					</li>
+				</ul>
+			</div>
+			<div class = "blank">
+			</div>
+			<div class = "menu">
+				<ul>
+					<!--
+						a标签是一个超链接标签，href链接的页面内容，跳转到index.php target链接的页面显示在什么地方
+					-->
+					<a href = "" onclick = "grant()"><li>学生信息录入</li></a>
+					<a href = "" onclick = "grant()"><li>学生信息查询</li></a>
+					<a href = "" onclick = "grant()"><li>学生学分排序</li></a>
+					<a href = "" onclick = "grant()"><li>课程信息录入</li></a>
+					<a href = "" onclick = "grant()"><li>课程信息查询</li></a>
+					<a href = "" onclick = "grant()"><li>成绩信息录入</li></a>
+					<a href = '?p=front&c=stu&act=student_mark_select&username=<?php echo $username;?>' target = 'main-frame'><li>学生成绩查询</li></a>
+					<a href = "" onclick = "grant()"><li>课程成绩排序</li></a>
+					<a href = "" onclick = "grant()" style = "border:0px"><li>课程分部分析</li></a>
+				</ul>
+			</div>
+		</body>
+		<script>
+			function jump(){
+				return window.confirm("你真的要退出吗?");
+			}
+			function grant(){
+				confirm("你无权访问！\\\(▔＾▔)/ ");
+			}
+		</script>
+</html>

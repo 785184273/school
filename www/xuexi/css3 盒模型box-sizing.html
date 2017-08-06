@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			/*
+				box-sizing:在css的盒模型中分为两种：W3C标准模型和IE的传统模型
+				1.W3C标准盒模型
+					element空间宽/高 = 内容宽度/高度 + 内距 + 边框 + 外距
+					element高宽/高 = 内容宽/高 + 内距 + 边框（height为内容高度,width为内容宽度）
+				2.IE传统下的模型
+					element空间宽/高 = 内容宽度/高度 + 外距(width包含了内容宽度，边框，内距)
+					element高宽/高 = 内容宽/高边框（height包含了内容高度，边框，内距）
+				box-sizing:content-box | border-box | inherit
+				参数
+					content-box		默认值，让其元素维持W3C的标准盒模型
+					border-box		让元素维持IE的传统模型
+					inherit			使元素继承父元素的盒模型模式
+			*/
+			div{
+				box-sizing:content-box;
+				width:200px;
+				height:200px;
+				padding:10px;
+				margin:10px;
+				border:10px solid red;
+				background:green;
+			}
+		</style>
+	</head>
+		<body>
+			<div>
+				the one
+			</div>
+		</body>
+</html>

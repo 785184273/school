@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+		var banji = "php39";
+		document.write("<br />" + banji);
+		function f1(){
+			document.write("<br />" + banji);
+			var person = 30;
+			function f2(){
+				document.write("<br />" + person);
+				var subject = "html";
+				var banji = "php37";
+				function f3(){
+					document.write("<br />" + subject);
+					document.write("<br />" + banji);
+				}
+				f3();
+			}
+			f2();
+		}
+		f1();
+		</script>
+	</head>
+		<body>
+		</body>
+</html>
+<!--
+	AO活动对象
+		AO:Active object 活动对象(抽象的)
+		执行环境
+			js代码执行是有环境的(全局环境,函数内部环境)
+			该环境定义了其有权访问的其他数据
+			环境有一个与之关联的"活动对象AO"
+			环境中所有的变量和函数都是活动对象AO的属性
+			全局环境是最外围的执行环境,活动对象是window对象
+			执行环境中的代码执行完毕后就会被销毁
+-->

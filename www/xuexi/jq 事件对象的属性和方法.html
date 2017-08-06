@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				event.pageX,event.pageY
+					获取鼠标当前相对于页面的坐标
+				event.preventDefault()
+					阻止默认行为
+				event.stopPropagation
+					阻止冒泡事件
+				event.which
+					获取在鼠标单击时，鼠标单击的是哪个键
+					左键1，中间键2，右键3
+				event.currentTarget
+					在事件冒泡过程中的当前dom元素
+			*/
+			$(function (){
+				$('input').on('click',	function (event){
+					alert(event.which);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type = "submit" value = "获取鼠标点击按钮的值">
+	</body>
+</html>

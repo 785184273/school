@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<a :href = "url" @click.prevent = "dosomething">baidu</a>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#box",
+				data : {
+					url : "#"
+				},
+				methods : {
+					dosomething : function (){
+						console.log(this.url);
+					}
+				}
+			})
+			/*
+			 v-bind
+			 	语法
+			 		<a v-bind:url = "url">
+			 		缩写
+			 		<a :url = "url">
+			 v-on
+			 	语法
+			 		<a v-on:click = "dosomething">
+			 		缩写
+			 		<a @click = "dosomething">
+			 * */
+		</script>
+	</body>
+</html>

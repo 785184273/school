@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>html</li>
+			<li>css</li>
+			<li>js</li>
+			<li>bootstrap</li>
+			<li>jquery</li>
+		</ul>
+		<script type="text/javascript">
+//			var c = 10;
+//			function f1(){
+//				var a = 999;
+//				b = 10;
+//				add = function (){
+//					a += 1;
+//					console.log(a);
+//				}
+//				function f2(){
+//					console.log(a);
+//				}
+//				return f2;
+//				var c = 20;
+//			}
+//			var result = f1();
+//			//add();
+//			//console.log(b);	//b is not defined在函数内部定义的全局变量，在为调用函数时在函数外面是不能访问的，因为函数内部定义的变量是在函数执行后才定义的，
+//			add();
+//			result();
+//			console.log(c);
+//			var name = 'global';
+//			var obj = {
+//				name : 'obj',
+//				dose : function(){
+//					var that = this;
+//					this.name = 'dose';
+//					return function(){
+//						return that.name;
+//					} 
+//				}
+//			}
+//			alert(obj.dose().call(this))
+			
+//			var name = "a";
+//			var object = {
+//				name : "b",
+//				getNameFunc : function (c){	//var c = c;
+//					console.log(c || this.name);
+//					return function (b){
+//						console.log(b);
+//						return this.name;
+//					};
+//				}
+//			};
+//			
+//			var func = object.getNameFunc();		//b
+//			console.log(func())						//a;
+//			console.log(func.call(object,"c"));		//b;
+//			console.log(func.apply(object,["b"]));	//b;
+//			function f1(a,b,c){
+//				return function (){
+//					console.log(++c);
+//				}
+//			}
+//			var result = f1(1,2);
+//			result();
+//			result();
+//			for(var i = 0;i < 5;i++){
+//				(function (i){//相当于 var i = 变量i
+//					setTimeout(function (){
+//						console.log(i);
+//					},1000)
+//				})(i);
+//				f1(i)
+//				function f1(t){
+//					console.log(t);
+//				}
+//			}
+			var lis = document.querySelectorAll("li"),
+				len = lis.length;
+			for(var i = 0; i < len;++i){
+				lis[i].onclick = f1(i);
+			}
+			function f1(i){
+				return function f2(){
+					console.log(i);
+				}
+			}
+		</script>
+	</body>
+</html>

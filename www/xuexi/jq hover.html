@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 100px;
+				height: 100px;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id = "box">
+			the one
+		</div>
+		<script src="jq/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("#box").hover(function (){
+					$(this).addClass("box");
+				},
+				function (){
+					$(this).removeClass("box");
+				}
+			)
+		</script>
+	</body>
+</html>

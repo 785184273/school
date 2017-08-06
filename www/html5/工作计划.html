@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			html,body{
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑";
+			}
+			a{
+				text-decoration: none;
+			}
+			header{
+				height: 3rem;
+				background: #0f4d92;
+				font-size: 1.5rem;
+				line-height: 3rem;
+				text-align: center;
+				font-weight: bold;
+				color: #fff;
+			}
+			nav{
+				height: 2.5rem;
+				background: #686868;
+				line-height: 2.5rem;
+				text-align: center;
+			}
+			nav a{
+				color: #ffffff;
+				background: #444444;
+				height: 1rem;
+				padding: 0.3rem;
+				border-radius: 0.5rem;
+			}
+			section ul{
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				background: #dddddd;
+			}
+			section ul li{
+				overflow: hidden;
+				margin-bottom: 0.5rem;
+				background: #ffffff;
+				border-radius: 0.3rem;
+			}
+			section ul input{
+				float: left;
+			}	
+			section ul .content{
+				float: left;
+			}
+			section ul .main{
+				font-weight: bold;
+				padding: 0;
+				margin: 0;
+			}
+			section ul .date{
+				padding: 0;
+				margin: 0;
+				color: #c6c6c6;
+			}
+			section ul .remove{
+				display: block;
+				text-align: center;
+				width: 2.5rem;
+				height: 1.5rem;
+				line-height: 1.5rem;
+				padding: 0.3rem;
+				border-radius: 0.5rem;
+				color: #ffffff;
+				font-weight: bold;
+				background: #ad390c;
+				float: right;
+			}
+			section .mission p{
+				margin: 0;
+				padding: 0.5rem;
+				line-height: auto;
+			}
+			.active{
+				background: green;
+			}
+			#add-item{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<header>工作计划</header>
+		<nav>
+			<a href="#" onclick = 'tab("item-list",this,event)'>任务列表</a>
+			<a href="#" onclick = 'tab("add-item",this,event)'>添加任务</a>
+			<a href="#">软件设置</a>
+		</nav>
+		<section id = "item-list">
+			<ul>
+				<li>
+					<input type="checkbox"/>
+					<div class = "content">
+						<p class = "main">今天一定要掌握HTML5数据存储!!</p>
+						<p class = "date">2016-10-16</p>
+					</div>
+					<a class = "remove" href = "#">删除</a>
+				</li>
+			</ul>
+		</section>
+		<section id = "add-item">
+			<form class = "mission">
+				<p>计划：<textarea id = "content"></textarea></p>
+				<p>时间：<input type="date" id = "date"/></p>
+				<p><input type="submit" value = "提交" id = "sub"/></p>
+			</form>
+		</section>
+	</body>
+	<script type="text/javascript">
+		window.onload = function (){
+			showItem();
+		}
+		sub.onclick = function (){
+			/*
+			 * 	在以下的情况下只能存储一条数据，并且后面的数据会覆盖前面的数据
+			localStorage.setItem("content",content.value);
+			localStorage.setItem("date",date.value);
+			*/
+			var content = document.querySelector("#content").value;
+			var time = document.querySelector("#date").value;
+			var info = localStorage.getItem("userItem");	//根据数据名字取出数据
+			
+			//判断数据是否存在
+			if(info){
+				//如果数据存在，则在数据的后面添加数据
+				var jsonObj = JSON.parse(info);
+				jsonObj.push({"content" : content,"time" : time});
+				localStorage.setItem("userItem",JSON.stringify(jsonObj));
+				showItem();
+			}else{
+				//如果数据不存在设置数据
+				var obj = {
+					"content" : content,
+					"time" : time
+				}
+				var strObj = JSON.stringify(obj);
+				var itemInfo = localStorage.setItem("userItem","[" + strObj + "]");
+				showItem();
+			}
+		}
+		function tab(str,t,event){
+			var e = event ? event : window.event;
+			e.preventDefault();
+			var nava = document.querySelectorAll("nav a");
+			var sets = document.querySelectorAll("section");
+			for(var i = 0; i < sets.length; ++i){
+				sets[i].style.display = "none";
+				nava[i].className = " ";
+			}
+			document.querySelector("#" + str).style.display = "block";
+			t.className = "active";
+		}
+		//数据展示
+		function showItem(){
+			var itemBox = document.querySelector("#item-list ul");
+			var str = "";
+			var data = localStorage.getItem("userItem");
+			var dataObj = JSON.parse(data);
+			console.log(dataObj);
+			for(var i = 0; i < dataObj.length; ++i){
+				str += '<li>';
+				str +=		'<input type="checkbox"/>';
+				str	+=		'<div class = "content">';
+				str +=			'<p class = "main">' + dataObj[i].content + '</p>';
+				str	+=			'<p class = "date">' + dataObj[i].time + '</p>';
+				str	+=		'</div>';
+				str	+=		'<a class = "remove" href = "#" onclick = "deleteItem(' + i + ')">删除</a>';
+				str += '</li>';
+			}
+			itemBox.innerHTML = str;
+		}
+		//删除项目数据
+		function deleteItem(num){
+			var data = localStorage.getItem("userItem");
+			dataObj = JSON.parse(data);
+			dataObj.splice(num,1);
+			localStorage.setItem("userItem",JSON.stringify(dataObj));
+			showItem();
+		}
+	</script>
+</html>

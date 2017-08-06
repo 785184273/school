@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/slide.css"/>
+		<style type="text/css">
+			.ck-slide{
+				height: 302px;
+				width: 680px;
+				margin: 0 auto;
+			}
+			.ck-slide-wrapper{
+				height: 302px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ck-slide"> 
+		    <ul class="ck-slide-wrapper"> 
+		        <li> 
+		            <a href="#/"><img src="img/1.jpg" alt=""></a> 
+		        </li> 
+		        <li style="display:none"> 
+		            <a href="#"><img src="img/2.jpg" alt=""></a> 
+		        </li> 
+		        <li style="display:none"> 
+		            <a href="javascript:"><img src="img/3.jpg" alt=""></a> 
+		        </li> 
+		        <li style="display:none"> 
+		            <a href="javascript:"><img src="img/4.jpg" alt=""></a> 
+		        </li> 
+		    </ul>
+		    <a href="javascript:" class="ctrl-slide ck-prev">上一张</a>
+		    <a href="javascript:" class="ctrl-slide ck-next">下一张</a>  
+		    <div class="ck-slidebox"> 
+		        <div class="slideWrap"> 
+		            <ul class="dot-wrap"> 
+		                <li class="current"><em>1</em></li> 
+		                <li><em>2</em></li> 
+		                <li><em>3</em></li> 
+		                <li><em>4</em></li> 
+		            </ul> 
+		        </div> 
+		    </div> 
+		</div>
+		<script src="js/jquery.min.js"></script> 
+		<script src="js/slide.js"></script>
+		<script type="text/javascript">
+			$('.ck-slide').ckSlide({
+				autoPlay : true
+				//dir : "x"
+			});
+		</script>
+	</body>
+</html>
+<!--
+ck-slide相关API
+	      参数							描述								默认值
+	autoPlay			自动播放										false
+	dir					可选 ‘x’，即水平滚动，非 ‘x’ 为淡入淡出			  -
+	isAnimate			是否开启动画效果								false
+-->

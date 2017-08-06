@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//封装：封装函数，封装函数以后，作用域会发生变化，外部不能访问内部的局部变量
+			//通过封装可以把一些属性和方法保护起来，只是几个有权限的成员可以访问内部的变量或方法
+			function Product(name,price){
+				this.name = name;
+				var _price = price;
+				this.setPrice = setPrice();
+				function setPrice(){
+					console.log(this.name);	//" "
+					console.log(_price);	//998
+				}
+			}
+			var p1 = new Product("小米",998);
+			alert(p1.price);
+			p1.setPrice;
+		</script>
+	</body>
+</html>

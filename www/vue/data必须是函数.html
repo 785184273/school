@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<myel></myel>
+			<myel></myel>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			/*
+			 	通过Vue构造器传入的各种选项大多数都可以在组件里面用，data是一个例外，他必须是一个函数
+			 * */
+			var data = { message: 0 };
+			
+			Vue.component("myel",{
+				template : "<button @click = 'message += 1'>{{ message }}</button>",
+				data : function (){
+					return {
+						message : 0
+					}
+				}
+			})
+			var vm = new Vue({
+				el : "#app"
+			})
+		</script>
+	</body>
+</html>

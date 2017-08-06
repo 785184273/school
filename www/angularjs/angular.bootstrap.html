@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller = "demo1">
+			<h1>{{say}}</h1>
+		</div>
+		<div ng-controller = "demo2">
+			<h1>{{say}}</h1>
+		</div>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 * 	angular.bootstrap
+			 * 		作用：使用这个函数手工启动angular应用
+			 * 	angular会检测是否它被多次载入到浏览器，并且只允许第一次载入的脚本启动，且会对之后的每次脚本报出一个warning到浏览器控制台，使用angular.bootstrap能避免这些
+			 */
+			var App = angular.module("app1",[]);
+			var App1 = angular.module("app2",[]);
+			App.controller("demo1",["$scope",function ($scope){
+				$scope.say = "hello world";
+			}])
+			App1.controller("demo2",["$scope",function ($scope){
+				$scope.say = "hi";
+			}])
+			var div = document.getElementsByTagName("div");
+			angular.bootstrap(div[0],["app1"]);
+			angular.bootstrap(div[1],["app2"]);
+		</script>
+	</body>
+</html>

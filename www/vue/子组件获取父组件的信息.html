@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+		 	<input v-model="msg.a">
+		  	<br>
+		  	{{ msg.a }}
+		  	<child :my-message="msg"></child>
+		</div>
+		<template id = "one">
+			<div>
+				<button @click = "show">修改父组件的信息</button>
+				<h2>{{ myMessage.a }}</h2>
+			</div>
+		</template>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component("child",{
+				props  : ['myMessage'],
+				template : "#one",
+				data : function (){
+					return {
+						a : "this.myMessage"
+					}
+				},
+				methods : {
+					show : function (){
+						//this.counter = "the one"	//Vue2.0不能修改父组件的信息，会发出警告
+						this.myMessage.a = "the one"
+						/*
+						 	父组件给子组件传递一个对象，因为对象是引用类型的
+						 * */
+						this.a = "timeless";
+						console.log(this.a)
+					}
+				}
+			})
+			new Vue({
+				el : "#app",
+				data : {
+					msg : {
+						a : "show me"
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

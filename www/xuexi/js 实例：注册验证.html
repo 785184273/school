@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<link href="public.css" rel="stylesheet" type="text/css"/>
+		<script type = "text/javascript" src = "./js/login.js"></script>
+		<style>
+			.msg{color:grey;}
+			.msg2{color:red;}
+		</style>
+	</head>
+		<body>
+			<div class = "header">
+				<img src = "img/QQkongjian.png"/>
+			</div>
+			<div class = "artic">
+				<form method = "post" action = "zhuce.php" name = "form1" onsubmit = "return check()">
+					<table>
+						<tr>
+							<td>邮箱账号</td>
+							<td class = "neirong"><input type = "email" id = "emailT" name = "email" onfocus = "focus_email()" onblur = "blur_email()"/></td>
+							<td id = "email" style = "width:292px;hieght:28px;line-height:28px;"></td>
+						</tr>
+						<tr>
+							<td>昵称</td>
+							<td><input type = "text" name = "name1" id = "nameT" onfocus = "focus_nicheng()" onblur = "blur_nicheng()"/></td>
+							<td id = "name" style = "width:292px;hieght:28px;line-height:28px;"></td>
+						</tr>
+						<tr>
+							<td>性别</td>
+							<td style = "text-align:left">
+								<input type = "radio" value = "男" name = "people" checked = "checked"style = "width:13px"/>男&nbsp&nbsp
+								<input type = "radio" value = "女" name = "people" style = "width:13px" />女
+							</td> 
+							<td></td>
+						</tr>
+						<tr>
+							<td>密码</td>
+							<td><input type = "password" id = "passT" name = "password" onfocus = "focus_mima()" onblur = "blur_mima()"/></td>
+							<td id = "pass" style = "width:292px;hieght:28px;line-height:28px;"></td>
+						</tr>
+						<tr>
+							<td>确认密码</td>
+							<td><input type = "password" id = "pass2T" name = "password1" onfocus = "focus_ps()" onblur = "blur_ps()"/></td>
+							<td id = "pass2" style = "width:292px;hieght:28px;line-height:28px;"></td>
+						</tr>
+						<tr>
+							<td>所在地</td>
+							<td>
+								<select style = "width:98px" id = "select1" onchange = "selchange()">
+									<option value = "">请选择</option>
+									<option value = "1">美国</option>
+									<option value = "2">日本</option>
+								</select>
+								<select style = "width:98px" id = "select2" onchange = "changesel()">
+									<option value = "">请选择</option>
+									<option value = "1">陕西</option>
+								</select>
+								<select style = "width:78px" id = "select2" onchange = "changesel()">
+									<option value = "">请选择</option>
+									<option value = "1">成都</option>
+								</select>
+							</td>
+							<td id = "select" style = "width:292px;hieght:28px;line-height:28px;"></td>
+						</tr>
+						<tr>
+							<td>验证码</td>
+							<td><input type = "text" id = "captchaT" name = "yzm" onfocus = "focus_yzm()" onblur = "blur_yzm()"/></td>
+							<td id = "captcha" style = "width:292px;hieght:28px;line-height:28px;"></td>
+						</tr>	
+						<tr>
+							<th>
+							</th>
+							<td>
+									<img class = "tupian"src = "img/yanzhengma.jpg" onclick  style = "margin:10px auto"/>
+									
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>
+							</td>
+							<td style="text-align:left;">
+								<input type = "submit" name = "button" value = "立即注册" style = "width:142px;height:40px;background:#00BFFF;border:1px solid #00BFFF;font-size:20px;font-weight:bold;color:white"/>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<input type = "checkbox" name= "xieyi" style = "width:12px;"/><span>我接收<span style = "color:#00BFFF"> QQ空间服务协议 QQ号码规则</span></span>
+							</td>
+							<td></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div class = "footer">
+					<ul>
+						<a href = ""><li>反馈建议</li></a>
+						<a href = ""><li>官方空间</li></a>
+						<a href = ""><li>官方微博</li></a>
+						<a href = ""><li>空间应用</li></a>
+						<a href = ""><li>QQ互联</li></a>
+						<a href = ""><li>空间热度</li></a>
+						<a href = ""><li>QQ登录</li></a>
+						<a href = ""><li>社交组件</li></a>
+						<a href = ""><li style = "width:95px;">应用侵权投诉</li></a>
+						<a href = ""><li style = "width:145px;border:none;">Complaint Guidelines</li></a>
+					</ul>
+					<br/>
+					<div style = "border:px solid red;margin-top:20px;text-align:center;font-size:12px;">
+					<span>Copyright © 2005 - 2015 Tencent.All Rights Reserved. 腾讯公司 版权所有 粤网文[2011]0483-070号</span>
+					</div>
+			</div>
+			
+		</body>
+</html>

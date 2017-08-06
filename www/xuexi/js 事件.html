@@ -1,0 +1,215 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style type = "text/css">
+			div{border:1px solid red;height:200px;}
+		</style>
+		<script type = "text/javascript">
+			function fn(){
+				var	inputObj = document.getElementById("d1");
+				inputObj.style.background = "#00BFFF";
+				inputObj.style.fontSize = "12px";
+				inputObj.style.borderRadius = "5px";
+				inputObj.style.width = "77px";
+				inputObj.style.height = "30px";
+				inputObj.style.fontWeight = "bold";
+				inputObj.style.color = "white";
+			}
+			function init(){
+				var imgObj = document.getElementById("img");
+				var w = imgObj.width;
+				var h = imgObj.width;
+				imgObj.width = w * 1.2;
+				imgObj.height = h * 1.2;
+				//imgObj.innerHTML = "尼玛逼";
+				//注意：innerHTML只能使用在双标签和容器标签中
+			}
+			function fn1(){
+				var pObj = document.getElementById("p1");
+				alert(pObj.innerText);
+			}
+			function jisuan(){
+				var t1Obj = document.getElementById("t1");
+				t1Obj.value;
+				var t2Obj = document.getElementById("t2");
+				t2Obj.value;
+				var fuhaoObj = document.getElementById("fuhao");
+				fuhaoObj.value;
+				var t3Obj = document.getElementById("t3");
+				if(fuhaoObj.value == "+"){
+					t3Obj.value = parseFloat(t1Obj.value) + parseFloat(t2Obj.value);
+				}else if(fuhaoObj.value == "-"){
+					t3Obj.value = parseFloat(t1Obj.value) - parseFloat(t2Obj.value);
+				}else if(fuhaoObj.value == "*"){
+					t3Obj.value = parseFloat(t1Obj.value) * parseFloat(t2Obj.value);
+				}else{
+					t3Obj.value = parseFloat(t1Obj.value) / parseFloat(t2Obj.value);
+				}
+			}
+			window.onload = init1;
+			function init1(){
+				window.alert("你大爷的！");
+			}
+			function init2(event){
+				//var imgObj = document.getElementById("dd");
+				//alert(event.type);当前事件类型
+				//alert(imgObj);
+				alert(event.target);
+				var str = "距离网页左边的距离：" + window.event.pageX;
+				str += "距离网页上边的距离：" + window.event.pageY;
+				alert(str);
+			}
+			function get_xy(event){
+				var obj = document.getElementById("xy");
+				var x = event.clientX;
+				var y = event.clientY;
+				obj.innerHTML = "坐标：" + x + "," + y;
+			}
+			function ret(){
+				var obj = document.getElementById("xy");
+				obj.innerHTML = "坐标:0,0";
+			}
+			//点击变开，再点击变关
+			function dianji(){
+				var obj = document.getElementById("subm");
+				if(obj.value == "开"){
+					dianji1();
+				}else{
+					obj.value = "开";
+				}
+			}
+			function dianji1(){
+				var obj = document.getElementById("subm");
+				obj.value = "关"
+			}
+			//*
+			var i = 0;
+			function dianji2(){
+				i++;
+				var obj = document.getElementById("subm1");
+				if(i%2 != 0){
+					obj.value = "关";
+					alert(i);
+				}else{
+					obj.value = "开";
+				}
+			}
+			function dianji3(obj){
+				if(obj.value == "开"){
+					obj.value = "关";
+				}else{
+					obj.value = "开";
+				}
+			}
+			function jia(e){
+				//使用event事件来实现
+				e.target.value = parseInt(e.target.value) + 1;
+			}
+			function jia1(obj){
+				//使用this来实现，this代表当前对象
+				obj.value = parseInt(obj.value) + 1;
+			}
+			//*/
+		</script>	
+	</head>
+		<body>
+			<input type = "submit" value = "确定" id = "d1" onmouseover = "fn()"/>
+			<image src = "./img/33.png" id = "img" onclick = "init()"> 傻逼
+			<p id = "p1" onclick = "fn1()">
+				你大爷的
+				<a href= "">哦洗吧</a>
+			</p>
+			<input type = "text" id = "t1"/>
+			<select id = "fuhao">
+				<option value = "+">+</option>
+				<option value = "-">-</option>
+				<option value = "*">*</option>
+				<option value = "/">/</option>
+			</select>
+			<input type = "text" id = "t2"/>
+			=
+			<input type = "text" id = "t3"/>
+			<input type = "submit" id = "t4" value = "计算" onclick = "jisuan()">
+			<image src = "./img/22.png" id = "dd" onclick = "init2(event)"/>
+			<input type = "submit" id = "t3" onclick = "init2(event)"/>
+			<div id = "xy" onmousemove = "get_xy(event)" onmouseout = "ret()">
+				坐标:0,0
+			</div>
+			<input type = "submit" value = "开" id = "subm" onclick = "dianji()"/>
+			<input type = "submit" value = "开" id = "subm1" onclick = "dianji2()"/>
+			<input type = "submit" value = "开" id = "subm2" onclick = "dianji3(this)"/>
+			<input type = "submit" value = "1" onclick = "jia(event)"/>
+			<input type = "submit" value = "2" onclick = "jia(event)"/>
+			<input type = "submit" value = "3" onclick = "jia(event)"/>
+			<input type = "submit" value = "4" onclick = "jia(event)"/>
+			<input type = "submit" value = "5" onclick = "jia1(this)"/>
+			<input type = "submit" value = "6" onclick = "jia1(this)"/>
+			<input type = "submit" value = "7" onclick = "jia1(this)"/>
+			<input type = "submit" value = "8" onclick = "jia1(this)"/>
+		</body>
+		</body>
+</html>
+<!--
+常用事件
+	onload:当网页加载完成时，只能给<body>用
+	onclick:当点击时，所有的标记都适用
+	onscroll:当拖动滚动条时
+	onMouseOver:当鼠标放上时
+	onmousemove:当鼠标移动时
+	onMouseOut:当鼠标移开时
+	onSubmit:当提交表单时
+	onReset:当重置表单时
+	ondblclick:双击事件
+	onFocus：当获得焦点是，把光标定位到文本框中
+	onBlur：当失去焦点时，把光标从文本框中移开
+	onchange：当下拉列表内容改变时，用在下拉列表，上传文件
+	onselect：当选中文本时
+	onresize：当改变窗口的大小时，发生的事件
+	onkeydown：键盘按下
+	onkeyup:键盘抬起
+	onkeypress：键盘按键一次
+	
+	event:保存事件发生时的相关信息
+		当事件发生的时候,event
+			全局变量event是事件对象
+			Event.clientX:事件发生时的X坐标
+			Event.clientY:事件发生时的Y坐标
+			event.pageX/pageY:相对dom区域坐标，给考虑滚动条距离
+			event.screenX/screenY:相对于屏幕坐标
+			Event.target:事件源
+				IE下,event对象有srcElement属性,但是没有target属性;
+				firefox下event对象有target属性,但是没有srcElement属性，但是作用是相当的
+				firefox 下的 event.target = IE 下的 event.srcElement
+			event.type:当前事件的类型
+			event必须要调用才能实现
+	innerHTML:对象中所有的内容(文本内容和标签内容)指的是双标签和容器标签
+	innerText:获取对象中所有的文本内容
+	
+	this；代表当前对象
+dom2级方式事件设置
+	1.主流浏览器方式(包括IE9以上版本浏览器)：
+		设置事件
+		itnode.addEventListener(事件类型，事件处理[,事件流])
+		取消事件
+		itnode.removeEventListener(事件类型，事件处理[,事件流])
+	2.IE浏览器方式(6/7/8)
+		设置事件
+		itnode.attachEvent(事件类型，事件处理)
+		取消事件
+		itnode.detachEvent(事件类型，事件处理)
+		
+		事件类型:	就是我们设置的具体事件，例如：onclick
+					主流浏览器方式没有"on"标志，例如addEventlistener("click"...)
+					IE浏览器方式有"on"标志，例如attachEvent("onclick")
+		事件处理:	事件驱动，可以是一个有名/匿名函数
+					例如：addEeventListener("click",function (){}/有名函数)
+		事件流:		true捕捉型,[false]冒泡型
+		
+		事件取消(rmoveEventListener/detachEvent)操作具体要求：
+			1.事件处理必须是有名函数，不可以是匿名函数
+			2.事件取消的参数与绑定的参数完全一致(数量,内容)
+	3.dom2级事件设置的特点
+		1.可以为同一个对象设置多个同类型事件
+		2.事件取消也非常灵活
+		3.对事件流也有很好的处理
+-->

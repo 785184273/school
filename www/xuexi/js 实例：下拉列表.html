@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<script type = "text/javascript">
+			function fn(){
+				var obj = document.getElementById("menu");
+				obj.style.display = "block";
+			}
+			function fn1(){
+				var obj = document.getElementById("menu");
+				obj.style.display = "none";
+			}
+		</script>
+		<style type = "text/css">
+			.header{border:1px solid red;width:70px;}
+			#menu{display:none;border:1px solid red;width:70px;}
+			.head{border:1px solid red;width:70px;height:20px;text-align:center;line-height:20px;}
+			a{text-decoration:none;color:black;};
+		</style>
+	</head>
+		<body>
+			<div  class = "header" onmouseover = "fn()" onmouseout = "fn1()">
+				<div class = "head">我的当当</div>
+				<div id = "menu">
+					<a href = "">我的订单</a>
+					<a href = "">账户余额</a>
+					<a href = "">购物礼券</a>
+					<a href = "">我的会员积分</a>
+				</div>
+			</div>
+		</body>
+</html>

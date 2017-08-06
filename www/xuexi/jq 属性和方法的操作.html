@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js">
+		</script>
+	</head>
+		<body>
+			<img src = "a.jpg"/>
+			
+			<input type = "button" value = "点击">
+			<input type = "button" value = "批量修改多个属性">
+		</body>
+		<script>
+			$('input').click(function (){
+				//获得img src属性
+				window.alert($('img').attr('src'));
+				
+				//设置class属性
+				$('img').attr('class','tupian');
+				
+				//删除class属性
+				$('img').removeAttr('class');
+				//alert(123);
+				
+			});
+			$('input:eq(1)').click(function (){
+				$('img').attr({class:'pear',id:'img'});
+			});
+		</script>
+</html>
+<!--
+	属性和方法的操作
+		属性：
+			Attr: 属性
+			attr(属性名)：获取属性
+			attr(attr,value)：设置属性
+			attr({attr:"value",attr:"value"}): 设置多个属性
+			removeAttr(name):删除name属性
+-->

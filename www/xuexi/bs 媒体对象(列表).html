@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<!--Bootstrap不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--移动设备优先,响应式布局-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	</head>
+		<body>
+			<div class = "container">
+				<ul class = "media-list">
+					<li class = "media">
+						<img  class = "pull-left media-object" src = "http://a.disquscdn.com/uploads/users/3740/2069/avatar92.jpg?1406972031"/>
+						<div class = "media-body">
+							<div class = "media-heading h3">我是大漠</div>
+							<div>我是W3cplus站长大漠，我在写Bootstrap框中的媒体对象测试用例</div>
+						</div>
+					</li>
+					<li class = "media">
+						<img class = "pull-left media-object" src = "http://tp2.sinaimg.cn/3306361973/50/22875318196/0">
+						<div class = "media-body">
+							<div class = "media-heading h3">慕课网</div>
+							<div>大漠写的《玩转Bootstrap》系列教程即将会在慕课网上发布</div>
+						</div>
+					</li>
+					<li class = "media">
+						<img class = "pull-left media-object" src = "http://tp4.sinaimg.cn/1167075935/50/22838101204/1"/>
+						<div class = "media-body">
+							<div class = "h3 media-heading">W3cplus</div>
+							<div>W3cplus站上还有很多教程</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		<!--bootstrap模板为使IE6、7、8版本（IE9以下版本）浏览器兼容html5新增的标签。-->
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<!--为使IE6、7、8版本浏览器兼容css3样式-->
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		</body>
+</html>
+<!--
+	媒体对象一般都是成组出现，而一组媒体对象常常包括以下几个部分
+		媒体对象的容器：常常使用media类名表示，用来容纳媒体对象的所有内容
+		媒体对象的对象：常常使用media-object表示，就是媒体对象中的对象，一般都是图片
+		媒体对象的主题：常使用media-body表示，就是媒体对象中的主题内容，可以是任何元素，常常是图片的侧边内容
+		媒体对象的标题：常常使用media-heading表示，就是用来描述对象的一个标题，此部分可选
+		pull-left:控制媒体对象中的对象的浮动方式,左浮动
+		pull-right:控制媒体对象中的对象的浮动方式，右浮动
+	
+	媒体对象的嵌套只需要将新的media嵌套在media-body中
+	在ul中添加 class = "media-list"
+-->

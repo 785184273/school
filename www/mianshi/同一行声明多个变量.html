@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//var a = 10;
+			function test(){
+				var c = 10,a = 20;	//同一行什么多个变量，a仍然的局部变量
+				var d = e = 30;	//相当于 e = 30; var d = 30;e现在就是全局变量
+				console.log(a);
+			}
+			var a2 = 1;		//变量命名规则：可以使用字母，下划线，$符号开头，后面可以使用数字
+			console.log(a2);
+			test();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			window.onload = fun;
+			function fun(){
+				var arr = ["巴中","成都","绵羊","南充"];
+				var len = arr.length;
+				var ul = document.createElement("ul");
+				document.body.appendChild(ul);
+				for(var i = 0;i < len;++i){
+					var lii = document.createElement("li");
+					ul.appendChild(lii);
+					lii.style.border = "1px solid red";
+					lii.addEventListener("mouseover",function (){
+						this.style.fontWeight = "bold";
+						this.style.color = "pink";
+					});
+					//*
+					
+					lii.addEventListener("mouseout",function (){
+						this.style.color = "black";
+					});
+					
+					//*/
+					var texti = document.createTextNode(arr[i]);
+					lii.appendChild(texti);
+				}
+				ul.style.listStyle = "none";
+			}
+		</script>
+	</head>
+		<body>
+		</body>
+</html>

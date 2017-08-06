@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+			执行css属性集的自定义动画
+				$(selector).animate(styles,speed,easing,callback);	
+					styles: 规定产生动画效果的css样式和值
+					speed：产生动画效果的速度
+					easing：规定在不同的动画中设置动画速度的easing速度
+					callback: animate函数执行完之后要执行的回调函数	
+			停止当前正在运行的动画
+				$(selector).stop(stopAll,goToEnd);
+					stopAll: 规定是否停止被选元素的所有加入队列的动画
+					goToEnd: 规定是否允许完成当前的动画
+				
+			*/
+			$(function (){
+				$('input:eq(0)').click(function (){
+					$(".box").animate({height:"300px"},"slow");
+					$(".box").animate({width:"300px"},"slow");
+					$(".box").animate({height:100},"slow");
+					$(".box").animate({width:100},"slow");
+				})
+				$('input:eq(1)').click(function (){
+					$('.box').stop(true,true);
+				})
+			})
+		</script>
+		<style>
+			.box{background:pink;height:100px;width:100px;}
+		</style>
+	</head>
+		<body>
+			<div class = "box" ></div>
+			<input type = "submit" value = "animate">
+			<input type = "submit" value = "stop">
+		</body>
+</html>

@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<!--Bootstrap不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--移动设备优先,响应式布局-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<style>
+			div[class^="col"]{
+				border:1px solid red;
+			}
+			hr{
+				margin-top:20px;
+				margin-bottom:20px;
+			}
+		</style>
+	</head>
+		<body>
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-3 col-lg-3 col-sm-12 col-xs-12"></div>
+					<div class = "col-md-6 col-lg-6 col-sm-12 col-xs-12">
+						<div class = "carousel slide" id = "img-show" data-interval = "1000" data-wrap = "true" data-pause = "hover" data-ride = "carousel">
+							<ol class = "carousel-indicators">
+								<li class = "active" data-slide-to = "0" data-target = "#img-show"></li>
+								<li data-slide-to = "1" data-target = "#img-show"></li>
+								<li data-slide-to = "2" data-target = "#img-show"></li>
+							</ol>
+							<div class = "carousel-inner">
+								<div class = "item active">
+									<a href = "#"><img src = "./img/233.jpg"/></a>
+								</div>
+								<div class = "item">
+									<a href = "#"><img src = "./img/234.jpg"/></a>
+								</div>
+								<div class = "item">
+									<a href = "#"><img src = "./img/235.jpg"/></a>
+								</div>
+							</div>
+							<a class = "left carousel-control" href = "#img-show" data-slide = "prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+							<a class = "right carousel-control" href = "#img-show" data-slide = "next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+						</div>
+					</div>
+					<div class = "col-md-3 col-lg-3 col-sm-12 col-xs-12"></div>
+				</div>
+			</div>
+		<!--bootstrap模板为使IE6、7、8版本（IE9以下版本）浏览器兼容html5新增的标签。-->
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<!--为使IE6、7、8版本浏览器兼容css3样式-->
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		</body>
+</html>
+<!--
+	轮播图片主要包括三个部分
+		轮播的图片
+		轮播图片的计数器
+		轮播图片的控制器
+	.设计轮播图片的容器
+		<div id = "slider-show" class = "carousel"></div>
+	.设计轮播图片的计数器在div.carousel的内部添加轮播图片的计数器,主要显示当前图片的播放顺序(有几张图片就放置几个li),一般才用有序列表
+		<ol class = "carousel-indicators">
+			<li class = "active">1</li>
+			<li>2</li>
+			...
+		</ol>
+	.设计轮播图片播放区，主要放置要轮播的图片
+		<div class = "carousel-inner">
+			<div class = "item active">
+				<a href = "#"><img src = ""></a>
+				<div class = "carousel-caption">
+					<h3>图片标题</h3>
+					<p>描述内容</p>
+				</div>
+			</div>
+			<div class = "item"><a href = "#"><img src = ""></a></div>
+		</div>
+	.设计轮播图片控制器，很多轮播图片都有向前播放和向后播放的控制器，在carousel中通过carousel-control样式配合left和right来实现,其中left表示向前播放，right表示向后播放
+		<a class = "left carousel-control" href = "">
+			<span class = "glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class = "right carousel-control" href = "">
+			<span class = "glyphicon glyphicon-chevron-right"></span>
+		</a>
+	
+	data属性
+		data-ride:取值carousel,并且将其定义在carousel上
+		data-target:取值carousel定义的id名或者其他样式的识别符,定义在轮播计数器的每个li上
+		data-slide:取值包括prev,next,prev表示向后滚动，next表示向前滚动，该属性值同样定义在轮播图控制器的a连接上，同时设置控制器href值为容器carousel的id名或者其他样式的识别符
+		data-slide-to:用来传递某个帧的下标,比如date-slide-to = "2",可以直接跳转到这个指定的帧，定义在轮播图计数器的每个li上(下标从0开始)
+	图片轮播
+		属性名称		类型		默认值			描述内容
+		data-interval	number		5000		幻灯片轮换的等待时间(毫秒)，如果为false轮播将会自动开始循环
+		data-pause		string		hover		默认鼠标悬停在幻灯片区域立即停止播放，离开即开始播放
+		data-wrap		布尔值		true		轮播是否持续循环
+	为了使图片的切换有平滑感,为class= "carousel"添加slide样式
+-->

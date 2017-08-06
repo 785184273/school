@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<box>
+				<!--
+					一般情况下ul会被覆盖掉
+				-->
+				<ul>
+					<li>1</li>
+				</ul>
+			</box>
+			<hr />
+			<box></box>
+		</div>
+		<template id = "one">
+			<div>
+				<span>{{ b }}</span>
+				<slot>这是默认情况</slot>
+				<!--使用slot标签可以使ul添加到组件中-->
+			</div>
+		</template>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component("box",{
+				template : "#one",
+				data : function (){
+					return {
+						a : 1,
+						b : "welcome"
+					}
+				}
+			})
+			new Vue({
+				el : "#app"
+			})
+		</script>
+	</body>
+</html>

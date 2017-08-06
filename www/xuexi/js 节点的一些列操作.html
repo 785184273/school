@@ -1,0 +1,148 @@
+<html 
+<!--onclick = "init(event)"-->  
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+			/*window.onload = function()
+			{
+				//创建一个标记
+				var imgObj = document.createElement("img");
+				//alert(imgObj);
+				//将创建的图片节点挂载到某个父节点下
+				document.body.appendChild(imgObj);
+				imgObj.setAttribute("src","img/444.jpg");
+				imgObj.setAttribute("width","358");
+				imgObj.setAttribute("height","428");
+			}*/
+			//节点创建的练习
+			/*
+			window.onload = function ()
+			{
+				var imgObj = document.createElement("img");
+				//alert(imgObj);
+				//将创建的节点挂载到某个父节点下
+				document.firstChild.lastChild.appendChild(imgObj);
+				imgObj.setAttribute("src","img/443.jpg");
+				//imgObj.style = "border:1px solid red
+				window.alert(imgObj.nodeName);
+				//删除创建的img节点
+				//document.body.removeChild(imgObj);
+			}
+			*/
+			/*
+			function init(event){
+				document.body.style.background = "black";
+				var imageObj = document.createElement("img");
+				//点击创建一个image标签对象
+				document.body.appendChild(imageObj);
+				//将创建的image标签对象追加到body标签对象下面
+				imageObj.src = "./img/piaofu.gif";
+				//将创建的image对象的图片随机大小20 - 100
+				imageObj.width = 80 * Math.random() + 20;
+				//鼠标点击时的坐标位置
+				var x = window.event.clientX - (0.5 * imageObj.width);
+				var y = window.event.clientY - (0.5 * imageObj.height);
+				//定位image对象
+				imageObj.style.position = "absolute";
+				imageObj.style.left = x + "px";
+				imageObj.style.top = y + "px";
+			}
+			*/
+			function fun(){
+				var ul = document.createElement("ul");
+				document.body.appendChild(ul);
+				var province = ['辽宁','山东','浙江'];
+				var city = ['沈阳','济南','杭州'];
+				var len = province.length;
+				for(var i = 0;i < len;++i){
+					var li = document.createElement("li");
+					var text = document.createTextNode(city[i]);
+					li.setAttribute("province",province[i]);
+					ul.appendChild(li);
+					li.appendChild(text);
+				}
+				//ul.style.textDecoration = "none";
+			}
+			//节点的追加
+			function append(){
+				var liaon = document.getElementById("ll");
+				var	nor = document.getElementById("north");
+				nor.appendChild(liaon);
+			}
+			//节点的替换
+			function replace(){
+				var shand = document.getElementById("sd");
+				var jil = document.getElementById("jl");
+				document.getElementById("sorth").replaceChild(shand,jil);
+			}
+			//节点的复制
+			function clone(){
+				var liaol = document.getElementById("ll");
+				var cl = liaol.cloneNode(true);
+				var nor = document.getElementById("north");
+				nor.appendChild(cl);
+			}
+			//节点的创建
+			function create(){
+				var div = document.createElement("div");
+				var text = document.createTextNode("赵梓健是shabi");
+				document.body.appendChild(div);
+				div.appendChild(text);
+				div.style.border = "1px solid red";
+			}
+			function remove(){
+				var li = document.getElementsByTagName("li")[3];
+				var nor = document.getElementById("north");
+				nor.removeChild(li);
+			}
+		</script>
+		<style type = "text/css">
+		</style>
+	</head>
+		<body onload = "fun()">
+			<ul id = "sorth">
+				<li id = "ll">辽宁</li>
+				<li id = "sd">山东</li>
+				<li id = "jl">吉林</li>
+			</ul>
+			<br />
+			<ul id = "north">
+				<li>浙江</li>
+			</ul>
+			<input type = "submit" value = "追加(insertBefore)" onclick = "append()">
+			<input type = "submit" value = "替换(replaceChild)" onclick = "replace()">
+			<input type = "submit" value = "复制(cloneNode)" onclick = "clone()">
+			<input type = "submit" value = "创建(createElement)" onclick = "create()">
+			<input type = "submit" value = "删除(removeChild)" onclick = "remove()">
+		</body>
+</html>
+<!--
+节点的创建
+		createTextNode()；创建文本节点
+		createElement(tagNmae):创建一个指定的html标记
+			tagname:是指尖括号的标记名
+			举例：var imgObj = document.createElement("img")
+节点的追加
+		appendChild(elementObj)：将创建的节点追加到某个父节点下
+		insertBefore(newnode,oldnode):将newnode放到oldnode前面
+		replaceChild(newnode.oldnode):newnode替换掉oldnode
+			elementObj:是创建的一个子节点
+			举例：document.body.appendChild(imgObj)
+					将创建的image对象放在body下面
+				  document.body是body标签对象
+				  parentNode.appendChild(childNode)
+					parentNode代表父节点，父节点必须存在
+					childNode代表子节点
+节点的删除
+		removeChild(elementObj):删除子节点
+			举例：parentNode.removeChild(childNode)
+节点的复制
+		被复制的节点.cloneNode(true/false);
+			true:深层次的复制(本身节点和其内部的节点)
+			false:浅层复制(本身节点)
+		
+
+
+
+
+-->

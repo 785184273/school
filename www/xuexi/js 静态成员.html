@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script>
+			//静态成员
+				function cat(){
+					this.color = "white";
+					this.age = 4;
+				} 
+				
+				var kitty = new cat();	
+				//cat也是对象，函数对象(cat不能调用color和age)
+				//kitty普通对象可以调用color和age两个成员
+				
+				//给cat函数对象丰富成员,就是静态成员
+				cat.eat = function(){
+					console.log("吃鱼");
+				}
+				cat.climb = "爬树";
+				
+				//console.log(cat.color);	//undefined
+				console.log(cat.climb);		//爬树
+				//console.log(kitty.eat);		//undefined
+				//console.log(kitty.climb);		//undefined
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+	静态成员
+		如果一个类里边，有这样的属性，其值不随便发生改变，全部对象都共用一个值，该属性就声明为static静态的，其在内存中无论创建多少个对象(或者说其与具体对象无关)都只占据一份空间
+		
+		静态成员在php里边需要通过 类名::静态成员 直接访问(普通对象也可以调用静态成员)在js里面如果一个成员是通过函数直接调用的，就称其为"静态成员"
+-->

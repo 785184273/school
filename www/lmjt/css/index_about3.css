@@ -1,0 +1,158 @@
+html,body,ul,section,footer,header,nav{
+	margin : 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+}
+body{
+	font-family: "微软雅黑";
+}
+a{
+	text-decoration: none;
+}
+.content .up:after,
+.content .down:after,
+.link ul:after,
+header nav ul:after{
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	clear: both;
+}
+/*content*/
+/*老妈动态加盟问答*/
+.content{
+	background: #f8ecdc;
+	padding : 20px 0px;
+}
+.content .up,.content .down{
+	width: 998px;
+	margin: 0px auto;
+}
+.content .up{
+	background: #f9e8c9;
+}
+.con_title{
+	color: #920011;
+	font-size: 24px;
+	font-weight: bold;
+	margin-top:10px;
+}
+.con_main{
+	margin-bottom: 10px;
+}
+.con_left,.down_left{
+	width: 46%;
+	float: left;
+	margin-left: 3%;
+}
+.con_right,.down_right{
+	width: 46%;
+	float: right;
+	margin-right: 3%;
+}
+.con_main_title{
+	font-size: 16px;
+	font-weight: bold;
+	margin:0px;
+}
+.con_main_title a{
+	color: #000000;
+}
+.con_left_main{
+	margin: 0px;
+	padding: 18px 0px;
+	font-size: 14px;
+	color: #908e8b;
+}
+.con_right_main{
+	text-indent: 2em;
+	font-size: 14px;
+}
+.con_right_main a{
+	color: #908e8b;
+}
+.up_con{
+	width: 60%;
+	float: right;
+}
+.up_show_title{
+	margin: 0px 0px 15px 0px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.up_show_title a{
+	color: #484848;
+}
+.up_show_con{
+	font-size: 14px;
+	color: #bfb8af;
+	margin-top: 0px;
+	margin-bottom: 14px;
+}
+.up_more{
+	font-size: 14px;
+	margin: 0px;
+}
+.up_more a{
+	color: #cd2525;
+}
+.up_list_show{
+	margin-top: 30px;
+	padding-left: 20px;
+}
+.up_list_show li{
+	font-size: 16px;
+	margin-bottom: 10px;
+	position: relative;
+	color: #262525;
+}
+.up_list_show li a{
+	color: #262525;
+}
+.up_list_show li a:hover{
+	color: #FF6600;
+}
+.up_list_show li span{
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #585857;
+}
+/*关于我们*/
+.down{
+	padding-top: 30px;
+}
+.down_aboutMe{
+	float: right;
+	width: 43%;
+	padding-top: 30px;
+}
+.down .down_aboutMe .about_title{
+	position: relative;
+	color : #fffefe;
+	font-size: 26px;
+	background: #a98056;
+	padding: 20px 25px;
+	left: -40px;
+	top: 0px;
+}
+.down .down_aboutMe .about_title .me{
+	font-size: 28px;
+	font-weight: bold;
+}
+.down .down_aboutMe .about_content{
+	text-indent: 2em;
+	font-size: 14px;
+	margin-left: 15px;
+	line-height: 25px;
+	color: #212121;
+}
+.down .down_aboutMe .about_content a{
+	color: #212121;
+}
+.down .down_aboutMe .about_content a:hover{
+	color: #FF6600;
+}

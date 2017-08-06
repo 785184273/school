@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		/*
+			ECMAscript还新增了两个归并数组：reduce()和reduceRight()这两个方法都会迭代数组的所有项，然后构建一个最终返回的值
+			reduce()方法从数组的第一项开始，逐个遍历到最后
+			reduceRight()方法从数组的最后一项开始，向前遍历到最后
+			这两个方法都接收两个参数：一个在每个项上调用的函数和作为归并基础的初始值
+			传给reduce()和reduceRight()的接收四个参数：前一个值，当前值，项的索引，当前对象，这个函数返回的任何值都会作为第一个参数自动传给下一项，第一次迭代发生在数组的第二项上，因此第一个参数是数组的第一项，第二个参数是数组的第二项
+		
+		*/
+			var arr = [1,2,3,4,5];
+			var arrr = arr.reduce(function (pre,cur,index,array){	//初始的cur是2，pre是1，pre + cur返回变成pre,下一个cur就是3
+				return pre + cur;
+			})
+			
+			var arrrR = arr.reduceRight(function (pre,cur,index,array){ //初始的cur是4，pre是5，pre + cur返回变成pre,下一个cur就是3
+				return pre + cur;
+			})
+			console.log(arrr);
+			console.log(arrrR);
+		</script>
+	</body>
+</html>

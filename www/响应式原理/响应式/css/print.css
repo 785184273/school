@@ -1,0 +1,9 @@
+div{
+	height: 100px;
+	margin: 0 auto;
+	background: #FFB6C1;
+}
+div::after{
+	content: "这是打印机的识别！！！";
+	display: block;
+}

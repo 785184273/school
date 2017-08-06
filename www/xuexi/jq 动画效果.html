@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+			div{width:300px;height:300px;background:pink;}
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			function f1(){
+				//隐藏
+				//$().hide([速度,回调函数]);
+				//速度:单位毫秒
+				//效果执行完毕后自动调用函数执行
+				$('div').hide(3000,function (){
+					window.alert("我消失了");
+				});
+			}
+			function f2(){
+				//显示
+				
+				$('div').show(3000,function (){
+					window.alert("我又出现了");
+				});
+			}
+			
+			function f3(){
+				//开关
+				
+				$("div").toggle(3000);
+			}
+			
+			function f4(){
+				$("div").slideUp();
+			}
+			
+			function f5(){
+				$("div").slideDown(3000);
+			}
+			
+			function f6(){
+				$("div").slideToggle(2000);
+			}
+			/*
+			$(function (){
+				f();
+				function f(){
+					$("div").slideToggle(1000,f);
+				}
+			});
+			*/
+			function f7(){
+				$("div").fadeOut(2000);
+			}
+			
+			function f8(){
+				$("div").fadeIn(2000);
+			}
+			
+			function f9(){
+				$("div").fadeToggle();
+			}
+		</script>
+	</head>
+	<body>
+		<div>my name is ergou</div>
+		<input type = "submit" value = "隐藏" onclick = "f1()">
+		<input type = "submit" value = "显示" onclick = "f2()">
+		<input type = "submit" value = "开关" onclick = "f3()">
+		<input type = "submit" value = "垂直隐藏" onclick = "f4()">
+		<input type = "submit" value = "垂直显示" onclick = "f5()">
+		<input type = "submit" value = "垂直开关" onclick = "f6()">
+		<input type = "submit" value = "颜色渐变隐藏" onclick = "f7()">
+		<input type = "submit" value = "颜色渐变显示" onclick = "f8()">
+		<input type = "submit" value = "颜色渐变开关" onclick = "f9()">
+	</body>
+</html>
+<!--
+	基本动画
+		$().hide(速度,回调函数)		隐藏
+			速度：毫秒
+			回调函数：在速度内完毕后执行的函数
+		$().show(速度,回调函数)		显示
+			速度：毫秒	
+			回调函数：在速度内完毕后执行的函数
+		$().toggle()			展示开关的效果
+			可用参数：[fn1,fn2,fn3....]
+				第一次点击执行fn1，第二次点击执行fn2......
+			可用参数：[速度,回调函数]
+				速度：毫秒
+				回调函数：在速度内完毕后执行的函数
+			可用参数：无参数
+				对某个jq对象进行切换(隐藏/显示)
+			可用参数：[true/false]
+				true显示元素
+				false隐藏元素
+		本质效果是宽度，高度，透明度，display在变化
+	垂直动画效果
+		$().slideUp(速度,回调函数)	隐藏
+			注意：有默认时间[速度]
+		$().slideDown(速度,回调函数)	显示
+			注意：有默认时间[速度]
+		$().slideToggle(速度,回调函数)	开关效果
+		本质效果是高度和display在变化
+	颜色渐变动画效果
+		$().fadeOut(速度,回调函数)	隐藏
+			注意：有默认时间[速度]
+		$().fadein(速度,回调函数)	显示
+			注意：有默认时间[速度]
+		$().fateTo(速度,透明度(0-1),回调函数)
+		$().fadeToggle(速度,回调函数)
+		
+-->

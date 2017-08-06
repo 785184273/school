@@ -1,0 +1,62 @@
+ <html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type="text/javascript">
+		//创建一个空数组
+		//var arr = new Array();
+		//增加数组元素，数组元素的值可以是任何类型
+		//arr[0] = "张三";
+		//arr[1] = "男";
+		//arr[2] = ["123943434","beijing@126.com","785184273"];
+		//构建输出的结果
+		//var str = "<h2>"+arr[0]+"的基本信息</h2>";
+		//str += "姓名："+arr[0];
+		//str += "<br>性别："+arr[1];
+		//str += "<br>电话："+arr[2][0];
+		//str += "<br>邮箱："+arr[2][1];
+		//str += "<br>QQ："+arr[2][2];
+		//输出结果
+		//document.write(str);
+		 //二维数组在表格中的应用
+		 var arr = [
+						["周才胜","男","20","大专"],
+						["陈龙","男","21","大专"],
+						["娟二狗","女","19","本科"],
+						["彭城","男","老男人不要在意年龄","....."]
+					];
+		var str = "";
+		var i;
+		var a;
+		str += "<table width=600 align=center rules=all border=1>";
+		for(i = 0;i < arr.length;i++)
+		{
+			str += "<tr>";
+				for(a = 0; a < arr[i].length;a++)
+				{
+					str += "<td>"+arr[i][a]+"</td>";
+				}	
+			str += "</tr>";
+		}
+		str += "</table>";
+		document.write(str);	
+		</script>
+	</head>
+		<body>
+			
+		</body>
+ </html>
+ <!--
+ 二维数组：给一个数组元素，赋一个数组的值，那么，这个数组就是"二维数组"
+ 二维数组和表格很像，可以拿来做表格，
+ 二维数组就得用两层循环来实现，也就是循环套循环
+ 二维数组的循环与二维表格的循环一模一样
+ 二维数组的访问，数组名后跟多个联系的中括号[]，第一个中括号[]代表第一维数组，第二个中括号[]代表第二维数组
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+	
+ -->

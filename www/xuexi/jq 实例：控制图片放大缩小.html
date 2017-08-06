@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			function big(){
+				//放大
+				var w = jQuery('img').width();
+				//var h = $('img').height();
+				//每次等比例放大
+				var new_w = w + 5;
+				//var new_h = new_w * h/w;
+				
+				$('img').width(new_w);
+				//$('img').height(new_h);
+				
+				//注意：可以只需要设定宽度(高度)，高度(宽度)会自适应
+				
+			}
+			
+			function small(){
+				//缩小
+				var w = $('img').width();
+				var h = $('img').height();
+				//每次等比例放大
+				var new_w = w - 5;
+				var new_h = new_w * h/w;
+				
+				$('img').width(new_w);
+				$('img').height(new_h);	
+			}
+		</script>
+	</head>
+	<body>
+		<img src = "./img/mm.jpg">
+		<input type = "submit" name = "big" value = "放大" onclick = "big()">
+		<input type = "submit" name = "big" value = "缩小" onclick = "small()">
+	</body>
+</html>

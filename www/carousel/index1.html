@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div class = "wapper">
+			<div class = "direct">
+				<span class = "left"></span>
+				<span class = "right"></span>
+			</div>
+			<div class = "show">
+				<ul>
+					<li style = "margin-left: 41.2px;">
+						<img src="img/图层-4-副本-4.jpg"/>
+						<p class = "name">田凯文 KEVIN</p>
+						<p class = "post">众智联邦创始人/董事长<p>
+					</li>
+					<li style = "margin-left: 41.2px;">
+						<img src="img/图层-4-副本-4.jpg"/>
+						<p class = "name">田凯文 KEVIN</p>
+						<p class = "post">众智联邦创始人/董事长<p>
+					</li>
+					<li style = "margin-left: 41.2px;">
+						<img src="img/图层-4-副本-4.jpg"/>
+						<p class = "name">田凯文 KEVIN</p>
+						<p class = "post">众智联邦创始人/董事长<p>
+					</li>
+					<li style = "margin-left: 41.2px;">
+						<img src="img/图层-4-副本-4.jpg"/>
+						<p class = "name">田凯文 KEVIN</p>
+						<p class = "post">众智联邦创始人/董事长<p>
+					</li>
+					<li style = "margin-left: 41.2px;">
+						<img src="img/图层-4-副本-4.jpg"/>
+						<p class = "name">田凯文 KEVIN</p>
+						<p class = "post">众智联邦创始人/董事长<p>
+					</li>
+					<li style = "margin-left: 41.2px;">
+						<img src="img/图层-4-副本-4.jpg"/>
+						<p class = "name">田凯文 KEVIN</p>
+						<p class = "post">众智联邦创始人/董事长<p>
+					</li>
+					<li style = "margin-left: 41.2px;">
+						<img src="img/图层-4-副本-4.jpg"/>
+						<p class = "name">田凯文 KEVIN</p>
+						<p class = "post">众智联邦创始人/董事长<p>
+					</li>
+					<li style = "margin-left: 41.2px;">
+						<img src="img/图层-4-副本-4.jpg"/>
+						<p class = "name">田凯文 KEVIN</p>
+						<p class = "post">众智联邦创始人/董事长<p>
+					</li>
+					<li style = "margin-left: 41.2px;">
+						<img src="img/图层-4-副本-4.jpg"/>
+						<p class = "name">田凯文 KEVIN</p>
+						<p class = "post">众智联邦创始人/董事长<p>
+					</li>
+					<li style = "margin-left: 41.2px;">
+						<img src="img/图层-4-副本-4.jpg"/>
+						<p class = "name">田凯文 KEVIN</p>
+						<p class = "post">众智联邦创始人/董事长<p>
+					</li>
+					<li style = "margin-left: 41.2px;">
+						<img src="img/图层-4-副本-4.jpg"/>
+						<p class = "name">田凯文 KEVIN</p>
+						<p class = "post">众智联邦创始人/董事长<p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+	
+		window.onload = function (){
+			var ppt = new carousel("show",4,0)
+			ppt.init();
+		}
+		function carousel(className,num,index){
+			this.n = 0;
+			this.boxn = num;	//滚动展示盒子的容量（展示的个数）
+			this.liObj = document.getElementsByClassName(className)[index].getElementsByTagName("li");
+			this.ulObj = document.getElementsByClassName(className)[index].getElementsByTagName("ul")[0];
+			this.liMargin = this.liObj[0].style.marginLeft.split("px")[0];
+			this.directObj = document.getElementsByClassName("direct")[0].getElementsByTagName("span");
+			this.left = document.getElementsByClassName("left")[0];
+			this.right = document.getElementsByClassName("right")[0];
+			this.i = this.liObj.length - this.boxn
+			this.timer;
+		}
+		carousel.prototype.init = function (){
+			var that = this;
+			this.ulObj.style.width = this.liObj.length * (this.liObj[0].offsetWidth + this.liMargin * 2) + "px";
+			this.ulObj.onmouseover = function(){
+				that.mouseover();
+			}
+			this.ulObj.onmouseout = function (){
+				that.mouseout();
+			}
+			this.left.onmouseover = function (){
+				that.mouseover();
+			}
+			this.left.onmouseout = function (){
+				that.mouseout();
+			}
+			this.right.onmouseover = function (){
+				that.mouseover();
+			}
+			this.right.onmouseout = function (){
+				that.mouseout();
+			}
+			this.left.onclick = function (){
+				that.show(1);
+			}
+			this.right.onclick = function (){
+				that.show(-1);
+			}
+			this.loop();
+		}
+		carousel.prototype.show = function (direct){
+			var direct = direct || 0;
+			if(direct < 0){
+				if(-this.i < this.n){
+					this.n--;
+					console.log(this.n)
+					this.ulObj.style.marginLeft = this.n  * (this.liObj[0].offsetWidth + this.liMargin * 2) + "px";
+				}
+			}else if(direct > 0){
+				if(this.n < 0){
+					this.n++;
+					console.log(this.n)
+					this.ulObj.style.marginLeft = this.n  * (this.liObj[0].offsetWidth + this.liMargin * 2) + "px";
+				}
+			}
+		}
+		carousel.prototype.loop = function (){
+			this.timer = setInterval(function (){
+				this.n--;
+				console.log(this.n)
+				if(-this.n > this.i){
+					this.n = 0;
+				}
+				this.ulObj.style.marginLeft = this.n * (this.liObj[0].offsetWidth + this.liMargin * 2) + "px";
+			}.bind(this),1000)
+		}
+		carousel.prototype.mouseover = function(){
+			clearInterval(this.timer);
+		}
+		carousel.prototype.mouseout = function (){
+			this.loop();
+		}
+		</script>
+	</body>
+</html>
+

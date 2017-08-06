@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p v-if = "show">
+				<label for = "username">username:</label>
+				<input type="text" id = "username" placeholder="请输入你的用户名" key = "username-input"/>
+			</p>
+			<p v-else>
+				<label for = "email">email:</label>
+				<input type="text" id = "email" placeholder="请输入你的邮箱" key = "email-input"/>
+			</p>
+			<input type="button" @click = "changeLogin" value = "change"/>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el : "#app",
+				data : {
+					show : true
+				},
+				methods : {
+					changeLogin : function (){
+						this.show = !this.show;
+					}
+				}
+			})
+			/*
+			 	vue会尽可能的高效的渲染元素，通常会复用已有的元素而不是从头开始渲染，这么做，可以使vue变得非常的快
+			 	vue提供了一种方式来声明"这两个元素是完全独立的--不要复用他们"，只需要添加一个唯一值的key属性即可
+			 * */
+		</script>
+	</body>
+</html>

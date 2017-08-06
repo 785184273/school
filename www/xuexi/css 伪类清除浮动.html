@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>css伪类浮动</title>
+		<style type="text/css">
+			.content{
+				border: 1px solid red;
+			}
+			.content img{
+				float: left;
+			}
+			.content:after{
+				content: "";
+				display: block;
+				border: 1px solid red;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<img src="img/1.png"/>
+		</div>
+	</body>
+</html>

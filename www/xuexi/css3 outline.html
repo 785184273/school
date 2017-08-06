@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style>
+			/*
+				outline属性主要用来在元素周围绘制一条轮廓线，可以起到突出元素的作用，但是并没得到各种主流浏览器的广泛支持
+					语法：
+						outline:[outline-color] || [outline-style] || [outline-width] || [outline-offset] || inherit
+					取值说明
+						outline-color		定义轮廓线的颜色
+						outline-style		定义轮廓线的样式
+						outline-width		定义轮廓线的宽度
+						outline-offset		定义轮廓线的便宜位置的数值
+						inherit				元素继承父元素的outline效果
+				注意：border和outline不一样，outline不占用网页布局空间
+			*/
+			div{
+				width:300px;
+				height:100px;
+				border:1px solid black;
+				outline:pink solid 10px;
+			}
+		</style>
+	</head>
+		<body>
+			<div>
+				cnm 听到没？cnm
+			</div>
+		</body>
+</html>

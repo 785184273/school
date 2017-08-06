@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+	</head>
+		<body>
+			<h2>ajax用户名的校验get方式</h2>
+			<form>
+				用户名:<input type = "text" name = "username" onblur = "checkname()" id = "name"><br />
+				密码:<input type = "text" name = "password"  id = "pas">
+			</form>
+		</body>
+</html>
+<script>
+	function checkname(){
+		//ajax方式校验
+		var nm = document.getElementById("name").value;
+		
+		//对传递的特殊符号进行编码处理(不是所有东西都进行编码处理)
+		nm = encodeURIComponent(nm);
+		
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function (){
+			if(xhr.readyState == 4){
+				window.alert(xhr.responseText);
+			}
+		}
+		
+		xhr.open('get','./aj get.php?name=' + nm + "&addr=beijing");
+		xhr.send(null);
+		
+	}
+</script>
+<!--
+	ajax get请求
+		对特殊信息(&,=)的处理
+			在浏览器里通过get参数传递一些特殊符号信息会被误解处理，为了避免特殊符号被误解产生歧义，需要对其进行编码处理
+				在php里面函数urlencode()/urldecode()对特殊符号进行编码，反编码处理
+				url_encode()可以把中文转变为浏览器可以识别的信息，编码后的信息为%后接两个十六进制数
+				
+				在js里边可以通过encodeURComponent()对特殊的符号进行编码，编码后的信息可以被正常接收使用，无需反编码
+			
+-->

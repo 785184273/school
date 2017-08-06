@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div id="div1" data-icon = "h">hello</div>
+		<ul id = "ul1">
+			<li>北京</li>
+			<li>上海</li>
+			<li>广州</li>
+		</ul>
+		<ul id = "ul2">
+			<li>陕西</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+	 dom把html文档的各个组成内容划分为各种节点（对象）
+	 文档节点(document)
+	 元素节点(就是html标签，比如<body>....)
+	 文本节点(就是标签中的文本)
+	 属性节点(就是标签中的属性，比如 <img src = "..."/>中的src)
+	 注释节点(就是注释标签 <!-- -->)
+	 
+	 元素节点获取
+	 	document.getElementById()
+	 	document.getElementsByClassName()
+	 	document.getElementsByTagName()
+	 
+	 文本节点获取
+	 	<div id = "div1">hello</div>
+	 	document.getElementById("div1").firstChild
+	 	也可以使用lastChild
+	 	
+	 通过文本节点获得对应的文本信息
+	 	<div id = "div1">hello</div>
+	 	document.getElementById("div1").firstChild.nodeValue;
+	 	
+	 子节点/兄弟节点
+	 	firstChild/lastChild：父节点获得第一个/最后一个节点
+	 	nextSibling:获得下一个兄弟节点
+	 	previousSibling:获得上一个兄弟节点
+	 	childNodes:父节点获得内部全部的子节点信息
+	 	以上属性在主流浏览器(firefox,chrome,safari,opera,ie9以上)中会给考虑空白节点(回车，空白)，在ie(6/7/8)浏览器中不考虑空白节点
+	 	空白节点的本质其实是文本节点
+	 	
+	 父节点
+	 	parentNode
+	 	
+	 属性值操作
+	 	获取属性值
+	 		元素节点node.属性名称		//只能操作W3C规定的属性
+	 		元素节点node.getAttribute(属性名称)	//规定的和自定义的都可以获取
+	 	设置属性值
+	 		元素节点node.属性名称 = 值	//只能操作W3C规定的属性
+	 		元素节点node.setAttribute(名称，值)	//规定的和自定义的都可以设置
+	 
+	属性节点获取
+		var attrlist = 元素节点对象.attributes
+			以"数组列表"形式返回对应节点内部的全部属性节点信息
+		attrilist.属性名称
+		
+	节点类型nodeType
+		节点.nodeType:
+			1------- >元素节点
+			2------- >属性节点
+			3------- >文本节点
+			9------- >文档节点
+		
+	节点创建和追加
+		节点创建
+			元素节点：document.createElement();
+			文本节点：document.createTextNode();
+		属性设置
+			node.setAttribute(名称，值);
+		节点追加
+			父节点.appendChild()
+			父节点.inserBefore(newnode,oldnode);
+			父节点.replaceChild(newnode,oldnode);
+	节点的复制
+		被复制的节点.cloneNode(true/false);
+			true:深层次的复制(本身节点和其内部的节点)
+			false:浅层复制(本身节点)
+	
+	节点的删除
+		父节点.removeChild(子节点)；
+	* */
+	
+	//alert(document.getElementById("div1").firstChild.nodeValue);	//获得文本节点信息
+	
+	//使用childNodes
+	var ul = document.getElementsByTagName("ul")[0];
+	for(var i = 0;i < ul.childNodes.length;++i){
+		console.log(ul.childNodes[i]);
+		/*
+		#text
+		li
+		#text
+		li
+		#text
+		li
+		#text
+		 * */
+	}
+	
+	//使用nextSibling
+	console.log(document.getElementById("div1").nextSibling.nextSibling.childNodes.length);
+	//使用previousSibling
+	console.log(document.getElementsByTagName("ul")[0].previousSibling.previousSibling.childNodes.length);
+	
+	//使用parentNode
+	console.log(document.getElementsByTagName("li")[1].parentNode)
+
+	//属性值操作
+	console.log(document.getElementById("div1").getAttribute("id"))
+	//设置属性值
+	document.getElementById("div1").setAttribute("class","div1");
+	//属性节点attributes
+	console.log(document.getElementById("div1").attributes.length);
+	for(var i = 0;i < document.getElementById("div1").attributes.length;++i){
+		console.log(document.getElementById("div1").attributes[i]);
+	}
+	//使用节点创建和追加
+		var ulObj = document.createElement("ul");
+		document.body.appendChild(ulObj);
+		var liObj = document.createElement("li");
+		ulObj.appendChild(liObj);
+		var textObj = document.createTextNode("四川");
+		liObj.appendChild(textObj);
+	//创建节点追加在兄弟节点后面
+		var li = document.createElement("li");
+		var text = document.createTextNode("巴中");
+		li.appendChild(text);
+		ulObj.insertBefore(li,liObj);
+	//已有节点的追加(会发生移动)
+		var li1 = document.getElementById("ul1").getElementsByTagName("li")[0];
+		var li2 = document.getElementById("ul2").getElementsByTagName("li")[0];
+		document.getElementById("ul1").insertBefore(li2,li1);
+	//节点复制的使用
+		var ul1 = document.getElementById("ul1");
+		var cloneTu = ul1.cloneNode(true);	//深层次的复制
+		var cloneFu = ul1.cloneNode(false);	//浅层复制
+		document.body.appendChild(cloneTu);
+		document.body.appendChild(cloneFu);
+	//节点删除操作
+		document.body.removeChild(cloneFu);
+</script>

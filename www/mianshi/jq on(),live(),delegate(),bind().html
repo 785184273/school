@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.2.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function (){
+				$("#add").bind("click",function (){
+					var li = $("<li>bootstrap</li>");
+					var ul = $("ul");
+					ul.append(li);
+				})
+				/*
+				 bind()方法未来添加的标签没有事件绑定处理函数
+				 * */
+//				$("li").bind("mouseover",function (event){
+//					event.target.style.background = "red";
+//				}).bind("mouseout",function (event){
+//					event.target.style.background = "#ffffff";
+//				})
+				/*
+				 delegate()方法为指定的元素，（属于被选元素的子元素）添加一个或多个事件处理程序，该方法的事件处理程序适用于当前或未来的元素
+				 * */
+//				$("ul").delegate("li","mouseover",function (event){
+//					event.target.style.background = "red";
+//				}).delegate("li","mouseout",function (event){
+//					event.target.style.background = "#ffffff";
+//				})
+//			})
+				/*
+				 live();
+				 * */
+//				$("li").live("mouseover",function (event){
+//					event.target.style.background = "red";
+//				}).live("mouseout",function (event){
+//					event.target.style.background = "#ffffff";
+//				})
+				$("#box").on("click",function (){
+					
+					alert(1);
+				})
+				$("p").on("click",function (event){
+					event.stopPropagation();
+					alert(2);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>html</li>
+			<li>css</li>
+			<li>js</li>
+		</ul>
+		<div id="box">
+			<p>the one</p>
+		</div>
+		<input type="button" name="add" id="add" value="添加li" />
+	</body>
+</html>

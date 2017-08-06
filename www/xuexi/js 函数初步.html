@@ -1,0 +1,199 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+		//*******************************
+		//function getMax(a,b){
+		//	if(a>b)
+		//	{
+		//		document.write(a+"大!<br>");
+		//	}else
+		//	{
+		//		document.write(b+"大!<br>");
+		//	}
+		//}	
+		//getMax(0,5);
+		//getMax(10,20);
+		//getMax(20,30);
+		//getMax(30,40);
+		//function show(name,age)
+		//{
+		//	document.write(name+"的年龄是"+age+"岁<br>");
+		//}
+		//调用函数时
+		//show("周财神","20");
+		//show("lisi","30")
+		//function getmax(a,b){
+		//	var max;
+		//	if(a>b)
+		//	{
+		//		max = a;
+		//	}else{
+		//		max = b;
+		//	}
+		//	return max;	
+		//}
+		//document.write(getmax(10,20));
+		//实例：用函数求两个数的最大值，然后，在函数外将最大值再加100求结果
+		function getMax(a,b)
+		{
+			var max;
+			if(a>b)
+			{
+				max = a;
+			}else
+			{
+				max = b;
+			}
+			return max;
+		}
+		//如果在函数中直接输出了，那么getMax(10,20)的值为undefined
+		//如果在函数中使用return返回一个20，那么getMax(10,20)的值为20
+		//return何时使用呢？当你在函数外需要这个值，只需要return返回
+		//var max = getMax(20,30) + 100;
+		document.write(getMax(20,30)+100);
+		document.write("<hr>");
+		//求给定任意数字圆的半径求圆的面积
+		function area(r){
+			var A;
+			A = 3.14 * r * r;
+			return A;
+		}
+		document.write("该圆的面积为:"+area(2));
+		document.write("<hr>");
+		function bian(a,b){
+			var c;
+			c = Math.pow((a * a + b * b),0.5);
+			return c;
+		}
+		document.write("斜边C为："+bian(9,10));
+		document.write("<hr>");
+		//函数的作用域
+		//var abc = 3;
+		ab();
+		function ab(){
+			abc = 2;
+			//document.write(abc+"<br />");
+		}
+		//document.write(abc+"<br />");
+		//ab();
+		document.write(abc+"<br />");
+		document.write("<hr>");
+		//99乘法表
+		var i;
+		var a;
+		var str = "<table border = 1 rules = all>";
+		for(i = 1;i < 10;++i){
+			str += "<tr>";
+				for(a = 1;a <= i;++a){
+					str += "<td>"+i+" X "+a+" = "+i*a+"</td>";
+				}
+			str += "</tr>";
+		}
+		str += "</table>";
+		document.write(str);
+		//求1-n之间的所有偶数的个数
+		function num(i){
+			var n = 0;
+			var a;
+			for(a = 1;a <= i;++a){
+				if(a%2 == 0){
+					n++;
+				}
+			}
+			return n;
+		}
+		document.write("偶数的个数为："+num(4));
+		//系统内部函数练习
+		document.write("<hr />");
+		document.write(parseInt(25.3) + "<br />");
+		document.write(parseInt("25.7a") + "<br />");
+		document.write(parseInt("sa25.3") + "<br />");//字符串第一个出现字母就会出现NaN
+		document.write(parseFloat("25.7a") + "<br />");
+		document.write(parseFloat(25.7) + "<br />");
+		document.write(isNaN("25.7a") + "<br />");
+		document.write(isNaN(25.7) + "<br />");
+		document.write(isNaN("25.7") + "<br />");
+		document.write("<hr>");
+		function getInfo(){
+			console.log("个人信息");
+		}
+		getInfo();
+		document.write("<hr>");
+		function f1(){
+			function f2(){
+				document.write("你是不是傻逼啊?");
+			}
+			return f2;
+		}
+		var ff = f1;
+		document.write(ff());
+		document.write("匿名函数自调用<br>");
+		var info = function (){
+			document.write("匿名函数<br />");
+		}
+		info();
+		(function (n){
+			document.write("匿名函数自调用的第" + n + "种方式<br />");
+		})
+		//匿名函数自调用第二种方式需要提高前面的优先级
+		//特点是程序代码没有停顿，立即停止
+		(2);
+		</script>
+	</head>
+		<body>		
+		</body>
+</html>
+<!--
+函数
+	函数的概念
+		函数是将一段公共的代码进行封装，给它取个名叫"函数"
+		函数可以一次定义，多次调用
+		函数可以将常用的功能代码进行封装，如：用户名的验证,验证码函数,邮箱的验证,手机号码验证
+	函数的定义格式
+		function 函数名([参数1],[参数2],[参数N]){
+			函数的功能代码;
+			[return 参数r]
+		}
+		格式说明
+		function：关键字，系统内定的 ，全小写
+		functionName：函数的名称，函数名的命名规则与变量的命名一样
+		()：是定义函数时接收数据的参数。参数可有可无，多个参数之间用逗号隔开
+			形参(形式参数)：定义函数时的参数就是"形参"，主要用来接收调用函数者传过来的数据
+				形参的名称，与变量的命名规则一样
+				但是形参不能用var关键字定义
+				参数只能存在于函数中
+				参数不需要声明直接使用
+			实参(实际参数)；调用函数时的参数称为"实参"，实参就是真正的数据
+		{}：是函数的功能。
+		return语句，用户向函数调用者返回一个值，并立即结束函数的运行
+			return也能返回函数
+			return用于终止函数的运行
+			break用于终止各种循环
+	函数的调用
+		函数定义是不会执行的，那么函数必须调用才会有效果
+		函数的定义和调用不分顺序
+		函数的调用：直接写函数名后跟小括号，小括号不能省略，如果有参数写参数，没有则不写
+		注意：函数执行完毕后，会回到函数调用的位置
+	匿名函数自调用
+	函数的参数
+		形参的个数，要与实参的个数一致
+		形参的顺序要与实参的顺序一致
+	函数的作用域
+		函数外部：变量不管是否用了var申明，都是全局变量。
+		函数内部：变量如果没有使用var关键字申明，那它就是全局变量，只有用var关键字申明了，才是局部变量
+		函数的外部不能使用函数内部的变量，函数内部可以使用函数外部的变量
+	系统内部函数
+		parseInt:取整
+			例如：parseInt(25.3);
+			注意：字符串开头第一个就是字母就会出现NaN
+		parseFloat：取浮点数
+			例如：parseFloat(24.22);
+		is NaN:is not a number
+			1.如果判断的数据为数子	:false
+			2.如果判断的数据为字符	：true
+
+
+
+
+-->

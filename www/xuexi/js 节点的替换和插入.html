@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li id = "li">李四</li>
+			<li id = "zhang">张三</li>
+		</ul>
+		<ul>
+			<li id = "liu">刘备</li>
+		</ul>
+		<input type="submit" name="sub" id="sub" value="替换" onclick = "replace()"/>
+		<input type="submit" name="insert" id="insert" value="添加" onclick = "insert()"/>
+		<script type="text/javascript">
+		/*
+			节点的替换
+				node.replaceChild(newnode,oldnode);
+			节点的插入
+				node.insertChild(newnode,oldnode);
+		 * */
+		function replace(){
+			var liu = document.getElementById("liu");
+			var li = document.getElementById("li");
+			document.getElementsByTagName("ul")[0].replaceChild(liu,li);
+		}
+		function insert(){
+			var w = document.createElement("li");
+			var w_text = document.createTextNode("王二");
+			w.appendChild(w_text);
+			document.getElementsByTagName("ul")[0].insertBefore(w,document.getElementById("zhang"));
+		}
+		</script>
+	</body>
+</html>

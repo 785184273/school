@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript">
+			/*
+				鼠标放上和移开变色
+					1.需要onmouseover
+					2.需要onmouseout
+			*/
+			function init(trObj)
+			{
+				trObj.style.backgroundColor = "red";
+			}
+			function init1(trObj)
+			{
+				trObj.style.backgroundColor = "white";
+			}
+			//删除行
+			function deleteProduct(id)
+			{
+				//是否真的要删除
+				if(window.confirm("你真的不考虑了吗？确定吗啊？"))
+				{
+					//获取tr节点
+					var trObj = document.getElementById(id);
+					//删除节点
+					//trObj.parentNode.removeChild(trObj);
+					//alert(trObj.parentNode)
+					var node_tbody = trObj.parentNode;
+					node_tbody.removeChild(trObj);
+				}
+			}
+			//购物车的计算
+			
+		</script>
+		<style type = "text/css">
+			.nima{width:50px;padding:0px;text-align:center}
+			table{margin:0px auto;width:400px;height:300px;}
+		</style>
+	</head>
+		<body>
+			<table border = 1>
+				<tr id = "on" onMouseOver = "init(this)" onMouseOut = "init1(this)">
+					<td></td>
+					<td class = "nima"><a href = "##" onclick = "deleteProduct('on')">删除</a></td>
+				</tr>
+				<tr id = "on1" onMouseOver = "init(this)" onMouseOut = "init1(this)">
+					<td></td>
+					<td class= "nima"><a href = "javascript:deleteProduct('on1')">删除</a></td>
+				</tr>
+				<tr id = "on2" onMouseOver = "init(this)" onMouseOut = "init1(this)">
+					<td></td>
+					<td class = "nima"><a href = "javascript:deleteProduct('on2')">删除</a></td>
+				</tr>
+				<tr id = "on3" onMouseOver = "init(this)" onMouseOut = "init1(this)">
+					<td></td>
+					<td class = "nima"><a href = "javascript:deleteProduct('on3')">删除</a></td>
+				</tr>
+			</table>
+		</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			1.时间框date
+			2.颜色选择框color
+			3.日期时间datetime,和普通的text类型的输入框差不多
+			4.日期时间本地格式datetime-local
+			5.月份选择month
+			6.时间选择time
+			7.周和年选择框week
+			8.number数值的输入域
+			9.区间选择器range
+		-->
+		<input type="date"/><br />
+		<input type="color"/><br />
+		<input type="datetime"/><br />
+		<input type="datetime-local"/><br />
+		<input type="month"/><br />
+		<input type="time"/><br />
+		<input type="week"/><br />
+		<input type="number" max = "10" min = "1" step = "2"><br />
+		<input type="range" max = "10" min = "0" oninput="result.innerHTML = this.value"/><span id = "result"></span>
+	</body>
+</html>

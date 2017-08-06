@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = 4;
+			(function (){
+				alert(a);	//undefined;
+				var a = 5;
+			})();
+			/*
+			 变量提升，就是将变量提升到函数的top地方，需要说明的是，变量的提升，只提升变量的声明，并不会把赋值也提升上来,如下
+			 var a = 4
+			 (function (){
+			 	var a;
+			 	alert(a);
+			 	a = 5;
+			 })();
+			 */
+			function mytest(){
+				foo();
+				function foo(){
+					alert("我来自foo");
+				}
+			}
+			mytest();
+			
+			function mytest1(){
+				foo1();
+				var foo1 = function (){
+					alert("我来自foo");		//error:foo1 is not a function 
+				}
+			}
+			mytest1();
+			/*
+			 函数提升是把整个函数都提到前面去，我们在写js代码的时候，函数有两种写法，一种是函数表达式，一种是函数的声明方式，函数声明的方式才能被提升，函数表达式不能被提升
+			 * */
+		</script>
+	</body>
+</html>

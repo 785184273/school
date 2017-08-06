@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				encodeURI()主要用于整个URI，而encodeURIComponent()主要用于对URI中的某一段进行编码，它们的主要区别在于，encodeURL不会对本身属于URI的特殊字符进行编码，例如：冒号，正斜杠，问号，井字号；而encodeURIComponent()则会对它发现的任何非标准字符进行编码 
+			*/
+			
+			var url = "https://www.baidu.com/";
+			console.log(encodeURI(url));			//https://www.baidu.com/
+			console.log(encodeURIComponent(url));	//https%3A%2F%2Fwww.baidu.com%2F
+			/*
+				使用encodeURI()编码后的结果除了空格之外的其它字符都原封不动，只有空格被替换成了%20
+				使用encodeURIComponent()方法则会使用对应的编码替换所有的非字母数字字符，这也正是可以对整个URI使用encodeURI，而只能对附加在现有URI后面的字符串使用encodeURIComponent()的原因所在
+			*/
+			var global = function (){
+				return this;
+			}();
+		</script>
+	</body>
+</html>

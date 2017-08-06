@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+		//例子，输出1-10之间的所有数
+		//for(a = 1;a <= 10;a++)
+		//{
+		//	document.write("<br>"+a);
+		//}
+		//例子，隔行变色
+		/*var str = "";
+		
+		str += '<table width=600 border=1 align=center rules=all>';
+		str +=		"<tr height=30>";
+		str +=			"<td>编号</td>";
+		str +=			"<td>新闻标题</td>";
+		str +=		 	"<td>发布时间</td>";
+		str +=		"</tr>";
+		for(a = 1;a <= 10;a++)
+		{
+			if(a%2==1)
+			{
+			str += '<tr height=30>';
+			}else
+			{
+			str += '<tr style="background:#eee" height=30>';
+			}
+			str +=		'<td><font color=red>第'+a+'行</font></td>';
+			str +=		'<td></td>';
+			str +=		'<td></td>';
+			str +=	'</tr>';
+			
+		}
+		str += '</table>';
+		document.write(str);*/
+		//输出1-100之间偶数的合
+		//var sum = 0;
+		//for(a = 1;a <= 100;a++)
+		//{
+		//	if(a%2==0)
+		//	{
+		//		sum=sum+a;
+		//	}
+		//}
+		//window.alert("\"偶数的和为:\""+sum);
+		//输出1-100所有数的和
+		var sum = 0;
+		for(a = 1;a<=100;a++)
+		{
+			sum=sum+a;
+		}
+		document.write(sum);
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+for循环
+	for(变量初始化;条件判断;变量更新)
+	{
+		循环体代码;
+	}
+	for循环执行的步骤；
+		第一步:变量初始化只在循环开始前执行一次，以后永远都不执行了
+		第二步:条件判断，如果条件为真， 则执行循环体的代码，否则退出循环，你需要循环多少遍，条件就需要多少次判断
+		第三步:执行循环体的代码，循环体代码执行完毕，程序立即跳到"变量更新"模块执行
+		第四步:变量更新，为了避免出现死循环，变量更新执行完毕后，程序跳到"条件判断"开始第二次循环
+	第二三四步会重复的执行，如果条件成立，则重复执行，条件不成了，则退出循环
+	
+	
+	
+	
+	
+	
+	
+-->

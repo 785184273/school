@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app = "app">
+		<div ng-controller = "demo">
+			<h1>{{other | currency}}</h1> <!--$4,999.00-->
+			<h1>{{other | currency : "￥"}}</h1> <!--￥4,999.00-->
+			<h1>{{other | number}}</h1> <!--4,999-->
+			<h1>{{other | number:3}}</h1> <!--4,999.000注意：后面的3代表几位小数-->
+			<h1>{{name | uppercase}}</h1> <!--JOHN-->
+			<h1>{{addr | lowercase}}</h1> <!--JOHN-->
+			<h1>{{name | limitTo : 2}}</h1> <!--jo limitTo截取操作，后面的2表示截取前2个-->
+			<h1>{{list | limitTo : 2}}</h1> <!--["a","b"]-->
+			<h1>{{date | date:'medium'}}</h1>
+			<h1>{{jsonarr | orderBy : 'age' : false}}</h1><!--参数age表示按照age来排序，第2个参数表示是否反向排序-->
+			<h2>{{jsonarr | filter : '小李' : true}}</h2><!--filter表示筛选，从数组中选择一个条目自己，并作为一个新数组返回，第二个参数表示是否全匹配，第二个参数小李表示按照小李匹配数组-->
+			<!--orderBy表示排序，来排序指定的数组，字符串按照字母顺序，数字按照大小顺序，-->
+			<h1><pre>{{data | json}}</pre></h1> <!--{
+													  "name": "小明",
+													  "age": "20"
+													}-->
+			<h1>{{name | limitTo : 2 | uppercase}}</h1><!--组合式过滤器-->
+			<h1>{{phone}}</h1>									
+		</div>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 	过滤器可以使用一个管道字符(|)添加到表达式和指令中
+			 * */
+			var App = angular.module("app",[]);
+			//在js中使用过滤器
+			App.controller("demo",["$scope","$filter",function ($scope,$filter){
+				$scope.phone = $filter("number")("13056509307",2);
+				$scope.other = "4999.123123123";
+				$scope.name = "john";
+				$scope.addr = "SICHUAN"
+				$scope.data = {"name":"小明","age" : "20","addr" : "四川省"};
+				$scope.list = ["a","b","c"];
+				$scope.date = "1231231231123";
+				$scope.jsonarr = [
+					{name : "小明",age : "20"},
+					{name : "小花",age : "19"},
+					{name : "小李",age : "17"}
+				]
+			}])
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		/*
+		 parseInt()方法首先查看位置0处的字符，判断他是否是一个有效数字，如果不是，该方法将返回NaN,不在执行其他的操作，但如果该字符是有效数字，该方法查看位置1处的字符，进行同样的测试，这一过程将持续到发现非有效数字的字符为止，此时parseInt()将把该字符之前的字符串转换成数字
+		 parseFloat()方法和parseInt()方法的处理方式相似，从位置0开始查看每个字符，直到找到第一个非有效的字符为止，然后把该字符之前的字符串转换成小数
+		 	注意：对该方法来说，第一个出现的小数点是有效数字，如果有两个小数点，第二个小数点将被看做是无效的，parseFloat()会把这个小数点之前的字符串转换成数字，这意味着“11.22.33”将会被转换成11.22
+		 * */
+			console.log(parseInt("abc"));		//NaN
+			console.log(parseInt("56.9"));		//56
+			console.log(parseInt("123abc"));	//123
+			
+			
+			console.log(parseFloat(".abc"));	//NaN
+			console.log(parseFloat("11.2"));	//11.2
+			console.log(parseFloat("11.22.33"));//11.22
+			console.log(parseFloat("0102"));	//102
+		</script>
+	</body>
+</html>

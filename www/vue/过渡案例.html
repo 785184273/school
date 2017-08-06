@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+		<style type="text/css">
+			p{
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin: 0 auto;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<input type = "text" v-model = "msg">
+			<transition-group
+				enter-active-class = "animated bounceInLeft"
+				leave-active-class = "animated bounceOutRight"
+			>
+				<p v-show = "msg" v-for = "(val,index) in lists" :key = "index">{{ val }}</p>
+			</transition-group>
+		</div>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			new Vue({
+				el : "#app",
+				data : {
+					msg : "",
+					list : [
+						"apple",
+						"banana",
+						"orange"
+					]
+				},
+				computed : {
+					lists : function (){
+						var arr = [];
+						this.list.forEach(function (val){
+							if(val.indexOf(this.msg) != -1){
+								arr.push(val);
+							}
+						}.bind(this))
+						console.log(arr);	
+						return arr;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

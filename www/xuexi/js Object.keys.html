@@ -1,0 +1,24 @@
+<html>
+	<head>
+	</head>
+		<body>
+			<script>
+				//Object.keys()取得对象上所有可枚举的属性
+				//Object.getOwnPropertyNames()取得所有的属性，无论他是否可枚举
+				function person(){
+					this.name = "小美";
+					this.age = 10;
+				}
+				person.prototype.addr = "四川";
+				var p = new person();
+				
+				//获得可枚举的实例属性
+				var obj = Object.keys(p);
+				console.log(typeof obj);	//object
+				//获得可枚举的原型属性
+				alert(Object.keys(person.prototype));
+				
+				console.log(Object.getOwnPropertyNames(person.prototype));
+			</script>
+		</body>
+</html>

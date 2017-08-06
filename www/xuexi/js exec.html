@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<script>
+			/*
+				正则表达式exec()
+					对于exec方法，即使在模式中设置了全局标志(g),他每次也只会返回一个匹配项，在不设置全局标志的情况下，在同一个字符串上多次调用exec()将始终返回第一个匹配项的信息，而在设置全局标志的情况下，每次调用exec()则都会在字符串中继查找新的匹配项
+			*/
+			
+			var str = "cat,bat,sat,fat";
+			var reg = /.at/;
+			
+			//在不设置全局匹配的模式下，每次调用exec()的匹配都只是返回第一个字符串
+			var res = reg.exec(str);
+			console.log(res);
+			
+			var res1 = reg.exec(str);
+			console.log(res1);
+			
+			//在设置全局匹配的模式下，每次调用exec()匹配的会在字符串中继续查找新的匹配项
+			var str1 = "cat,bat,sat,fat";
+			var reg1 = /.at/g;
+			
+			var res2 = reg1.exec(str1);
+			console.log(res2);
+			console.log(reg1.lastIndex);
+			console.log(reg1.toString());
+			
+			var res3 = reg1.exec(str1);
+			console.log(res3);
+			console.log(reg1.lastIndex);
+			console.log(reg1.toLocaleString());
+			
+			var arr = new Array();
+			var fun = new Object();
+			var s = new String();
+			var num = new Number();
+			var f = new Boolean();
+			var re = new RegExp();
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

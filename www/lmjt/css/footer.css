@@ -1,0 +1,63 @@
+/*友情链接*/
+.link{
+	height: 52px;
+	border-top: 1px solid #cac0b6;
+	background: #f8ecdc;
+}
+.link ul{
+	height: 100%;
+	width: 998px;
+	margin: 0 auto;
+	list-style: none;
+}
+.link ul li{
+	height: 100%;
+	line-height: 52px;
+	float: left;
+	margin: 0px 15px;
+	font-size: 14px;
+}
+.link ul li a{
+	color : #716c65;
+}
+.link ul li a:hover{
+	color:#FF6600;
+}
+/*脚部*/
+footer{
+	background: url(../img/f_bg1.jpg);
+	padding: 50px 0px 10px 0px;
+}
+footer div{
+	width: 998px;
+	margin: 0 auto;
+	position: relative;
+}
+footer div dd{
+	color: #9d9c9c;
+	margin-bottom: 10px;
+}
+footer div dl{
+	float: left;
+	margin: 0px;
+}
+footer div dd .phone{
+	margin: 0;
+	padding: 0;
+	font-size: 22px;
+}
+footer div .wx{
+	text-align: center;
+}
+footer div:after{
+	content: "";
+	clear: both;
+	width:  0px;
+	height: 0px;
+	display: block;
+}
+footer div .top{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}

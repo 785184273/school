@@ -1,0 +1,71 @@
+{config_load file = "site.conf"}
+{config_load file = "style.conf" section = "grey"}
+{config_load file = "style.conf" section = "$hobby"}
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+		<style type = "text/css">
+			div{ background:{#CLR#};width:{#WD#};height:{#HT#};border:1px solid red; }
+			.js{ border:1px solid red; }
+		</style>
+		<script type = "text/javascript">
+			
+		</script>
+	</head>
+		<body>
+			<div>
+				01.html<br/>
+				地址：{$addr}<br/>
+				姓名：{$name}<br/>
+				<hr>
+				配置变量的使用<br/>
+				{$smarty.config.NETWORK}<br/>
+				{#POLICE#}<br/>
+				{#NUM#}<br/>
+				数组元素的访问<br/>
+				{$arr[2]}<br/>
+				{$arr.1}<br/>
+				{$arr1['sichuan']}<br/>
+				{$arr1.chengdu}<br/>
+				{*
+					注释的部分
+						多维数组
+						{$数组[][][]}
+						{$数组......}
+				*}
+				索引数组的遍历<br/>
+				{foreach $arr as $k => $v}
+					{$v@first}-->{$v@index}-->{$v@iteration}-->{$k} = > {$v}-->{$v@last}<br/>
+				{foreachelse}
+					数组没有任何的元素<br/>
+				{/foreach}
+					数组元素的总个数：{$v@total};<br/>
+					数组是否遍历元素出来：{$v@show};<br/>
+				<pre>
+					foreach遍历数组的内部关键字
+					值变量@iteration---->从1开始的序号信息
+					值变量@index---->从0开始的序号信息
+					值变量@first---->判断第一个元素，返回布尔值
+					值变量@last---->判断最后一个元素，返回布尔值
+					值变量@total---->判断数组元素的个数(长度)
+					值变量@show---->判断当前数组是否遍历元素出来，返回布尔值
+				</pre>
+				关联数组的遍历<br/>
+				{foreach $arr1 as $m => $n}
+					{if $n@iteration%2 == 1}
+					<li class = "js">{$n@first}-->{$n@index}-->{$n@iteration}-->{$m} = > {$n}-->{$n@last}</li><br/>
+					{else}
+					<li class = "os">{$n@first}-->{$n@index}-->{$n@iteration}-->{$m} = > {$n}-->{$n@last}</li><br/>
+					{/if}
+				{foreachelse}
+					数组没有任何的元素<br/>
+				{/foreach}
+					数组元素的总个数：{$n@total};<br/>
+					数组是否遍历元素出来：{$n@show};<br/>
+				复选框的应用<br>
+				{html_checkboxes name = "hobby" selected = $select options = $arr1 separator = '<br/>' label_ids = true}
+				下拉列表的应用<br/>
+				{html_options name = "city" options = $opcity}
+			</div>
+		</body>
+</html>

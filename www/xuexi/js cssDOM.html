@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style type = "text/css">
+		.news{padding:20px 30px;}
+		</style>
+		<script type = "text/javascript">
+		window.onload = init; 
+		function init()
+		{
+		//创建一个div节点
+		var imgObj = document.createElement("img")
+		//将div节点挂载到body下
+		document.body.appendChild(imgObj);
+		imgObj.src = "img/443.jpg";
+		imgObj.setAttribute("style","border:1px solid red");
+		//节点属性的删除
+		//imgObj.removeAttribute("src")
+		//imgObj.style.border = "1px solid red";
+		imgObj.className = "news"
+		var divObj = document.createElement("div")
+		document.body.appendChild(divObj)
+		//节点的删除
+		//body.removeChild("divObj")
+		divObj.align = "center";
+		divObj.style.border = "1px solid blue";
+		divObj.style.width = "400px";
+		divObj.style.height = "500px";
+		divObj.style.margin = "0px auto";
+		document.body.style.backgroundColor = "grey"
+		//document.write(divObj.nodeName);
+		}
+		</script>
+	</head>
+		<body>
+			
+		</body>
+</html>
+<!--
+css DOM
+	使用js操作css的各属性，js只能操作或修改行内样式 如：imgObj.style.border = "1p solid red"
+	对于类样式可以通过className赋值	 如：imgObj.className = "imgClass"
+style对象
+	每个html标记都有一个style属性，但是这个style属性又是一个style对象
+	那么，这个style对象的属性有哪些？
+	style对象的属性与css中的属性一一对应
+	因此，style对象用来代替css
+	如：imgObj.style.border = "1p solid red";
+style对象属性与css属性的转换
+	如果都是一个单词，style对象的属性，和css属性一样
+	如果是多个单词，第一个单词小写，后面的每个单词首字母大写，并去掉中划线
+		如 ： divObj.style.backgroundColor = "red";
+			   divObj.style.backgroundimage = "url()"
+
+
+
+
+
+
+
+-->

@@ -1,0 +1,56 @@
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<style type="text/css">
+			body.div,ul,li,img,p,input{padding:0px;margin:0px;}
+			body{background:url(img/show1.jpg);font-size:12px;color:#444;font-family:宋体;}
+			.box{width:910px;height:610px;border:px solid red;margin:0px auto;}
+			.box img{border:px solid red;float:left;margin:100px 20px;}
+			.box .content{border:px solid red;width:423px;height:600px;float:right;background:white;border-radius:3px;text-align:center;}
+			.box .content .jiyu{width:380px;height:50px;line-height:50px;border-bottom:1px solid grey;margin:0px auto;}
+			.box .content .jiyu .s1{font-size:20px;}
+			.box .content .jiyu .neirong{width:380px;height:150px;border:1px solid #444;border-radius:4px;margin-top:5px;margin-bottom:5px;}
+			.box .content .jiyu .neirong p{border:px solid red;height:30px;line-height:30px;}
+			.box .content .jiyu .liuyan{width:380px;height:380px;border:1px solid #444;border-radius:4px;}
+			.box .content .jiyu .liuyan form{border:px solid red;}
+			.box .content .jiyu .liuyan tr{border:1px solid grey;}
+			.box .content .jiyu .liuyan input{background-color:#EEE8AA;border:1px solid grey;border-radius:3px;width:337px;height:40px;font-size:14px;}
+		</style>
+	</head>
+		<body>
+			<div class="box">
+				<img src="img/kj4.png">
+				<div class="content">
+					<div class="jiyu">
+						<span class="s1">主人寄语</span>
+						<div class="neirong">
+							<p>把你的影子加点盐;</p>
+							<p>腌起来;</p>
+							<p>风干;</p>
+							<p>老的时候;</p>
+							<p>下酒.</p>
+						</div>
+						<div class="liuyan">
+							
+								<form action="liuyando.php" method="post">
+									<table width=280 height=120 align="center">
+									<tr>
+										<td><input type="text" name="title" placeholder="请输入标题"/></td>
+									</tr>
+									<tr>
+										<td><input type="text" name="author" placeholder="请输入您的名字"/></td>
+									</tr>
+									</table>
+									<textarea name="content" cols="45" rows="13" style="border-radius:3px;background-color:#EEE8AA;font-size:14px;overflow-y:hidden;height:211px;width:336px;border:1px solid grey;"placeholder="您要发表的内容"></textarea>
+									<tr>
+										<input type="submit" value="确定" style="margin-top:5px;font-size:15px;background-color:#00FF00"/>
+									</tr>
+								</form>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    	body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+   		.seconde-nav{
+   			height: 80px;
+   			margin-bottom: 10px;
+   		}
+   		.seconde-nav ul li a {
+   			line-height: 50px;
+   		}
+   		.seconde-nav .navbar-brand{
+   			line-height: 50px;
+   		}
+   		.row {
+ 				margin-top: 10px;
+   		}
+   		.row .fea{
+   			width: 80%;
+   		}
+   		.row dl dt{
+   			margin-bottom: 5px;
+   		}
+   		.e-panel,.banking-panel{
+   			//padding: 0;
+   			border: none;
+   		}
+   		.e-panel .e-panel-heading{
+   			background: #fff;
+   			padding: 0;
+   		}
+   		.e-panel .left{
+   			color: #2e8ece;
+   			font-size: 24px;
+   			font-weight: bold;
+   			border-bottom: 3px solid;
+   		}
+   		.e-panel table tr:first-child td{
+   			color: #999999;
+   			font-weight: bold;
+   		}
+   		.e-panel table tr:first-child{
+   			border-bottom: 2px solid #999;
+   		}
+   		.footer{
+   			margin-top: 20px;
+   			background-color: #f8f8f8;
+   		}
+   		.footer .row{
+   			margin-top: 30px;
+   		}
+    </style>
+ 	</head>
+<body>
+	<!--加载页面的头部-->
+	<script src="./header.html" type="text/javascript" charset="utf-8"></script>
+	<!--轮播图-->
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	  <!-- Indicators -->
+  		<ol class="carousel-indicators">
+    		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+  		</ol>
+	  <!-- Wrapper for slides -->
+	  	<div class="carousel-inner" role="listbox">
+	    	<div class="item active">
+	      		<img src="img/slide2.jpg" alt="...">
+	   		 </div>
+	    	<div class="item">
+	      		<img src="img/slide1.jpg" alt="...">
+	   		 </div>
+	  	</div>
+	  <!-- Controls -->
+	  	<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+	    	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	    	<span class="sr-only">Previous</span>
+	  	</a>
+	  	<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+	    	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    	<span class="sr-only">Next</span>
+	  	</a>
+	</div>
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-md-4 col-sm-12">
+				<img src="img/fea1.jpg"/>
+				<dl class = "pull-right fea">
+					<dt>投资理财</dt>
+					<dd>稳定投资、高收益、短期限，易融贷先行赔付，保障投资人权益。</dd>
+				</dl>
+			</div>
+			<div class = "col-md-4 col-sm-12">
+				<img src="img/fea2.png"/>
+				<dl class = "pull-right fea">
+					<dt>投资理财</dt>
+					<dd>稳定投资、高收益、短期限，易融贷先行赔付，保障投资人权益。</dd>
+				</dl>
+			</div>
+			<div class = "col-md-4 col-sm-12">
+				<img src="img/fea3.jpg"/>
+				<dl class = "pull-right fea">
+					<dt>投资理财</dt>
+					<dd>稳定投资、高收益、短期限，易融贷先行赔付，保障投资人权益。</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default container e-panel">
+		<!-- Default panel contents -->
+	  	<div class="panel-heading clearfix e-panel-heading">
+	  		<span class = "pull-left left">进行中借款</span>
+	  		<a href = "#" class = "pull-right btn btn-link">进入投资列表</a>
+	  	</div>
+	  	<!-- Table -->
+	  	<table class="table table-hover">
+	    	<tr>
+	    		<td>借款人</td>
+	    		<td>借款标题</td>
+	    		<td>年利率</td>
+	    		<td>金额</td>
+	    		<td>还款方式</td>
+	    		<td>进度</td>
+	    		<td>操作</td>
+	    	</tr>
+	    	<tr>
+	    		<td>张三</td>
+	    		<td>给我2000度过难关</td>
+	    		<td>10.00%</td>
+	    		<td>2,000.00</td>
+	    		<td>按月分期还款</td>
+	    		<td>78.00%</td>
+	    		<td><a class = "btn btn-danger btn-sm">查看</a></a></td>
+	    	</tr>
+	    	<tr>
+	    		<td>王五</td>
+	    		<td>借钱吃饭</td>
+	    		<td>12.00%</td>
+	    		<td>100.00</td>
+	    		<td>按月到期还款</td>
+	    		<td>100.00%</td>
+	    		<td><a class = "btn btn-danger btn-sm">查看</a></td>
+	    	</tr>
+	  	</table>
+	</div>
+	<div class = "container banking-panel">
+		<div class = "row">
+			<div class = "col-md-6 c col-ms-12 col-xs-12">
+				<div class="panel panel-default e-panel">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading e-panel-heading clearfix">
+				  	<span class = "pull-left left">企业最新资讯</span>
+				  	<a class = "pull-right btn btn-link">更多资讯</a>
+				  </div>
+				  <table class="table table-hover">
+						<tr>
+							<td>央视力挺互联网金融</td>
+							<td>发表日期：2015-03-23</td>
+						</tr>
+						<tr>
+							<td>央视力挺互联网金融</td>
+							<td>发表日期：2015-03-23</td>
+						</tr>
+						<tr>
+							<td>央视力挺互联网金融</td>
+							<td>发表日期：2015-03-23</td>
+						</tr>
+				  </table>
+				</div>
+			</div>
+			<div class = "col-md-6 c col-ms-12 col-xs-12">
+				<div class="panel panel-default e-panel">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading e-panel-heading clearfix">
+				  	<span class = "pull-left left">企业最新资讯</span>
+				  	<a class = "pull-right btn btn-link">更多资讯</a>
+				  </div>
+				  <table class="table table-hover">
+						<tr>
+							<td>央视力挺互联网金融</td>
+							<td>发表日期：2015-03-23</td>
+						</tr>
+						<tr>
+							<td>央视力挺互联网金融</td>
+							<td>发表日期：2015-03-23</td>
+						</tr>
+						<tr>
+							<td>央视力挺互联网金融</td>
+							<td>发表日期：2015-03-23</td>
+						</tr>
+				  </table>
+				</div>
+			</div>
+			<div class = "col-md-6 c col-ms-12 col-xs-12">
+				<div class="panel panel-default e-panel">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading e-panel-heading clearfix">
+				  	<span class = "pull-left left">企业最新资讯</span>
+				  	<a class = "pull-right btn btn-link">更多资讯</a>
+				  </div>
+				  <table class="table table-hover">
+						<tr>
+							<td>央视力挺互联网金融</td>
+							<td>发表日期：2015-03-23</td>
+						</tr>
+						<tr>
+							<td>央视力挺互联网金融</td>
+							<td>发表日期：2015-03-23</td>
+						</tr>
+						<tr>
+							<td>央视力挺互联网金融</td>
+							<td>发表日期：2015-03-23</td>
+						</tr>
+				  </table>
+				</div>
+			</div>
+			<div class = "col-md-6 c col-ms-12 col-xs-12">
+				<div class="panel panel-default e-panel">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading e-panel-heading clearfix">
+				  	<span class = "pull-left left">企业最新资讯</span>
+				  	<a class = "pull-right btn btn-link">更多资讯</a>
+				  </div>
+				  <table class="table table-hover">
+						<tr>
+							<td>央视力挺互联网金融</td>
+							<td>发表日期：2015-03-23</td>
+						</tr>
+						<tr>
+							<td>央视力挺互联网金融</td>
+							<td>发表日期：2015-03-23</td>
+						</tr>
+						<tr>
+							<td>央视力挺互联网金融</td>
+							<td>发表日期：2015-03-23</td>
+						</tr>
+				  </table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--加载页面的底部-->
+	<script src="./footer.html" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="js/bs_index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

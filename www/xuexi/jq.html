@@ -1,0 +1,222 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script src = "./jq/jquery.min.js">
+		</script>
+		<style>
+			#d1{width:200px;
+				height:200px;
+				background:blue;
+			}
+		</style>
+	</head>
+		<body>
+			<h1>h1</h1>
+			<h2 class = "pear">h2</h2>
+			<h3 class = "pear">h3</h3>
+			<div id = "xiba">
+				<p><a href = "">哈狗</a></p>
+				<a href = "">链接</a>
+				<ul>
+					<li id = "li1" class = "shabi">1</li>
+					<li>2</li>
+					<li class = "pear">3</li>
+					<li class = "pear">4</li>
+					<li>5</li>
+				</ul>
+			</div>
+			<div id = "d1"></div>
+			<div id = "d2">这是div2</div>
+			<div id = "d3"></div>
+			<div id = "d4">这是div4</div>
+			<div id = "div1" class = "d1"><span id = "d1">abcd</span></div>
+			<input type = "text">
+			<input type = "submit"/>
+			<input type = "button" value = "点击"/>
+			<input type = "submit" id = "s1" value = "点击"/>
+			<input type = "checkbox" class = "hb" name = "hobby[]" value = 1>1
+			<input type = "checkbox" class = "hb" name = "hobby[]" value = 2>2
+			<input type = "checkbox" class = "hb" name = "hobby[]" value = 3>3
+			<input type = "checkbox" class = "hb" name = "hobby[]" value = 4>4
+			<input type = "checkbox" class = "hb" name = "hobby[]" value = 5>5
+			
+			<select>
+				<option value = "1" >1</option>
+				<option value = "2" >2</option>
+				<option value = "3" >3</option>
+				<option value = "4" >4</option>
+			</select>
+			<hr>
+			<input type = "submit" value = "checked" onclick = "init()">
+			<input type = "submit" value = "selected" onclick = "init()">
+			<script>
+				function init(){
+					console.log($('hb:checked'));
+				}
+				function init1(){
+				
+				}
+				$("#s1").css('color','blue');
+				//id选择器
+				/*
+				$("input").click(function (){
+					//$("#div1").css({background:"red"});
+					//$("li:first").css({background:"red"});
+					//$("li:last").css({background:"red"});
+					//$("li:even").css({background:"red"});
+					//$("li:odd").css({background:"yellow"});
+					//$("li:eq(1)").css({background:"yellow"});
+					//$("li:lt(1)").css({background:"yellow"});
+					//$(".pear:header").css({background:"red"});
+					//$("li:not(.shabi)").css({background:"red"});
+					//$('li:gt(1):lt(1)').css({background:"red"});
+					//$('li.pear').css('color','red');
+				});
+				//*/
+				//元素选择器
+				/*
+				$("input").click(function (){
+					$("div,p").css({background:"red"});
+				});
+				//*/
+				//类选择器
+				/*
+				$("input").click(function (){
+					$(".d1").css({background:"red"});
+				});
+				*/
+				//层级选择器
+				/*
+				$("input").click(function (){
+					//$("div p").css({background:"red"});
+					//$("div>a").css({background:"red"});
+					//$("div>ul>li").css({background:"red"});
+					//$("#li1+").css({background:"red"});
+					$("p~").css({background:"red"});
+				});
+				*/
+				//内容选择器
+				/*
+				$("input").click(function (){	
+					//$("div:contains('这是div4')").css({background:"blue"});
+					//$("div:empty").css({background:"blue"});
+					//$("div:has(p)").css({background:"blue"});
+					//$("div:parent").css({background:"blue"});
+					//$("#d1").hide(3000);
+					$("div:has(#d1)").css({background:"blue"});
+				});
+				*/
+				//属性选择器
+				/*
+				$("input").click(function (){
+					//$("[id]").css({background:"red"});
+					//$("[class='d1']").css({background:"red"});
+					//$("[class!='d1']").css({background:"red"});
+					//$("[id^='d']").css({background:"red"});
+					//$("[id$='1']").css({background:"red"});
+					$("[id*=d]").css({background:"red"});
+				});
+				//*/
+				//子元素选择器
+				/*
+					$("input").click(function (){
+						//$("li:first-child").css({background:"red"});
+						//$("li:first-of-type").css({background:"red"});
+						//$("li:last-child").css({background:"red"});
+						//$("li:last-of-type").css({background:"blue"});
+						//$("li:nth-child(3)").css({background:"blue"});
+						//$("li:nth-of-type(2)").css({background:"red"});
+						//$("li:nth-last-child(1)").css({background:"red"});
+						//$("li:nth-last-of-type(2)").css({background:"red"});
+						//$("#xiba:nth-last-child(1)").css({background:"red"});
+					});
+				//*/
+				//表单选择器
+				/*
+					$("input").click(function (){
+						//$(":input").css({background:"red"});
+						$(":text").css({background:"red"});
+					});
+				//*/
+			</script>
+		</body>
+</html>
+<!--
+	jq：一个js库
+		js和jq
+			js:ECMAscript,BOM,DOM
+			jq:把BOM和DOM的部分封装
+		特点：
+			资源多，DOM封装好
+		引入：<script src = "jq....js"></script>
+		jq内容：
+			语法：$(select).action
+			选择器
+				选择页面元素的工具
+				1.基本选择器
+					#id:id选择器
+					并且选择器
+						注意：并且选择器可以单独使用
+							各种选择器都可以构造并且关系
+							并且关系的选择器可以使用多个，每个选择器使用前，已经获得节点下标都要归0
+							并且关系的多个选择器没有前后顺序的关系，避免产生歧义
+						:first 第一个子元素
+						:last 最后一个子元素
+						:even 查找1、3、5...行（即索引值0、2、4...）
+						:odd
+							查找2、4、6行（即索引值1、3、5...）
+						:eq(index)
+							匹配一个给定索引值的元素，从0开始计数
+						:gt(index)
+							匹配所有大于给定索引值的元素,从0开始计数
+						:lt(index)
+							匹配所有小于给定索引值的元素,从0开始计数
+						:header
+							匹配如 h1, h2, h3之类的标题元素
+						:not(selector)
+							取出所有与给定选择器匹配的元素
+					2.Element元素选择器
+					3.class类选择器
+				4.层级选择器
+					ancestor descendant：表示选取 ancestor 里面所有的 descendant的元素
+					parent>child: 表示选择parent儿子元素child
+					selectr+: 表示紧挨着的下一个
+					selectr~: 表示后面所有的兄弟
+				5.内容选择器
+					:contains("text")：匹配含有text内容的元素
+					:empty: 匹配内容为空的元素，包括换行空格这些都不能出现
+					:has(selecter): 匹配包含有selecter的选择器
+				6.属性选择器
+					[attribute]:attribute是属性名，匹配包含给定属性的元素。
+					[attribute=value]:匹配给定的属性是某个特定值的元素
+					[attribute!=value]:匹配所有不含有指定的属性，或者属性不等于特定值的元素。
+					[attribute^=value]:匹配给定的属性是以某些值开始的元素
+					[attribute$=value]:匹配给定的属性是以某些值结尾的元素
+					[attribute*=value]:匹配给定的属性是以包含某些值的元素
+				7.子元素选择器
+					type阵营	child阵营
+								:first-child：查找第一个子元素
+					:first-of-type: 查找第一个子元素
+								:last-child: 查找最后一个子元素
+					:lasi-of-type: 查早最后一个子元素
+								:nth-child(n):查找指定的一个子元素
+					:nth-of-type(n):查找指定的一个子元素
+								:nth-last-child(n):查找倒数第n个的子元素
+					:nth-last-of-type(n):查找倒数第n个的子元素
+				8.表单域中选择器
+					:checked	复选框，单选按钮	选中选择器
+					:selected	下拉列表	选中选择器
+				9.可见性筛选器
+					:visible	选择所有显示的元素
+					:hidden		选择所有隐藏的元素
+			事件
+			DOM
+			动画
+			基本操作
+			插件
+			ajax
+		$符号的由来
+			$('div') $('.apple')等
+			选择器使用的过程就是函数调用过程
+			$符号就是一个函数，函数名称为"$"符号而已，也可以使用"jQuery"符号
+-->

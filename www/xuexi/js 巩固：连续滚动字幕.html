@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style type = "text/css">
+		body{font-size:12px;}
+		ul{padding:0px;margin:0px;}
+		li{list-style-type:none;padding:0px;margin:5px 0px;}
+		#dome{border:1px solid red;width:190px;height:184px;text-align:center;padding:0px;margin:0px;overflow:hidden;margin:0px auto;}
+		
+		</style>
+		<script type = "text/javascript">
+		function init()
+		{
+			//先找到三个div的id
+			var dome = document.getElementById("dome");
+			var dome1 = document.getElementById("dome1");
+			var dome2 = document.getElementById("dome2");
+			//让三个div宽高一样
+			//alert(dome);
+			dome1.setAttribute("style","height:184px;");
+			dome2.setAttribute("style","height:184px;");
+			//将dome1中的内容复制到dome2中
+			dome2.innerHTML = dome1.innerHTML;
+			//计时器开始走位
+			window.setInterval("start1()",40);
+		}
+		function start1()
+		{
+			dome.scrollTop++;
+			if(dome.scrollTop == dome.offsetHeight)
+			{
+				dome.scrollTop = 0;
+			}
+		}
+		</script>
+	</head>
+		<body onload = "init()">
+			<div id = "dome">
+				<div id = "dome1">
+					<ul>
+						<li>2010考研英语大纲到货75折...</li>
+						<li>权威定本四大名著（人民文...</li>
+						<li>口述历史权威唐德刚先生国...</li>
+						<li>袁伟民与体坛风云：实话实...</li>
+						<li>我们台湾这些年：轰动两岸...</li>
+						<li>畅销教辅推荐：精品套书50...</li>
+						<li>2010版法律硕士联考大纲75...</li>
+						<li>计算机新书畅销书75折抢购...</li>
+						<li>2009年孩子最喜欢的书是这...</li>
+						<li>弗洛伊德作品精选集59折抢...</li>
+					</ul>
+				</div>
+				<div id = "dome2">
+				</div>
+			</div>
+		</body>
+</html>

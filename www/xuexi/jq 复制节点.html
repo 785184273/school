@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			$(function (){
+				$('li').mouseover(function (){
+					this.style.background = "pink";
+					//$('li').css('background','pink');
+				});
+				$('li').mouseout(function (){
+					this.style.background = "";
+					//$('li').css('background','pink');
+				});	
+				f1();
+				f2();
+			});
+			//节点的复制
+			
+			function f1(){
+				//只复制节点本身
+				var copy_fei = $("#fei").clone(false);
+				$("#shu").append(copy_fei);
+				
+				//节点和其身上的事件都给复制
+				var copy_bei = $("#shu li:eq(0)").clone(true);
+				$("#shu"),append(copy_bei);
+			}
+			
+			//节点的删除
+			function f2(){
+				$("#shu li:eq(0)").remove();
+			}
+		</script>
+	</head>
+	<body>
+		<ul id = "shu">
+			<li>刘备</li>
+			<li>关羽</li>
+			<li id= "fei">张飞</li>
+		</ul>
+	</body>
+</html>
+<!--
+	复制节点
+		$().clone(true)		节点和其身上的事件都给复制
+		$().clone(false)	只复制节点本身(包括节点内部信息)
+-->

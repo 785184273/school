@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var str = "  Microsoft  ";
+			console.log(str);
+			console.log(trim(str));
+			function trim(str) {
+			    if (str && typeof str === "string") {
+			        return str.replace(/\s+/g,""); //去除前后空白符
+			        
+			    }
+			}
+			for (var i = 0; i < 5; i++) {
+			 		setTimeout(function (){
+			 			console.log(i);
+			 		},i * 1000);	//5,5,5,5,5
+			}
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

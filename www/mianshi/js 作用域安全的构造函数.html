@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 	作用域安全的构造函数
+			 		构造函数其实就是一个使用new操作符调用的函数，当使用new调用时，构造函数内用到的this对象会指向新创建的对象例
+			 		如果不使用new操作符，相当于函数的调用，构造函数内部的this就指向window
+			 	
+			 		使用作用域安全的构造函数，首先确定this对象是正确类型的实例，如果不是，那么会创建新的实例并返回
+			 		
+			 		注意：作用域安全的构造函数的继承需要结合以下方式
+			 * */
+			function polygon(sides){
+				if(this instanceof polygon){
+					this.sides = sides;
+					this.getArea = function (){
+						return 0;
+					}
+				}else{
+					return new polygon(sides);
+				}
+			}
+			function rectangle(width,height){
+				//polygon.call(this,2);
+				this.width = width;
+				this.height = height;
+			}
+			
+			rectangle.prototype = new polygon(2);
+			
+			var rec = new rectangle(5,10);
+			console.log(rec.sides);
+		</script>
+	</body>
+</html>

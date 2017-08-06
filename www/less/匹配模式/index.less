@@ -1,0 +1,30 @@
+@s:dark;
+.mixin(dark,@color){
+    color:darken(@color,10%);
+}
+.mixin(light,@color){
+    color:lighten(@color,10%);
+}
+.mixin(@_,@color){
+    display: block;
+}
+
+div{
+    .mixin(@s,pink);
+}
+/*
+    匹配模式
+        根据条件进行样式显示，类似js中的switch
+    有些情况下，我们想根据传入的参数来改变混合的默认呈现，比如下面这个例子
+    
+    .class{
+        .mixin(@switch,#888)
+    }
+    如果想让mixin根据不同的@switch值而表现各异，可以按下面配置
+    .mixin(dark,@color){
+        color:darken(@color,10%);
+    }
+    .mixin(light,@color){
+        color:lighten(@color,10%);
+    }
+ * */

@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<style>
+			/*
+				gradient分为线性渐变(linear)和径向渐变(radial)
+				语法
+					linear-gradient(to bottom,#fff,#999);
+				参数
+					第一个参数指定渐变的方向，可以用角度的关键词或英文来表示
+					角度		英文		作用
+					0deg		to top		从下向上
+					90deg		to right	从左向右
+					180deg		to bottom	从上向下
+					720deg		to left		从右向左
+								to top left	从右下角到左上角
+								to top right	从左下角到右上角
+			*/
+			div{
+				width:300px;
+				height:300px;
+				background:linear-gradient(to right,white,black);
+			}
+		</style>
+	</head>
+		<body>
+			<div>
+			</div>
+		</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+			*{margin:0px;padding:0px;}
+			#up{width:400px;height:400px;background:pink;}
+			#down{width:200px;height:200px;background:blue;position:absolute;left:300px;}
+		</style>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			function f1(){
+				//window.alert(123);
+				$("#down").fadeTo(1000,0.1);
+			}
+		</script>
+	</head>
+	<body>
+		<div id = "up">
+			<div id = "down">
+				颜色渐变
+			</div>
+		</div>
+		<input type = "submit" value = "颜色渐变" onclick = "f1()">
+	</body>
+</html>
+<!--
+	$().fadeTo(速度,透明度(0-1),回调函数);
+-->	

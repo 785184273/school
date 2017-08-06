@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<style type = "text/css">
+		
+		</style>
+		<script type = "text/javascript">
+			window.onload = init;
+			var imgObj = document.createElement("img")
+			function init()
+			{
+				//创建一个img节点
+				
+				//将创建的img节点放在body节点下
+				document.body.appendChild(imgObj);
+				//alert(imgObj.nodeName);
+				imgObj.src = "img/443.jpg";
+				imgObj.onclick = init1;//此时的onclick属性一定要全小写，传递不带括号
+				
+			}
+			function init1()
+			{
+				
+				//将图片的高度和宽度改为原来的两倍
+				//var imgObj = document.getElementById("nima");
+				imgObj.width = imgObj.width*2;
+			}
+		</script>
+	</head>
+		<body>
+			<!--<img src = "img/443.jpg" id = "nima" onclick = "init()"/>-->
+		</body>
+</html>
+<!--
+Event DOM----事件DOM
+事件简介
+	事件主要是实现"用户与网页的交互"
+	当事件发生时：去执行js代码
+		当点击图片时(onclick)，将图片方法两倍(就是代码)
+		当网页加载完成时(onload)，弹出一个小窗口
+		当鼠标放到滚动文本上时(onMouseOver)，文本停止滚动
+		当向下拖动滚动条时(onscroll)，文本向上滚动
+		......
+常用事件
+	onload:当网页加载完成时，只能给<body>用
+	onclick:当点击时，所有的标记都适用
+	onscroll:当拖动滚动条时
+	onMouseOver:当鼠标放上时
+	onMouseOut:当鼠标移开时
+	onSubmit:当提交表单时
+	onReset:当重置表单时
+	onFocus：当获得焦点是，把光标定位到文本框中
+	onBlur：当失去焦点时，把光标从文本框中移开
+	onchange：当下拉列表内容改变时，用在下拉列表，上传文件
+	onselect：当选中文本时
+	onresize：当改变窗口的大小时，发生的事件
+事件句柄属性
+	html标记，都有相应的事件属性
+	每一个html标记，都对应一个元素对象，元素对象也具有相应的事件属性
+	但是，元素对象的事件属性应该是全小写
+	事件属性后面调用的一般是js函数，通过js函数来完成相应的功能
+
+
+
+
+
+
+
+
+-->

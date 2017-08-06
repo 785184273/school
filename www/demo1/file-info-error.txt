@@ -1,0 +1,1 @@
+1054<br />select * from `work` where `key_word` = 'neusoft' and `type` = github<br />Unknown column 'github' in 'where clause'<br />

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div id = "div1"></div>
+		<script type="text/javascript">
+			/*
+			 parentElement是ie专用的
+			 parentNode是w3c标准，一般情况下可以取代parentElement所有功能
+			 * */
+			window.onload = function (){
+				console.log(document.body.parentElement.parentElement)	//null
+				console.log(document.body.parentNode.parentNode)	//document
+			};
+		</script>
+	</body>
+</html>

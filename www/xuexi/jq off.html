@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<script type = "text/javascript" src = "./jq/jquery.min.js"></script>
+		<script>
+			/*
+				通过on()绑定的事件处理程序
+				通过off()方法移除该绑定
+				$(selector).off()	删除所有的事件
+				
+				$(selector).off(event);
+				删除指定的事件
+				
+				$(selector).off(event,fn)	//删除指定事件的指定事件处理函数
+			*/
+			$(function (){
+				$('p').on({click:f1,mouseout:f2});
+				$('a').on('click',function (event){
+					event.preventDefault();
+					$('p').off("click",f1);
+				})
+			})
+			
+			function f1(){
+				alert($(this).text());
+			}
+			function f2(){
+				alert($(this).text());
+			}
+		</script>
+	</head>
+	<body>
+		<p>the one</p>
+		<a href = "http://www.baidu,com">事件取消</a>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta charset = "utf-8"/>
+		<!--Bootstrap不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--移动设备优先,响应式布局-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	
+	</head>
+		<body>
+			<button type = "button" class = "btn btn-default" data-toggle = "tooltip" data-placement = "right" data-original-title = "提示框居右">提示框居右</button>
+			<a href = "#" class = "btn btn-primary" data-toggle = "tooltip" data-placement = "bottom" data-original-title = "提示框居下" title = "">提示框居下</a>
+		<script>
+			$(function (){
+				$("[data-toggle = 'tooltip']").tooltip();
+			})
+		</script>
+		<!--bootstrap模板为使IE6、7、8版本（IE9以下版本）浏览器兼容html5新增的标签。-->
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<!--为使IE6、7、8版本浏览器兼容css3样式-->
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		</body>
+</html>
+<!--
+	提示框
+		bs中的提示框非常的简单，常常使用的就是a标签和button标签来制作，，他们都有一些共性
+			.通过title属性的值来定义提示信息(也可以使用自定义属性data-original-title来设置提示信息)
+			.通过data-placement自定义属性来控制提示信息框的位置，根据四种不同的位置,data-placement:top | right | bottom | left
+				分别表示提示框出现的位置在顶部,右边,底部,左边
+			.还有一个重要的参数不能缺少,data-toggle = "tooltip"
+		注意：
+			.同时设置了data-original-title和title定义提示信息,那么data-original-title的优先级要高于title，只有data-original-title值为空的时候，才会取title的值做为提示信息的内容
+			.该插件不同于之前的几款插件可以不需要js代码的实现，该插件必须依赖js代码的实现
+-->
